@@ -44,7 +44,7 @@ header{
      padding: 2rem 10;
      display: flex;   
      justify-content: space-between;
-z-index: 999;
+     z-index: 999;
 }
 
 header .logo{
@@ -77,22 +77,21 @@ display: none;
 header label{
 font-size: 3rem;
 color: dimgray;
-cursor: crosshair;
-visibility: hidden;
-opacity: 0;
-
+cursor: pointer;
+visibility: visible;
+opacity: 1;
 }
 
 @media(max-widht:1200px){
 html{
-font-size: 54%;
+font-size: 55%;
     }
 }
 
 @media(max-widht:768px){
     header label{
         visibility: visible;
-        opacity: 1%; 
+        opacity: 1; 
     }
 }
 
@@ -103,19 +102,33 @@ top: 100%;
 left: 0%;
 width: 100%;
 background:beige;
-padding: 1rem, 2rem;
-border-top: .1rem solid rgba(0, 0, 0, 0.2);
-box-shadow: .1rem solid rgba(0, 0, 0, 0.2);
+padding: 1rem 2rem;
+border-top: .1rem solid rgba(0, 0, 0, .2);
+box-shadow: 0 .5rem solid rgba(0, 0, 0, .1);
 transform-origin: top;
-transform: scaleY();
+transform: scaleY(0);
+opacity: 0;
+}
+ 
+header .navbar a{
+display: block;
+margin: 2rem 0;
+font-size: 2rem;
 }
 
-header input: :checked ~ .navbar{
-transform: scaleY(1);
-opacity: 1;
+header input:checked ~ .navbar{
+    transform: scaleY(1);
+    opacity: 1;
 }
+   
 
 header input:checked ~ label::before{
 content: '\f00d';
+}
 
+@media(max-widht:450px){
+    html{
+       font-size: 45%; 
+
+    }
 }
