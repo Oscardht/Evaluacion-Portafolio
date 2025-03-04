@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap);
+
+
+:root {
+     --gris:   #5d6d7e; 
+     --marmol: #f2f3f4;
+    --degradado: linear-gradient(45deg,var(--gris) var(--marmol));
+} 
+
+*{
+font-family: 'Hedvig Letters Serif', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+outline: none;
+border: none;
+text-transform: capitalize;
+;
+}
+
+*::selection{
+    background-color: beige;
+
+}
+
+html{
+font-size: 65.3%;
+overflow: hidden;
+
+}
+
+body{
+    background: beige;
+}
