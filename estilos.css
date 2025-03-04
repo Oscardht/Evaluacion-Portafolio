@@ -33,3 +33,40 @@ overflow: hidden;
 body{
     background: beige;
 }
+
+header{
+     position: fixed;
+     top: 0; 
+     left: 0;
+     width: 100%;
+     background-color: seashell;
+    box-shadow: 0.5rem 1rem #d1bdbd;
+     padding: 2rem 10;
+     display: flex;   
+     justify-content: space-between;
+z-index: 999;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: blanchedalmond
+    
+}
+
+header .logo span{
+color: var(--gris)
+
+}
+
+header .navbar a{
+    font-size: 1.0rem;
+margin-left: 2rem;
+color:  var(--gris);
+
+}
+
+header .navbar a:hover{
+color:blanchedalmond
+}
+
+
