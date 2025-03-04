@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap);
 
 
+
+
 :root {
      --gris:   #5d6d7e; 
      --marmol: #f2f3f4;
@@ -32,6 +34,13 @@ overflow: hidden;
 
 body{
     background: beige;
+}
+
+section{
+min-height: 100vh;
+padding: 0 9%;
+padding-top: 7.5rem;
+padding-bottom: 2rem;
 }
 
 header{
@@ -82,6 +91,57 @@ visibility: visible;
 opacity: 1;
 }
 
+
+.Historia{
+display:inline-flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.Historia  .image img{
+width: 45vw;
+animation: fadeInDown 6s infinite;
+
+}
+
+@keyframes fadeInDown {
+    0%, 100%{
+        transform: translateY('0rem');
+    }
+    50%{
+        transform: translateY(-2.5rem);
+    }
+    
+}
+
+.Historia .content h3{
+font-size: 5.5rem;
+color: black;
+text-decoration-color: rgb(4, 4, 37);
+}
+
+.Historia .content h3 span{
+    color: var(--gris);
+}
+
+
+.Historia .content p2{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+
+
+}
+
+
+    
+
+.Opiniones .boxbox .box{
+flex: 1 1 30rem;
+
+
+}
+
 @media(max-widht:1200px){
 html{
 font-size: 55%;
@@ -103,11 +163,12 @@ left: 0%;
 width: 100%;
 background:beige;
 padding: 1rem 2rem;
-border-top: .1rem solid rgba(0, 0, 0, .2);
-box-shadow: 0 .5rem solid rgba(0, 0, 0, .1);
+border-top: .1rem solid rgba(15, 1, 1, 0.2);
+box-shadow: 0 .5rem solid rgba(182, 37, 37, 0.1);
 transform-origin: top;
 transform: scaleY(0);
 opacity: 0;
+transition: .2s linear;
 }
  
 header .navbar a{
@@ -131,4 +192,47 @@ content: '\f00d';
        font-size: 45%; 
 
     }
+
+}
+
+
+.heading{
+    font-size: 1.0rem;
+margin-left: 2rem;
+color:  var(--gris);
+
+ 
+
+}
+
+
+
+section .Opinions{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: initial;
+
+}
+.Opiniones .tope{
+    font-size: 6rem;
+    color: black;
+    }
+    
+    .Opiniones .boxbox p{
+        font-size: 2rem;
+        color: black;
+  
+    }
+
+    .Opiniones .boxbox h3{
+        font-size: 3rem;
+        color: black;
+
+        .Opiniones .boxbox p2{
+            font-size: 3rem;
+            color: black;
+
+    }
+
 }
