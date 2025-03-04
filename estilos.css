@@ -15,7 +15,7 @@ box-sizing: border-box;
 text-decoration: none;
 outline: none;
 border: none;
-text-transform: capitalize;
+text-transform: none;
 ;
 }
 
@@ -49,7 +49,7 @@ z-index: 999;
 
 header .logo{
     font-size: 2rem;
-    color: blanchedalmond
+    color: rgba(13, 13, 14, 0.534)
     
 }
 
@@ -69,4 +69,53 @@ header .navbar a:hover{
 color:blanchedalmond
 }
 
+header .input{
+display: none;
 
+}
+
+header label{
+font-size: 3rem;
+color: dimgray;
+cursor: crosshair;
+visibility: hidden;
+opacity: 0;
+
+}
+
+@media(max-widht:1200px){
+html{
+font-size: 54%;
+    }
+}
+
+@media(max-widht:768px){
+    header label{
+        visibility: visible;
+        opacity: 1%; 
+    }
+}
+
+
+header .navbar{ 
+position: absolute;
+top: 100%;
+left: 0%;
+width: 100%;
+background:beige;
+padding: 1rem, 2rem;
+border-top: .1rem solid rgba(0, 0, 0, 0.2);
+box-shadow: .1rem solid rgba(0, 0, 0, 0.2);
+transform-origin: top;
+transform: scaleY();
+}
+
+header input: :checked ~ .navbar{
+transform: scaleY(1);
+opacity: 1;
+}
+
+header input:checked ~ label::before{
+content: '\f00d';
+
+}
