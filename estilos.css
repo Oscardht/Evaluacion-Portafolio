@@ -23,12 +23,13 @@ text-transform: none;
 
 *::selection{
     background-color: beige;
+    min-height: 100vh;
 
 }
 
 html{
 font-size: 65.3%;
-overflow: hidden;
+overflow: visible;
 
 }
 
@@ -228,11 +229,87 @@ section .Opinions{
     .Opiniones .boxbox h3{
         font-size: 3rem;
         color: black;
+        padding: 1.5rem;
 
         .Opiniones .boxbox p2{
             font-size: 3rem;
             color: black;
+            padding: 1.5rem;
 
     }
 
+
+    .Opiniones .boxbox p{
+        font-size: 2rem;
+        color: black;
+  
+    }
+
+    
+    .Legado {
+        background-color: #f0f0f0;
+        padding: 20px; 
+        text-align: center; 
+    }
+    
+    .content {
+        max-width: 800px; 
+        margin: auto; 
+        background-color: #fff; 
+        padding: 20px; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    
+    .boxiboxi {
+        display: flex; 
+        justify-content: space-between; 
+    }
+    
+    .boxi {
+        width: 45%; 
+        margin: 10px; 
+    }
+    
+    .boxi h3 {
+        color:  black;
+        margin-bottom: 10px; 
+    }
+    
+    .boxi span {
+        color: #000000; 
+    }
+    
+    .image {
+        margin-top: 20px; 
+    }
+    
+    .image img {
+        width: 53%; 
+        height: auto; 
+        border-radius: 10px; 
+    }
+    
+   
+    p2 {
+        display: block; 
+    }
+    
+    
+
+  .footer{
+ width: 100%;
+ margin-top: auto;
+ background-color: plum;
+
 }
+
+.footer{
+    align-content: center;
+    color: black;
+  
+}
+
+
+
+}
+    }
