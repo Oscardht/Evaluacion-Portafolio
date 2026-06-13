@@ -1,252 +1,576 @@
-@import url(https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-
+/* ===== COLOR PALETTE ===== */
 :root {
-     --gris:   #5d6d7e; 
-     --marmol: #f2f3f4;
-    --degradado: linear-gradient(45deg,var(--gris) var(--marmol));
-} 
-
-*{
-font-family: 'Hedvig Letters Serif', sans-serif;
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-text-decoration: none;
-outline: none;
-border: none;
-text-transform: none;
-;
+    --gold:       #DAA520;
+    --gold-light: #F5D76E;
+    --gold-dark:  #B8860B;
+    --sand:       #C2B280;
+    --sand-light: #E8DCC8;
+    --sand-warm:  #D4C4A0;
+    --teal:       #1e6b7b;
+    --teal-light: #48a9b3;
+    --teal-dark:  #0f3d47;
+    --black:      #0D0D0D;
+    --black-soft:  #1A1A1A;
+    --black-medium:#2C2C2C;
+    --cream:      #FFF8E7;
+    --white-alpha: rgba(255, 255, 255, 0.08);
 }
 
-*::selection{
-    background-color: beige;
+/* ===== RESET ===== */
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: none;
+}
+
+*::selection {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+html {
+    font-size: 65.3%;
+    overflow: visible;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+}
+
+/* ===== SECTIONS BASE ===== */
+section {
     min-height: 100vh;
-
+    padding: 0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+    position: relative;
 }
 
-html{
-font-size: 65.3%;
-overflow: visible;
-
+/* ===== HEADER — dark glassmorphism with gold accent ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(13,13,13,0.92) 0%, rgba(44,44,44,0.88) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 2px 24px rgba(218,165,32,0.15), 0 1px 0 rgba(218,165,32,0.25) inset;
+    padding: 2rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    border-bottom: 1px solid rgba(218,165,32,0.2);
 }
 
-body{
-    background: beige;
+header .logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--sand-light);
+    transition: color 0.3s ease;
 }
 
-section{
-min-height: 100vh;
-padding: 0 9%;
-padding-top: 7.5rem;
-padding-bottom: 2rem;
+header .logo:hover {
+    color: var(--gold-light);
 }
 
-header{
-     position: fixed;
-     top: 0; 
-     left: 0;
-     width: 100%;
-     background-color: seashell;
-    box-shadow: 0.5rem 1rem #d1bdbd;
-     padding: 2rem 10;
-     display: flex;   
-     justify-content: space-between;
-     z-index: 999;
+header .logo span {
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(218,165,32,0.3);
 }
 
-header .logo{
-    font-size: 2rem;
-    color: rgba(13, 13, 14, 0.534)
-    
+header #menu-bar {
+    display: none;
 }
 
-header .logo span{
-color: var(--gris)
-
+header label {
+    display: none; /* Hidden on desktop */
+    font-size: 3rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-header .navbar a{
-    font-size: 1.0rem;
-margin-left: 2rem;
-color:  var(--gris);
-
+header label:hover {
+    color: var(--gold-light);
 }
 
-header .navbar a:hover{
-color:blanchedalmond
+header .navbar {
+    display: flex;
+    align-items: center;
 }
 
-header .input{
-display: none;
-
+header .navbar a {
+    font-size: 1.6rem;
+    margin-left: 2.5rem;
+    color: var(--sand-light);
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-header label{
-font-size: 3rem;
-color: dimgray;
-cursor: pointer;
-visibility: visible;
-opacity: 1;
+header .navbar a:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 8px rgba(218,165,32,0.4);
 }
 
-
-.Historia{
-display:inline-flex;
-align-items: center;
-justify-content: center;
-
+/* ===== SECTION 1 — HISTORIA (Gold zone with Caribbean background) ===== */
+.Historia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(218,165,32,0.7) 0%,
+            rgba(194,178,128,0.6) 40%,
+            rgba(194,178,128,0.8) 100%
+        ),
+        url('img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg') center/cover no-repeat fixed;
+    position: relative;
 }
 
-.Historia  .image img{
-width: 45vw;
-animation: fadeInDown 6s infinite;
+.Historia::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--sand));
+    pointer-events: none;
+    z-index: 1;
+}
 
+.Historia .content {
+    flex: 1 1 45rem;
+}
+
+.Historia .image {
+    flex: 1 1 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Historia .image img {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeInDown 6s infinite;
+    border-radius: 16px;
+    border: 2px solid rgba(218,165,32,0.3);
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        0 0 60px rgba(218,165,32,0.12),
+        0 2px 0 rgba(218,165,32,0.2) inset;
+    transition: box-shadow 0.4s ease;
+}
+
+.Historia .image img:hover {
+    box-shadow:
+        0 12px 48px rgba(0,0,0,0.5),
+        0 0 80px rgba(218,165,32,0.2),
+        0 2px 0 rgba(218,165,32,0.3) inset;
+}
+
+/* Nav icon spacing */
+header .navbar a i {
+    margin-right: 0.4rem;
+    font-size: 0.9em;
+    color: var(--gold);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header .navbar a:hover i {
+    color: var(--gold-light);
+    transform: scale(1.15);
 }
 
 @keyframes fadeInDown {
-    0%, 100%{
-        transform: translateY('0rem');
+    0%, 100% {
+        transform: translateY(0rem);
     }
-    50%{
+    50% {
         transform: translateY(-2.5rem);
     }
-    
 }
 
-.Historia .content h3{
-font-size: 5.5rem;
-color: black;
-text-decoration-color: rgb(4, 4, 37);
+.Historia .content h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(218,165,32,0.2);
 }
 
-.Historia .content h3 span{
-    color: var(--gris);
+.Historia .content h3 span {
+    color: var(--gold-dark);
 }
 
-
-.Historia .content p2{
+.Historia .content p2 {
     font-size: 1.5rem;
-    color: rgb(0, 0, 0);
-
-
+    color: var(--black-soft);
 }
 
+.Historia .content p {
+    color: var(--black-soft);
+}
 
+.Historia .content .btn {
+    color: var(--gold-dark);
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.Historia .content .btn:hover {
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(218,165,32,0.5);
+}
+
+/* ===== SECTION 2 — OPINIONES (Sand → dark transition) ===== */
+.Opiniones {
+    background:
+        linear-gradient(
+            180deg,
+            var(--sand) 0%,
+            var(--sand-warm) 25%,
+            rgba(100,85,60,0.85) 60%,
+            var(--black-soft) 100%
+        );
+    position: relative;
+}
+
+.Opiniones .tope {
+    font-family: 'Raleway', sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--cream);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.Opiniones .boxbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.Opiniones .boxbox .box {
+    flex: 1 1 30rem;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(218,165,32,0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.Opiniones .boxbox .box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(218,165,32,0.15);
+    border-color: rgba(218,165,32,0.35);
+}
+
+.Opiniones .boxbox .box img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.Opiniones .boxbox p {
+    font-size: 2rem;
+    color: var(--sand-light);
+    line-height: 1.6;
+}
+
+.Opiniones .boxbox h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--gold-light);
+    padding: 1.5rem 0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.Opiniones .boxbox p2 {
+    font-size: 2rem;
+    color: var(--sand-light);
+    line-height: 1.6;
+}
+
+.Opiniones .boxbox .btn {
+    color: var(--gold);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Opiniones .boxbox .btn:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 8px rgba(218,165,32,0.5);
+}
+
+/* ===== RESPONSIVE & MOBILE CONVERSION ===== */
+@media(max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    section {
+        padding: 0 5%;
+        padding-top: 10rem;
+        padding-bottom: 4rem;
+    }
+
+    /* Header & Mobile Navigation */
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    header label {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(13,13,13,0.96) 0%, rgba(26,26,26,0.94) 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 2rem;
+        border-top: 1px solid rgba(218,165,32,0.2);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+        flex-direction: column;
+        align-items: flex-start;
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    header .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        margin-left: 0;
+        font-size: 1.8rem;
+        width: 100%;
+    }
+
+    header input:checked ~ .navbar {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    header input:checked ~ label::before {
+        content: '\f00d'; /* X (close) icon from FontAwesome */
+    }
+
+    /* Section 1 - Historia Mobile Stack */
+    .Historia {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 12rem;
+    }
+
+    .Historia .content h3 {
+        font-size: 3.8rem;
+        line-height: 1.2;
+    }
+
+    .Historia .hero-tagline {
+        font-size: 1.8rem;
+        margin: 2rem 0;
+    }
+
+    .Historia .image img {
+        max-width: 320px;
+        margin-bottom: 2rem;
+    }
     
-
-.Opiniones .boxbox .box{
-flex: 1 1 30rem;
-
-
-}
-
-@media(max-widht:1200px){
-html{
-font-size: 55%;
+    .Opiniones .tope {
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 3rem;
     }
 }
 
-@media(max-widht:768px){
-    header label{
-        visibility: visible;
-        opacity: 1; 
+@media(max-width: 450px) {
+    html {
+        font-size: 45%;
+    }
+    .Historia .image img {
+        max-width: 260px;
     }
 }
 
-
-header .navbar{ 
-position: absolute;
-top: 100%;
-left: 0%;
-width: 100%;
-background:beige;
-padding: 1rem 2rem;
-border-top: .1rem solid rgba(15, 1, 1, 0.2);
-box-shadow: 0 .5rem solid rgba(182, 37, 37, 0.1);
-transform-origin: top;
-transform: scaleY(0);
-opacity: 0;
-transition: .2s linear;
-}
- 
-header .navbar a{
-display: block;
-margin: 2rem 0;
-font-size: 2rem;
-}
-
-header input:checked ~ .navbar{
-    transform: scaleY(1);
-    opacity: 1;
-}
-   
-
-header input:checked ~ label::before{
-content: '\f00d';
-}
-
-@media(max-widht:450px){
-    html{
-       font-size: 45%; 
-
-    }
-
-}
-
-
-.heading{
-    font-size: 1.0rem;
-margin-left: 2rem;
-color:  var(--gris);
-
- 
-
-}
-
-
-
-section .Opinions{
-    display: inline-block;
+/* ===== FLOATING WHATSAPP BUTTON ===== */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: initial;
-
-}
-.Opiniones .tope{
-    font-size: 6rem;
-    color: black;
-    }
-    
-    .Opiniones .boxbox p{
-        font-size: 2rem;
-        color: black;
-  
-    }
-
-    .Opiniones .boxbox h3{
-        font-size: 3rem;
-        color: black;
-        padding: 1.5rem;
-
-        .Opiniones .boxbox p2{
-            font-size: 3rem;
-            color: black;
-            padding: 1.5rem;
-
-    }
-
-
-    .Opiniones .boxbox p{
-        font-size: 2rem;
-        color: black;
-  
-    }
-
-
- 
-
+    font-size: 3.2rem;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 0 20px rgba(218, 165, 32, 0.1);
+    z-index: 998;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
 }
 
+.floating-whatsapp i {
+    color: #FFF;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6), 0 0 30px rgba(218, 165, 32, 0.2);
+}
+
+/* ===== POPUP MODAL (LIGHTBOX) ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(13,13,13,0.98) 100%);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(218, 165, 32, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 3.5rem;
+    color: var(--sand-light);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--gold-light);
+    transform: scale(1.1);
+}
+
+.modal-img-container {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    display: block;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+}
+
+.modal-btn-wa {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #FFF;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.modal-btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+.modal-btn-mail {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: var(--black);
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
+}
+
+.modal-btn-mail:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    box-shadow: 0 6px 18px rgba(218, 165, 32, 0.4);
+}

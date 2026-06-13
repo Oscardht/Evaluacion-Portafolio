@@ -1,13 +1,29 @@
 
 :root {
-    --gris:   #5d6d7e; 
-    --marmol: #f2f3f4;
-   --degradado: linear-gradient(45deg,var(--gris) var(--marmol));
-} 
+    --gold:       #DAA520;
+    --gold-light: #F5D76E;
+    --gold-dark:  #B8860B;
+    --sand:       #C2B280;
+    --sand-light: #E8DCC8;
+    --sand-warm:  #D4C4A0;
+    --black:      #0D0D0D;
+    --black-soft:  #1A1A1A;
+    --black-medium:#2C2C2C;
+    --cream:      #FFF8E7;
+}
 
+/* ===== SECTION 3 — LEGADO (Black zone with Caribbean background) ===== */
 .Legado {
     padding: 50px 20px;
-    background-color: beige;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13,13,13,0.88) 0%,
+            rgba(26,26,26,0.75) 30%,
+            rgba(13,13,13,0.85) 100%
+        ),
+        url('img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg') center/cover no-repeat fixed;
+    position: relative;
 }
 
 .Legado .content {
@@ -21,34 +37,48 @@
 
 .Legado .boxiboxi {
     flex: 1;
-    min-width: 300px; 
+    min-width: 300px;
 }
 
 .Legado .boxi {
     padding: 0.1rem;
-    
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(218,165,32,0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Legado .boxi:hover {
+    border-color: rgba(218,165,32,0.3);
+    box-shadow: 0 8px 24px rgba(218,165,32,0.08);
 }
 
 .Legado h3 {
+    font-family: 'Raleway', sans-serif;
     font-size: 5rem;
-    color: #333;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    text-shadow: 0 2px 8px rgba(218,165,32,0.2);
 }
 
 .Legado h3 span {
-    color: #150750; 
+    color: var(--gold-light);
 }
-
 
 .Legado p {
     font-size: 1.8rem;
     line-height: 1.6;
-    color: black;
+    color: var(--sand-light);
 }
 
 .Legado p + p {
     margin-top: 20px;
 }
-
 
 .Legado .image {
     flex: 1;
@@ -60,15 +90,24 @@
     width: 100%;
     height: auto;
     max-width: 400px;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(218,165,32,0.2), 0 2px 8px rgba(0,0,0,0.4);
+    border: 1px solid rgba(218,165,32,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.Legado .image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(218,165,32,0.3), 0 4px 12px rgba(0,0,0,0.5);
+}
 
+/* ===== FOOTER — deep black with gold accents ===== */
 footer {
-    background-color: rgb(223, 194, 223); 
+    background: linear-gradient(135deg, var(--black) 0%, var(--black-medium) 100%);
     padding: 30px 0;
-    color: white;
+    color: var(--sand-light);
     text-align: center;
+    border-top: 1px solid rgba(218,165,32,0.2);
 }
 
 .footer .container {
@@ -80,6 +119,8 @@ footer {
 .footer h4 {
     font-size: 1.6rem;
     margin-bottom: 15px;
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(218,165,32,0.2);
 }
 
 .footer ul {
@@ -93,12 +134,87 @@ footer {
 }
 
 .footer ul li a {
-    color: rgb(59, 15, 59);
+    color: var(--sand-light);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem; /* larger, readable links */
+    transition: color 0.3s ease;
 }
 
 .footer ul li a:hover {
-    text-decoration: underline; 
+    color: var(--gold-light);
+    text-decoration: none;
+    text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
 }
 
+.footer-social {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-social .social-link {
+    font-size: 2.2rem;
+    color: var(--sand-light);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.footer-social .social-link:hover {
+    color: var(--gold-light);
+    transform: translateY(-3px);
+    background: rgba(218, 165, 32, 0.15);
+    border-color: var(--gold-light);
+    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+}
+
+/* ===== MOBILE MEDIA QUERIES FOR SECTION 3 ===== */
+@media (max-width: 768px) {
+    .Legado {
+        padding: 50px 15px;
+    }
+    
+    .Legado .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .Legado .boxiboxi {
+        width: 100%;
+    }
+    
+    .Legado .boxi {
+        text-align: center;
+        padding: 2.5rem;
+    }
+    
+    .Legado h3 {
+        font-size: 3.8rem;
+    }
+    
+    .Legado p {
+        font-size: 1.6rem;
+    }
+    
+    .Legado .image {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .Legado .image img {
+        max-width: 320px;
+    }
+
+    .footer ul li {
+        display: block;
+        margin: 15px 0;
+    }
+}
