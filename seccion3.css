@@ -1,114 +1,132 @@
-
-:root {
-    --gold:       #DAA520;
-    --gold-light: #F5D76E;
-    --gold-dark:  #B8860B;
-    --sand:       #C2B280;
-    --sand-light: #E8DCC8;
-    --sand-warm:  #D4C4A0;
-    --black:      #0D0D0D;
-    --black-soft:  #1A1A1A;
-    --black-medium:#2C2C2C;
-    --cream:      #FFF8E7;
-}
-
-/* ===== SECTION 3 — LEGADO (Black zone with Caribbean background) ===== */
+/* ===== SECTION 3 — LEGADO (NEOBRUTALISM BENTO SOLID COLORS) ===== */
 .Legado {
-    padding: 50px 20px;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(13,13,13,0.88) 0%,
-            rgba(26,26,26,0.75) 30%,
-            rgba(13,13,13,0.85) 100%
-        ),
-        url('img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg') center/cover no-repeat fixed;
-    position: relative;
+    background: var(--bg-dark);
+    padding: 8rem 9%;
 }
 
-.Legado .content {
-    max-width: 1200px;
-    margin: 0 auto;
+.legado-bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem;
+}
+
+.legado-card.bento-dark-large {
+    grid-column: span 7;
+    background: var(--card-dark-pine);
+    color: var(--text-white);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.Legado .boxiboxi {
-    flex: 1;
-    min-width: 300px;
-}
-
-.Legado .boxi {
-    padding: 0.1rem;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(218,165,32,0.1);
-    border-radius: 12px;
-    padding: 2rem;
+.legado-card.bento-dark-large h3 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.15;
     margin-bottom: 1.5rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-white);
 }
 
-.Legado .boxi:hover {
-    border-color: rgba(218,165,32,0.3);
-    box-shadow: 0 8px 24px rgba(218,165,32,0.08);
+.legado-card.bento-dark-large h3 span {
+    color: var(--card-yellow);
+    background: #000000;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    display: inline-block;
 }
 
-.Legado h3 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--gold);
-    text-shadow: 0 2px 8px rgba(218,165,32,0.2);
-}
-
-.Legado h3 span {
-    color: var(--gold-light);
-}
-
-.Legado p {
-    font-size: 1.8rem;
+.legado-card.bento-dark-large p {
+    font-size: 1.7rem;
+    font-weight: 500;
     line-height: 1.6;
-    color: var(--sand-light);
+    color: var(--text-sand);
     text-align: justify;
 }
 
-.Legado p + p {
-    margin-top: 20px;
+.legado-card.bento-yellow-contact {
+    grid-column: span 5;
+    background: var(--card-yellow);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
 }
 
-.Legado .image {
-    flex: 1;
-    min-width: 300px;
+.contact-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legado-card.bento-yellow-contact h3 span {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-dark);
+}
+
+.contact-tag {
+    background: #000000;
+    color: var(--card-yellow);
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    border: 2px solid #000000;
+    text-transform: uppercase;
+}
+
+.contact-details p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.contact-details p i {
+    width: 2.4rem;
+    color: var(--card-dark-pine);
+}
+
+.click-notice {
+    background: var(--card-white);
+    color: var(--text-dark);
+    font-weight: 800;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.4rem;
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0px #000000;
+    border-radius: var(--radius-sm);
     text-align: center;
+    margin-top: 1rem;
 }
 
-.Legado .image img {
+.legado-card.bento-image-card {
+    grid-column: span 12;
+    background: var(--card-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.legado-card.bento-image-card img {
+    max-width: 450px;
     width: 100%;
     height: auto;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(218,165,32,0.2), 0 2px 8px rgba(0,0,0,0.4);
-    border: 1px solid rgba(218,165,32,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    border: 3px solid #000000;
+    box-shadow: 6px 6px 0px #000000;
 }
 
-.Legado .image img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(218,165,32,0.3), 0 4px 12px rgba(0,0,0,0.5);
-}
-
-/* ===== FOOTER — deep black with gold accents ===== */
+/* ===== FOOTER — NEOBRUTALIST SOLID BLACK ===== */
 footer {
-    background: linear-gradient(135deg, var(--black) 0%, var(--black-medium) 100%);
-    padding: 30px 0;
-    color: var(--sand-light);
+    background: #121212;
+    padding: 4rem 0 3rem 0;
+    color: var(--text-white);
     text-align: center;
-    border-top: 1px solid rgba(218,165,32,0.2);
+    border-top: 3px solid #000000;
 }
 
 .footer .container {
@@ -118,37 +136,43 @@ footer {
 }
 
 .footer h4 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: var(--gold);
-    text-shadow: 0 0 8px rgba(218,165,32,0.2);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--card-yellow);
 }
 
 .footer ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 2.5rem;
 }
 
 .footer ul li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
 .footer ul li a {
-    color: var(--sand-light);
-    text-decoration: none;
-    font-size: 1.5rem; /* larger, readable links */
-    transition: color 0.3s ease;
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.6rem 1.4rem;
+    background: var(--bg-dark-soft);
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0px #000000;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
 }
 
 .footer ul li a:hover {
-    color: var(--gold-light);
-    text-decoration: none;
-    text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
+    background: var(--card-yellow);
+    color: var(--text-dark);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #000000;
 }
 
 .footer-social {
-    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -156,70 +180,45 @@ footer {
 
 .footer-social .social-link {
     font-size: 2.2rem;
-    color: var(--sand-light);
-    transition: all 0.3s ease;
+    color: var(--text-dark);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(218, 165, 32, 0.2);
+    background: var(--card-yellow);
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+    transition: all 0.2s ease;
 }
 
 .footer-social .social-link:hover {
-    color: var(--gold-light);
-    transform: translateY(-3px);
-    background: rgba(218, 165, 32, 0.15);
-    border-color: var(--gold-light);
-    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+    background: var(--card-blue);
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px #000000;
 }
 
 /* ===== MOBILE MEDIA QUERIES FOR SECTION 3 ===== */
+@media (max-width: 992px) {
+    .legado-card.bento-dark-large { grid-column: span 12; }
+    .legado-card.bento-yellow-contact { grid-column: span 12; }
+    .legado-card.bento-image-card { grid-column: span 12; }
+}
+
 @media (max-width: 768px) {
-    .Legado {
-        padding: 50px 15px;
-    }
+    .Legado { padding: 6rem 5%; }
     
-    .Legado .content {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
+    .legado-card.bento-dark-large h3 { font-size: 3.2rem; }
     
-    .Legado .boxiboxi {
-        width: 100%;
-    }
-    
-    .Legado .boxi {
-        text-align: left;
-        padding: 2.5rem;
-    }
-    
-    .Legado h3 {
-        font-size: 3.8rem;
-        text-align: center;
-    }
-    
-    .Legado p {
-        font-size: 1.6rem;
+    .legado-card.bento-dark-large p {
         text-align: justify;
         text-justify: inter-word;
         hyphens: auto;
     }
     
-    .Legado .image {
-        width: 100%;
-        margin-top: 10px;
-    }
-    
-    .Legado .image img {
-        max-width: 320px;
-    }
-
     .footer ul li {
         display: block;
-        margin: 15px 0;
+        margin: 1.2rem 0;
     }
 }
