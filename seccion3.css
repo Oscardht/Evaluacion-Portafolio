@@ -1,6 +1,6 @@
 /* ===== SECTION 4 — LEGADO & CONTACTO (EDITORIAL GLASSMORPHISM) ===== */
 .Legado {
-    background: linear-gradient(180deg, var(--black-deep) 0%, #111115 100%);
+    background: linear-gradient(180deg, rgba(13,13,15,0.95) 0%, rgba(18,18,22,0.85) 50%, rgba(13,13,15,0.98) 100%), url('img/isla-saona.jpg') center/cover no-repeat fixed;
     padding: 10rem 9%;
 }
 
@@ -10,48 +10,163 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    justify-content: space-between;
-    gap: 3rem;
-}
-
-.Legado .boxiboxi {
-    flex: 1 1 38rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.Legado .boxi {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    gap: 2.5rem;
 }
 
-.Legado h3 {
+/* Card 1: Vende tu propiedad con nosotros */
+.legado-card {
+    flex: 1 1 32rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.legado-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.2rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #FFFFFF;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.Legado h3 span {
+.legado-card h3 span {
     color: var(--gold);
     font-style: italic;
     font-weight: 400;
 }
 
-.Legado p {
-    font-size: 1.6rem;
+.legado-card p {
+    font-size: 1.5rem;
     line-height: 1.7;
     color: var(--sand-light);
     text-align: justify;
 }
 
-/* Interactive Contact Card */
-.contact-interactive-card {
+/* Card 2: Lic. Claudia Di Diomede — Tarjeta Profesional Encargada */
+.agent-profile-card {
     flex: 1 1 34rem;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.8rem 2.4rem;
+    background: linear-gradient(145deg, rgba(28, 28, 36, 0.85) 0%, rgba(18, 18, 24, 0.95) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agent-profile-card:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.22);
+    transform: translateY(-6px);
+}
+
+.agent-header-row {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.agent-avatar-frame {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    flex-shrink: 0;
+}
+
+.agent-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.agent-title-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-sub-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.agent-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin: 0.3rem 0 0.5rem 0;
+}
+
+.agent-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-full);
+    padding: 0.3rem 1rem;
+    color: var(--gold-light);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.agent-details {
+    margin-bottom: 1.6rem;
+}
+
+.agent-role {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--sand-warm);
+    margin-bottom: 0.8rem;
+}
+
+.agent-role i {
+    color: var(--gold);
+    margin-right: 0.5rem;
+}
+
+.agent-bio {
+    font-size: 1.4rem;
+    color: var(--sand-light);
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.agent-actions {
+    width: 100%;
+    margin-top: auto;
+}
+
+.agent-actions .editorial-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+}
+
+/* Card 3: Interactive Contact Card */
+.contact-interactive-card {
+    flex: 1 1 32rem;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -124,119 +239,6 @@
 .contact-interactive-card:hover .card-prompt-badge {
     background: var(--gold);
     color: var(--black-deep);
-}
-
-/* ===== AGENT PROFILE CARD (LIC. CLAUDIA DI DIOMEDE) ===== */
-.agent-profile-card {
-    flex: 1 1 35rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 3.5rem 2.8rem;
-    background: linear-gradient(145deg, rgba(28, 28, 36, 0.85) 0%, rgba(18, 18, 24, 0.95) 100%);
-    border: 1px solid var(--glass-border);
-    position: relative;
-    overflow: hidden;
-}
-
-.agent-profile-card:hover {
-    border-color: var(--gold-light);
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
-}
-
-.agent-photo-wrapper {
-    position: relative;
-    width: 220px;
-    height: 280px;
-    margin-bottom: 2rem;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    border: 2px solid var(--gold);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.2);
-}
-
-.agent-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.agent-photo-wrapper:hover .agent-img {
-    transform: scale(1.05);
-}
-
-.agent-badge-pill {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(13, 13, 15, 0.88);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--gold);
-    border-radius: var(--radius-full);
-    padding: 0.5rem 1.4rem;
-    color: var(--gold-light);
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    white-space: nowrap;
-}
-
-.agent-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.agent-sub-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-
-.agent-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    margin-bottom: 0.8rem;
-}
-
-.agent-role {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--sand-warm);
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-    text-align: center;
-}
-
-.agent-role i {
-    color: var(--gold);
-    margin-right: 0.5rem;
-}
-
-.agent-bio {
-    font-size: 1.45rem;
-    color: var(--sand-light);
-    line-height: 1.6;
-    margin-bottom: 2.2rem;
-    text-align: justify;
-}
-
-.agent-actions {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 /* ===== FOOTER — EDITORIAL GLASSMORPHISM ===== */
