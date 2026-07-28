@@ -1,114 +1,161 @@
-
-:root {
-    --gold:       #DAA520;
-    --gold-light: #F5D76E;
-    --gold-dark:  #B8860B;
-    --sand:       #C2B280;
-    --sand-light: #E8DCC8;
-    --sand-warm:  #D4C4A0;
-    --black:      #0D0D0D;
-    --black-soft:  #1A1A1A;
-    --black-medium:#2C2C2C;
-    --cream:      #FFF8E7;
-}
-
-/* ===== SECTION 3 — LEGADO (Black zone with Caribbean background) ===== */
+/* ===== SECTION 4 — LEGADO & CONTACTO (EDITORIAL GLASSMORPHISM) ===== */
 .Legado {
-    padding: 50px 20px;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(13,13,13,0.88) 0%,
-            rgba(26,26,26,0.75) 30%,
-            rgba(13,13,13,0.85) 100%
-        ),
-        url('img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg') center/cover no-repeat fixed;
-    position: relative;
+    background: linear-gradient(180deg, var(--black-deep) 0%, #111115 100%);
+    padding: 10rem 9%;
 }
 
 .Legado .content {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
     justify-content: space-between;
-    gap: 20px;
+    gap: 3rem;
 }
 
 .Legado .boxiboxi {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 38rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .Legado .boxi {
-    padding: 0.1rem;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(218,165,32,0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.Legado .boxi:hover {
-    border-color: rgba(218,165,32,0.3);
-    box-shadow: 0 8px 24px rgba(218,165,32,0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Legado h3 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--gold);
-    text-shadow: 0 2px 8px rgba(218,165,32,0.2);
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
 }
 
 .Legado h3 span {
-    color: var(--gold-light);
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
 }
 
 .Legado p {
-    font-size: 1.8rem;
-    line-height: 1.6;
+    font-size: 1.6rem;
+    line-height: 1.7;
     color: var(--sand-light);
     text-align: justify;
 }
 
-.Legado p + p {
-    margin-top: 20px;
+/* Interactive Contact Card */
+.contact-interactive-card {
+    flex: 1 1 34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(28, 28, 36, 0.75) 0%, rgba(18, 18, 24, 0.85) 100%);
+    border: 1px solid var(--glass-border);
 }
 
-.Legado .image {
-    flex: 1;
-    min-width: 300px;
+.contact-interactive-card:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.22);
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-card-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.4));
+}
+
+.contact-header h3 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+.contact-list p {
+    font-size: 1.6rem;
+    color: var(--sand-cream);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-list p i {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.card-prompt-badge {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-full);
+    padding: 0.8rem 1.6rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 1.3rem;
     text-align: center;
+    margin-top: 2rem;
+    transition: background 0.3s ease;
 }
 
-.Legado .image img {
+.contact-interactive-card:hover .card-prompt-badge {
+    background: var(--gold);
+    color: var(--black-deep);
+}
+
+/* Editorial Image Frame */
+.image-frame-editorial {
+    flex: 1 1 30rem;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.editorial-side-img {
     width: 100%;
-    height: auto;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(218,165,32,0.2), 0 2px 8px rgba(0,0,0,0.4);
-    border: 1px solid rgba(218,165,32,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.Legado .image img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(218,165,32,0.3), 0 4px 12px rgba(0,0,0,0.5);
+.image-frame-editorial:hover .editorial-side-img {
+    transform: scale(1.06);
 }
 
-/* ===== FOOTER — deep black with gold accents ===== */
+/* ===== FOOTER — EDITORIAL GLASSMORPHISM ===== */
 footer {
-    background: linear-gradient(135deg, var(--black) 0%, var(--black-medium) 100%);
-    padding: 30px 0;
+    background: rgba(10, 10, 12, 0.95);
+    padding: 5rem 0 3rem 0;
     color: var(--sand-light);
     text-align: center;
-    border-top: 1px solid rgba(218,165,32,0.2);
+    border-top: 1px solid var(--glass-border);
 }
 
 .footer .container {
@@ -117,38 +164,51 @@ footer {
     padding: 0 20px;
 }
 
+.footer-brand-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.4));
+}
+
 .footer h4 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
     color: var(--gold);
-    text-shadow: 0 0 8px rgba(218,165,32,0.2);
 }
 
 .footer ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 3rem;
 }
 
 .footer ul li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 1.5rem;
 }
 
 .footer ul li a {
     color: var(--sand-light);
-    text-decoration: none;
-    font-size: 1.5rem; /* larger, readable links */
+    font-size: 1.5rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .footer ul li a:hover {
     color: var(--gold-light);
-    text-decoration: none;
-    text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .footer-social {
-    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -157,69 +217,37 @@ footer {
 .footer-social .social-link {
     font-size: 2.2rem;
     color: var(--sand-light);
-    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.8rem;
+    height: 4.8rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(218, 165, 32, 0.2);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
 }
 
 .footer-social .social-link:hover {
-    color: var(--gold-light);
-    transform: translateY(-3px);
-    background: rgba(218, 165, 32, 0.15);
-    border-color: var(--gold-light);
-    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+    color: var(--black-deep);
+    background: var(--gold-light);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
-/* ===== MOBILE MEDIA QUERIES FOR SECTION 3 ===== */
+/* ===== MOBILE RESPONSIVE MEDIA QUERIES ===== */
 @media (max-width: 768px) {
-    .Legado {
-        padding: 50px 15px;
-    }
-    
-    .Legado .content {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    
-    .Legado .boxiboxi {
-        width: 100%;
-    }
-    
-    .Legado .boxi {
-        text-align: left;
-        padding: 2.5rem;
-    }
-    
-    .Legado h3 {
-        font-size: 3.8rem;
-        text-align: center;
-    }
+    .Legado { padding: 6rem 5%; }
+    .Legado h3 { font-size: 3.2rem; text-align: center; }
     
     .Legado p {
-        font-size: 1.6rem;
         text-align: justify;
         text-justify: inter-word;
         hyphens: auto;
     }
     
-    .Legado .image {
-        width: 100%;
-        margin-top: 10px;
-    }
-    
-    .Legado .image img {
-        max-width: 320px;
-    }
-
     .footer ul li {
         display: block;
-        margin: 15px 0;
+        margin: 1.2rem 0;
     }
 }

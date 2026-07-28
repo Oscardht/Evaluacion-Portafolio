@@ -1,156 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claudia Di Diomede — Real Estate Agent</title>
+    <title>Inversiones D'ALROC — Real Estate & Servicios Inmobiliarios de Lujo</title>
+
+    <!-- Google Fonts: Playfair Display (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- Custom CSS Styles -->
     <link rel="stylesheet" href="estilos.css">
-
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-
     <link rel="stylesheet" href="seccion3.css">
-
 </head>
 
 <body>
+    <!-- HEADER NAVBAR WITH IMAGE LOGO -->
     <header>
-        <a href="#" class="logo">
-            <span>Inversiones D'</span>ALROC</a>
+        <a href="#" class="logo-link" title="Inversiones D'ALROC Real Estate">
+            <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC" class="header-logo-img">
+            <div class="logo-text-wrapper">
+                <span class="logo-brand">INVERSIONES D'<em>ALROC</em></span>
+                <span class="logo-sub">Real Estate — Isla de Margarita</span>
+            </div>
+        </a>
 
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
 
         <nav class="navbar">
             <a href="#Historia"><i class="fa-solid fa-house"></i> Inicio</a>
-            <a href="#Opiniones"><i class="fa-solid fa-building"></i> Propiedades</a>
-            <a href="#Legado"><i class="fa-solid fa-handshake"></i> Servicios</a>
-            <a href="#Contacto"><i class="fa-solid fa-phone"></i> Contacto</a>
+            <a href="#Galeria"><i class="fa-solid fa-camera"></i> Galerías</a>
+            <a href="#Opiniones"><i class="fa-solid fa-building-user"></i> Servicios</a>
+            <a href="#Contacto"><i class="fa-solid fa-phone-volume"></i> Contacto</a>
         </nav>
-
-
     </header>
 
+    <!-- SECTION 1 — HERO EDITORIAL (HISTORIA) -->
     <section class="Historia" id="Historia">
-        <div class="content">
-            <h1>Inversiones D'ALROC<span> Real Estate</span></h1>
-            <p class="location"><i class="fa-solid fa-location-dot"></i> Isla de Margarita</p>
+        <div class="editorial-container">
+            <div class="content">
+                <span class="editorial-badge"><i class="fa-solid fa-crown"></i> Inmobiliaria de Vanguardia</span>
+                
+                <h1 class="editorial-main-title">Inversiones D'ALROC <br><em>Real Estate</em></h1>
+                <p class="location"><i class="fa-solid fa-location-dot"></i> Isla de Margarita & El Caribe</p>
 
-            <h2 class="hero-tagline">NO BUSQUES, DEJA QUE TE ENCUENTREN. <strong>CONFÍA LA VENTA
-                    DE TU PROPIEDAD A LOS EXPERTOS.</strong></h2>
+                <div class="hero-quote-card">
+                    <h2 class="hero-tagline">NO BUSQUES, DEJA QUE TE ENCUENTREN. <strong>CONFÍA LA VENTA DE TU PROPIEDAD A LOS EXPERTOS.</strong></h2>
+                </div>
 
-            <p class="hero-feature"><i class="fa-solid fa-circle-check"></i> Nuestros servicios inmobiliarios de vanguardia maximizan el alcance
-                y el valor de tu propiedad.</p>
+                <div class="editorial-features">
+                    <p class="hero-feature"><i class="fa-solid fa-gem"></i> Nuestros servicios inmobiliarios de vanguardia maximizan el alcance y el valor de tu propiedad en el mercado internacional.</p>
+                    <p class="hero-feature"><i class="fa-solid fa-shield-halved"></i> Captamos las mejores propiedades de lujo para los compradores más exigentes con total confidencialidad.</p>
+                </div>
 
-            <p class="hero-feature"><i class="fa-solid fa-circle-check"></i> Captamos las mejores propiedades para los compradores más exigentes.</p>
-
-            <a href="#Opiniones" class="btn"><i class="fa-solid fa-arrow-down"></i> Conoce nuestros servicios</a>
-        </div>
-        <div class="image">
-            <img src="img/IMG_0217.png" alt="Propiedad de Lujo en el Caribe">
-        </div>
-
-    </section>
-
-    <section class="Opiniones" id="Opiniones">
-        <h2 class="tope">Nuestros Servicios</h2>
-        <div class="boxbox">
-            <div class="box">
-                <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                <h3>Asesoría Personalizada</h3>
-                <p>Te acompañamos en cada paso del proceso de compra o venta de tu propiedad,
-                    brindándote una atención exclusiva y adaptada a tus necesidades específicas
-                    en el mercado inmobiliario de Isla de Margarita.</p>
-            </div>
-
-            <div class="box">
-                <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h3>Oportunidades de Inversión</h3>
-                <p>Identificamos las mejores oportunidades de inversión inmobiliaria
-                    en la región caribeña, maximizando el retorno de tu capital con propiedades
-                    de alto valor y potencial de crecimiento.</p>
-            </div>
-
-            <div class="box">
-                <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Seguridad Jurídica</h3>
-                <p>Garantizamos la transparencia y legalidad de cada transacción,
-                    respaldados por un equipo de asesores legales que protegen
-                    tu inversión en todo momento.</p>
-            </div>
-
-            <div class="box">
-                <div class="service-icon"><i class="fa-solid fa-key"></i></div>
-                <h3>Acceso Exclusivo a Propiedades</h3>
-                <p>Captamos las mejores propiedades para los compradores más exigentes,
-                    ofreciendo acceso privileged a inmuebles que no encontrarás
-                    en el mercado convencional.</p>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="Legado" id="Legado">
-        <div class="content">
-            <div class="boxiboxi">
-                <div class="boxi">
-                    <h3>Vende tu Propiedad<span> Con Nosotros</span></h3>
-                    <p class="cta-subtitle"><i class="fa-solid fa-heart"></i> Tu mejor inversión</p>
-                    <p>No busques, deja que te encuentren. Confía la venta de tu propiedad a los expertos.
-                        Nuestros servicios inmobiliarios de vanguardia maximizan el alcance
-                        y el valor de tu propiedad en Isla de Margarita y toda la región caribeña.</p>
+                <div class="hero-actions">
+                    <a href="#Opiniones" class="editorial-btn primary-btn"><i class="fa-solid fa-arrow-down"></i> Conoce Nuestros Servicios</a>
+                    <a href="#Contacto" class="editorial-btn secondary-btn contacto-btn"><i class="fa-brands fa-whatsapp"></i> Contactar Asesor</a>
                 </div>
             </div>
 
-            <div class="boxi" id="Contacto" style="cursor: pointer;" title="Haga clic para ver tarjeta de contacto">
-                <h3><span>Contáctanos</span></h3>
-                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: +58 414 790 7819</p>
-                <p><i class="fa-solid fa-envelope"></i> Email: inversiones.idalroc@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Isla de Margarita, Venezuela</p>
-            </div>
+            <!-- EDITORIAL PHOTO SHOWCASE FRONT & CENTER -->
+            <div class="hero-photo-showcase">
+                <div class="main-photo-frame">
+                    <img src="img/luxury_villa.png" alt="Propiedad de Lujo en el Caribe" class="hero-img">
+                    <div class="photo-overlay-glass">
+                        <span class="property-tag"><i class="fa-solid fa-star"></i> Propiedad Destacada</span>
+                        <h3>Villa Exclusiva Caribeña</h3>
+                    </div>
+                </div>
 
-            <div class="image">
-                <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC">
+                <!-- Secondary Overlapping Image Card -->
+                <div class="secondary-photo-badge">
+                    <img src="img/IMG_0217.png" alt="Sello Inversiones D'ALROC" class="badge-logo-img">
+                    <div class="badge-text">
+                        <strong>100%</strong>
+                        <span>Garantía Jurídica</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- SECTION 2 — GALLERY SHOWCASE (AL OJO DEL ESPECTADOR) -->
+    <section class="Galeria" id="Galeria">
+        <div class="section-title-wrapper">
+            <span class="editorial-sub-tag">EXCLUSIVIDAD & PAISAJES</span>
+            <h2 class="editorial-section-title">Nuestras Zonas & Propiedades</h2>
+            <div class="gold-divider"></div>
+        </div>
 
+        <div class="property-gallery-grid">
+            <div class="gallery-card card-large">
+                <img src="img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg" alt="Playas del Caribe">
+                <div class="gallery-glass-caption">
+                    <span class="gallery-tag">Vista al Mar</span>
+                    <h3>Playas de Alta Plusvalía</h3>
+                    <p>Ubicaciones privilegiadas en las zonas más codiciadas de la isla.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card card-tall">
+                <img src="img/IMG_0219.jpeg" alt="Residencia de Lujo">
+                <div class="gallery-glass-caption">
+                    <span class="gallery-tag">Diseño Moderno</span>
+                    <h3>Arquitectura Caribeña</h3>
+                    <p>Espacios amplios y lujosos creados para el confort total.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card card-medium">
+                <img src="img/isla-saona.jpg" alt="Isla del Caribe">
+                <div class="gallery-glass-caption">
+                    <span class="gallery-tag">Entorno Natural</span>
+                    <h3>Paisajes Exóticos</h3>
+                    <p>Propiedades rodeadas de naturaleza y playas paradisíacas.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card card-wide">
+                <img src="img/largeimage.png" alt="Complejo Inmobiliario">
+                <div class="gallery-glass-caption">
+                    <span class="gallery-tag">Inversiones</span>
+                    <h3>Desarrollos Inmobiliarios</h3>
+                    <p>Proyectos de alto retorno de inversión en Isla de Margarita.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — OPINIONES / SERVICIOS EDITORIAL -->
+    <section class="Opiniones" id="Opiniones">
+        <div class="section-title-wrapper">
+            <span class="editorial-sub-tag">SOLUCIONES DE ALTO NIVEL</span>
+            <h2 class="tope">Nuestros Servicios Premium</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="boxbox">
+            <div class="box glass-card">
+                <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3>Asesoría Personalizada</h3>
+                <p>Te acompañamos en cada paso del proceso de compra o venta de tu propiedad, brindándote una atención exclusiva y adaptada a tus necesidades específicas en el mercado inmobiliario de Isla de Margarita.</p>
+            </div>
+
+            <div class="box glass-card">
+                <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Oportunidades de Inversión</h3>
+                <p>Identificamos las mejores oportunidades de inversión inmobiliaria en la región caribeña, maximizando el retorno de tu capital con propiedades de alto valor y potencial de crecimiento.</p>
+            </div>
+
+            <div class="box glass-card">
+                <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Seguridad Jurídica</h3>
+                <p>Garantizamos la transparencia y legalidad de cada transacción, respaldados por un equipo de asesores legales que protegen tu inversión en todo momento.</p>
+            </div>
+
+            <div class="box glass-card">
+                <div class="service-icon"><i class="fa-solid fa-key"></i></div>
+                <h3>Acceso Exclusivo a Propiedades</h3>
+                <p>Captamos las mejores propiedades para los compradores más exigentes, ofreciendo acceso privilegiado a inmuebles que no encontrarás en el mercado convencional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — LEGADO / CONTACTO -->
+    <section class="Legado" id="Legado">
+        <div class="content">
+            <div class="boxiboxi">
+                <div class="boxi glass-card">
+                    <span class="editorial-badge-gold"><i class="fa-solid fa-heart"></i> Tu Mejor Inversión</span>
+                    <h3>Vende tu Propiedad <span>Con Nosotros</span></h3>
+                    <p>No busques, deja que te encuentren. Confía la venta de tu propiedad a los expertos. Nuestros servicios inmobiliarios de vanguardia maximizan el alcance y el valor de tu propiedad en Isla de Margarita y toda la región caribeña.</p>
+                </div>
+            </div>
+
+            <div class="boxi glass-card contact-interactive-card" id="Contacto" style="cursor: pointer;" title="Haga clic para ver tarjeta de contacto">
+                <div class="contact-header">
+                    <img src="img/IMG_0217.png" alt="Inversiones D'ALROC Logo" class="contact-card-logo">
+                    <h3><span>Contáctanos</span></h3>
+                </div>
+                <div class="contact-list">
+                    <p><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp:</strong> +58 414 790 7819</p>
+                    <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> inversiones.idalroc@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Ubicación:</strong> Isla de Margarita, Venezuela</p>
+                </div>
+                <div class="card-prompt-badge">
+                    <i class="fa-solid fa-expand"></i> Haz clic para abrir tarjeta digital
+                </div>
+            </div>
+
+            <div class="image-frame-editorial">
+                <img src="img/IMG_0216.jpeg" alt="Inmueble de Lujo" class="editorial-side-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH GLASSMORPHISM & LOGO -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-row">
                 <div class="footer-links">
-
-                    <h4>Inversiones D'ALROC &copy; 2025 — Alternativa Inmobiliaria</h4>
+                    <div class="footer-brand-heading">
+                        <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC" class="footer-logo-img">
+                        <h4>Inversiones D'ALROC &copy; 2025 — Alternativa Inmobiliaria</h4>
+                    </div>
                     <ul>
                         <li><a href="#Historia"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                        <li><a href="#Galeria"><i class="fa-solid fa-camera"></i> Galerías</a></li>
                         <li><a href="#Opiniones"><i class="fa-solid fa-building"></i> Servicios</a></li>
-                        <li><a href="#Legado" class="contacto-btn"><i class="fa-solid fa-handshake"></i> Contacto</a>
-                        </li>
+                        <li><a href="#Legado" class="contacto-btn"><i class="fa-solid fa-handshake"></i> Contacto</a></li>
                     </ul>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/inversionesdalroc.ca?utm_source=qr&igsh=cG54N2lrMnhqZDhx" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/584147907819" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp"><i
-                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/inversionesdalroc.ca?utm_source=qr&igsh=cG54N2lrMnhqZDhx" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/584147907819" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="https://www.facebook.com/search/top?q=Inversiones%20D%27ALROC" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     </div>
-
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button for Mobile Conversion -->
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/584147907819" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Premium Image Popup Modal -->
     <div id="contact-modal" class="modal-overlay">
-        <div class="modal-content">
+        <div class="modal-content glass-modal">
             <span id="modal-close" class="modal-close-btn">×</span>
             <div class="modal-img-container">
                 <img src="img/IMG_0218.jpeg" alt="Contacto Inversiones D'ALROC">
@@ -172,14 +256,10 @@
     <!-- Modal Trigger, Navigation, and Slideshow Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // ==========================================
-            // 1. POPUP MODAL LOGIC
-            // ==========================================
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('modal-close');
             const menuCheckbox = document.getElementById('menu-bar');
 
-            // Function to open modal
             const openModal = (e) => {
                 if (e) {
                     e.preventDefault();
@@ -187,30 +267,25 @@
                 }
                 modal.classList.add('active');
 
-                // Uncheck hamburger checkbox to close mobile nav
                 if (menuCheckbox) {
                     menuCheckbox.checked = false;
                 }
             };
 
-            // Function to close modal
             const closeModal = () => {
                 modal.classList.remove('active');
             };
 
-            // Contact navigation link clicks
             const contactLinks = document.querySelectorAll('a[href="#Contacto"], .contacto-btn');
             contactLinks.forEach(link => {
                 link.addEventListener('click', openModal);
             });
 
-            // Contact box container click
             const contactBox = document.getElementById('Contacto');
             if (contactBox) {
                 contactBox.addEventListener('click', openModal);
             }
 
-            // Close listeners
             if (closeBtn) {
                 closeBtn.addEventListener('click', closeModal);
             }
@@ -227,9 +302,7 @@
                 }
             });
 
-            // ==========================================
-            // 2. BACKGROUND SLIDESHOW LOGIC
-            // ==========================================
+            // Background Crossfade Slideshow with Glassmorphism Overlays
             const bgImages = [
                 'img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg',
                 'img/isla-saona.jpg',
@@ -237,13 +310,12 @@
                 'img/largeimage.png'
             ];
 
-            function setupBgSlideshow(selector, gradients) {
+            function setupBgSlideshow(selector, baseGradient) {
                 const element = document.querySelector(selector);
                 if (!element) return;
 
                 let currentIndex = 0;
 
-                // Create overlay slide element for smooth crossfade
                 const overlay = document.createElement('div');
                 overlay.style.position = 'absolute';
                 overlay.style.top = '0';
@@ -252,21 +324,18 @@
                 overlay.style.height = '100%';
                 overlay.style.zIndex = '0';
                 overlay.style.opacity = '0';
-                overlay.style.transition = 'opacity 1.5s ease-in-out';
+                overlay.style.transition = 'opacity 2s ease-in-out';
                 overlay.style.pointerEvents = 'none';
 
-                // Set parent styles
                 element.style.position = 'relative';
                 element.appendChild(overlay);
 
-                // Elevate parent children z-index
                 Array.from(element.children).forEach(child => {
                     if (child !== overlay) {
                         const style = getComputedStyle(child);
                         if (style.position === 'static') {
                             child.style.position = 'relative';
                         }
-                        // If it doesn't have a z-index, give it a higher one
                         if (child.style.zIndex === '' || child.style.zIndex === 'auto') {
                             child.style.zIndex = '2';
                         }
@@ -277,21 +346,20 @@
                     currentIndex = (currentIndex + 1) % bgImages.length;
                     const nextImage = bgImages[currentIndex];
 
-                    // Set background on overlay
-                    overlay.style.background = `${gradients}, url('${nextImage}') center/cover no-repeat fixed`;
+                    overlay.style.background = `${baseGradient}, url('${nextImage}') center/cover no-repeat fixed`;
                     overlay.style.opacity = '1';
 
-                    // After crossfade finishes, commit to main element background and hide overlay
                     setTimeout(() => {
-                        element.style.background = `${gradients}, url('${nextImage}') center/cover no-repeat fixed`;
+                        element.style.background = `${baseGradient}, url('${nextImage}') center/cover no-repeat fixed`;
                         overlay.style.opacity = '0';
-                    }, 1600);
-                }, 30000); // 30 seconds
+                    }, 2100);
+                }, 18000);
             }
 
-            // Start slideshows
-            setupBgSlideshow('.Historia', 'linear-gradient(180deg, rgba(218,165,32,0.7) 0%, rgba(194,178,128,0.6) 40%, rgba(194,178,128,0.8) 100%)');
-            setupBgSlideshow('.Legado', 'linear-gradient(180deg, rgba(13,13,13,0.88) 0%, rgba(26,26,26,0.75) 30%, rgba(13,13,13,0.85) 100%)');
+            setupBgSlideshow('.Historia', 'linear-gradient(180deg, rgba(13,13,15,0.85) 0%, rgba(20,20,25,0.75) 50%, rgba(13,13,15,0.9) 100%)');
+            setupBgSlideshow('.Galeria', 'linear-gradient(180deg, rgba(13,13,15,0.92) 0%, rgba(30,25,18,0.82) 50%, rgba(13,13,15,0.95) 100%)');
+            setupBgSlideshow('.Opiniones', 'linear-gradient(180deg, rgba(13,13,15,0.95) 0%, rgba(25,22,16,0.88) 50%, rgba(13,13,15,0.95) 100%)');
+            setupBgSlideshow('.Legado', 'linear-gradient(180deg, rgba(13,13,15,0.95) 0%, rgba(18,18,22,0.85) 50%, rgba(13,13,15,0.98) 100%)');
         });
     </script>
 </body>
