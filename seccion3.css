@@ -126,27 +126,117 @@
     color: var(--black-deep);
 }
 
-/* Editorial Image Frame */
-.image-frame-editorial {
-    flex: 1 1 30rem;
-    position: relative;
-    border-radius: var(--radius-md);
-    overflow: hidden;
+/* ===== AGENT PROFILE CARD (LIC. CLAUDIA DI DIOMEDE) ===== */
+.agent-profile-card {
+    flex: 1 1 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3.5rem 2.8rem;
+    background: linear-gradient(145deg, rgba(28, 28, 36, 0.85) 0%, rgba(18, 18, 24, 0.95) 100%);
     border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
 }
 
-.editorial-side-img {
+.agent-profile-card:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
+}
+
+.agent-photo-wrapper {
+    position: relative;
+    width: 220px;
+    height: 280px;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.agent-img {
     width: 100%;
     height: 100%;
-    min-height: 320px;
     object-fit: cover;
+    object-position: top center;
     display: block;
     transition: transform 0.5s ease;
 }
 
-.image-frame-editorial:hover .editorial-side-img {
-    transform: scale(1.06);
+.agent-photo-wrapper:hover .agent-img {
+    transform: scale(1.05);
+}
+
+.agent-badge-pill {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 13, 15, 0.88);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1.4rem;
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+.agent-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agent-sub-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.agent-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.8rem;
+}
+
+.agent-role {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--sand-warm);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.agent-role i {
+    color: var(--gold);
+    margin-right: 0.5rem;
+}
+
+.agent-bio {
+    font-size: 1.45rem;
+    color: var(--sand-light);
+    line-height: 1.6;
+    margin-bottom: 2.2rem;
+    text-align: justify;
+}
+
+.agent-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* ===== FOOTER — EDITORIAL GLASSMORPHISM ===== */
