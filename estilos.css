@@ -205,32 +205,62 @@ header .navbar a:hover i {
     }
 }
 
-.Historia .content h3 {
+.Historia .content h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 5.5rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--black);
     text-shadow: 0 2px 4px rgba(218,165,32,0.2);
+    text-align: left;
 }
 
-.Historia .content h3 span {
+.Historia .content h1 span {
     color: var(--gold-dark);
 }
 
-.Historia .content p2 {
-    font-size: 1.5rem;
+.Historia .content .location {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin: 1rem 0 2rem 0;
+    text-align: left;
+}
+
+.Historia .content .hero-tagline {
+    font-size: 2.2rem;
+    font-weight: 500;
     color: var(--black-soft);
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+.Historia .content .hero-feature {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--black-soft);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.Historia .content .hero-feature i {
+    color: var(--gold-dark);
+    margin-right: 0.6rem;
 }
 
 .Historia .content p {
     color: var(--black-soft);
+    text-align: justify;
 }
 
 .Historia .content .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
     color: var(--gold-dark);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     transition: color 0.3s ease;
 }
 
@@ -259,6 +289,8 @@ header .navbar a:hover i {
     letter-spacing: 0.04em;
     color: var(--cream);
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 .Opiniones .boxbox {
@@ -274,7 +306,7 @@ header .navbar a:hover i {
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(218,165,32,0.15);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -293,25 +325,20 @@ header .navbar a:hover i {
 }
 
 .Opiniones .boxbox p {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: var(--sand-light);
     line-height: 1.6;
+    text-align: justify;
 }
 
 .Opiniones .boxbox h3 {
     font-family: 'Raleway', sans-serif;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 600;
     letter-spacing: 0.03em;
     color: var(--gold-light);
     padding: 1.5rem 0;
     text-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-
-.Opiniones .boxbox p2 {
-    font-size: 2rem;
-    color: var(--sand-light);
-    line-height: 1.6;
 }
 
 .Opiniones .boxbox .btn {
@@ -399,14 +426,31 @@ header .navbar a:hover i {
         padding-top: 12rem;
     }
 
-    .Historia .content h3 {
+    .Historia .content h1 {
         font-size: 3.8rem;
         line-height: 1.2;
+        text-align: center;
     }
 
-    .Historia .hero-tagline {
+    .Historia .content .location {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .Historia .content .hero-tagline {
         font-size: 1.8rem;
         margin: 2rem 0;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .Historia .content .hero-feature {
+        font-size: 1.5rem;
+        margin: 1.2rem 0;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
     }
 
     .Historia .image img {
@@ -418,6 +462,13 @@ header .navbar a:hover i {
         font-size: 4rem;
         text-align: center;
         margin-bottom: 3rem;
+    }
+
+    .Opiniones .boxbox .box p {
+        font-size: 1.5rem;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
     }
 }
 
@@ -561,6 +612,17 @@ header .navbar a:hover i {
 .modal-btn-wa:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+.modal-btn-ig {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #FFF;
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.25);
+}
+
+.modal-btn-ig:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(220, 39, 67, 0.45);
 }
 
 .modal-btn-mail {

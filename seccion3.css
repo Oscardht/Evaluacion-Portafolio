@@ -74,6 +74,7 @@
     font-size: 1.8rem;
     line-height: 1.6;
     color: var(--sand-light);
+    text-align: justify;
 }
 
 .Legado p + p {
@@ -192,16 +193,20 @@ footer {
     }
     
     .Legado .boxi {
-        text-align: center;
+        text-align: left;
         padding: 2.5rem;
     }
     
     .Legado h3 {
         font-size: 3.8rem;
+        text-align: center;
     }
     
     .Legado p {
         font-size: 1.6rem;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
     }
     
     .Legado .image {

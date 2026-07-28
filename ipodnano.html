@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="estilos.css">
 
-    <link rel="stylesheet" href="scrollbar.css" media="only screen and (max-device width:480px)">
+    <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
 
     <link rel="stylesheet" href="seccion3.css">
 
@@ -35,16 +35,16 @@
 
     <section class="Historia" id="Historia">
         <div class="content">
-            <h3>Inversiones D'ALROC<span> Real Estate</span></h3>
-            <h3><i class="fa-solid fa-location-dot"></i> Isla de Margarita</h3>
+            <h1>Inversiones D'ALROC<span> Real Estate</span></h1>
+            <p class="location"><i class="fa-solid fa-location-dot"></i> Isla de Margarita</p>
 
-            <h1 class="hero-tagline">NO BUSQUES, DEJA QUE TE ENCUENTREN. <strong>CONFÍA LA VENTA
-                    DE TU PROPIEDAD A LOS EXPERTOS.</strong></h1>
+            <h2 class="hero-tagline">NO BUSQUES, DEJA QUE TE ENCUENTREN. <strong>CONFÍA LA VENTA
+                    DE TU PROPIEDAD A LOS EXPERTOS.</strong></h2>
 
-            <h1>-Nuestros servicios inmobiliarios de vanguardia maximizan el alcance
-                y el valor de tu propiedad.</h1>
+            <p class="hero-feature"><i class="fa-solid fa-circle-check"></i> Nuestros servicios inmobiliarios de vanguardia maximizan el alcance
+                y el valor de tu propiedad.</p>
 
-            <h1>- Captamos las mejores propiedades para los compradores más exigentes.</h1>
+            <p class="hero-feature"><i class="fa-solid fa-circle-check"></i> Captamos las mejores propiedades para los compradores más exigentes.</p>
 
             <a href="#Opiniones" class="btn"><i class="fa-solid fa-arrow-down"></i> Conoce nuestros servicios</a>
         </div>
@@ -55,7 +55,7 @@
     </section>
 
     <section class="Opiniones" id="Opiniones">
-        <h1 class="tope">Nuestros Servicios</h1>
+        <h2 class="tope">Nuestros Servicios</h2>
         <div class="boxbox">
             <div class="box">
                 <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
@@ -85,7 +85,7 @@
                 <div class="service-icon"><i class="fa-solid fa-key"></i></div>
                 <h3>Acceso Exclusivo a Propiedades</h3>
                 <p>Captamos las mejores propiedades para los compradores más exigentes,
-                    ofreciendo acceso privilegiado a inmuebles que no encontrarás
+                    ofreciendo acceso privileged a inmuebles que no encontrarás
                     en el mercado convencional.</p>
             </div>
         </div>
@@ -131,11 +131,11 @@
                         </li>
                     </ul>
                     <div class="footer-social">
-                        <a href="#" class="social-link instagram-trigger" title="Instagram"><i
+                        <a href="https://www.instagram.com/inversionesdalroc.ca?utm_source=qr&igsh=cG54N2lrMnhqZDhx" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i
                                 class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/584147907819" target="_blank" class="social-link" title="WhatsApp"><i
+                        <a href="https://wa.me/584147907819" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp"><i
                                 class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/search/top?q=Inversiones%20D%27ALROC" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     </div>
 
                 </div>
@@ -144,20 +144,23 @@
     </footer>
 
     <!-- Floating WhatsApp Button for Mobile Conversion -->
-    <a href="https://wa.me/584147907819" class="floating-whatsapp" target="_blank" title="Contactar por WhatsApp">
+    <a href="https://wa.me/584147907819" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Premium Image Popup Modal -->
-    <div id="contact-modal" class="modal-overlay" style="left: 336px; top: 26px;">
+    <div id="contact-modal" class="modal-overlay">
         <div class="modal-content">
             <span id="modal-close" class="modal-close-btn">×</span>
             <div class="modal-img-container">
                 <img src="img/IMG_0218.jpeg" alt="Contacto Inversiones D'ALROC">
             </div>
             <div class="modal-actions">
-                <a href="https://wa.me/584147907819" target="_blank" class="modal-btn modal-btn-wa">
+                <a href="https://wa.me/584147907819" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-wa">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.instagram.com/inversionesdalroc.ca?utm_source=qr&igsh=cG54N2lrMnhqZDhx" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-ig">
+                    <i class="fa-brands fa-instagram"></i> Instagram
                 </a>
                 <a href="mailto:inversiones.idalroc@gmail.com" class="modal-btn modal-btn-mail">
                     <i class="fa-solid fa-envelope"></i> Enviar Correo
@@ -195,23 +198,10 @@
                 modal.classList.remove('active');
             };
 
-            // Instagram triggers
-            const instagramTriggers = document.querySelectorAll('.instagram-trigger, .fa-instagram');
-            instagramTriggers.forEach(trigger => {
-                const link = trigger.closest('a');
-                if (link) {
-                    link.addEventListener('click', openModal);
-                } else {
-                    trigger.addEventListener('click', openModal);
-                }
-            });
-
             // Contact navigation link clicks
-            const contactLinks = document.querySelectorAll('a[href="#Contacto"], .contacto-btn, a[href="#Legado"]');
+            const contactLinks = document.querySelectorAll('a[href="#Contacto"], .contacto-btn');
             contactLinks.forEach(link => {
-                if (link.textContent.toLowerCase().includes('contacto') || link.classList.contains('contacto-btn')) {
-                    link.addEventListener('click', openModal);
-                }
+                link.addEventListener('click', openModal);
             });
 
             // Contact box container click
