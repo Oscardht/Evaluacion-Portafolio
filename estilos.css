@@ -959,11 +959,11 @@ header.luxury-topbar .navbar a:hover::after {
 }
 
 .airbnb-tab-btn:hover {
-    color: #222222;
+    color: var(--emerald-column);
 }
 
 .airbnb-tab-btn.active {
-    color: #222222;
+    color: var(--emerald-column);
     font-weight: 700;
 }
 
@@ -974,7 +974,7 @@ header.luxury-topbar .navbar a:hover::after {
     left: 0;
     width: 100%;
     height: 2.5px;
-    background-color: #222222;
+    background-color: var(--emerald-column);
     border-radius: 9999px;
 }
 
@@ -1013,9 +1013,14 @@ header.luxury-topbar .navbar a:hover::after {
 
 .field-icon {
     font-size: 1.15rem;
-    color: #222222;
-    opacity: 0.85;
+    color: var(--gold-dark);
+    opacity: 0.9;
     flex-shrink: 0;
+    transition: color 0.2s ease;
+}
+
+.airbnb-field-group:hover .field-icon {
+    color: var(--emerald-column);
 }
 
 .field-texts {
@@ -1061,9 +1066,9 @@ header.luxury-topbar .navbar a:hover::after {
 
 /* BOTÓN CTA (EXTREMO DERECHO) */
 .airbnb-cta-btn {
-    background-color: #FF385C;
+    background: var(--emerald-column);
     color: #FFFFFF;
-    border: none;
+    border: 1px solid var(--gold-border);
     border-radius: 9999px;
     padding: 0.95rem 1.7rem;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1073,7 +1078,7 @@ header.luxury-topbar .navbar a:hover::after {
     align-items: center;
     gap: 0.65rem;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(255, 56, 92, 0.35);
+    box-shadow: 0 4px 14px rgba(29, 61, 46, 0.35), 0 0 10px rgba(184, 142, 62, 0.2);
     transition: all 0.2s ease;
     flex-shrink: 0;
     margin-left: 0.4rem;
@@ -1081,12 +1086,13 @@ header.luxury-topbar .navbar a:hover::after {
 
 .airbnb-cta-btn i {
     font-size: 0.95rem;
-    color: #FFFFFF;
+    color: var(--gold-light);
 }
 
 .airbnb-cta-btn:hover {
-    background-color: #E00B41;
-    box-shadow: 0 6px 18px rgba(255, 56, 92, 0.48);
+    background-color: #142B20;
+    border-color: var(--gold);
+    box-shadow: 0 6px 18px rgba(29, 61, 46, 0.48), 0 0 14px rgba(184, 142, 62, 0.35);
     transform: scale(1.02);
 }
 
