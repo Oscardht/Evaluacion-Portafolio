@@ -114,140 +114,100 @@
 
 <body>
     <!-- ==========================================================================
-         TOPE DE PÁGINA ARQUITECTÓNICO CON POP-UP ARQUEADO D'ALROC
-         - Lo redondo en el lado derecho (curvatura de arco en el extremo derecho).
-         - Funciona como Pop-up elegante desplegable y cerrable.
-         - CERO DIFUMINADO DEL FONDO (la sección Hero permanece limpia, visible y protagónica).
-         - Mismo color y paleta de la página (pergamino marfil #FCFAF6 / #F6F1E7 con oro antiguo).
+         FORMA SACRA D'ALROC EN EL TOPE (POP-UP OCULTO QUE SOBRESALE SOLO UN POQUITO)
+         - CERO barra rectangular en el tope (el Hero queda 100% libre desde y:0).
+         - La forma está oculta en el techo; solo sobresale un poquito (la pestaña de 46px).
+         - Curvatura de arco en el extremo derecho (border-bottom-right-radius: 140px).
+         - Mismo color marfil/pergamino de la página (#FCFAF6 / #F6F1E7).
+         - CERO DIFUMINADO DEL FONDO (fondo 100% nítido y visible al desplegarse).
          ========================================================================== -->
-    <header class="arch-topbar" id="site-header">
-        <!-- Barra Superior Compacta (deja despejada y amplia la sección Hero) -->
-        <div class="arch-topbar-bar">
-            <div class="arch-topbar-container">
-                <!-- Marca & Logotipo -->
-                <a href="#" class="arch-brand" title="Inversiones D'ALROC Real Estate">
-                    <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC" class="arch-brand-img">
-                    <div class="arch-brand-text">
-                        <span class="arch-brand-title">INVERSIONES D'<em>ALROC</em></span>
-                        <span class="arch-brand-sub">Territorio de confort y estilo</span>
+    <aside class="top-shape-popup" id="top-shape-popup" aria-label="Menú Arquitectónico D'ALROC">
+        <!-- Cuerpo Principal de la Forma (Desplegable) -->
+        <div class="top-shape-body">
+            <!-- Encabezado con Marca & Botón de Cierre -->
+            <div class="top-shape-header">
+                <div class="top-shape-brand">
+                    <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC" class="top-shape-logo">
+                    <div class="top-shape-brand-text">
+                        <span class="top-shape-kicker"><i class="fa-solid fa-crown"></i> EXCLUSIVIDAD</span>
+                        <h2 class="top-shape-title">INVERSIONES D'<em>ALROC</em></h2>
                     </div>
+                </div>
+                <button class="top-shape-close-btn" id="top-shape-close-btn" aria-label="Cerrar Menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Navegación Editorial de la Forma -->
+            <nav class="top-shape-nav" aria-label="Secciones del Sitio">
+                <a href="#Historia" class="top-shape-link" data-section="Historia">
+                    <span class="top-shape-num">I</span>
+                    <div class="top-shape-link-info">
+                        <strong>Inicio & Mercado</strong>
+                        <span>Búsqueda directa insular</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
                 </a>
+                <a href="#Ruta" class="top-shape-link" data-section="Ruta">
+                    <span class="top-shape-num">II</span>
+                    <div class="top-shape-link-info">
+                        <strong>Ruta de Inversión</strong>
+                        <span>Curaduría y protocolo</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="#Galeria" class="top-shape-link" data-section="Galeria">
+                    <span class="top-shape-num">III</span>
+                    <div class="top-shape-link-info">
+                        <strong>Cartera de Inmuebles</strong>
+                        <span>Villas, playa y townhouses</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="#Opiniones" class="top-shape-link" data-section="Opiniones">
+                    <span class="top-shape-num">IV</span>
+                    <div class="top-shape-link-info">
+                        <strong>Servicios Premium</strong>
+                        <span>Asesoría jurídica y avalúo</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="#Legado" class="top-shape-link" data-section="Legado">
+                    <span class="top-shape-num">V</span>
+                    <div class="top-shape-link-info">
+                        <strong>Lic. Claudia Di Diomede</strong>
+                        <span>Corredora certificada</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="#Contacto" class="top-shape-link contacto-btn" data-section="Contacto">
+                    <span class="top-shape-num">VI</span>
+                    <div class="top-shape-link-info">
+                        <strong>Atención Personalizada</strong>
+                        <span>Solicitar llamada y cita</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </nav>
 
-                <!-- Contacto Rápido & Ubicación -->
-                <div class="arch-quick-contact">
-                    <a href="tel:+584147907819" class="arch-phone-link" title="Llamar a Inversiones D'ALROC">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>+58 414 790-7819</span>
-                    </a>
-                    <span class="arch-location-badge" title="Sede en Nueva Esparta">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Isla de Margarita</span>
-                    </span>
-                </div>
-
-                <!-- Disparadores de Acción: WhatsApp & Pop-up Menú Arqueado -->
-                <div class="arch-menu-trigger-wrap">
-                    <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="arch-wa-btn" title="Contactar por WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-
-                    <!-- Botón Pop-Up con Remate Redondeado en el Lado Derecho y Corona -->
-                    <button class="arch-menu-toggle-btn" id="top-arch-menu-btn" aria-expanded="false" aria-controls="top-arch-popup" aria-label="Abrir Menú de Navegación">
-                        <span class="arch-btn-label">MENÚ</span>
-                        <span class="arch-btn-icon-box">
-                            <i class="fa-solid fa-crown" id="top-arch-toggle-icon"></i>
-                        </span>
-                    </button>
-                </div>
+            <!-- Acciones de Contacto Inmediato -->
+            <div class="top-shape-actions">
+                <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="top-shape-wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+                </a>
+                <a href="tel:+584147907819" class="top-shape-phone-link">
+                    <i class="fa-solid fa-phone"></i> +58 414 790-7819
+                </a>
             </div>
         </div>
 
-        <!-- Pop-Up Arqueado Desplegable desde el Tope (Curva en el lado derecho, Mismo Color de la Página) -->
-        <div class="top-arch-popup" id="top-arch-popup" aria-hidden="true">
-            <div class="top-arch-popup-inner">
-                <!-- Encabezado del Pop-up con Corona y Botón de Cierre -->
-                <div class="top-arch-popup-header">
-                    <div>
-                        <span class="top-arch-popup-kicker"><i class="fa-solid fa-crown"></i> NAVEGACIÓN PRIVILEGIADA</span>
-                        <h2 class="top-arch-popup-title">INVERSIONES D'<em>ALROC</em></h2>
-                    </div>
-                    <button class="top-arch-close-btn" id="top-arch-close-btn" aria-label="Cerrar Menú">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-
-                <!-- Rejilla Editorial de 6 Secciones -->
-                <nav class="top-arch-nav-grid" aria-label="Navegación Principal">
-                    <a href="#Historia" class="top-arch-nav-card" data-section="Historia">
-                        <span class="top-arch-nav-num">01</span>
-                        <div class="top-arch-nav-info">
-                            <strong>Inicio & Mercado</strong>
-                            <span>Búsqueda directa y barómetro insular</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#Ruta" class="top-arch-nav-card" data-section="Ruta">
-                        <span class="top-arch-nav-num">02</span>
-                        <div class="top-arch-nav-info">
-                            <strong>Ruta de Inversión</strong>
-                            <span>Curaduría, blindaje y protocolización</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#Galeria" class="top-arch-nav-card" data-section="Galeria">
-                        <span class="top-arch-nav-num">03</span>
-                        <div class="top-arch-nav-info">
-                            <strong>Cartera de Inmuebles</strong>
-                            <span>Villas, townhouses y propiedades de playa</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#Opiniones" class="top-arch-nav-card" data-section="Opiniones">
-                        <span class="top-arch-nav-num">04</span>
-                        <div class="top-arch-nav-info">
-                            <strong>Servicios Premium</strong>
-                            <span>Asesoría jurídica y avalúo certificado</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#Legado" class="top-arch-nav-card" data-section="Legado">
-                        <span class="top-arch-nav-num">05</span>
-                        <div class="top-arch-nav-info">
-                            <strong>Lic. Claudia Di Diomede</strong>
-                            <span>Corredora inmobiliaria & colegiatura</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#Contacto" class="top-arch-nav-card contacto-btn" data-section="Contacto">
-                        <span class="top-arch-nav-num">06</span>
-                        <div class="top-arch-nav-info">
-                            <strong>Atención Personalizada</strong>
-                            <span>Solicitar llamada y consulta privada</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                </nav>
-
-                <!-- Fila de Colecciones Rápidas y Búsqueda -->
-                <div class="top-arch-filter-row">
-                    <div class="top-arch-pills">
-                        <span class="top-arch-pills-label"><i class="fa-solid fa-gem"></i> Colecciones:</span>
-                        <a href="#Galeria" class="top-arch-pill" data-filter="villas">Villas & Arquitectura</a>
-                        <a href="#Galeria" class="top-arch-pill" data-filter="playas">Frente al Mar</a>
-                        <a href="#Galeria" class="top-arch-pill" data-filter="townhouses">Townhouses</a>
-                        <a href="#Galeria" class="top-arch-pill" data-filter="terrenos">Terrenos</a>
-                    </div>
-                    <form class="top-arch-search-form" action="#Galeria" method="GET">
-                        <input type="text" placeholder="Buscar por zona..." class="top-arch-search-input" aria-label="Buscar inmuebles">
-                        <button type="submit" class="top-arch-search-btn" aria-label="Buscar">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
+        <!-- Pestaña inferior de agarre que sobresale "solo un poquito" en el tope cuando está oculta -->
+        <button class="top-shape-handle" id="top-shape-handle" aria-expanded="false" aria-controls="top-shape-popup" aria-label="Abrir Menú D'ALROC" title="Abrir Menú D'ALROC">
+            <span class="shape-handle-crown"><i class="fa-solid fa-crown"></i></span>
+            <span class="shape-handle-text">MENÚ</span>
+            <span class="shape-handle-icon"><i class="fa-solid fa-chevron-down" id="shape-handle-arrow"></i></span>
+        </button>
+    </aside>
 
     <!-- BRÚJULA & INDICADOR FLOTANTE DE RECORRIDO (SCROLL COMPASS) -->
     <aside class="scroll-compass-dock" id="scroll-compass" aria-label="Navegación de recorrido">
@@ -896,91 +856,67 @@
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('modal-close');
-            const topArchPopup = document.getElementById('top-arch-popup');
-            const topArchMenuBtn = document.getElementById('top-arch-menu-btn');
-            const topArchCloseBtn = document.getElementById('top-arch-close-btn');
-            const topArchToggleIcon = document.getElementById('top-arch-toggle-icon');
+            const topShapePopup = document.getElementById('top-shape-popup');
+            const topShapeHandle = document.getElementById('top-shape-handle');
+            const topShapeCloseBtn = document.getElementById('top-shape-close-btn');
 
-            // --- Lógica del Tope de Página con Pop-up Arqueado (Curva a la derecha, Sin difuminar fondo) ---
-            const openTopArchPopup = () => {
-                if (!topArchPopup) return;
-                topArchPopup.classList.add('active');
-                topArchPopup.setAttribute('aria-hidden', 'false');
-                if (topArchMenuBtn) {
-                    topArchMenuBtn.setAttribute('aria-expanded', 'true');
-                    topArchMenuBtn.classList.add('active');
-                }
-                if (topArchToggleIcon) {
-                    topArchToggleIcon.className = 'fa-solid fa-xmark';
+            // --- Lógica de la Forma Arquitectónica Pop-Up en el Tope (Oculta, sobresale solo la pestaña) ---
+            const openTopShape = () => {
+                if (!topShapePopup) return;
+                topShapePopup.classList.add('active');
+                if (topShapeHandle) {
+                    topShapeHandle.setAttribute('aria-expanded', 'true');
                 }
             };
 
-            const closeTopArchPopup = () => {
-                if (!topArchPopup) return;
-                topArchPopup.classList.remove('active');
-                topArchPopup.setAttribute('aria-hidden', 'true');
-                if (topArchMenuBtn) {
-                    topArchMenuBtn.setAttribute('aria-expanded', 'false');
-                    topArchMenuBtn.classList.remove('active');
-                }
-                if (topArchToggleIcon) {
-                    topArchToggleIcon.className = 'fa-solid fa-crown';
+            const closeTopShape = () => {
+                if (!topShapePopup) return;
+                topShapePopup.classList.remove('active');
+                if (topShapeHandle) {
+                    topShapeHandle.setAttribute('aria-expanded', 'false');
                 }
             };
 
-            const toggleTopArchPopup = (e) => {
+            const toggleTopShape = (e) => {
                 if (e) e.stopPropagation();
-                if (topArchPopup && topArchPopup.classList.contains('active')) {
-                    closeTopArchPopup();
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    closeTopShape();
                 } else {
-                    openTopArchPopup();
+                    openTopShape();
                 }
             };
 
-            if (topArchMenuBtn) {
-                topArchMenuBtn.addEventListener('click', toggleTopArchPopup);
+            if (topShapeHandle) {
+                topShapeHandle.addEventListener('click', toggleTopShape);
             }
 
-            if (topArchCloseBtn) {
-                topArchCloseBtn.addEventListener('click', (e) => {
+            if (topShapeCloseBtn) {
+                topShapeCloseBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    closeTopArchPopup();
+                    closeTopShape();
                 });
             }
 
-            // Cerrar al hacer clic fuera del pop-up o de la barra
+            // Cerrar al hacer clic fuera de la forma
             document.addEventListener('click', (e) => {
-                if (topArchPopup && topArchPopup.classList.contains('active')) {
-                    const header = document.getElementById('site-header');
-                    if (header && !header.contains(e.target)) {
-                        closeTopArchPopup();
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    if (!topShapePopup.contains(e.target)) {
+                        closeTopShape();
                     }
                 }
             });
 
-            // Cerrar con la tecla Escape
+            // Cerrar con tecla Escape
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && topArchPopup && topArchPopup.classList.contains('active')) {
-                    closeTopArchPopup();
+                if (e.key === 'Escape' && topShapePopup && topShapePopup.classList.contains('active')) {
+                    closeTopShape();
                 }
             });
 
-            // Cerrar al hacer clic en enlaces de navegación del pop-up
-            document.querySelectorAll('.top-arch-nav-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    closeTopArchPopup();
-                });
-            });
-
-            // Filtrar al hacer clic en las pastillas (pills) del pop-up
-            document.querySelectorAll('.top-arch-pill').forEach(pill => {
-                pill.addEventListener('click', () => {
-                    const filterVal = pill.getAttribute('data-filter');
-                    const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterVal}"]`);
-                    if (targetBtn) {
-                        targetBtn.click();
-                    }
-                    closeTopArchPopup();
+            // Cerrar al pulsar un enlace de navegación
+            document.querySelectorAll('.top-shape-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeTopShape();
                 });
             });
 
@@ -990,7 +926,7 @@
                     e.preventDefault();
                     e.stopPropagation();
                 }
-                closeTopArchPopup();
+                closeTopShape();
                 if (modal) {
                     modal.classList.add('active');
                 }

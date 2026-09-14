@@ -876,7 +876,7 @@ header.luxury-topbar .navbar a:hover::after {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 5.5rem;
+    padding-top: 0;
 }
 
 /* Capa sutil de oscurecimiento (overlay) */
@@ -3111,467 +3111,303 @@ header.luxury-topbar .navbar a:hover::after {
 }
 
 /* ==========================================================================
-   TOPE DE PÁGINA ARQUITECTÓNICO CON POP-UP ARQUEADO D'ALROC
-   - La forma del pop-up tiene lo redondo en el lado derecho (border-bottom-right-radius: 140px).
-   - Funciona como un pop-up pero SIN difuminar el fondo (la sección Hero queda despejada y visible).
-   - Utiliza el mismo color marfil y pergamino cálido de la página (#FCFAF6 / #F6F1E7).
+   FORMA ARQUITECTÓNICA EN EL TOPE (POP-UP OCULTO QUE SOBRESALE SOLO UN POQUITO)
+   - CERO barra rectangular en el tope: la sección Hero queda 100% visible desde y:0.
+   - Solo sobresale un poquito de la forma en el margen superior (46px).
+   - Forma única arqueada: LO REDONDO EN EL LADO DERECHO (border-bottom-right-radius: 140px).
+   - Mismo color marfil y pergamino cálido de la página (#FCFAF6 / #F6F1E7).
+   - CERO difuminado del fondo (backdrop-filter ni overlay oscuro).
    ========================================================================== */
 
-.arch-topbar {
+.top-shape-popup {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1500;
+    right: 4%;
+    width: min(390px, 92vw);
+    background: var(--bg-surface); /* Mismo color pergamino marfil de la página */
+    border: 2px solid var(--gold);
+    border-top: none;
+    border-bottom-right-radius: 140px; /* LO REDONDO EN EL LADO DERECHO */
+    border-bottom-left-radius: 18px;
+    box-shadow: 0 16px 45px rgba(40, 34, 25, 0.16), 0 0 20px rgba(184, 142, 62, 0.2);
+    z-index: 2500;
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(calc(-100% + 46px)); /* Oculto: solo sobresalen 46px en el tope */
+    outline: 1px solid rgba(184, 142, 62, 0.3);
+    outline-offset: -5px;
+    overflow: hidden;
+}
+
+/* Nudge sutil al pasar el cursor cuando está oculta para invitar al clic */
+.top-shape-popup:not(.active):hover {
+    transform: translateY(calc(-100% + 52px));
+    box-shadow: 0 18px 48px rgba(40, 34, 25, 0.2), 0 0 24px rgba(184, 142, 62, 0.35);
+}
+
+/* Marca de agua sacra en el arco redondeado derecho */
+.top-shape-popup::before {
+    content: '';
+    position: absolute;
+    right: 12px;
+    bottom: 52px;
+    width: 120px;
+    height: 130px;
+    background: url('img/POP-upPAGINAWEBok_trimmed.png') no-repeat bottom right / contain;
+    opacity: 0.13;
     pointer-events: none;
-    transition: all 0.3s ease;
+    z-index: 0;
 }
 
-/* 1. Barra Superior Compacta (Máximo espacio y despeje para la sección Hero) */
-.arch-topbar-bar {
-    width: 100%;
-    background: rgba(246, 241, 231, 0.98);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1.5px solid var(--gold);
-    box-shadow: 0 4px 18px rgba(40, 34, 25, 0.07);
-    pointer-events: auto;
-    transition: all 0.3s ease;
+/* Estado Desplegado (Clic en la pestaña o botón) */
+.top-shape-popup.active {
+    transform: translateY(0); /* Desciende completamente mostrando la forma */
+    box-shadow: 0 24px 60px rgba(40, 34, 25, 0.22), 0 0 28px rgba(184, 142, 62, 0.3);
 }
 
-.arch-topbar-container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0.65rem 2.8rem;
+/* Cuerpo de la forma */
+.top-shape-body {
+    padding: 1.8rem 2rem 1.2rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Encabezado */
+.top-shape-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    min-height: 56px;
+    padding-bottom: 1.1rem;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid var(--gold-border);
 }
 
-/* Marca D'ALROC */
-.arch-brand {
+.top-shape-brand {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    text-decoration: none;
-    user-select: none;
+    gap: 0.9rem;
 }
 
-.arch-brand-img {
-    height: 40px;
+.top-shape-logo {
+    height: 38px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(184, 142, 62, 0.25));
 }
 
-.arch-brand-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.arch-brand-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--text-headline);
-    letter-spacing: 0.03em;
-    line-height: 1.15;
-}
-
-.arch-brand-title em {
-    color: var(--gold-dark);
-    font-style: italic;
-    font-weight: 700;
-}
-
-.arch-brand-sub {
-    font-size: 0.95rem;
-    color: var(--gold-dark);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-/* Contacto Rápido Compacto en la barra */
-.arch-quick-contact {
-    display: flex;
-    align-items: center;
-    gap: 1.8rem;
-}
-
-.arch-phone-link {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-headline);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.arch-phone-link i {
-    color: var(--gold-dark);
-    font-size: 1.15rem;
-}
-
-.arch-phone-link:hover {
-    color: var(--gold-dark);
-}
-
-.arch-location-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-.arch-location-badge i {
-    color: var(--emerald-column);
-}
-
-/* Disparador del Menú Pop-Up con Remate Redondeado en el Lado Derecho */
-.arch-menu-trigger-wrap {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
-
-.arch-wa-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: var(--emerald-column);
-    color: #FFFFFF;
-    padding: 0.65rem 1.3rem;
-    border-radius: var(--radius-card);
+.top-shape-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 2px 8px rgba(29, 61, 46, 0.25);
-}
-
-.arch-wa-btn:hover {
-    background: #142B20;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.35);
-}
-
-/* Botón MENÚ con remate redondeado a la derecha */
-.arch-menu-toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.9rem;
-    background: var(--bg-surface);
-    border: 1.5px solid var(--gold);
-    border-radius: 4px 24px 24px 4px; /* Lo redondo en el lado derecho */
-    padding: 0.65rem 1rem 0.65rem 1.4rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 2px 10px rgba(40, 34, 25, 0.08);
-}
-
-.arch-menu-toggle-btn:hover {
-    background: #FFFFFF;
-    border-color: var(--gold-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(184, 142, 62, 0.25);
-}
-
-.arch-btn-label {
-    font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    color: var(--text-headline);
-}
-
-.arch-btn-icon-box {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--gold-subtle);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold-dark);
-    font-size: 1.15rem;
-    transition: all 0.25s ease;
-}
-
-.arch-menu-toggle-btn:hover .arch-btn-icon-box {
-    background: var(--gold);
-    color: #FFFFFF;
-}
-
-.arch-menu-toggle-btn.active {
-    background: var(--gold-dark);
-    border-color: var(--gold-dark);
-}
-
-.arch-menu-toggle-btn.active .arch-btn-label {
-    color: #FFFFFF;
-}
-
-.arch-menu-toggle-btn.active .arch-btn-icon-box {
-    background: #FFFFFF;
-    color: var(--gold-dark);
-}
-
-/* 2. POP-UP ARQUEADO DESPLEGABLE DESDE EL TOPE */
-/* Forma arqueada: LO REDONDO EN EL LADO DERECHO (border-bottom-right-radius: 160px) */
-/* CERO DIFUMINADO DEL FONDO: la sección Hero permanece 100% visible y activa */
-/* MISMO COLOR QUE LA PÁGINA: #FCFAF6 / #F6F1E7 */
-.top-arch-popup {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-16px);
-    transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
-                visibility 0.32s ease;
-}
-
-.top-arch-popup.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.top-arch-popup-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    background: var(--bg-surface); /* Mismo color de la página */
-    border: 2px solid var(--gold);
-    border-top: none;
-    border-bottom-right-radius: 160px; /* LO REDONDO EN EL LADO DERECHO */
-    border-bottom-left-radius: 14px;
-    padding: 2.2rem 3.4rem 2.8rem 3.4rem;
-    box-shadow: 0 22px 55px rgba(40, 34, 25, 0.16), 0 0 20px rgba(184, 142, 62, 0.18);
-    outline: 1px solid rgba(184, 142, 62, 0.35);
-    outline-offset: -6px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Marca de agua sacra en el arco derecho */
-.top-arch-popup-inner::after {
-    content: '';
-    position: absolute;
-    right: 28px;
-    bottom: 8px;
-    width: 130px;
-    height: 140px;
-    background: url('img/POP-upPAGINAWEBok_trimmed.png') no-repeat bottom right / contain;
-    opacity: 0.14;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Encabezado del Pop-up */
-.top-arch-popup-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 1.2rem;
-    margin-bottom: 1.6rem;
-    border-bottom: 1px solid var(--gold-border);
-}
-
-.top-arch-popup-kicker {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
     display: block;
 }
 
-.top-arch-popup-title {
+.top-shape-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.1rem;
+    font-size: 1.55rem;
     font-weight: 800;
     color: var(--text-headline);
-    letter-spacing: 0.03em;
+    margin: 0;
+    line-height: 1.1;
 }
 
-.top-arch-popup-title em {
+.top-shape-title em {
     color: var(--gold-dark);
     font-style: italic;
 }
 
-.top-arch-close-btn {
-    width: 36px;
-    height: 36px;
+.top-shape-close-btn {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
     color: var(--text-headline);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.22s ease;
+    transition: all 0.2s ease;
 }
 
-.top-arch-close-btn:hover {
+.top-shape-close-btn:hover {
     background: var(--emerald-column);
     color: #FFFFFF;
     border-color: var(--emerald-column);
     transform: rotate(90deg);
 }
 
-/* Rejilla de Navegación Editorial */
-.top-arch-nav-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    margin-bottom: 1.8rem;
+/* Enlaces de Navegación */
+.top-shape-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.2rem;
 }
 
-.top-arch-nav-card {
+.top-shape-link {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    padding: 1.2rem 1.4rem;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
     background: var(--bg-canvas);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-card);
     text-decoration: none;
     color: var(--text-headline);
-    transition: all 0.25s ease;
-    position: relative;
+    transition: all 0.22s ease;
 }
 
-.top-arch-nav-card:hover {
+.top-shape-link:hover {
     background: #FFFFFF;
     border-color: var(--gold-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(40, 34, 25, 0.08);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(40, 34, 25, 0.08);
 }
 
-.top-arch-nav-num {
+.top-shape-num {
     font-family: 'Cinzel', serif;
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: var(--gold-dark);
-    width: 28px;
+    width: 22px;
     text-align: center;
 }
 
-.top-arch-nav-info {
+.top-shape-link-info {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.top-arch-nav-info strong {
+.top-shape-link-info strong {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.45rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-headline);
+    line-height: 1.2;
 }
 
-.top-arch-nav-info span {
-    font-size: 1.1rem;
+.top-shape-link-info span {
+    font-size: 0.95rem;
     color: var(--text-muted);
-    margin-top: 0.15rem;
 }
 
-.top-arch-nav-card i {
+.top-shape-link i {
     color: var(--gold-dark);
-    font-size: 1.1rem;
-    transition: transform 0.22s ease;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
 }
 
-.top-arch-nav-card:hover i {
+.top-shape-link:hover i {
     transform: translateX(3px);
     color: var(--emerald-column);
 }
 
-/* Fila de Colecciones y Búsqueda */
-.top-arch-filter-row {
+/* Acciones rápidas al pie de la forma */
+.top-shape-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    padding-top: 1.4rem;
-    border-top: 1px solid rgba(184, 142, 62, 0.25);
-}
-
-.top-arch-pills {
-    display: flex;
-    align-items: center;
     gap: 0.8rem;
-    flex-wrap: wrap;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--gold-border);
+    margin-bottom: 0.2rem;
 }
 
-.top-arch-pills-label {
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--gold-dark);
-    letter-spacing: 0.08em;
-    display: flex;
+.top-shape-wa-link {
+    flex: 1;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-}
-
-.top-arch-pill {
-    padding: 0.55rem 1.1rem;
-    background: var(--bg-card-warm);
-    border: 1px solid var(--gold-border);
+    background: var(--emerald-column);
+    color: #FFFFFF;
+    padding: 0.65rem 0.9rem;
     border-radius: var(--radius-card);
     font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: var(--text-headline);
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
-.top-arch-pill:hover {
-    background: var(--gold-dark);
-    color: #FFFFFF;
-    border-color: var(--gold-dark);
+.top-shape-wa-link:hover {
+    background: #142B20;
 }
 
-.top-arch-search-form {
+.top-shape-phone-link {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-headline);
+    text-decoration: none;
     display: flex;
     align-items: center;
-    background: #FFFFFF;
-    border: 1px solid var(--gold-border);
-    border-radius: 4px;
-    padding: 0.3rem 0.5rem 0.3rem 1rem;
-    width: 280px;
+    gap: 0.4rem;
+    transition: color 0.2s ease;
 }
 
-.top-arch-search-input {
-    flex: 1;
+.top-shape-phone-link:hover {
+    color: var(--gold-dark);
+}
+
+/* Pestaña inferior de agarre que sobresale "solo un poquito" en el tope */
+.top-shape-handle {
+    width: 100%;
+    height: 46px;
+    background: var(--bg-card-warm);
+    border: none;
+    border-top: 1px solid var(--gold-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    transition: all 0.25s ease;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+}
+
+.top-shape-popup:not(.active) .top-shape-handle {
+    background: var(--bg-surface);
+    box-shadow: 0 4px 14px rgba(40, 34, 25, 0.12);
+}
+
+.top-shape-popup:not(.active) .top-shape-handle:hover {
+    background: #FFFFFF;
+}
+
+.shape-handle-crown {
+    color: var(--gold-dark);
     font-size: 1.15rem;
-    background: transparent;
+    animation: crownGlint 2.8s ease-in-out infinite;
+}
+
+@keyframes crownGlint {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(184, 142, 62, 0)); }
+    50% { transform: scale(1.15); filter: drop-shadow(0 0 6px rgba(184, 142, 62, 0.6)); }
+}
+
+.shape-handle-text {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
     color: var(--text-headline);
 }
 
-.top-arch-search-btn {
-    background: transparent;
+.shape-handle-icon {
     color: var(--gold-dark);
-    font-size: 1.2rem;
-    padding: 0.4rem 0.6rem;
-    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.top-shape-popup.active #shape-handle-arrow {
+    transform: rotate(180deg);
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
@@ -3728,52 +3564,27 @@ header.luxury-topbar .navbar a:hover::after {
         justify-content: center;
     }
 
-    /* Topbar y Pop-up Arqueado Responsive */
-    .arch-topbar-container {
-        padding: 0.6rem 4%;
-    }
-    .arch-quick-contact {
-        display: none;
-    }
-    .top-arch-popup-inner {
-        padding: 1.8rem 2rem 2.2rem 2rem;
-        border-bottom-right-radius: 90px;
-        margin: 0 1rem;
-    }
-    .top-arch-nav-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .top-arch-filter-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.2rem;
-    }
-    .top-arch-search-form {
-        width: 100%;
+    /* Forma Arquitectónica Pop-Up Responsive */
+    .top-shape-popup {
+        right: 2%;
+        width: min(360px, 94vw);
     }
 }
 
 @media (max-width: 540px) {
-    .arch-brand-sub {
-        display: none;
+    .top-shape-popup {
+        right: 1.5%;
+        left: 1.5%;
+        width: auto;
+        border-bottom-right-radius: 90px;
     }
-    .arch-wa-btn span {
-        display: none;
+    .top-shape-body {
+        padding: 1.3rem 1.2rem 0.9rem 1.2rem;
     }
-    .arch-wa-btn {
+    .top-shape-link {
         padding: 0.6rem 0.8rem;
     }
-    .top-arch-popup-inner {
-        padding: 1.4rem 1.4rem 1.8rem 1.4rem;
-        border-bottom-right-radius: 50px;
-        margin: 0 0.5rem;
-    }
-    .top-arch-nav-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-    .top-arch-popup-title {
-        font-size: 1.7rem;
+    .top-shape-title {
+        font-size: 1.4rem;
     }
 }
