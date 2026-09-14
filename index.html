@@ -107,28 +107,116 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=victorian-3.0">
+    <link rel="stylesheet" href="estilos.css?v=victorian-3.1">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-    <link rel="stylesheet" href="seccion3.css?v=victorian-3.0">
+    <link rel="stylesheet" href="seccion3.css?v=victorian-3.1">
 </head>
 
 <body>
     <!-- BACKDROP DEL POP-UP SACRO VICTORIANO -->
     <div class="church-popup-backdrop" id="church-popup-backdrop" aria-hidden="true"></div>
 
-    <!-- PESTAÑA POP-UP DESDE LA DERECHA: MANTO DE LA VIRGEN DEL VALLE (ESTILO VIDRIOS DE IGLESIA) -->
-    <!-- Forma exacta sobresaliendo desde el margen derecho, inspirada en POP-upPAGINAWEBok.png -->
+    <!-- PESTAÑA POP-UP DESDE LA DERECHA: VENTANA OJIVAL GÓTICA + MANTO DE LA VIRGEN (OPCIÓN 2) -->
     <div class="church-popup-container active" id="church-popup-container" aria-hidden="false">
         <!-- Pestaña indicadora para cuando está retraído hacia el margen -->
-        <div class="church-mantle-tab-hint" id="church-mantle-tab-hint" aria-label="Abrir Pop-up D'ALROC" title="Abrir Manto Sacro D'ALROC">
-            <i class="fa-solid fa-chevron-left"></i>
-            <span>ALROC</span>
+        <div class="church-mantle-tab-hint" id="church-mantle-tab-hint" aria-label="Abrir Menú Sacro D'ALROC" title="Abrir Menú Vitral D'ALROC">
+            <i class="fa-solid fa-church"></i>
+            <span>MENÚ</span>
         </div>
 
-        <!-- Envoltura de la silueta pura del Manto y Corona -->
-        <div class="church-mantle-wrapper" id="church-mantle-trigger" role="button" tabindex="0" aria-label="Pestaña Pop-up D'ALROC — Manto Sacro" title="Manto Sacro D'ALROC (Vitral Victoriano)">
-            <!-- Botón joya de repliegue / cierre hacia la derecha -->
-            <button class="church-mantle-close" id="church-mantle-close" aria-label="Retraer hacia el margen">
+        <!-- VENTANA OJIVAL GÓTICA CON VIDRIOS DE IGLESIA (PROYECTADA A LA IZQUIERDA DEL MANTO) -->
+        <aside class="gothic-arch-window" id="gothic-arch-window" aria-label="Navegación Vitral Sacro D'ALROC">
+            <!-- Remate Superior: Arco Ojival con Rosetón de Catedral -->
+            <div class="gothic-arch-top">
+                <button class="gothic-window-close" id="gothic-window-close" aria-label="Cerrar Navegación">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="gothic-rosette-icon" title="Emblema Sacro D'ALROC">
+                    <i class="fa-solid fa-cross"></i>
+                </div>
+                <span class="gothic-site-tag">INVERSIONES D'<em>ALROC</em></span>
+                <span class="gothic-site-sub">Navegación en Vitral Victoriano</span>
+                <div class="gothic-lead-divider"></div>
+            </div>
+
+            <!-- Celdas de Vitral Emplomado (Navegación Principal) -->
+            <nav class="gothic-nav-panes">
+                <a href="#Historia" class="gothic-pane-item" data-section="Historia">
+                    <span class="gothic-pane-num">I</span>
+                    <div class="gothic-pane-info">
+                        <strong>Inicio & Mercado</strong>
+                        <span>Barómetro insular y bienvenida</span>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+                <a href="#Ruta" class="gothic-pane-item" data-section="Ruta">
+                    <span class="gothic-pane-num">II</span>
+                    <div class="gothic-pane-info">
+                        <strong>Ruta de Inversión</strong>
+                        <span>Curaduría, blindaje y protocolización</span>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+                <a href="#Galeria" class="gothic-pane-item" data-section="Galeria">
+                    <span class="gothic-pane-num">III</span>
+                    <div class="gothic-pane-info">
+                        <strong>Cartera de Inmuebles</strong>
+                        <span>Villas, casas y apartamentos</span>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+                <a href="#Opiniones" class="gothic-pane-item" data-section="Opiniones">
+                    <span class="gothic-pane-num">IV</span>
+                    <div class="gothic-pane-info">
+                        <strong>Servicios Premium</strong>
+                        <span>Asesoría personalizada y gestión</span>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+                <a href="#Legado" class="gothic-pane-item" data-section="Legado">
+                    <span class="gothic-pane-num">V</span>
+                    <div class="gothic-pane-info">
+                        <strong>Lic. Claudia Di Diomede</strong>
+                        <span>Corredora certificada & colegiatura</span>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+                <a href="#Contacto" class="gothic-pane-item" data-section="Contacto">
+                    <span class="gothic-pane-num">VI</span>
+                    <div class="gothic-pane-info">
+                        <strong>Canales de Contacto</strong>
+                        <span>WhatsApp, llamada y oficina</span>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </nav>
+
+            <!-- Gemas de Vitral (Colecciones de Inmuebles) -->
+            <div class="gothic-filter-gem-wrap">
+                <span class="gothic-gem-label"><i class="fa-solid fa-gem"></i> Colecciones Selectas</span>
+                <div class="gothic-gems-grid">
+                    <a href="#Galeria" class="gothic-gem-btn" data-filter="villas"><i class="fa-solid fa-landmark"></i> Villas</a>
+                    <a href="#Galeria" class="gothic-gem-btn" data-filter="playas"><i class="fa-solid fa-water"></i> Playa</a>
+                    <a href="#Galeria" class="gothic-gem-btn" data-filter="townhouses"><i class="fa-solid fa-house-chimney"></i> Townhouses</a>
+                    <a href="#Galeria" class="gothic-gem-btn" data-filter="terrenos"><i class="fa-solid fa-chart-line"></i> Terrenos</a>
+                </div>
+            </div>
+
+            <!-- Base del Ventanal con Botón WhatsApp -->
+            <div class="gothic-arch-footer">
+                <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="gothic-wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> Conversar con la Lic. Claudia
+                </a>
+                <div class="gothic-footer-schedule">
+                    <span><i class="fa-regular fa-clock"></i> Lun - Sáb 08:30 - 18:30</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- SILUETA SAGRADA DEL MANTO Y CORONA (DOCKADA A LA DERECHA) -->
+        <div class="church-mantle-wrapper" id="church-mantle-trigger" role="button" tabindex="0" aria-label="Abrir o retraer menú gótico de vitral" title="Manto Sacro D'ALROC — Clic para replegar / desplegar menú">
+            <!-- Botón joya de repliegue hacia el margen derecho -->
+            <button class="church-mantle-close" id="church-mantle-close" aria-label="Retraer ventana hacia el margen">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
 
@@ -987,18 +1075,20 @@
                 }
             });
 
-            // --- Lógica del Pop-up Sacro D'ALROC (Manto & Corona — Vitral Victoriano) ---
+            // --- Lógica del Pop-up Sacro D'ALROC: Opción 2 Ventana Ojival + Manto ---
             const churchPopupContainer = document.getElementById('church-popup-container');
             const churchBackdrop = document.getElementById('church-popup-backdrop');
             const churchMantleTrigger = document.getElementById('church-mantle-trigger');
             const churchMantleClose = document.getElementById('church-mantle-close');
             const churchMantleTabHint = document.getElementById('church-mantle-tab-hint');
+            const gothicWindowClose = document.getElementById('gothic-window-close');
 
             const openChurchPopup = () => {
                 if (churchPopupContainer) {
                     churchPopupContainer.classList.add('active');
                     churchPopupContainer.setAttribute('aria-hidden', 'false');
                     if (churchBackdrop) churchBackdrop.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 }
             };
 
@@ -1007,6 +1097,7 @@
                     churchPopupContainer.classList.remove('active');
                     churchPopupContainer.setAttribute('aria-hidden', 'true');
                     if (churchBackdrop) churchBackdrop.classList.remove('active');
+                    document.body.style.overflow = '';
                 }
             };
 
@@ -1026,10 +1117,7 @@
                         closeChurchPopup();
                         return;
                     }
-                    if (!churchPopupContainer.classList.contains('active')) {
-                        e.stopPropagation();
-                        openChurchPopup();
-                    }
+                    toggleChurchPopup();
                 });
             }
 
@@ -1047,6 +1135,13 @@
                 });
             }
 
+            if (gothicWindowClose) {
+                gothicWindowClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeChurchPopup();
+                });
+            }
+
             if (churchBackdrop) {
                 churchBackdrop.addEventListener('click', closeChurchPopup);
             }
@@ -1055,6 +1150,25 @@
                 if (e.key === 'Escape' && churchPopupContainer && churchPopupContainer.classList.contains('active')) {
                     closeChurchPopup();
                 }
+            });
+
+            // Enlaces de las celdas de vitral en la ventana gótica
+            document.querySelectorAll('.gothic-pane-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    closeChurchPopup();
+                });
+            });
+
+            // Gemas de filtro de portafolio en la ventana gótica
+            document.querySelectorAll('.gothic-gem-btn').forEach(gem => {
+                gem.addEventListener('click', (e) => {
+                    const filterVal = gem.getAttribute('data-filter');
+                    const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterVal}"]`);
+                    if (targetBtn) {
+                        targetBtn.click();
+                    }
+                    closeChurchPopup();
+                });
             });
 
             // --- Lógica del Modal de Contacto & QR ---

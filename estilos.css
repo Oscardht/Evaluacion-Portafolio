@@ -3148,12 +3148,323 @@ header.luxury-topbar .navbar a:hover::after {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Estado Activo: La figura sobresale completa desde la derecha */
+/* Estado Activo: Tanto la ventana ojival como el manto sobresalen completos */
 .church-popup-container.active {
     transform: translateY(-50%) translateX(0);
 }
 
-/* 3. Envoltura de la Figura Sagrada */
+/* 3. OPCIÓN 2: VENTANA OJIVAL GÓTICA (PROYECTADA HACIA LA IZQUIERDA DEL MANTO) */
+.gothic-arch-window {
+    width: 350px;
+    max-width: calc(100vw - 110px);
+    height: min(85vh, 730px);
+    background: rgba(10, 10, 15, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid var(--vitral-gold, #F3C64D);
+    border-right: none;
+    border-radius: 175px 0 0 8px;
+    box-shadow: -15px 0 45px rgba(0, 201, 219, 0.3), -4px 0 25px rgba(243, 198, 77, 0.25), -25px 0 60px rgba(5, 5, 8, 0.85);
+    outline: 1px solid rgba(0, 201, 219, 0.32);
+    outline-offset: -6px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: -14px; /* Ensamblaje perfecto solapado con el borde del manto */
+    z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrollbar estilizado de vitral para la ventana gótica */
+.gothic-arch-window::-webkit-scrollbar {
+    width: 4px;
+}
+.gothic-arch-window::-webkit-scrollbar-track {
+    background: rgba(10, 10, 15, 0.5);
+}
+.gothic-arch-window::-webkit-scrollbar-thumb {
+    background: var(--vitral-gold, #F3C64D);
+    border-radius: 2px;
+}
+
+/* Remate Superior de la Ojiva */
+.gothic-arch-top {
+    position: relative;
+    padding: 3.2rem 2.2rem 1.6rem 2.2rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(24, 24, 34, 0.75) 0%, rgba(10, 10, 15, 0.25) 100%);
+    border-bottom: 1px solid rgba(243, 198, 77, 0.32);
+}
+
+.gothic-rosette-icon {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 1.2rem auto;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 201, 219, 0.3) 0%, rgba(10, 10, 15, 0.85) 100%);
+    border: 1px solid var(--vitral-gold, #F3C64D);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vitral-gold, #F3C64D);
+    font-size: 1.6rem;
+    box-shadow: 0 0 16px rgba(0, 201, 219, 0.5), inset 0 0 8px rgba(243, 198, 77, 0.4);
+    animation: gothicRosetteGlow 4s ease-in-out infinite;
+}
+
+@keyframes gothicRosetteGlow {
+    0%, 100% { box-shadow: 0 0 14px rgba(0, 201, 219, 0.4), inset 0 0 6px rgba(243, 198, 77, 0.3); }
+    50% { box-shadow: 0 0 24px rgba(0, 201, 219, 0.7), inset 0 0 12px rgba(243, 198, 77, 0.6); }
+}
+
+.gothic-window-close {
+    position: absolute;
+    top: 1.8rem;
+    left: 1.8rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(20, 20, 28, 0.85);
+    border: 1px solid rgba(243, 198, 77, 0.4);
+    color: #F0F3F6;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.gothic-window-close:hover {
+    background: rgba(0, 201, 219, 0.25);
+    border-color: var(--vitral-cyan, #00C9DB);
+    color: var(--vitral-cyan, #00C9DB);
+    transform: rotate(90deg);
+}
+
+.gothic-site-tag {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #F0F3F6;
+    letter-spacing: 0.06em;
+    display: block;
+}
+
+.gothic-site-tag em {
+    color: var(--vitral-gold, #F3C64D);
+    font-style: italic;
+}
+
+.gothic-site-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--vitral-cyan, #00C9DB);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.gothic-lead-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--vitral-gold, #F3C64D), transparent);
+    margin: 1.2rem auto 0 auto;
+}
+
+/* Celdas de Vitral Emplomado (Navegación) */
+.gothic-nav-panes {
+    padding: 1.8rem 1.8rem 1rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex: 1;
+}
+
+.gothic-pane-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.1rem 1.4rem;
+    background: rgba(18, 18, 26, 0.65);
+    border: 1px solid rgba(243, 198, 77, 0.28);
+    border-radius: 4px;
+    outline: 1px solid rgba(0, 201, 219, 0.15);
+    outline-offset: -3px;
+    text-decoration: none;
+    color: #F0F3F6;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.gothic-pane-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 201, 219, 0.15) 0%, rgba(243, 198, 77, 0.12) 100%);
+    opacity: 0;
+    transition: opacity 0.28s ease;
+}
+
+.gothic-pane-item:hover {
+    background: rgba(24, 24, 36, 0.9);
+    border-color: var(--vitral-gold, #F3C64D);
+    outline-color: var(--vitral-cyan, #00C9DB);
+    transform: translateX(-4px);
+    box-shadow: 0 4px 18px rgba(0, 201, 219, 0.25), inset 0 0 12px rgba(243, 198, 77, 0.2);
+}
+
+.gothic-pane-item:hover::before {
+    opacity: 1;
+}
+
+.gothic-pane-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--vitral-gold, #F3C64D);
+    width: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.gothic-pane-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.gothic-pane-info strong {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+}
+
+.gothic-pane-info span {
+    font-size: 1.05rem;
+    color: #A6A4A0;
+    margin-top: 0.15rem;
+}
+
+.gothic-pane-item i {
+    color: var(--vitral-gold, #F3C64D);
+    font-size: 1.2rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.gothic-pane-item:hover i {
+    transform: translateX(4px);
+    color: var(--vitral-cyan, #00C9DB);
+}
+
+/* Gemas de Vitral (Colecciones de Portafolio) */
+.gothic-filter-gem-wrap {
+    padding: 0 1.8rem 1.4rem 1.8rem;
+}
+
+.gothic-gem-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--vitral-gold, #F3C64D);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.gothic-gems-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+}
+
+.gothic-gem-btn {
+    padding: 0.75rem 0.9rem;
+    background: rgba(22, 22, 32, 0.7);
+    border: 1px solid rgba(0, 201, 219, 0.35);
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #F0F3F6;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.22s ease;
+    cursor: pointer;
+}
+
+.gothic-gem-btn i {
+    color: var(--vitral-cyan, #00C9DB);
+    font-size: 1.05rem;
+}
+
+.gothic-gem-btn:hover {
+    background: rgba(0, 201, 219, 0.2);
+    border-color: var(--vitral-cyan, #00C9DB);
+    color: #FFFFFF;
+    box-shadow: 0 0 12px rgba(0, 201, 219, 0.35);
+}
+
+/* Base del Ventanal con Botón WhatsApp */
+.gothic-arch-footer {
+    padding: 1.6rem 1.8rem;
+    background: linear-gradient(180deg, rgba(14, 14, 20, 0.85) 0%, rgba(8, 8, 12, 0.95) 100%);
+    border-top: 1px solid rgba(243, 198, 77, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gothic-wa-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    background: linear-gradient(135deg, #184A36 0%, #0F3023 100%);
+    border: 1px solid rgba(0, 201, 219, 0.4);
+    color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(24, 74, 54, 0.4);
+    transition: all 0.25s ease;
+}
+
+.gothic-wa-link:hover {
+    background: linear-gradient(135deg, #226349 0%, #164230 100%);
+    border-color: var(--vitral-gold, #F3C64D);
+    box-shadow: 0 6px 18px rgba(0, 201, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+.gothic-footer-schedule {
+    font-size: 1.1rem;
+    color: #A6A4A0;
+    text-align: center;
+}
+
+/* 4. Envoltura de la Figura Sagrada (Manto y Corona) */
 .church-mantle-wrapper {
     position: relative;
     display: inline-flex;
@@ -3163,6 +3474,7 @@ header.luxury-topbar .navbar a:hover::after {
             drop-shadow(-3px 5px 14px rgba(243, 198, 77, 0.38))
             drop-shadow(-8px 14px 28px rgba(10, 10, 14, 0.75));
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+    z-index: 3;
 }
 
 .church-popup-container:not(.active) .church-mantle-wrapper:hover {
@@ -3188,18 +3500,18 @@ header.luxury-topbar .navbar a:hover::after {
     animation: churchStainedGlassPulse 3.8s ease-in-out infinite;
 }
 
-/* 4. Imagen Exacta del Manto y Corona (POP-upPAGINAWEBok) */
+/* 5. Imagen Exacta del Manto y Corona (POP-upPAGINAWEBok) */
 .church-mantle-img {
     height: min(82vh, 720px);
     width: auto;
-    max-width: 50vw;
+    max-width: 45vw;
     display: block;
     object-fit: contain;
     object-position: right center;
     pointer-events: auto;
 }
 
-/* 5. Joya / Botón de Retracción y Cierre */
+/* 6. Joya / Botón de Retracción y Cierre en el Manto */
 .church-mantle-close {
     position: absolute;
     top: 24px;
@@ -3239,15 +3551,15 @@ header.luxury-topbar .navbar a:hover::after {
     box-shadow: 0 0 22px rgba(0, 201, 219, 0.8), 0 0 12px rgba(243, 198, 77, 0.65);
 }
 
-/* 6. Pestaña Indicadora Flotante cuando está retraído */
+/* 7. Pestaña Indicadora Flotante cuando está retraído */
 .church-mantle-tab-hint {
     position: absolute;
-    left: -36px;
+    left: -38px;
     top: 50%;
     transform: translateY(-50%);
-    width: 34px;
-    height: 92px;
-    background: linear-gradient(180deg, rgba(14, 14, 19, 0.94) 0%, rgba(20, 20, 28, 0.94) 100%);
+    width: 36px;
+    height: 96px;
+    background: linear-gradient(180deg, rgba(14, 14, 19, 0.95) 0%, rgba(20, 20, 28, 0.95) 100%);
     border: 1px solid var(--vitral-gold, #F3C64D);
     border-right: none;
     border-radius: 6px 0 0 6px;
@@ -3256,7 +3568,7 @@ header.luxury-topbar .navbar a:hover::after {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    box-shadow: -4px 0 14px rgba(0, 201, 219, 0.35);
+    box-shadow: -5px 0 16px rgba(0, 201, 219, 0.4);
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 1;
@@ -3269,8 +3581,8 @@ header.luxury-topbar .navbar a:hover::after {
 }
 
 .church-mantle-tab-hint i {
-    color: #F3C64D;
-    font-size: 1.1rem;
+    color: var(--vitral-gold, #F3C64D);
+    font-size: 1.2rem;
     animation: churchHintBounce 2s ease-in-out infinite;
 }
 
@@ -3445,8 +3757,14 @@ header.luxury-topbar .navbar a:hover::after {
     }
 
     .church-mantle-img {
-        height: min(68vh, 460px);
-        max-width: 82vw;
+        height: min(64vh, 420px);
+        max-width: 44vw;
+    }
+    .gothic-arch-window {
+        width: 285px;
+        max-width: calc(100vw - 85px);
+        height: min(78vh, 520px);
+        border-radius: 130px 0 0 6px;
     }
     .church-popup-container {
         transform: translateY(-50%) translateX(calc(100% - 50px));
@@ -3458,5 +3776,26 @@ header.luxury-topbar .navbar a:hover::after {
         left: -32px;
         width: 30px;
         height: 78px;
+    }
+}
+
+@media (max-width: 540px) {
+    .gothic-arch-window {
+        width: calc(100vw - 65px);
+        height: 82vh;
+        border-radius: 90px 0 0 6px;
+    }
+    .church-mantle-img {
+        display: none; /* En pantallas ultra estrechas, la ventana gótica toma protagonismo */
+    }
+    .church-popup-container {
+        transform: translateY(-50%) translateX(100%);
+    }
+    .church-popup-container.active {
+        transform: translateY(-50%) translateX(0);
+    }
+    .church-mantle-tab-hint {
+        left: -34px;
+        display: flex;
     }
 }
