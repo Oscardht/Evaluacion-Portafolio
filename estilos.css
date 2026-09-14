@@ -7,42 +7,42 @@
    ========================================================================== */
 
 :root {
-    /* Paleta AlRocWeb (Luz, Alabastro, Mármol y Oro Imperial) */
-    --bg-canvas:           #FAF8F5; /* Alabastro luminoso */
-    --bg-surface:          #FFFFFF; /* Superficie pura de tarjetas */
-    --bg-card-warm:        #F6F2E9; /* Marfil / arenisca cálida */
-    --bg-card-subtle:      #F1ECE0; /* Arena suave para fondos secundarios */
+    /* Paleta Victoriana AlRoc (Parchment, Alabastro, Mármol y Oro Antiguo) */
+    --bg-canvas:           #F6F1E7; /* Pergamino marfil cálido victoriano */
+    --bg-surface:          #FCFAF6; /* Superficie pura de tarjetas con velo marfil */
+    --bg-card-warm:        #EEE5D5; /* Marfil / arenisca suave */
+    --bg-card-subtle:      #E4D9C5; /* Fondo secundario archival */
     
-    /* Metales y Orfebrería Clásica */
-    --gold:                #C5A85A; /* Oro imperial colonial */
-    --gold-light:          #DFC785; /* Reflejo hoja de oro */
-    --gold-dark:           #9B7E35; /* Oro viejo / bronce orfebre */
-    --gold-subtle:         rgba(197, 168, 90, 0.14);
-    --gold-border:         rgba(197, 168, 90, 0.38);
+    /* Metales y Orfebrería Victoriana */
+    --gold:                #B88E3E; /* Oro antiguo victoriano enriquecido */
+    --gold-light:          #D4B062; /* Hoja de oro bruñido */
+    --gold-dark:           #8C6820; /* Bronce orfebre clásico */
+    --gold-subtle:         rgba(184, 142, 62, 0.16);
+    --gold-border:         rgba(184, 142, 62, 0.42);
     
-    /* Acentos Arquitectónicos Nobles de la Obra */
-    --emerald-column:      #2D5446; /* Verde mármol corintio */
-    --emerald-light:       #EAF2EE; /* Lavado esmeralda suave */
-    --marian-blue:         #4A728E; /* Azul bóveda celestial */
-    --marian-light:        #F0F5F8; /* Brisa caribeña */
+    /* Acentos Arquitectónicos Nobles */
+    --emerald-column:      #1D3D2E; /* Verde heráldico imperial victoriano */
+    --emerald-light:       #E5EFE9; /* Lavado esmeralda suave */
+    --marian-blue:         #33566E; /* Azul prusiano clásico */
+    --marian-light:        #EBF2F6; /* Brisa caribeña suave */
     
     /* Tipografía Editorial y Contraste */
-    --text-headline:       #1B1815; /* Carbón obsidiana profundo */
-    --text-body:           #4A453F; /* Tinta mineral / gris piedra cálido */
-    --text-muted:          #7D756C; /* Subtítulos y capitulares */
-    --text-gold:           #9B7E35; /* Rótulos en oro visible */
+    --text-headline:       #161310; /* Carbón obsidiana profundo */
+    --text-body:           #3E3832; /* Tinta mineral de imprenta */
+    --text-muted:          #6F665C; /* Subtítulos y capitulares */
+    --text-gold:           #8C6820; /* Rótulos en oro visible */
     
-    /* Sombras Naturales Arquitectónicas (Luz Cenital Solar) */
-    --shadow-soft:         0 4px 20px rgba(44, 38, 28, 0.05), 0 1px 3px rgba(44, 38, 28, 0.03);
-    --shadow-elevated:     0 14px 35px rgba(44, 38, 28, 0.08), 0 2px 8px rgba(197, 168, 90, 0.12);
-    --shadow-subtle:       0 2px 10px rgba(44, 38, 28, 0.04);
+    /* Sombras Naturales Arquitectónicas */
+    --shadow-soft:         0 4px 20px rgba(40, 34, 25, 0.07), 0 1px 3px rgba(40, 34, 25, 0.05);
+    --shadow-elevated:     0 16px 40px rgba(40, 34, 25, 0.12), 0 2px 8px rgba(184, 142, 62, 0.18);
+    --shadow-subtle:       0 2px 10px rgba(40, 34, 25, 0.05);
     
-    /* Geometría Clásica */
-    --radius-arch:         180px 180px 12px 12px; /* Arco arquitectónico de medio punto */
-    --radius-card:         10px;                  /* Proporción clásica y serena */
-    --radius-pill:         9999px;
-    --border-hairline:     1px solid rgba(197, 168, 90, 0.32);
-    --border-classical:    3px double rgba(197, 168, 90, 0.45);
+    /* Geometría Clásica Victoriana */
+    --radius-arch:         180px 180px 4px 4px;
+    --radius-card:         4px;                  /* Borde recto arquitectónico victoriano */
+    --radius-pill:         4px;                  /* Distintivos con esquinas nítidas */
+    --border-hairline:     1px solid rgba(184, 142, 62, 0.38);
+    --border-classical:    3px double rgba(184, 142, 62, 0.55);
 }
 
 /* ===== RESET & TIPOGRAFÍA BASE ===== */
@@ -73,7 +73,7 @@ body {
     color: var(--text-body);
     line-height: 1.65;
     background-image: 
-        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.8) 0%, rgba(250,248,245,0.6) 100%);
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.45) 0%, rgba(246,241,231,0.85) 100%);
     background-attachment: fixed;
 }
 
@@ -96,25 +96,36 @@ section {
     position: relative;
 }
 
-/* Filigrana o Divisor Clásico */
+/* Filigrana & Divisor Clásico Victoriano */
 .gold-divider {
-    width: 90px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 1.6rem auto 0 auto;
+    width: 160px;
+    height: 18px;
+    background: none;
+    margin: 1.6rem auto 2.6rem auto;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gold-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dark), var(--gold), var(--gold-dark), transparent);
 }
 
 .gold-divider::after {
-    content: '◆';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    content: '❖';
+    position: relative;
     color: var(--gold-dark);
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     background: var(--bg-canvas);
-    padding: 0 0.4rem;
+    padding: 0 0.9rem;
+    line-height: 1;
 }
 
 /* ===== TOPE DE PÁGINA DOBLE NIVEL — ESTILO LUXURY TOPBAR (ALROC LUMINOSO) ===== */
@@ -128,18 +139,18 @@ header {
     display: flex;
     flex-direction: column;
     padding: 0;
-    background: rgba(250, 248, 245, 0.97);
+    background: rgba(246, 241, 231, 0.98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 25px rgba(44, 38, 28, 0.08), 0 1px 3px rgba(197, 168, 90, 0.15);
-    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 25px rgba(40, 34, 25, 0.08), 0 1px 3px rgba(184, 142, 62, 0.2);
+    border-bottom: 3px double var(--gold);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* TIER 1: BARRA SUPERIOR DE CONTACTO & UTILIDAD */
 .topbar-tier1 {
     width: 100%;
-    background-color: rgba(250, 248, 245, 0.98);
+    background-color: rgba(246, 241, 231, 0.98);
     border-bottom: 1px solid var(--gold-border);
     padding: 0.9rem 4%;
 }
@@ -401,9 +412,9 @@ header {
 /* TIER 2: BARRA DE NAVEGACIÓN & CATÁLOGO */
 .topbar-tier2 {
     width: 100%;
-    background-color: #F4EFE6;
+    background-color: #EEE4D3;
     padding: 0 4%;
-    border-top: 1px solid rgba(197, 168, 90, 0.2);
+    border-top: 1px solid rgba(184, 142, 62, 0.3);
 }
 
 .topbar-nav-container {
@@ -646,7 +657,7 @@ header.luxury-topbar .navbar a:hover::after {
     box-shadow: 0 2px 10px rgba(45, 84, 70, 0.25);
 }
 
-/* ===== DISTINTIVOS & ETIQUETAS EDITORIALES ===== */
+/* ===== DISTINTIVOS & ETIQUETAS EDITORIALES VICTORIANAS ===== */
 .editorial-badge, .editorial-badge-gold, .editorial-sub-tag {
     display: inline-flex;
     align-items: center;
@@ -654,11 +665,12 @@ header.luxury-topbar .navbar a:hover::after {
     padding: 0.6rem 1.6rem;
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
-    border-radius: var(--radius-pill);
+    border-radius: 3px;
     color: var(--gold-dark);
+    font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.14em;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-subtle);
@@ -668,7 +680,7 @@ header.luxury-topbar .navbar a:hover::after {
     margin-bottom: 1rem;
     color: var(--emerald-column);
     background: var(--emerald-light);
-    border-color: rgba(45, 84, 70, 0.25);
+    border-color: rgba(35, 72, 57, 0.28);
 }
 
 .editorial-main-title {
@@ -1158,7 +1170,7 @@ header.luxury-topbar .navbar a:hover::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 55%, #F5F0E6 100%);
+    background: linear-gradient(180deg, #FDFBF7 0%, #F6F1E7 55%, #EEE5D5 100%);
     border-bottom: 1px solid var(--gold-border);
     position: relative;
     padding: 13rem 9% 5rem 9%;
@@ -1965,7 +1977,7 @@ header.luxury-topbar .navbar a:hover::after {
 
 /* 3. SECCIÓN RUTA DE LA INVERSIÓN INMOBILIARIA */
 .RutaInversion {
-    background: linear-gradient(180deg, #F5F0E6 0%, #FAF8F5 40%, #F5F0E6 100%);
+    background: linear-gradient(180deg, #EEE5D5 0%, #F6F1E7 40%, #EEE5D5 100%);
     padding: 10rem 9%;
     border-bottom: 1px solid var(--gold-subtle);
     position: relative;
@@ -2004,27 +2016,29 @@ header.luxury-topbar .navbar a:hover::after {
 .step-card {
     background: var(--bg-surface);
     border: 1px solid var(--gold-border);
+    outline: 1px solid rgba(184, 142, 62, 0.35);
+    outline-offset: -7px;
     border-radius: var(--radius-card);
     padding: 3.2rem 2.6rem;
     box-shadow: 
         inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        inset 0 -1px 2px rgba(197, 168, 90, 0.15),
-        0 12px 30px rgba(44, 38, 28, 0.07);
+        0 12px 30px rgba(40, 34, 25, 0.07);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     z-index: 1;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, outline-color 0.35s ease;
 }
 
 .step-card:hover {
     transform: translateY(-6px);
     box-shadow: 
         inset 0 1px 0 rgba(255, 255, 255, 1),
-        0 20px 45px rgba(44, 38, 28, 0.12),
-        0 2px 10px rgba(197, 168, 90, 0.25);
+        0 20px 45px rgba(40, 34, 25, 0.12),
+        0 2px 10px rgba(184, 142, 62, 0.28);
     border-color: var(--gold-dark);
+    outline-color: rgba(184, 142, 62, 0.75);
 }
 
 .step-header {
@@ -2155,7 +2169,7 @@ header.luxury-topbar .navbar a:hover::after {
 
 /* ===== SECCIÓN 2 — PORTAFOLIO DE PROPIEDADES ESTILO CRESTFIELD (ALROC EXCLUSIVO) ===== */
 .Galeria {
-    background: linear-gradient(180deg, #FAF8F5 0%, #F5EFE4 50%, #FAF8F5 100%);
+    background: linear-gradient(180deg, #F6F1E7 0%, #EDE4D3 50%, #F6F1E7 100%);
     padding: 10rem 7% 9rem 7%;
     border-bottom: 1px solid var(--gold-border);
     position: relative;
@@ -2173,12 +2187,13 @@ header.luxury-topbar .navbar a:hover::after {
     align-items: center;
     gap: 0.8rem;
     padding: 0.6rem 1.8rem;
-    border-radius: var(--radius-pill);
+    border-radius: 3px;
     background: var(--bg-surface);
     border: 1px solid var(--gold-border);
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     color: var(--gold-dark);
     text-transform: uppercase;
     box-shadow: var(--shadow-subtle);
@@ -2196,12 +2211,13 @@ header.luxury-topbar .navbar a:hover::after {
     color: var(--text-headline);
     line-height: 1.2;
     margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
 }
 
 .portfolio-title em {
     color: var(--gold-dark);
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .portfolio-desc {
@@ -2211,7 +2227,7 @@ header.luxury-topbar .navbar a:hover::after {
     margin-top: 1.2rem;
 }
 
-/* Filtros de la Galería (Tabs estilo Crestfield / AlRoc) */
+/* Filtros de la Galería (Tabs estilo Victoriano / AlRoc) */
 .portfolio-filter-tabs {
     display: flex;
     justify-content: center;
@@ -2225,10 +2241,13 @@ header.luxury-topbar .navbar a:hover::after {
 .gallery-filter-btn {
     background: var(--bg-surface);
     border: 1px solid var(--gold-border);
-    padding: 1rem 2.2rem;
-    border-radius: var(--radius-pill);
-    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    border-radius: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
     font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--text-body);
     cursor: pointer;
     transition: all 0.25s ease;
@@ -2250,7 +2269,7 @@ header.luxury-topbar .navbar a:hover::after {
     border-color: var(--gold-dark);
     color: var(--gold-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(44, 38, 28, 0.08);
+    box-shadow: 0 6px 18px rgba(40, 34, 25, 0.08);
 }
 
 .filter-btn:hover i,
@@ -2260,10 +2279,12 @@ header.luxury-topbar .navbar a:hover::after {
 
 .filter-btn.active,
 .gallery-filter-btn.active {
-    background: var(--emerald-column);
-    color: #FFFFFF;
-    border-color: var(--emerald-column);
-    box-shadow: 0 6px 20px rgba(45, 84, 70, 0.32);
+    background: var(--text-headline);
+    color: var(--gold-light);
+    border-color: var(--gold);
+    outline: 1px solid rgba(216, 190, 122, 0.45);
+    outline-offset: -3px;
+    box-shadow: 0 6px 20px rgba(24, 21, 18, 0.35);
 }
 
 .filter-btn.active i,
@@ -2281,17 +2302,19 @@ header.luxury-topbar .navbar a:hover::after {
     margin: 0 auto;
 }
 
-/* Tarjeta de Propiedad individual (Portfolio Card) */
+/* Tarjeta de Propiedad individual (Portfolio Card con Enmarcado Victoriano) */
 .portfolio-card,
 .gallery-card {
     background: var(--bg-surface);
-    border-radius: 12px;
+    border-radius: 4px;
     border: 1px solid var(--gold-border);
+    outline: 1px solid rgba(184, 142, 62, 0.35);
+    outline-offset: -7px;
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, outline-color 0.35s ease, opacity 0.3s ease;
     cursor: pointer;
     position: relative;
     height: auto;
@@ -2300,8 +2323,9 @@ header.luxury-topbar .navbar a:hover::after {
 .portfolio-card:hover,
 .gallery-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 42px rgba(44, 38, 28, 0.12), 0 4px 14px rgba(197, 168, 90, 0.22);
+    box-shadow: 0 20px 42px rgba(40, 34, 25, 0.14), 0 4px 14px rgba(184, 142, 62, 0.28);
     border-color: var(--gold-dark);
+    outline-color: rgba(184, 142, 62, 0.75);
 }
 
 /* Contenedor Multimedia */
@@ -2312,6 +2336,7 @@ header.luxury-topbar .navbar a:hover::after {
     position: relative;
     overflow: hidden;
     background: #0E0D0C;
+    border-bottom: 1px solid rgba(184, 142, 62, 0.32);
 }
 
 .portfolio-media-holder img,
@@ -2328,21 +2353,22 @@ header.luxury-topbar .navbar a:hover::after {
     transform: scale(1.06);
 }
 
-/* Badge Superior en la Imagen */
+/* Badge Superior en la Imagen (Heráldica Victoriana) */
 .placeholder-badge {
     position: absolute;
     top: 1.4rem;
     left: 1.4rem;
-    background: rgba(27, 24, 21, 0.88);
+    background: rgba(22, 19, 16, 0.93);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: #FFFFFF;
-    border: 1px solid rgba(197, 168, 90, 0.4);
-    border-radius: var(--radius-pill);
-    padding: 0.55rem 1.4rem;
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    border: 1px solid rgba(184, 142, 62, 0.55);
+    border-radius: 3px;
+    padding: 0.55rem 1.3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
@@ -2499,9 +2525,11 @@ header.luxury-topbar .navbar a:hover::after {
 
 .property-modal-box {
     background: var(--bg-surface);
-    border-radius: 16px;
-    border: 2px solid var(--gold-border);
-    box-shadow: 0 25px 60px rgba(27, 24, 21, 0.4);
+    border-radius: 6px;
+    border: 1px solid var(--gold);
+    outline: 1px solid rgba(184, 142, 62, 0.45);
+    outline-offset: -8px;
+    box-shadow: 0 25px 60px rgba(24, 21, 18, 0.45);
     max-width: 960px;
     width: 100%;
     max-height: 90vh;
@@ -2521,7 +2549,7 @@ header.luxury-topbar .navbar a:hover::after {
     right: 1.8rem;
     width: 42px;
     height: 42px;
-    border-radius: 50%;
+    border-radius: 4px;
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
     color: var(--text-headline);
@@ -2567,14 +2595,15 @@ header.luxury-topbar .navbar a:hover::after {
     position: absolute;
     top: 1.8rem;
     left: 1.8rem;
-    background: rgba(20, 18, 15, 0.92);
+    background: rgba(24, 21, 18, 0.92);
     border: 1px solid var(--gold);
     color: var(--gold-light);
-    border-radius: var(--radius-pill);
+    border-radius: 3px;
     padding: 0.6rem 1.4rem;
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
@@ -2587,11 +2616,12 @@ header.luxury-topbar .navbar a:hover::after {
 }
 
 .modal-property-category {
+    font-family: 'Cinzel', serif;
     font-size: 1.15rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--emerald-column);
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.18em;
     margin-bottom: 0.8rem;
     display: block;
 }
@@ -2603,6 +2633,7 @@ header.luxury-topbar .navbar a:hover::after {
     color: var(--text-headline);
     line-height: 1.25;
     margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
 }
 
 .modal-property-lead {
@@ -2620,15 +2651,28 @@ header.luxury-topbar .navbar a:hover::after {
     margin-bottom: 1.8rem;
 }
 
+.modal-property-body::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    margin-right: 0.8rem;
+    margin-top: 0.18rem;
+    color: var(--gold-dark);
+}
+
 .modal-wip-notice {
     background: var(--bg-card-warm);
     border-left: 4px solid var(--gold-dark);
     padding: 1.4rem 1.6rem;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 4px 4px 0;
     margin-bottom: 1.8rem;
     font-size: 1.3rem;
     color: var(--text-headline);
     line-height: 1.55;
+    outline: 1px solid rgba(184, 142, 62, 0.28);
+    outline-offset: -3px;
 }
 
 .modal-wip-notice i {
@@ -2647,9 +2691,11 @@ header.luxury-topbar .navbar a:hover::after {
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
     padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-size: 1.25rem;
+    border-radius: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
     font-weight: 700;
+    letter-spacing: 0.06em;
     color: var(--text-headline);
     display: flex;
     align-items: center;
@@ -2671,33 +2717,38 @@ header.luxury-topbar .navbar a:hover::after {
     background: var(--emerald-column);
     color: #FFFFFF;
     padding: 1.25rem 2rem;
-    border-radius: 8px;
-    font-size: 1.35rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
+    border-radius: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.9rem;
     text-decoration: none;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 15px rgba(45, 84, 70, 0.3);
+    box-shadow: 0 4px 15px rgba(35, 72, 57, 0.3);
 }
 
 .modal-btn-wa:hover {
-    background: #234337;
+    background: #183327;
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(45, 84, 70, 0.4);
+    box-shadow: 0 8px 22px rgba(35, 72, 57, 0.4);
 }
 
 .modal-btn-close {
     background: transparent;
-    border: 1.5px solid var(--gold-border);
+    border: 1px solid var(--gold-border);
     color: var(--text-headline);
     padding: 0.95rem 2rem;
-    border-radius: 8px;
-    font-size: 1.3rem;
+    border-radius: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
     font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.25s ease;
     text-align: center;
@@ -2711,7 +2762,7 @@ header.luxury-topbar .navbar a:hover::after {
 
 /* ===== SECCIÓN 3 — SERVICIOS PREMIUM (CERO POLIMORFISMO EXAGERADO) ===== */
 .Opiniones {
-    background: linear-gradient(180deg, #F5F0E6 0%, #FAF8F5 100%);
+    background: linear-gradient(180deg, #EDE4D3 0%, #F6F1E7 100%);
     padding: 10rem 9%;
     border-bottom: 1px solid var(--gold-subtle);
 }
@@ -2724,14 +2775,16 @@ header.luxury-topbar .navbar a:hover::after {
     margin: 0 auto;
 }
 
-/* Tarjetas Nobles en Alabastro Puro */
+/* Tarjetas Nobles en Alabastro Puro con Enmarcado Victoriano */
 .glass-card {
     background: var(--bg-surface);
     border: 1px solid var(--gold-border);
+    outline: 1px solid rgba(184, 142, 62, 0.35);
+    outline-offset: -7px;
     box-shadow: var(--shadow-soft);
     border-radius: var(--radius-card);
     padding: 3.2rem 2.4rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, outline-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
@@ -2740,6 +2793,7 @@ header.luxury-topbar .navbar a:hover::after {
     transform: translateY(-5px);
     box-shadow: var(--shadow-elevated);
     border-color: var(--gold-dark);
+    outline-color: rgba(184, 142, 62, 0.75);
 }
 
 .service-icon {
