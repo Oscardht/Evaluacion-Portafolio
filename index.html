@@ -240,6 +240,37 @@
         </nav>
     </aside>
 
+    <!-- ==========================================================================
+         INSIGNIA / PESTAÑA FLOTANTE VIRGEN DEL VALLE (OPCIÓN 2)
+         - Ubicada en el margen derecho inferior como sello protector insular.
+         - Muestra la silueta de PopUPpaginawebOK con resplandor dorado.
+         - Al hacer clic, abre un flyout victoriano con canal directo a WhatsApp.
+         ========================================================================== -->
+    <aside class="virgen-floating-dock" id="virgen-floating-dock" aria-label="Sello Sacro Virgen del Valle D'ALROC">
+        <!-- Tarjeta Flyout Desplegable de Bienvenida / Contacto Sacro -->
+        <div class="virgen-flyout-card" id="virgen-flyout-card" aria-hidden="true">
+            <button class="virgen-flyout-close" id="virgen-flyout-close" aria-label="Cerrar ventana">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="virgen-flyout-badge">
+                <i class="fa-solid fa-crown"></i>
+                <span>PATRONA DE MARGARITA</span>
+            </div>
+            <h4 class="virgen-flyout-title">Bajo el Manto de la Virgen</h4>
+            <p class="virgen-flyout-desc">
+                Inversiones D'ALROC guía tu patrimonio con la tradición, fe y seguridad jurídica que mereces en la Isla.
+            </p>
+            <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="virgen-flyout-wa-btn">
+                <i class="fa-brands fa-whatsapp"></i> Conversar con la Lic. Claudia
+            </a>
+        </div>
+
+        <!-- Pestaña / Silueta de la Virgen que asoma desde el margen derecho -->
+        <div class="virgen-tab-trigger" id="virgen-tab-trigger" role="button" tabindex="0" aria-label="Abrir mensaje de bienvenida y WhatsApp" title="Virgen del Valle — Manto Sacro D'ALROC">
+            <img src="img/POP-upPAGINAWEBok_trimmed.png" alt="Manto Sagrado Virgen del Valle D'ALROC" class="virgen-mantle-img">
+            <span class="virgen-pulse-pill"><i class="fa-brands fa-whatsapp"></i> Contacto</span>
+        </div>
+    </aside>
 
     <!-- SECCIÓN 1 — HERO ESTILO AIRBNB (BÚSQUEDA DIRECTA & CONVERSIÓN) -->
     <section class="airbnb-hero" id="Historia">
@@ -918,6 +949,52 @@
                 });
             });
 
+            // --- Lógica de la Insignia Flotante de la Virgen del Valle (Opción 2) ---
+            const virgenTabTrigger = document.getElementById('virgen-tab-trigger');
+            const virgenFlyoutCard = document.getElementById('virgen-flyout-card');
+            const virgenFlyoutClose = document.getElementById('virgen-flyout-close');
+
+            const toggleVirgenCard = (e) => {
+                if (e) e.stopPropagation();
+                if (virgenFlyoutCard) {
+                    virgenFlyoutCard.classList.toggle('active');
+                }
+            };
+
+            const closeVirgenCard = () => {
+                if (virgenFlyoutCard) {
+                    virgenFlyoutCard.classList.remove('active');
+                }
+            };
+
+            if (virgenTabTrigger) {
+                virgenTabTrigger.addEventListener('click', toggleVirgenCard);
+            }
+
+            if (virgenFlyoutClose) {
+                virgenFlyoutClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeVirgenCard();
+                });
+            }
+
+            // Cerrar flyout al hacer clic fuera del dock
+            document.addEventListener('click', (e) => {
+                if (virgenFlyoutCard && virgenFlyoutCard.classList.contains('active')) {
+                    const dock = document.getElementById('virgen-floating-dock');
+                    if (dock && !dock.contains(e.target)) {
+                        closeVirgenCard();
+                    }
+                }
+            });
+
+            // Cerrar flyout con Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeVirgenCard();
+                }
+            });
+
             // --- Lógica del Modal de Contacto & QR ---
             const openModal = (e) => {
                 if (e) {
@@ -925,6 +1002,7 @@
                     e.stopPropagation();
                 }
                 closeTopShape();
+                closeVirgenCard();
                 if (modal) {
                     modal.classList.add('active');
                 }

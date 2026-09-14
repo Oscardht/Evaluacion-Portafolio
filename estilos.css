@@ -3394,6 +3394,177 @@ header.luxury-topbar .navbar a:hover::after {
     filter: drop-shadow(0 4px 12px rgba(184, 142, 62, 0.7));
 }
 
+/* ==========================================================================
+   INSIGNIA FLOTANTE SACRA: VIRGEN DEL VALLE (OPCIÓN 2)
+   - Dockada en el margen derecho inferior con resplandor suave de vitral.
+   - Pestaña interactiva que asoma con gracia y despliega tarjeta concierge.
+   ========================================================================== */
+
+.virgen-floating-dock {
+    position: fixed;
+    bottom: 2.2rem;
+    right: 0;
+    z-index: 2200;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+/* Pestaña disparador que asoma */
+.virgen-tab-trigger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+    pointer-events: auto;
+    padding-right: 0.2rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+    filter: drop-shadow(-4px 6px 16px rgba(184, 142, 62, 0.38)) 
+            drop-shadow(-2px 4px 10px rgba(26, 22, 18, 0.28));
+}
+
+.virgen-tab-trigger:hover {
+    transform: translateX(-8px) scale(1.03);
+    filter: drop-shadow(-6px 8px 22px rgba(184, 142, 62, 0.6)) 
+            drop-shadow(-3px 5px 14px rgba(26, 22, 18, 0.4));
+}
+
+/* Imagen recortada del Manto */
+.virgen-mantle-img {
+    height: clamp(100px, 14vh, 135px);
+    width: auto;
+    display: block;
+    object-fit: contain;
+    object-position: right bottom;
+    user-select: none;
+}
+
+/* Pastilla flotante con icono WhatsApp */
+.virgen-pulse-pill {
+    margin-top: -10px;
+    margin-right: 10px;
+    background: var(--emerald-column);
+    color: #FFFFFF;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.35), 0 0 10px rgba(184, 142, 62, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+.virgen-tab-trigger:hover .virgen-pulse-pill {
+    background: #142B20;
+    transform: scale(1.05);
+}
+
+/* Tarjeta Flyout que emerge a la izquierda de la Virgen */
+.virgen-flyout-card {
+    position: absolute;
+    bottom: 0;
+    right: calc(100% + 14px);
+    width: 290px;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--gold);
+    border-radius: 16px 16px 4px 16px;
+    padding: 1.4rem 1.4rem 1.2rem 1.4rem;
+    box-shadow: 0 16px 40px rgba(40, 34, 25, 0.18), 0 0 20px rgba(184, 142, 62, 0.25);
+    outline: 1px solid rgba(184, 142, 62, 0.25);
+    outline-offset: -4px;
+    pointer-events: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(12px) scale(0.96);
+    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease;
+}
+
+.virgen-flyout-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+.virgen-flyout-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-card-warm);
+    border: 1px solid var(--gold-border);
+    color: var(--text-headline);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.virgen-flyout-close:hover {
+    background: var(--emerald-column);
+    color: #FFFFFF;
+}
+
+.virgen-flyout-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+}
+
+.virgen-flyout-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-headline);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.virgen-flyout-desc {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.45;
+    margin-bottom: 1rem;
+}
+
+.virgen-flyout-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--emerald-column);
+    color: #FFFFFF;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius-card);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.25);
+}
+
+.virgen-flyout-wa-btn:hover {
+    background: #142B20;
+    transform: translateY(-1px);
+}
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 @media (max-width: 1100px) {
     .property-gallery-grid, .Opiniones .boxbox {
