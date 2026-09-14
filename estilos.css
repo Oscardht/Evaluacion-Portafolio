@@ -3153,7 +3153,7 @@ header.luxury-topbar .navbar a:hover::after {
     bottom: 60px;
     width: 120px;
     height: 130px;
-    background: url('img/POP-upPAGINAWEBok_trimmed.png') no-repeat bottom right / contain;
+    background: url('img/Ejemplo.png') no-repeat bottom right / contain;
     opacity: 0.13;
     pointer-events: none;
     z-index: 0;
@@ -3403,7 +3403,7 @@ header.luxury-topbar .navbar a:hover::after {
 .virgen-floating-dock {
     position: fixed;
     bottom: 2.2rem;
-    right: 0;
+    right: 1.2rem;
     z-index: 2200;
     display: flex;
     align-items: flex-end;
@@ -3416,54 +3416,56 @@ header.luxury-topbar .navbar a:hover::after {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     cursor: pointer;
     pointer-events: auto;
-    padding-right: 0.2rem;
+    padding: 0.2rem;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-    filter: drop-shadow(-4px 6px 16px rgba(184, 142, 62, 0.38)) 
-            drop-shadow(-2px 4px 10px rgba(26, 22, 18, 0.28));
+    filter: drop-shadow(0 6px 18px rgba(184, 142, 62, 0.45)) 
+            drop-shadow(0 4px 12px rgba(26, 22, 18, 0.3));
 }
 
 .virgen-tab-trigger:hover {
-    transform: translateX(-8px) scale(1.03);
-    filter: drop-shadow(-6px 8px 22px rgba(184, 142, 62, 0.6)) 
-            drop-shadow(-3px 5px 14px rgba(26, 22, 18, 0.4));
+    transform: translateY(-6px) scale(1.04);
+    filter: drop-shadow(0 10px 26px rgba(184, 142, 62, 0.7)) 
+            drop-shadow(0 6px 16px rgba(26, 22, 18, 0.45));
 }
 
-/* Imagen recortada del Manto */
+/* Imagen completa del Manto Sagrado */
 .virgen-mantle-img {
-    height: clamp(100px, 14vh, 135px);
+    height: clamp(105px, 15vh, 145px);
     width: auto;
     display: block;
     object-fit: contain;
-    object-position: right bottom;
+    object-position: center bottom;
     user-select: none;
 }
 
 /* Pastilla flotante con icono WhatsApp */
 .virgen-pulse-pill {
-    margin-top: -10px;
-    margin-right: 10px;
+    margin-top: -12px;
+    margin-right: 0;
     background: var(--emerald-column);
     color: #FFFFFF;
     font-family: 'Cinzel', serif;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.06em;
-    padding: 0.35rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--radius-pill);
-    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.35), 0 0 10px rgba(184, 142, 62, 0.3);
-    display: flex;
+    box-shadow: 0 4px 14px rgba(29, 61, 46, 0.4), 0 0 12px rgba(184, 142, 62, 0.35);
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .virgen-tab-trigger:hover .virgen-pulse-pill {
     background: #142B20;
     transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(29, 61, 46, 0.5), 0 0 16px rgba(184, 142, 62, 0.5);
 }
 
 /* Tarjeta Flyout que emerge a la izquierda de la Virgen */
@@ -3745,5 +3747,25 @@ header.luxury-topbar .navbar a:hover::after {
     }
     .shape-handle-logo {
         height: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    .virgen-floating-dock {
+        bottom: 1.2rem;
+        right: 0.6rem;
+    }
+    .virgen-mantle-img {
+        height: clamp(85px, 12vh, 105px);
+    }
+    .virgen-pulse-pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.65rem;
+        margin-top: -8px;
+    }
+    .virgen-flyout-card {
+        right: 0;
+        bottom: calc(100% + 12px);
+        width: min(290px, calc(100vw - 1.5rem));
     }
 }
