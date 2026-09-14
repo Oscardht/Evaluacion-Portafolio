@@ -3386,37 +3386,21 @@ header.luxury-topbar .navbar a:hover::after {
     transition: transform 0.5s ease;
 }
 
-/* Tira Verde No-Botón (Informativa/Estética) */
+/* Tira Verde No-Botón (Estética / Relleno) */
 .top-shape-green-strip {
     position: absolute;
     left: 64px;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    height: 36px;
-    background: var(--emerald-column);
+    height: 30px;
+    background: linear-gradient(135deg, var(--emerald-column), #142B20);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-pill);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.55rem;
-    color: #FFFFFF;
-    font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 0 1rem;
-    white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(20, 43, 32, 0.12);
+    box-shadow: 0 2px 8px rgba(20, 43, 32, 0.14);
     pointer-events: none; /* No es un botón */
     z-index: 1;
     transition: opacity 0.32s ease, transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.top-shape-green-strip i {
-    color: var(--gold-light);
-    font-size: 0.78rem;
 }
 
 /* Estado Hover / Activo: Se expande en Píldora Panorámica y la Tira se desplaza hacia la derecha y desvanece */
