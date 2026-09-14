@@ -43,6 +43,18 @@
     --radius-pill:         4px;                  /* Distintivos con esquinas nítidas */
     --border-hairline:     1px solid rgba(184, 142, 62, 0.38);
     --border-classical:    3px double rgba(184, 142, 62, 0.55);
+
+    /* Estilo Victoriano con Vidrios de Iglesia (Inspirado en POP-upPAGINAWEBok / Virgen del Valle) */
+    --vitral-obsidian:     #0B0B0E; /* Carbón profundo de nave de basílica */
+    --vitral-cyan:         #00C9DB; /* Turquesa sacro luminoso del vitral de la Virgen */
+    --vitral-cyan-deep:    #009BB0; /* Turquesa mineral */
+    --vitral-sapphire:     #124386; /* Azul zafiro catedralicio de rosetones */
+    --vitral-gold:         #F3C64D; /* Pan de oro sagrado y orfebrería de la corona */
+    --vitral-amber:        #E5A93C; /* Ámbar dorado cálido */
+    --vitral-lead:         #181820; /* Plomo de unión y contorno de vitral */
+    --vitral-silver:       #F0F3F6; /* Trazo de luz y plata */
+    --vitral-glow-cyan:    0 0 24px rgba(0, 201, 219, 0.45);
+    --vitral-glow-gold:    0 0 20px rgba(243, 198, 77, 0.45);
 }
 
 /* ===== RESET & TIPOGRAFÍA BASE ===== */
@@ -3099,369 +3111,183 @@ header.luxury-topbar .navbar a:hover::after {
 }
 
 /* ==========================================================================
-   PESTAÑA POP-UP Y DRAWER DE NAVEGACIÓN LATERAL D'ALROC
-   Emblema Vectorial: Triángulo Arquitectónico con Corona en el Vértice
+   PESTAÑA POP-UP SACRA D'ALROC — MANTO Y CORONA (ESTILO VIDRIOS DE IGLESIA)
+   Inspirado fielmente en POP-upPAGINAWEBok.png y devoción a la Virgen del Valle
    ========================================================================== */
 
-/* 1. Fondo Oscurecido / Backdrop del Pop-up */
-.side-drawer-backdrop {
+/* 1. Velo de Penumbra Sacra / Backdrop */
+.church-popup-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(22, 19, 16, 0.58);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 2100;
+    background: rgba(8, 8, 12, 0.62);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2200;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.side-drawer-backdrop.active {
+.church-popup-backdrop.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* 2. Contenedor Maestro del Pop-up (Se oculta y sobresale desde la derecha) */
-.side-drawer-container {
+/* 2. Contenedor Maestro del Pop-up (Se oculta y sobresale desde el margen derecho) */
+.church-popup-container {
     position: fixed;
-    top: 0;
+    top: 50%;
     right: 0;
-    width: 380px;
-    max-width: 88vw;
-    height: 100vh;
-    height: 100dvh;
-    z-index: 2200;
-    transform: translateX(100%);
-    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-
-.side-drawer-container.active {
-    transform: translateX(0);
+    transform: translateY(-50%) translateX(calc(100% - 62px));
+    z-index: 2300;
+    transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: auto;
-}
-
-/* 3. La Pestaña que Sobresale: FORMA PURA DEL TRIÁNGULO CON LA CORONA */
-.crest-tab-handle {
-    position: absolute;
-    left: -82px;
-    top: 26%;
-    transform: translateY(-50%);
-    width: 88px;
-    height: 88px;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding: 0;
-    cursor: pointer;
-    pointer-events: auto;
-    z-index: 2210;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     align-items: center;
-    justify-content: center;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-.crest-tab-handle:hover {
-    transform: translateY(-50%) translateX(-8px);
+/* Estado Activo: La figura sobresale completa desde la derecha */
+.church-popup-container.active {
+    transform: translateY(-50%) translateX(0);
 }
 
-.crest-tab-handle .crest-shape-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(-4px 6px 14px rgba(24, 21, 18, 0.42));
-    transition: filter 0.3s ease, transform 0.3s ease;
+/* 3. Envoltura de la Figura Sagrada */
+.church-mantle-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(-6px 8px 18px rgba(0, 201, 219, 0.3)) 
+            drop-shadow(-3px 5px 14px rgba(243, 198, 77, 0.38))
+            drop-shadow(-8px 14px 28px rgba(10, 10, 14, 0.75));
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.church-popup-container:not(.active) .church-mantle-wrapper:hover {
+    transform: translateX(-12px);
+    filter: drop-shadow(-8px 12px 26px rgba(0, 201, 219, 0.6)) 
+            drop-shadow(-4px 7px 18px rgba(243, 198, 77, 0.65))
+            drop-shadow(-10px 18px 34px rgba(10, 10, 14, 0.9));
+}
+
+/* Resplandor pulsante de Vitral de Iglesia cuando está replegado */
+@keyframes churchStainedGlassPulse {
+    0%, 100% {
+        filter: drop-shadow(-5px 7px 16px rgba(0, 201, 219, 0.3)) 
+                drop-shadow(-3px 4px 12px rgba(243, 198, 77, 0.38));
+    }
+    50% {
+        filter: drop-shadow(-8px 11px 26px rgba(0, 201, 219, 0.65)) 
+                drop-shadow(-4px 7px 20px rgba(243, 198, 77, 0.68));
+    }
+}
+
+.church-popup-container:not(.active) .church-mantle-wrapper {
+    animation: churchStainedGlassPulse 3.8s ease-in-out infinite;
+}
+
+/* 4. Imagen Exacta del Manto y Corona (POP-upPAGINAWEBok) */
+.church-mantle-img {
+    height: min(82vh, 720px);
+    width: auto;
+    max-width: 50vw;
     display: block;
-}
-
-.crest-tab-handle:hover .crest-shape-svg {
-    filter: drop-shadow(-6px 8px 22px rgba(184, 142, 62, 0.65));
-    transform: scale(1.05);
-}
-
-@keyframes crestShimmer {
-    0%, 100% { filter: drop-shadow(-4px 6px 14px rgba(24, 21, 18, 0.42)); }
-    50% { filter: drop-shadow(-5px 7px 18px rgba(184, 142, 62, 0.55)); }
-}
-
-.side-drawer-container:not(.active) .crest-tab-handle .crest-shape-svg {
-    animation: crestShimmer 4s ease-in-out infinite;
-}
-
-/* 4. Panel Interior de Navegación */
-.side-drawer-panel {
-    width: 100%;
-    height: 100%;
-    background: var(--bg-canvas);
-    border-left: 2px solid var(--gold);
-    outline: 1px solid rgba(184, 142, 62, 0.3);
-    outline-offset: -6px;
-    box-shadow: -15px 0 45px rgba(22, 19, 16, 0.35);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
+    object-fit: contain;
+    object-position: right center;
     pointer-events: auto;
 }
 
-/* Encabezado del Pop-up con Emblema Heráldico */
-.side-drawer-header {
-    position: relative;
-    padding: 2.8rem 2.4rem 1.6rem 2.4rem;
-    text-align: center;
-    background: linear-gradient(180deg, #FCFAF6 0%, #EEE5D5 100%);
-    border-bottom: 1px solid var(--gold-border);
-}
-
-.side-drawer-close {
+/* 5. Joya / Botón de Retracción y Cierre */
+.church-mantle-close {
     position: absolute;
-    top: 1.4rem;
-    right: 1.4rem;
+    top: 24px;
+    right: 20px;
     width: 36px;
     height: 36px;
-    border-radius: 4px;
-    background: var(--bg-surface);
-    border: 1px solid var(--gold-border);
-    color: var(--text-headline);
-    font-size: 1.5rem;
+    border-radius: 50%;
+    background: rgba(11, 11, 14, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid var(--vitral-gold, #F3C64D);
+    color: var(--vitral-gold, #F3C64D);
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.25s ease;
+    box-shadow: 0 0 16px rgba(0, 201, 219, 0.45);
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-.side-drawer-close:hover {
-    background: var(--emerald-column);
+.church-popup-container.active .church-mantle-close {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.church-mantle-close:hover {
+    transform: scale(1.14);
+    background: #14141C;
     color: #FFFFFF;
-    border-color: var(--emerald-column);
-    transform: rotate(90deg);
+    border-color: #00C9DB;
+    box-shadow: 0 0 22px rgba(0, 201, 219, 0.8), 0 0 12px rgba(243, 198, 77, 0.65);
 }
 
-.drawer-crest-img {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;
-    margin: 0 auto 1.2rem auto;
-    display: block;
-    filter: drop-shadow(0 4px 8px rgba(140, 104, 32, 0.25));
-}
-
-.drawer-title-main {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.1rem;
-    font-weight: 800;
-    color: var(--text-headline);
-    letter-spacing: 0.04em;
-    display: block;
-}
-
-.drawer-title-main em {
-    color: var(--gold-dark);
-    font-style: italic;
-    font-weight: 700;
-}
-
-.drawer-title-sub {
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 0.35rem;
-}
-
-.drawer-divider {
-    margin: 1.4rem auto 0 auto !important;
-}
-
-/* Navegación Principal en el Drawer */
-.drawer-nav {
-    padding: 2rem 1.8rem;
+/* 6. Pestaña Indicadora Flotante cuando está retraído */
+.church-mantle-tab-hint {
+    position: absolute;
+    left: -36px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 92px;
+    background: linear-gradient(180deg, rgba(14, 14, 19, 0.94) 0%, rgba(20, 20, 28, 0.94) 100%);
+    border: 1px solid var(--vitral-gold, #F3C64D);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
-    flex: 1;
-}
-
-.drawer-nav-item {
-    display: flex;
-    align-items: center;
-    gap: 1.4rem;
-    padding: 1.2rem 1.4rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--gold-border);
-    outline: 1px solid rgba(184, 142, 62, 0.2);
-    outline-offset: -4px;
-    border-radius: var(--radius-card);
-    text-decoration: none;
-    color: var(--text-headline);
-    transition: all 0.25s ease;
-    position: relative;
-}
-
-.drawer-nav-item:hover {
-    background: #FFFDF9;
-    transform: translateX(-4px);
-    border-color: var(--gold-dark);
-    outline-color: rgba(184, 142, 62, 0.6);
-    box-shadow: 0 4px 14px rgba(40, 34, 25, 0.08);
-}
-
-.drawer-nav-num {
-    font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--gold-dark);
-    width: 26px;
-    text-align: center;
-}
-
-.drawer-nav-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.drawer-nav-text strong {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: var(--text-headline);
-    letter-spacing: 0.02em;
-}
-
-.drawer-nav-text span {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-top: 0.15rem;
-}
-
-.drawer-nav-item i {
-    color: var(--gold-dark);
-    font-size: 1.2rem;
-    transition: transform 0.25s ease;
-}
-
-.drawer-nav-item:hover i {
-    transform: translateX(4px);
-    color: var(--emerald-column);
-}
-
-/* Accesos Directos por Colección */
-.drawer-shortcuts-wrap {
-    padding: 0 1.8rem 1.6rem 1.8rem;
-}
-
-.drawer-section-heading {
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: var(--gold-dark);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 1rem;
-}
-
-.drawer-pills-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-}
-
-.drawer-pill {
-    padding: 0.8rem 1rem;
-    background: var(--bg-card-warm);
-    border: 1px solid var(--gold-border);
-    border-radius: var(--radius-card);
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-headline);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.drawer-pill i {
-    color: var(--gold-dark);
-    font-size: 1.1rem;
-}
-
-.drawer-pill:hover {
-    background: var(--gold-dark);
-    color: #FFFFFF;
-    border-color: var(--gold-dark);
-}
-
-.drawer-pill:hover i {
-    color: #FFFFFF;
-}
-
-/* Pie del Pop-up con Canales Directos */
-.drawer-footer {
-    padding: 1.8rem;
-    background: linear-gradient(180deg, #EEE5D5 0%, #E2D7C2 100%);
-    border-top: 1px solid var(--gold-border);
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.drawer-btn-wa {
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.9rem;
-    background: var(--emerald-column);
-    color: #FFFFFF;
-    padding: 1.1rem 1.6rem;
-    border-radius: var(--radius-card);
+    gap: 6px;
+    box-shadow: -4px 0 14px rgba(0, 201, 219, 0.35);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.church-popup-container.active .church-mantle-tab-hint {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.church-mantle-tab-hint i {
+    color: #F3C64D;
+    font-size: 1.1rem;
+    animation: churchHintBounce 2s ease-in-out infinite;
+}
+
+.church-mantle-tab-hint span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
     font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: #F0F3F6;
     text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.3);
-    transition: all 0.25s ease;
 }
 
-.drawer-btn-wa:hover {
-    background: #142B20;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(29, 61, 46, 0.4);
-}
-
-.drawer-phone-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.15rem;
-    color: var(--text-muted);
-}
-
-.drawer-phone-link {
-    color: var(--text-headline);
-    font-weight: 700;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.drawer-phone-link i {
-    color: var(--gold-dark);
+@keyframes churchHintBounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-3px); }
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
@@ -3618,14 +3444,19 @@ header.luxury-topbar .navbar a:hover::after {
         justify-content: center;
     }
 
-    .side-drawer-container {
-        width: 100%;
-        max-width: 100vw;
+    .church-mantle-img {
+        height: min(68vh, 460px);
+        max-width: 82vw;
     }
-    .crest-tab-handle {
-        left: -68px;
-        top: 24%;
-        width: 72px;
-        height: 72px;
+    .church-popup-container {
+        transform: translateY(-50%) translateX(calc(100% - 50px));
+    }
+    .church-popup-container.active {
+        transform: translateY(-50%) translateX(0);
+    }
+    .church-mantle-tab-hint {
+        left: -32px;
+        width: 30px;
+        height: 78px;
     }
 }
