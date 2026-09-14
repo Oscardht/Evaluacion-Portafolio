@@ -3237,6 +3237,21 @@ header.luxury-topbar .navbar a:hover::after {
     transition: color 0.2s ease;
 }
 
+.top-shape-tagline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 0.28rem;
+    display: block;
+    line-height: 1.25;
+    transition: color 0.2s ease;
+}
+
+.top-shape-brand-link:hover .top-shape-tagline {
+    color: var(--text-headline);
+}
+
 .top-shape-close-btn {
     width: 32px;
     height: 32px;
