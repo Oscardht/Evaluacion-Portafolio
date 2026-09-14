@@ -107,112 +107,162 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=victorian-2.1">
+    <link rel="stylesheet" href="estilos.css?v=victorian-2.2">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-    <link rel="stylesheet" href="seccion3.css?v=victorian-2.1">
+    <link rel="stylesheet" href="seccion3.css?v=victorian-2.2">
 </head>
 
 <body>
-    <!-- PESTAÑA POP-UP DESDE LA DERECHA (VECTOR TRIÁNGULO Y CORONA) -->
-    <button class="side-tab-trigger" id="side-tab-trigger" aria-label="Abrir Menú de Navegación D'ALROC" aria-expanded="false" aria-controls="side-nav-drawer" title="Menú de Navegación Exclusivo">
-        <img src="img/crest_triangle_crown.svg" alt="Emblema Triángulo y Corona" class="side-tab-crest">
-        <div class="side-tab-label-box">
-            <span class="side-tab-label">MENÚ</span>
-            <span class="side-tab-sub">ALROC</span>
-        </div>
-        <i class="fa-solid fa-chevron-left side-tab-arrow"></i>
-    </button>
-
-    <!-- BACKDROP Y DRAWER DE NAVEGACIÓN LATERAL (POP-UP CERRABLE DESDE LA DERECHA) -->
+    <!-- BACKDROP DEL POP-UP LATERAL -->
     <div class="side-drawer-backdrop" id="side-drawer-backdrop" aria-hidden="true"></div>
-    <aside class="side-nav-drawer side-drawer-panel" id="side-nav-drawer" aria-label="Navegación Principal D'ALROC" aria-hidden="true">
-        <!-- Encabezado con Vector Triángulo + Corona y Botón de Cierre -->
-        <div class="side-drawer-header">
-            <button class="side-drawer-close" id="side-drawer-close" aria-label="Cerrar Menú">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <img src="img/crest_triangle_crown.svg" alt="Emblema Imperial D'ALROC" class="drawer-crest-img">
-            <span class="drawer-title-main">INVERSIONES D'<em>ALROC</em></span>
-            <span class="drawer-title-sub">Navegación & Curaduría Insular</span>
-            <div class="gold-divider drawer-divider"></div>
-        </div>
 
-        <!-- Navegación Principal (Mirror de la Navbar en formato Pop-up) -->
-        <nav class="drawer-nav">
-            <a href="#Historia" class="drawer-nav-item" data-section="Historia">
-                <span class="drawer-nav-num">01</span>
-                <div class="drawer-nav-text">
-                    <strong>Inicio & Mercado</strong>
-                    <span>Barómetro insular y bienvenida</span>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#Ruta" class="drawer-nav-item" data-section="Ruta">
-                <span class="drawer-nav-num">02</span>
-                <div class="drawer-nav-text">
-                    <strong>Ruta de Inversión</strong>
-                    <span>Curaduría, blindaje y protocolización</span>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#Galeria" class="drawer-nav-item" data-section="Galeria">
-                <span class="drawer-nav-num">03</span>
-                <div class="drawer-nav-text">
-                    <strong>Cartera de Inmuebles</strong>
-                    <span>Villas, casas y apartamentos</span>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#Opiniones" class="drawer-nav-item" data-section="Opiniones">
-                <span class="drawer-nav-num">04</span>
-                <div class="drawer-nav-text">
-                    <strong>Servicios Premium</strong>
-                    <span>Asesoría personalizada y gestión</span>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#Legado" class="drawer-nav-item" data-section="Legado">
-                <span class="drawer-nav-num">05</span>
-                <div class="drawer-nav-text">
-                    <strong>Lic. Claudia Di Diomede</strong>
-                    <span>Corredora certificada & colegiatura</span>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="#Contacto" class="drawer-nav-item" data-section="Contacto">
-                <span class="drawer-nav-num">06</span>
-                <div class="drawer-nav-text">
-                    <strong>Canales de Contacto</strong>
-                    <span>WhatsApp directo, correo y ubicación</span>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </nav>
+    <!-- CONTENEDOR POP-UP DESDE LA DERECHA -->
+    <div class="side-drawer-container" id="side-drawer-container" aria-hidden="true">
+        <!-- PESTAÑA QUE SOBRESALE Y SE OCULTA: FORMA DEL TRIÁNGULO CON LA CORONA EN EL VÉRTICE -->
+        <button class="crest-tab-handle" id="side-tab-trigger" aria-label="Abrir o Cerrar Menú de Navegación D'ALROC" aria-expanded="false" title="Menú D'ALROC (Triángulo & Corona)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" class="crest-shape-svg">
+              <defs>
+                <linearGradient id="goldMetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F2E6BF"/>
+                  <stop offset="25%" stop-color="#D8B560"/>
+                  <stop offset="60%" stop-color="#B38730"/>
+                  <stop offset="100%" stop-color="#7A5618"/>
+                </linearGradient>
+                <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FCFAF6"/>
+                  <stop offset="50%" stop-color="#F6F1E7"/>
+                  <stop offset="100%" stop-color="#EEE5D5"/>
+                </linearGradient>
+                <linearGradient id="emeraldGem" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#2D5E48"/>
+                  <stop offset="100%" stop-color="#142B20"/>
+                </linearGradient>
+                <filter id="crestShadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="-3" dy="4" stdDeviation="4" flood-color="rgba(24, 21, 18, 0.45)"/>
+                </filter>
+              </defs>
+              <g filter="url(#crestShadow)">
+                <!-- Triángulo Principal Victoriano -->
+                <polygon points="55,34 10,98 100,98" fill="url(#parchmentBg)" stroke="url(#goldMetalGrad)" stroke-width="2.8" stroke-linejoin="round"/>
+                <!-- Filete Doble Interior -->
+                <polygon points="55,44 19,92 91,92" fill="none" stroke="url(#goldMetalGrad)" stroke-width="1" stroke-opacity="0.75" stroke-linejoin="round"/>
+                <!-- Textos en Tipografía Heráldica Cinzel -->
+                <text x="55" y="73" font-family="'Cinzel', serif" font-size="9.5" font-weight="900" fill="#161310" text-anchor="middle" letter-spacing="1.5">MENÚ</text>
+                <line x1="38" y1="78" x2="72" y2="78" stroke="url(#goldMetalGrad)" stroke-width="0.8" stroke-opacity="0.65"/>
+                <text x="55" y="88" font-family="'Cinzel', serif" font-size="7.5" font-weight="700" fill="#8C6820" text-anchor="middle" letter-spacing="1.8">ALROC</text>
+                <polygon points="55,52 57.5,56 55,60 52.5,56" fill="url(#goldMetalGrad)"/>
+                <circle cx="10" cy="98" r="2.5" fill="url(#goldMetalGrad)"/>
+                <circle cx="100" cy="98" r="2.5" fill="url(#goldMetalGrad)"/>
+                <!-- Corona Victoriana en el Vértice Superior (55,34) -->
+                <rect x="39" y="29" width="32" height="6" rx="1.5" fill="url(#goldMetalGrad)" stroke="#523A0E" stroke-width="0.6"/>
+                <circle cx="43.5" cy="32" r="1.1" fill="#FFFFFF"/>
+                <circle cx="49" cy="32" r="1.2" fill="url(#emeraldGem)"/>
+                <circle cx="55" cy="32" r="1.4" fill="#FFFFFF"/>
+                <circle cx="61" cy="32" r="1.2" fill="url(#emeraldGem)"/>
+                <circle cx="66.5" cy="32" r="1.1" fill="#FFFFFF"/>
+                <path d="M 39,29 L 36,17 Q 41,21 46,14 Q 51,20 55,7 Q 59,20 64,14 Q 69,21 74,17 L 71,29 Z" fill="url(#goldMetalGrad)" stroke="#523A0E" stroke-width="0.8" stroke-linejoin="round"/>
+                <path d="M 42,29 Q 55,19 68,29" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+                <circle cx="36" cy="16" r="1.8" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+                <circle cx="46" cy="13" r="1.9" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+                <circle cx="55" cy="6" r="2.4" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.8"/>
+                <line x1="55" y1="1" x2="55" y2="4.5" stroke="url(#goldMetalGrad)" stroke-width="1.1" stroke-linecap="round"/>
+                <line x1="53" y1="2.6" x2="57" y2="2.6" stroke="url(#goldMetalGrad)" stroke-width="1.1" stroke-linecap="round"/>
+                <circle cx="64" cy="13" r="1.9" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+                <circle cx="74" cy="16" r="1.8" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+              </g>
+            </svg>
+        </button>
 
-        <!-- Accesos Directos a Colecciones del Portafolio -->
-        <div class="drawer-shortcuts-wrap">
-            <span class="drawer-section-heading"><i class="fa-solid fa-gem"></i> Colecciones Selectas</span>
-            <div class="drawer-pills-row">
-                <a href="#Galeria" class="drawer-pill" data-filter="villas"><i class="fa-solid fa-landmark"></i> Villas</a>
-                <a href="#Galeria" class="drawer-pill" data-filter="playas"><i class="fa-solid fa-water"></i> Playa</a>
-                <a href="#Galeria" class="drawer-pill" data-filter="townhouses"><i class="fa-solid fa-house-chimney"></i> Townhouses</a>
-                <a href="#Galeria" class="drawer-pill" data-filter="terrenos"><i class="fa-solid fa-chart-line"></i> Terrenos</a>
+        <!-- Panel Lateral de Navegación (Pop-up desde la derecha) -->
+        <aside class="side-drawer-panel" id="side-nav-drawer" aria-label="Navegación Principal D'ALROC">
+            <!-- Encabezado con Vector Triángulo + Corona y Botón de Cierre -->
+            <div class="side-drawer-header">
+                <button class="side-drawer-close" id="side-drawer-close" aria-label="Cerrar Menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <img src="img/crest_triangle_crown.svg" alt="Emblema Imperial D'ALROC" class="drawer-crest-img">
+                <span class="drawer-title-main">INVERSIONES D'<em>ALROC</em></span>
+                <span class="drawer-title-sub">Navegación & Curaduría Insular</span>
+                <div class="gold-divider drawer-divider"></div>
             </div>
-        </div>
 
-        <!-- Pie con Contacto Inmediato -->
-        <div class="drawer-footer">
-            <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="drawer-btn-wa">
-                <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp
-            </a>
-            <div class="drawer-phone-info">
-                <a href="tel:+584147907819" class="drawer-phone-link">
-                    <i class="fa-solid fa-phone"></i> +58 414 790-7819
+            <!-- Navegación Principal (Mirror de la Navbar en formato Pop-up) -->
+            <nav class="drawer-nav">
+                <a href="#Historia" class="drawer-nav-item" data-section="Historia">
+                    <span class="drawer-nav-num">01</span>
+                    <div class="drawer-nav-text">
+                        <strong>Inicio & Mercado</strong>
+                        <span>Barómetro insular y bienvenida</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <span class="drawer-schedule"><i class="fa-regular fa-clock"></i> Lun - Sáb 08:30 - 18:30</span>
+                <a href="#Ruta" class="drawer-nav-item" data-section="Ruta">
+                    <span class="drawer-nav-num">02</span>
+                    <div class="drawer-nav-text">
+                        <strong>Ruta de Inversión</strong>
+                        <span>Curaduría, blindaje y protocolización</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#Galeria" class="drawer-nav-item" data-section="Galeria">
+                    <span class="drawer-nav-num">03</span>
+                    <div class="drawer-nav-text">
+                        <strong>Cartera de Inmuebles</strong>
+                        <span>Villas, casas y apartamentos</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#Opiniones" class="drawer-nav-item" data-section="Opiniones">
+                    <span class="drawer-nav-num">04</span>
+                    <div class="drawer-nav-text">
+                        <strong>Servicios Premium</strong>
+                        <span>Asesoría personalizada y gestión</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#Legado" class="drawer-nav-item" data-section="Legado">
+                    <span class="drawer-nav-num">05</span>
+                    <div class="drawer-nav-text">
+                        <strong>Lic. Claudia Di Diomede</strong>
+                        <span>Corredora certificada & colegiatura</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#Contacto" class="drawer-nav-item" data-section="Contacto">
+                    <span class="drawer-nav-num">06</span>
+                    <div class="drawer-nav-text">
+                        <strong>Canales de Contacto</strong>
+                        <span>WhatsApp directo, correo y ubicación</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </nav>
+
+            <!-- Accesos Directos a Colecciones del Portafolio -->
+            <div class="drawer-shortcuts-wrap">
+                <span class="drawer-section-heading"><i class="fa-solid fa-gem"></i> Colecciones Selectas</span>
+                <div class="drawer-pills-row">
+                    <a href="#Galeria" class="drawer-pill" data-filter="villas"><i class="fa-solid fa-landmark"></i> Villas</a>
+                    <a href="#Galeria" class="drawer-pill" data-filter="playas"><i class="fa-solid fa-water"></i> Playa</a>
+                    <a href="#Galeria" class="drawer-pill" data-filter="townhouses"><i class="fa-solid fa-house-chimney"></i> Townhouses</a>
+                    <a href="#Galeria" class="drawer-pill" data-filter="terrenos"><i class="fa-solid fa-chart-line"></i> Terrenos</a>
+                </div>
             </div>
-        </div>
-    </aside>
+
+            <!-- Pie con Contacto Inmediato -->
+            <div class="drawer-footer">
+                <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="drawer-btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp
+                </a>
+                <div class="drawer-phone-info">
+                    <a href="tel:+584147907819" class="drawer-phone-link">
+                        <i class="fa-solid fa-phone"></i> +58 414 790-7819
+                    </a>
+                    <span class="drawer-schedule"><i class="fa-regular fa-clock"></i> Lun - Sáb 08:30 - 18:30</span>
+                </div>
+            </div>
+        </aside>
+    </div>
 
     <!-- BRÚJULA & INDICADOR FLOTANTE DE RECORRIDO (SCROLL COMPASS) -->
     <aside class="scroll-compass-dock" id="scroll-compass" aria-label="Navegación de recorrido">
@@ -1066,34 +1116,43 @@
 
             // --- Lógica de Pestaña Pop-up y Drawer de Navegación Lateral (Triángulo & Corona) ---
             const sideTabTrigger = document.getElementById('side-tab-trigger');
-            const sideDrawer = document.getElementById('side-nav-drawer');
+            const sideDrawerContainer = document.getElementById('side-drawer-container');
             const sideBackdrop = document.getElementById('side-drawer-backdrop');
             const sideDrawerClose = document.getElementById('side-drawer-close');
 
             const openSideDrawer = () => {
-                if (sideDrawer && sideBackdrop) {
-                    sideDrawer.classList.add('active');
+                if (sideDrawerContainer && sideBackdrop) {
+                    sideDrawerContainer.classList.add('active');
                     sideBackdrop.classList.add('active');
-                    sideDrawer.setAttribute('aria-hidden', 'false');
+                    sideDrawerContainer.setAttribute('aria-hidden', 'false');
                     if (sideTabTrigger) sideTabTrigger.setAttribute('aria-expanded', 'true');
                     document.body.style.overflow = 'hidden';
                 }
             };
 
             const closeSideDrawer = () => {
-                if (sideDrawer && sideBackdrop) {
-                    sideDrawer.classList.remove('active');
+                if (sideDrawerContainer && sideBackdrop) {
+                    sideDrawerContainer.classList.remove('active');
                     sideBackdrop.classList.remove('active');
-                    sideDrawer.setAttribute('aria-hidden', 'true');
+                    sideDrawerContainer.setAttribute('aria-hidden', 'true');
                     if (sideTabTrigger) sideTabTrigger.setAttribute('aria-expanded', 'false');
                     document.body.style.overflow = '';
+                }
+            };
+
+            const toggleSideDrawer = () => {
+                if (!sideDrawerContainer) return;
+                if (sideDrawerContainer.classList.contains('active')) {
+                    closeSideDrawer();
+                } else {
+                    openSideDrawer();
                 }
             };
 
             if (sideTabTrigger) {
                 sideTabTrigger.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    openSideDrawer();
+                    toggleSideDrawer();
                 });
             }
 
@@ -1109,7 +1168,7 @@
             }
 
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && sideDrawer && sideDrawer.classList.contains('active')) {
+                if (e.key === 'Escape' && sideDrawerContainer && sideDrawerContainer.classList.contains('active')) {
                     closeSideDrawer();
                 }
             });

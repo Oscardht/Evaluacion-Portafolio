@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" width="100%" height="100%" class="crest-shape-svg">
+  <defs>
+    <linearGradient id="goldMetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2E6BF"/>
+      <stop offset="25%" stop-color="#D8B560"/>
+      <stop offset="60%" stop-color="#B38730"/>
+      <stop offset="100%" stop-color="#7A5618"/>
+    </linearGradient>
+    <linearGradient id="parchmentBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAF6"/>
+      <stop offset="50%" stop-color="#F6F1E7"/>
+      <stop offset="100%" stop-color="#EEE5D5"/>
+    </linearGradient>
+    <linearGradient id="emeraldGem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D5E48"/>
+      <stop offset="100%" stop-color="#142B20"/>
+    </linearGradient>
+    <filter id="crestShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="-3" dy="4" stdDeviation="4" flood-color="rgba(24, 21, 18, 0.45)"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#crestShadow)">
+    <!-- TRIÁNGULO PRINCIPAL VICTORIANO -->
+    <!-- Fondo Pergamino Cálido -->
+    <polygon points="55,34 10,98 100,98" fill="url(#parchmentBg)" stroke="url(#goldMetalGrad)" stroke-width="2.8" stroke-linejoin="round"/>
+    
+    <!-- Filete Doble Interior Victoriano (Hairline) -->
+    <polygon points="55,44 19,92 91,92" fill="none" stroke="url(#goldMetalGrad)" stroke-width="1" stroke-opacity="0.75" stroke-linejoin="round"/>
+
+    <!-- Textos en Tipografía Heráldica Cinzel -->
+    <text x="55" y="73" font-family="'Cinzel', serif" font-size="9.5" font-weight="900" fill="#161310" text-anchor="middle" letter-spacing="1.5">MENÚ</text>
+    <line x1="38" y1="78" x2="72" y2="78" stroke="url(#goldMetalGrad)" stroke-width="0.8" stroke-opacity="0.65"/>
+    <text x="55" y="88" font-family="'Cinzel', serif" font-size="7.5" font-weight="700" fill="#8C6820" text-anchor="middle" letter-spacing="1.8">ALROC</text>
+    
+    <!-- Florón / Diamante en vértice interior -->
+    <polygon points="55,52 57.5,56 55,60 52.5,56" fill="url(#goldMetalGrad)"/>
+
+    <!-- Remates de Esquina de la Base -->
+    <circle cx="10" cy="98" r="2.5" fill="url(#goldMetalGrad)"/>
+    <circle cx="100" cy="98" r="2.5" fill="url(#goldMetalGrad)"/>
+
+    <!-- ============================================== -->
+    <!-- CORONA VICTORIANA EN EL VÉRTICE SUPERIOR (55,34) -->
+    <!-- ============================================== -->
+    <!-- Cintillo / Diadema Real -->
+    <rect x="39" y="29" width="32" height="6" rx="1.5" fill="url(#goldMetalGrad)" stroke="#523A0E" stroke-width="0.6"/>
+    <!-- Gemas en el Cintillo -->
+    <circle cx="43.5" cy="32" r="1.1" fill="#FFFFFF"/>
+    <circle cx="49" cy="32" r="1.2" fill="url(#emeraldGem)"/>
+    <circle cx="55" cy="32" r="1.4" fill="#FFFFFF"/>
+    <circle cx="61" cy="32" r="1.2" fill="url(#emeraldGem)"/>
+    <circle cx="66.5" cy="32" r="1.1" fill="#FFFFFF"/>
+
+    <!-- Cuerpo y Florones de la Corona -->
+    <path d="M 39,29 
+             L 36,17 
+             Q 41,21 46,14 
+             Q 51,20 55,7 
+             Q 59,20 64,14 
+             Q 69,21 74,17 
+             L 71,29 Z" 
+          fill="url(#goldMetalGrad)" 
+          stroke="#523A0E" 
+          stroke-width="0.8" 
+          stroke-linejoin="round"/>
+
+    <!-- Arco Interior y Filigrana -->
+    <path d="M 42,29 Q 55,19 68,29" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+
+    <!-- Perlas & Cúspide de la Corona -->
+    <circle cx="36" cy="16" r="1.8" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+    <circle cx="46" cy="13" r="1.9" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+    
+    <!-- Cúspide Central: Orbe y Cruz Imperial -->
+    <circle cx="55" cy="6" r="2.4" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.8"/>
+    <line x1="55" y1="1" x2="55" y2="4.5" stroke="url(#goldMetalGrad)" stroke-width="1.1" stroke-linecap="round"/>
+    <line x1="53" y1="2.6" x2="57" y2="2.6" stroke="url(#goldMetalGrad)" stroke-width="1.1" stroke-linecap="round"/>
+    
+    <circle cx="64" cy="13" r="1.9" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+    <circle cx="74" cy="16" r="1.8" fill="#FFFFFF" stroke="url(#goldMetalGrad)" stroke-width="0.7"/>
+  </g>
+</svg>
