@@ -3216,8 +3216,15 @@ header.luxury-topbar .navbar a:hover::after {
     font-weight: 700;
     color: var(--gold-dark);
     letter-spacing: 0.14em;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     margin-bottom: 0.2rem;
+}
+
+.top-shape-kicker i {
+    font-size: 0.72rem;
+    color: var(--gold-dark);
 }
 
 .top-shape-title {
@@ -3709,20 +3716,14 @@ header.luxury-topbar .navbar a:hover::after {
 
 .vcard-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
+    font-size: 0.64rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    line-height: 1.1;
+    letter-spacing: 0.06em;
+    display: block;
+    line-height: 1.15;
     margin-bottom: 0.2rem;
     white-space: nowrap;
-}
-
-.vcard-kicker i {
-    font-size: 0.58rem;
 }
 
 .vcard-name {
