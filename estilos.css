@@ -3188,40 +3188,53 @@ header.luxury-topbar .navbar a:hover::after {
     border-bottom: 1px solid var(--gold-border);
 }
 
-.top-shape-brand {
+.top-shape-brand-link {
     display: flex;
-    align-items: center;
-    gap: 0.9rem;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.22s ease, opacity 0.22s ease;
 }
 
-.top-shape-logo {
-    height: 38px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(184, 142, 62, 0.25));
+.top-shape-brand-link:hover {
+    opacity: 0.9;
+    transform: translateX(3px);
+}
+
+.top-shape-brand-link:hover .top-shape-title {
+    color: var(--emerald-column);
+}
+
+.top-shape-brand-link:hover .top-shape-title em {
+    color: var(--gold-dark);
 }
 
 .top-shape-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     display: block;
+    margin-bottom: 0.2rem;
 }
 
 .top-shape-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.55rem;
+    font-size: 1.85rem;
     font-weight: 800;
     color: var(--text-headline);
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
 }
 
 .top-shape-title em {
     color: var(--gold-dark);
     font-style: italic;
+    transition: color 0.2s ease;
 }
 
 .top-shape-close-btn {
@@ -3615,7 +3628,7 @@ header.luxury-topbar .navbar a:hover::after {
     position: absolute;
     bottom: 0;
     right: calc(100% + 14px);
-    width: 290px;
+    width: 298px;
     background: var(--bg-surface);
     border: 1.5px solid var(--gold);
     border-radius: 16px 16px 4px 16px;
@@ -3696,33 +3709,34 @@ header.luxury-topbar .navbar a:hover::after {
 
 .vcard-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 0.2rem;
+    white-space: nowrap;
 }
 
 .vcard-kicker i {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
 }
 
 .vcard-name {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-headline);
-    line-height: 1.18;
+    line-height: 1.15;
     margin-bottom: 0.25rem;
     white-space: nowrap;
 }
 
 .vcard-cert-tag {
-    font-size: 0.74rem;
+    font-size: 0.69rem;
     font-weight: 600;
     color: var(--emerald-column);
     background: var(--bg-card-warm);
@@ -3734,6 +3748,7 @@ header.luxury-topbar .navbar a:hover::after {
     gap: 0.28rem;
     width: fit-content;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .vcard-cert-tag i {
