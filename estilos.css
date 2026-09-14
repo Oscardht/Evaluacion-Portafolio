@@ -3560,7 +3560,7 @@ header.luxury-topbar .navbar a:hover::after {
 
 .vcard-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     font-weight: 700;
     color: var(--gold-dark);
     letter-spacing: 0.08em;
@@ -3568,74 +3568,75 @@ header.luxury-topbar .navbar a:hover::after {
     align-items: center;
     gap: 0.25rem;
     line-height: 1;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.2rem;
 }
 
 .vcard-kicker i {
-    font-size: 0.56rem;
+    font-size: 0.62rem;
 }
 
 .vcard-name {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 0.98rem;
+    font-size: 1.08rem;
     font-weight: 700;
     color: var(--text-headline);
     line-height: 1.15;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.2rem;
     white-space: nowrap;
 }
 
 .vcard-cert-tag {
-    font-size: 0.68rem;
+    font-size: 0.76rem;
     font-weight: 600;
     color: var(--emerald-column);
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-pill);
-    padding: 0.12rem 0.4rem;
+    padding: 0.15rem 0.45rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.3rem;
     width: fit-content;
     line-height: 1.2;
 }
 
 .vcard-cert-tag i {
     color: var(--gold-dark);
-    font-size: 0.65rem;
+    font-size: 0.72rem;
 }
 
 /* Divisor ornamental */
 .vcard-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(184, 142, 62, 0.4), transparent);
-    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, transparent, rgba(184, 142, 62, 0.45), transparent);
+    margin-bottom: 0.55rem;
 }
 
 /* Lista de Servicios compacta */
 .vcard-services-list {
     display: flex;
     flex-direction: column;
-    gap: 0.32rem;
-    margin-bottom: 0.75rem;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
     text-align: left;
 }
 
 .vcard-service-row {
     display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    font-size: 0.73rem;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.82rem;
     color: var(--text-body);
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
 .vcard-service-row > i {
-    font-size: 0.75rem;
+    font-size: 0.84rem;
     color: var(--emerald-column);
     flex-shrink: 0;
-    width: 14px;
+    width: 15px;
     text-align: center;
+    margin-top: 0.12rem;
 }
 
 .vcard-service-row strong {
@@ -3648,14 +3649,14 @@ header.luxury-topbar .navbar a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.55rem;
     background: var(--emerald-column);
     color: #FFFFFF;
     font-family: 'Cinzel', serif;
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    padding: 0.55rem 0.8rem;
+    padding: 0.6rem 0.85rem;
     border-radius: var(--radius-pill);
     border: 1px solid var(--gold-border);
     text-decoration: none;
