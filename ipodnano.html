@@ -107,7 +107,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=victorian-5.0">
+    <link rel="stylesheet" href="estilos.css?v=victorian-5.1">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
     <link rel="stylesheet" href="seccion3.css?v=victorian-4.0">
 </head>
@@ -138,12 +138,15 @@
 
             <!-- Perfil Profesional & Presentación: De qué se trata Inversiones D'ALROC -->
             <div class="top-shape-about-card">
-                <div class="top-shape-agent-row">
-                    <img src="img/ClaudiaIMG.jpeg" alt="Lcda. Claudia Di Diomede" class="top-shape-agent-avatar">
-                    <div class="top-shape-agent-info">
-                        <span class="top-shape-agent-role"><i class="fa-solid fa-crown"></i> INVERSIONES D'ALROC</span>
-                        <h3 class="top-shape-agent-name">Lcda. Claudia Di Diomede</h3>
-                        <span class="top-shape-agent-cert"><i class="fa-solid fa-award"></i> Profesional Certificado N° 2735</span>
+                <!-- Fila Interactiva: Burbuja circular a Píldora Panorámica + Tira Verde Informativa -->
+                <div class="top-shape-expand-row" id="top-shape-expand-row" title="Pasa el cursor para desplegar la vista panorámica">
+                    <div class="top-shape-pill-box">
+                        <img src="img/ImagenLarge.jpg" alt="Vista Panorámica Isla de Margarita — Inversiones D'ALROC" class="top-shape-pill-img">
+                        <span class="top-shape-pill-caption"><i class="fa-solid fa-panorama"></i> Isla de Margarita</span>
+                    </div>
+                    <div class="top-shape-green-strip">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                        <span>Vista Panorámica Insular</span>
                     </div>
                 </div>
 
@@ -967,6 +970,14 @@
                     closeTopShape();
                 });
             });
+
+            // Toggle para expandir píldora panorámica en móviles o al hacer clic
+            const expandRow = document.getElementById('top-shape-expand-row');
+            if (expandRow) {
+                expandRow.addEventListener('click', (e) => {
+                    expandRow.classList.toggle('expanded');
+                });
+            }
 
             // --- Lógica de la Insignia Flotante de la Virgen del Valle (Opción 2) ---
             const virgenTabTrigger = document.getElementById('virgen-tab-trigger');
