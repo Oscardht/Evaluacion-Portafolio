@@ -107,123 +107,147 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=victorian-3.1">
+    <link rel="stylesheet" href="estilos.css?v=victorian-4.0">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-    <link rel="stylesheet" href="seccion3.css?v=victorian-3.1">
+    <link rel="stylesheet" href="seccion3.css?v=victorian-4.0">
 </head>
 
 <body>
-    <!-- BACKDROP DEL POP-UP SACRO VICTORIANO -->
-    <div class="church-popup-backdrop" id="church-popup-backdrop" aria-hidden="true"></div>
+    <!-- ==========================================================================
+         TOPE DE PÁGINA ARQUITECTÓNICO CON POP-UP ARQUEADO D'ALROC
+         - Lo redondo en el lado derecho (curvatura de arco en el extremo derecho).
+         - Funciona como Pop-up elegante desplegable y cerrable.
+         - CERO DIFUMINADO DEL FONDO (la sección Hero permanece limpia, visible y protagónica).
+         - Mismo color y paleta de la página (pergamino marfil #FCFAF6 / #F6F1E7 con oro antiguo).
+         ========================================================================== -->
+    <header class="arch-topbar" id="site-header">
+        <!-- Barra Superior Compacta (deja despejada y amplia la sección Hero) -->
+        <div class="arch-topbar-bar">
+            <div class="arch-topbar-container">
+                <!-- Marca & Logotipo -->
+                <a href="#" class="arch-brand" title="Inversiones D'ALROC Real Estate">
+                    <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC" class="arch-brand-img">
+                    <div class="arch-brand-text">
+                        <span class="arch-brand-title">INVERSIONES D'<em>ALROC</em></span>
+                        <span class="arch-brand-sub">Territorio de confort y estilo</span>
+                    </div>
+                </a>
 
-    <!-- PESTAÑA POP-UP DESDE LA DERECHA: VENTANA OJIVAL GÓTICA + MANTO DE LA VIRGEN (OPCIÓN 2) -->
-    <div class="church-popup-container active" id="church-popup-container" aria-hidden="false">
-        <!-- Pestaña indicadora para cuando está retraído hacia el margen -->
-        <div class="church-mantle-tab-hint" id="church-mantle-tab-hint" aria-label="Abrir Menú Sacro D'ALROC" title="Abrir Menú Vitral D'ALROC">
-            <i class="fa-solid fa-church"></i>
-            <span>MENÚ</span>
+                <!-- Contacto Rápido & Ubicación -->
+                <div class="arch-quick-contact">
+                    <a href="tel:+584147907819" class="arch-phone-link" title="Llamar a Inversiones D'ALROC">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+58 414 790-7819</span>
+                    </a>
+                    <span class="arch-location-badge" title="Sede en Nueva Esparta">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Isla de Margarita</span>
+                    </span>
+                </div>
+
+                <!-- Disparadores de Acción: WhatsApp & Pop-up Menú Arqueado -->
+                <div class="arch-menu-trigger-wrap">
+                    <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="arch-wa-btn" title="Contactar por WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <!-- Botón Pop-Up con Remate Redondeado en el Lado Derecho y Corona -->
+                    <button class="arch-menu-toggle-btn" id="top-arch-menu-btn" aria-expanded="false" aria-controls="top-arch-popup" aria-label="Abrir Menú de Navegación">
+                        <span class="arch-btn-label">MENÚ</span>
+                        <span class="arch-btn-icon-box">
+                            <i class="fa-solid fa-crown" id="top-arch-toggle-icon"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- VENTANA OJIVAL GÓTICA CON VIDRIOS DE IGLESIA (PROYECTADA A LA IZQUIERDA DEL MANTO) -->
-        <aside class="gothic-arch-window" id="gothic-arch-window" aria-label="Navegación Vitral Sacro D'ALROC">
-            <!-- Remate Superior: Arco Ojival con Rosetón de Catedral -->
-            <div class="gothic-arch-top">
-                <button class="gothic-window-close" id="gothic-window-close" aria-label="Cerrar Navegación">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div class="gothic-rosette-icon" title="Emblema Sacro D'ALROC">
-                    <i class="fa-solid fa-cross"></i>
+        <!-- Pop-Up Arqueado Desplegable desde el Tope (Curva en el lado derecho, Mismo Color de la Página) -->
+        <div class="top-arch-popup" id="top-arch-popup" aria-hidden="true">
+            <div class="top-arch-popup-inner">
+                <!-- Encabezado del Pop-up con Corona y Botón de Cierre -->
+                <div class="top-arch-popup-header">
+                    <div>
+                        <span class="top-arch-popup-kicker"><i class="fa-solid fa-crown"></i> NAVEGACIÓN PRIVILEGIADA</span>
+                        <h2 class="top-arch-popup-title">INVERSIONES D'<em>ALROC</em></h2>
+                    </div>
+                    <button class="top-arch-close-btn" id="top-arch-close-btn" aria-label="Cerrar Menú">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
-                <span class="gothic-site-tag">INVERSIONES D'<em>ALROC</em></span>
-                <span class="gothic-site-sub">Navegación en Vitral Victoriano</span>
-                <div class="gothic-lead-divider"></div>
-            </div>
 
-            <!-- Celdas de Vitral Emplomado (Navegación Principal) -->
-            <nav class="gothic-nav-panes">
-                <a href="#Historia" class="gothic-pane-item" data-section="Historia">
-                    <span class="gothic-pane-num">I</span>
-                    <div class="gothic-pane-info">
-                        <strong>Inicio & Mercado</strong>
-                        <span>Barómetro insular y bienvenida</span>
-                    </div>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <a href="#Ruta" class="gothic-pane-item" data-section="Ruta">
-                    <span class="gothic-pane-num">II</span>
-                    <div class="gothic-pane-info">
-                        <strong>Ruta de Inversión</strong>
-                        <span>Curaduría, blindaje y protocolización</span>
-                    </div>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <a href="#Galeria" class="gothic-pane-item" data-section="Galeria">
-                    <span class="gothic-pane-num">III</span>
-                    <div class="gothic-pane-info">
-                        <strong>Cartera de Inmuebles</strong>
-                        <span>Villas, casas y apartamentos</span>
-                    </div>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <a href="#Opiniones" class="gothic-pane-item" data-section="Opiniones">
-                    <span class="gothic-pane-num">IV</span>
-                    <div class="gothic-pane-info">
-                        <strong>Servicios Premium</strong>
-                        <span>Asesoría personalizada y gestión</span>
-                    </div>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <a href="#Legado" class="gothic-pane-item" data-section="Legado">
-                    <span class="gothic-pane-num">V</span>
-                    <div class="gothic-pane-info">
-                        <strong>Lic. Claudia Di Diomede</strong>
-                        <span>Corredora certificada & colegiatura</span>
-                    </div>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <a href="#Contacto" class="gothic-pane-item" data-section="Contacto">
-                    <span class="gothic-pane-num">VI</span>
-                    <div class="gothic-pane-info">
-                        <strong>Canales de Contacto</strong>
-                        <span>WhatsApp, llamada y oficina</span>
-                    </div>
-                    <i class="fa-solid fa-angle-right"></i>
-                </a>
-            </nav>
+                <!-- Rejilla Editorial de 6 Secciones -->
+                <nav class="top-arch-nav-grid" aria-label="Navegación Principal">
+                    <a href="#Historia" class="top-arch-nav-card" data-section="Historia">
+                        <span class="top-arch-nav-num">01</span>
+                        <div class="top-arch-nav-info">
+                            <strong>Inicio & Mercado</strong>
+                            <span>Búsqueda directa y barómetro insular</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#Ruta" class="top-arch-nav-card" data-section="Ruta">
+                        <span class="top-arch-nav-num">02</span>
+                        <div class="top-arch-nav-info">
+                            <strong>Ruta de Inversión</strong>
+                            <span>Curaduría, blindaje y protocolización</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#Galeria" class="top-arch-nav-card" data-section="Galeria">
+                        <span class="top-arch-nav-num">03</span>
+                        <div class="top-arch-nav-info">
+                            <strong>Cartera de Inmuebles</strong>
+                            <span>Villas, townhouses y propiedades de playa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#Opiniones" class="top-arch-nav-card" data-section="Opiniones">
+                        <span class="top-arch-nav-num">04</span>
+                        <div class="top-arch-nav-info">
+                            <strong>Servicios Premium</strong>
+                            <span>Asesoría jurídica y avalúo certificado</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#Legado" class="top-arch-nav-card" data-section="Legado">
+                        <span class="top-arch-nav-num">05</span>
+                        <div class="top-arch-nav-info">
+                            <strong>Lic. Claudia Di Diomede</strong>
+                            <span>Corredora inmobiliaria & colegiatura</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#Contacto" class="top-arch-nav-card contacto-btn" data-section="Contacto">
+                        <span class="top-arch-nav-num">06</span>
+                        <div class="top-arch-nav-info">
+                            <strong>Atención Personalizada</strong>
+                            <span>Solicitar llamada y consulta privada</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </nav>
 
-            <!-- Gemas de Vitral (Colecciones de Inmuebles) -->
-            <div class="gothic-filter-gem-wrap">
-                <span class="gothic-gem-label"><i class="fa-solid fa-gem"></i> Colecciones Selectas</span>
-                <div class="gothic-gems-grid">
-                    <a href="#Galeria" class="gothic-gem-btn" data-filter="villas"><i class="fa-solid fa-landmark"></i> Villas</a>
-                    <a href="#Galeria" class="gothic-gem-btn" data-filter="playas"><i class="fa-solid fa-water"></i> Playa</a>
-                    <a href="#Galeria" class="gothic-gem-btn" data-filter="townhouses"><i class="fa-solid fa-house-chimney"></i> Townhouses</a>
-                    <a href="#Galeria" class="gothic-gem-btn" data-filter="terrenos"><i class="fa-solid fa-chart-line"></i> Terrenos</a>
-                </div>
-            </div>
-
-            <!-- Base del Ventanal con Botón WhatsApp -->
-            <div class="gothic-arch-footer">
-                <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="gothic-wa-link">
-                    <i class="fa-brands fa-whatsapp"></i> Conversar con la Lic. Claudia
-                </a>
-                <div class="gothic-footer-schedule">
-                    <span><i class="fa-regular fa-clock"></i> Lun - Sáb 08:30 - 18:30</span>
+                <!-- Fila de Colecciones Rápidas y Búsqueda -->
+                <div class="top-arch-filter-row">
+                    <div class="top-arch-pills">
+                        <span class="top-arch-pills-label"><i class="fa-solid fa-gem"></i> Colecciones:</span>
+                        <a href="#Galeria" class="top-arch-pill" data-filter="villas">Villas & Arquitectura</a>
+                        <a href="#Galeria" class="top-arch-pill" data-filter="playas">Frente al Mar</a>
+                        <a href="#Galeria" class="top-arch-pill" data-filter="townhouses">Townhouses</a>
+                        <a href="#Galeria" class="top-arch-pill" data-filter="terrenos">Terrenos</a>
+                    </div>
+                    <form class="top-arch-search-form" action="#Galeria" method="GET">
+                        <input type="text" placeholder="Buscar por zona..." class="top-arch-search-input" aria-label="Buscar inmuebles">
+                        <button type="submit" class="top-arch-search-btn" aria-label="Buscar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-        </aside>
-
-        <!-- SILUETA SAGRADA DEL MANTO Y CORONA (DOCKADA A LA DERECHA) -->
-        <div class="church-mantle-wrapper" id="church-mantle-trigger" role="button" tabindex="0" aria-label="Abrir o retraer menú gótico de vitral" title="Manto Sacro D'ALROC — Clic para replegar / desplegar menú">
-            <!-- Botón joya de repliegue hacia el margen derecho -->
-            <button class="church-mantle-close" id="church-mantle-close" aria-label="Retraer ventana hacia el margen">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-
-            <!-- Silueta exacta del Manto con Corona recortada sin bordes muertos -->
-            <img src="img/POP-upPAGINAWEBok_trimmed.png" alt="Manto Sacro D'ALROC — Vitral Victoriano Virgen del Valle" class="church-mantle-img">
         </div>
-    </div>
+    </header>
 
     <!-- BRÚJULA & INDICADOR FLOTANTE DE RECORRIDO (SCROLL COMPASS) -->
     <aside class="scroll-compass-dock" id="scroll-compass" aria-label="Navegación de recorrido">
@@ -258,149 +282,6 @@
         </nav>
     </aside>
 
-    <!-- TOPE DE PÁGINA DOBLE NIVEL — ESTILO LUXURY TOPBAR (ALROC IDENTITY) -->
-    <header class="luxury-topbar" id="site-header">
-        <!-- TIER 1: BARRA SUPERIOR DE CONTACTO, MARCA & UTILIDADES -->
-        <div class="topbar-tier1">
-            <div class="topbar-container">
-                <!-- Marca & Logotipo -->
-                <div class="topbar-brand">
-                    <a href="#" class="topbar-logo-link" title="Inversiones D'ALROC Real Estate">
-                        <img src="img/IMG_0217.png" alt="Logo Inversiones D'ALROC" class="topbar-logo-img">
-                        <div class="topbar-logo-text">
-                            <span class="brand-title">INVERSIONES D'<em>ALROC</em></span>
-                            <span class="brand-tagline">Territorio de confort y estilo</span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Bloque Contacto & Llamada (Teléfono, Horario, Ubicación, Botón) -->
-                <div class="topbar-contact-group">
-                    <div class="contact-phone-block">
-                        <a href="tel:+584147907819" class="phone-number" title="Llamar a Inversiones D'ALROC">
-                            <i class="fa-solid fa-phone"></i> +58 414 790-7819
-                        </a>
-                        <span class="phone-schedule"><i class="fa-regular fa-clock"></i> Lun - Sáb 08:30 - 18:30</span>
-                    </div>
-
-                    <div class="contact-location-block" title="Sede principal en Nueva Esparta">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Isla de Margarita</span>
-                    </div>
-
-                    <button class="topbar-call-btn contacto-btn" id="open-call-modal-btn" aria-label="Solicitar Llamada Inmobiliaria">
-                        <span>SOLICITAR LLAMADA</span>
-                    </button>
-                </div>
-
-                <!-- Búsqueda Rápida & Accesos de Mensajería -->
-                <div class="topbar-utility-group">
-                    <form class="topbar-search-form" id="topbar-search-form" action="#Galeria" method="GET">
-                        <input type="text" id="topbar-search-input" placeholder="Buscar villas, apartamentos..." class="topbar-search-input" aria-label="Buscar inmuebles">
-                        <button type="submit" class="topbar-search-submit" aria-label="Ejecutar búsqueda">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-
-                    <div class="topbar-direct-channels">
-                        <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="channel-icon-btn whatsapp" title="Escribir por WhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="mailto:inversiones.idalroc@gmail.com" class="channel-icon-btn email" title="Enviar correo electrónico">
-                            <i class="fa-regular fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Botón Menú Hamburguesa para Móvil -->
-                <button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
-                    <i class="fa-solid fa-bars" id="menu-icon"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- TIER 2: BARRA DE NAVEGACIÓN PRINCIPAL & CATÁLOGO -->
-        <div class="topbar-tier2">
-            <div class="topbar-nav-container">
-                <!-- Botón Catálogo con Menú Desplegable -->
-                <div class="catalog-dropdown-wrapper">
-                    <button class="catalog-btn" id="catalog-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-                        <span class="catalog-text">CATÁLOGO</span>
-                        <i class="fa-solid fa-chevron-down catalog-chevron"></i>
-                    </button>
-                    <div class="catalog-menu" id="catalog-menu">
-                        <a href="#Galeria" class="catalog-item" data-filter="all">
-                            <i class="fa-solid fa-layer-group"></i>
-                            <div>
-                                <strong>Todas las Propiedades</strong>
-                                <span>Catálogo completo AlRoc</span>
-                            </div>
-                        </a>
-                        <a href="#Galeria" class="catalog-item" data-filter="villas">
-                            <i class="fa-solid fa-landmark"></i>
-                            <div>
-                                <strong>Villas & Arquitectura</strong>
-                                <span>Pampatar & Los Robles</span>
-                            </div>
-                        </a>
-                        <a href="#Galeria" class="catalog-item" data-filter="playas">
-                            <i class="fa-solid fa-water"></i>
-                            <div>
-                                <strong>Frente al Mar</strong>
-                                <span>La Caracola & Playa El Agua</span>
-                            </div>
-                        </a>
-                        <a href="#Galeria" class="catalog-item" data-filter="townhouses">
-                            <i class="fa-solid fa-house-chimney"></i>
-                            <div>
-                                <strong>Townhouses & Apts</strong>
-                                <span>Costa Azul & Porlamar</span>
-                            </div>
-                        </a>
-                        <a href="#Galeria" class="catalog-item" data-filter="terrenos">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <div>
-                                <strong>Terrenos & Plusvalía</strong>
-                                <span>Playa El Ángel & Proyectos</span>
-                            </div>
-                        </a>
-                        <a href="#Galeria" class="catalog-item" data-filter="alquiler">
-                            <i class="fa-solid fa-key"></i>
-                            <div>
-                                <strong>Alquileres VIP</strong>
-                                <span>El Yaque & Temporada</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Enlaces Principales de Navegación -->
-                <nav class="navbar" id="navbar">
-                    <a href="#Historia"><i class="fa-solid fa-house"></i> INICIO</a>
-                    <a href="#Ruta"><i class="fa-solid fa-compass"></i> LA RUTA</a>
-                    <a href="#Galeria"><i class="fa-solid fa-building"></i> PROPIEDADES</a>
-                    <a href="#Opiniones"><i class="fa-solid fa-shield-halved"></i> SERVICIOS</a>
-                    <a href="#Legado"><i class="fa-solid fa-user-tie"></i> ASESORA</a>
-                    <a href="#Contacto" class="contacto-btn"><i class="fa-solid fa-comments"></i> CONTACTO</a>
-                </nav>
-
-                <!-- Acciones de Usuario & Insignias (Favoritos, Cartera, VIP) -->
-                <div class="topbar-user-actions">
-                    <a href="#Galeria" class="action-badge-btn" id="nav-fav-btn" title="Propiedades Favoritas">
-                        <i class="fa-regular fa-heart"></i>
-                        <span class="badge-counter" id="favorites-badge">0</span>
-                    </a>
-                    <a href="#Galeria" class="action-badge-btn" id="nav-portfolio-btn" title="Mi Cartera de Inmuebles">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span class="badge-counter" id="portfolio-badge">0</span>
-                    </a>
-                    <a href="#Contacto" class="topbar-vip-btn contacto-btn" title="Consultar Asesoría VIP">
-                        <span>CONSULTAR VIP</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- SECCIÓN 1 — HERO ESTILO AIRBNB (BÚSQUEDA DIRECTA & CONVERSIÓN) -->
     <section class="airbnb-hero" id="Historia">
@@ -1015,159 +896,91 @@
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('modal-close');
-            const menuToggle = document.getElementById('menu-toggle');
-            const navbar = document.getElementById('navbar');
-            const menuIcon = document.getElementById('menu-icon');
-            const header = document.querySelector('header');
+            const topArchPopup = document.getElementById('top-arch-popup');
+            const topArchMenuBtn = document.getElementById('top-arch-menu-btn');
+            const topArchCloseBtn = document.getElementById('top-arch-close-btn');
+            const topArchToggleIcon = document.getElementById('top-arch-toggle-icon');
 
-            // --- Lógica del Menú Hamburguesa Robusto ---
-            const closeMenu = () => {
-                if (navbar && navbar.classList.contains('active')) {
-                    navbar.classList.remove('active');
-                    if (menuToggle) {
-                        menuToggle.classList.remove('active');
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                    }
-                    if (menuIcon) {
-                        menuIcon.classList.remove('fa-xmark');
-                        menuIcon.classList.add('fa-bars');
-                    }
+            // --- Lógica del Tope de Página con Pop-up Arqueado (Curva a la derecha, Sin difuminar fondo) ---
+            const openTopArchPopup = () => {
+                if (!topArchPopup) return;
+                topArchPopup.classList.add('active');
+                topArchPopup.setAttribute('aria-hidden', 'false');
+                if (topArchMenuBtn) {
+                    topArchMenuBtn.setAttribute('aria-expanded', 'true');
+                    topArchMenuBtn.classList.add('active');
+                }
+                if (topArchToggleIcon) {
+                    topArchToggleIcon.className = 'fa-solid fa-xmark';
                 }
             };
 
-            const toggleMenu = () => {
-                if (!navbar || !menuToggle) return;
-                const isOpen = navbar.classList.toggle('active');
-                menuToggle.classList.toggle('active', isOpen);
-                menuToggle.setAttribute('aria-expanded', isOpen);
-
-                if (menuIcon) {
-                    if (isOpen) {
-                        menuIcon.classList.remove('fa-bars');
-                        menuIcon.classList.add('fa-xmark');
-                    } else {
-                        menuIcon.classList.remove('fa-xmark');
-                        menuIcon.classList.add('fa-bars');
-                    }
+            const closeTopArchPopup = () => {
+                if (!topArchPopup) return;
+                topArchPopup.classList.remove('active');
+                topArchPopup.setAttribute('aria-hidden', 'true');
+                if (topArchMenuBtn) {
+                    topArchMenuBtn.setAttribute('aria-expanded', 'false');
+                    topArchMenuBtn.classList.remove('active');
+                }
+                if (topArchToggleIcon) {
+                    topArchToggleIcon.className = 'fa-solid fa-crown';
                 }
             };
 
-            if (menuToggle) {
-                menuToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleMenu();
-                });
-            }
-
-            // Cerrar menú al hacer clic en cualquier enlace
-            if (navbar) {
-                navbar.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        closeMenu();
-                    });
-                });
-            }
-
-            // Cerrar menú al hacer clic fuera del header
-            document.addEventListener('click', (e) => {
-                if (navbar && menuToggle && !navbar.contains(e.target) && !menuToggle.contains(e.target)) {
-                    closeMenu();
-                }
-            });
-
-            // --- Lógica del Pop-up Sacro D'ALROC: Opción 2 Ventana Ojival + Manto ---
-            const churchPopupContainer = document.getElementById('church-popup-container');
-            const churchBackdrop = document.getElementById('church-popup-backdrop');
-            const churchMantleTrigger = document.getElementById('church-mantle-trigger');
-            const churchMantleClose = document.getElementById('church-mantle-close');
-            const churchMantleTabHint = document.getElementById('church-mantle-tab-hint');
-            const gothicWindowClose = document.getElementById('gothic-window-close');
-
-            const openChurchPopup = () => {
-                if (churchPopupContainer) {
-                    churchPopupContainer.classList.add('active');
-                    churchPopupContainer.setAttribute('aria-hidden', 'false');
-                    if (churchBackdrop) churchBackdrop.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            };
-
-            const closeChurchPopup = () => {
-                if (churchPopupContainer) {
-                    churchPopupContainer.classList.remove('active');
-                    churchPopupContainer.setAttribute('aria-hidden', 'true');
-                    if (churchBackdrop) churchBackdrop.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            };
-
-            const toggleChurchPopup = () => {
-                if (!churchPopupContainer) return;
-                if (churchPopupContainer.classList.contains('active')) {
-                    closeChurchPopup();
+            const toggleTopArchPopup = (e) => {
+                if (e) e.stopPropagation();
+                if (topArchPopup && topArchPopup.classList.contains('active')) {
+                    closeTopArchPopup();
                 } else {
-                    openChurchPopup();
+                    openTopArchPopup();
                 }
             };
 
-            if (churchMantleTrigger) {
-                churchMantleTrigger.addEventListener('click', (e) => {
-                    if (e.target.closest('#church-mantle-close')) {
-                        e.stopPropagation();
-                        closeChurchPopup();
-                        return;
+            if (topArchMenuBtn) {
+                topArchMenuBtn.addEventListener('click', toggleTopArchPopup);
+            }
+
+            if (topArchCloseBtn) {
+                topArchCloseBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeTopArchPopup();
+                });
+            }
+
+            // Cerrar al hacer clic fuera del pop-up o de la barra
+            document.addEventListener('click', (e) => {
+                if (topArchPopup && topArchPopup.classList.contains('active')) {
+                    const header = document.getElementById('site-header');
+                    if (header && !header.contains(e.target)) {
+                        closeTopArchPopup();
                     }
-                    toggleChurchPopup();
-                });
-            }
-
-            if (churchMantleTabHint) {
-                churchMantleTabHint.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openChurchPopup();
-                });
-            }
-
-            if (churchMantleClose) {
-                churchMantleClose.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    closeChurchPopup();
-                });
-            }
-
-            if (gothicWindowClose) {
-                gothicWindowClose.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    closeChurchPopup();
-                });
-            }
-
-            if (churchBackdrop) {
-                churchBackdrop.addEventListener('click', closeChurchPopup);
-            }
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && churchPopupContainer && churchPopupContainer.classList.contains('active')) {
-                    closeChurchPopup();
                 }
             });
 
-            // Enlaces de las celdas de vitral en la ventana gótica
-            document.querySelectorAll('.gothic-pane-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    closeChurchPopup();
+            // Cerrar con la tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && topArchPopup && topArchPopup.classList.contains('active')) {
+                    closeTopArchPopup();
+                }
+            });
+
+            // Cerrar al hacer clic en enlaces de navegación del pop-up
+            document.querySelectorAll('.top-arch-nav-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    closeTopArchPopup();
                 });
             });
 
-            // Gemas de filtro de portafolio en la ventana gótica
-            document.querySelectorAll('.gothic-gem-btn').forEach(gem => {
-                gem.addEventListener('click', (e) => {
-                    const filterVal = gem.getAttribute('data-filter');
+            // Filtrar al hacer clic en las pastillas (pills) del pop-up
+            document.querySelectorAll('.top-arch-pill').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    const filterVal = pill.getAttribute('data-filter');
                     const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterVal}"]`);
                     if (targetBtn) {
                         targetBtn.click();
                     }
-                    closeChurchPopup();
+                    closeTopArchPopup();
                 });
             });
 
@@ -1177,7 +990,7 @@
                     e.preventDefault();
                     e.stopPropagation();
                 }
-                closeMenu();
+                closeTopArchPopup();
                 if (modal) {
                     modal.classList.add('active');
                 }

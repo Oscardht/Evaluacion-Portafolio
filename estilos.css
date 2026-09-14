@@ -876,7 +876,7 @@ header.luxury-topbar .navbar a:hover::after {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 11.5rem;
+    padding-top: 5.5rem;
 }
 
 /* Capa sutil de oscurecimiento (overlay) */
@@ -903,7 +903,7 @@ header.luxury-topbar .navbar a:hover::after {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: -4vh;
+    margin-top: 0;
 }
 
 /* ENCABEZADO CENTRAL (TERCIO SUPERIOR) */
@@ -3111,495 +3111,467 @@ header.luxury-topbar .navbar a:hover::after {
 }
 
 /* ==========================================================================
-   PESTAÑA POP-UP SACRA D'ALROC — MANTO Y CORONA (ESTILO VIDRIOS DE IGLESIA)
-   Inspirado fielmente en POP-upPAGINAWEBok.png y devoción a la Virgen del Valle
+   TOPE DE PÁGINA ARQUITECTÓNICO CON POP-UP ARQUEADO D'ALROC
+   - La forma del pop-up tiene lo redondo en el lado derecho (border-bottom-right-radius: 140px).
+   - Funciona como un pop-up pero SIN difuminar el fondo (la sección Hero queda despejada y visible).
+   - Utiliza el mismo color marfil y pergamino cálido de la página (#FCFAF6 / #F6F1E7).
    ========================================================================== */
 
-/* 1. Velo de Penumbra Sacra / Backdrop */
-.church-popup-backdrop {
+.arch-topbar {
     position: fixed;
-    inset: 0;
-    background: rgba(8, 8, 12, 0.62);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 2200;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.church-popup-backdrop.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* 2. Contenedor Maestro del Pop-up (Se oculta y sobresale desde el margen derecho) */
-.church-popup-container {
-    position: fixed;
-    top: 50%;
+    top: 0;
+    left: 0;
     right: 0;
-    transform: translateY(-50%) translateX(calc(100% - 62px));
-    z-index: 2300;
-    transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1500;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* 1. Barra Superior Compacta (Máximo espacio y despeje para la sección Hero) */
+.arch-topbar-bar {
+    width: 100%;
+    background: rgba(246, 241, 231, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1.5px solid var(--gold);
+    box-shadow: 0 4px 18px rgba(40, 34, 25, 0.07);
     pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+.arch-topbar-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0.65rem 2.8rem;
     display: flex;
     align-items: center;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 56px;
 }
 
-/* Estado Activo: Tanto la ventana ojival como el manto sobresalen completos */
-.church-popup-container.active {
-    transform: translateY(-50%) translateX(0);
-}
-
-/* 3. OPCIÓN 2: VENTANA OJIVAL GÓTICA (PROYECTADA HACIA LA IZQUIERDA DEL MANTO) */
-.gothic-arch-window {
-    width: 350px;
-    max-width: calc(100vw - 110px);
-    height: min(85vh, 730px);
-    background: rgba(10, 10, 15, 0.88);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1.5px solid var(--vitral-gold, #F3C64D);
-    border-right: none;
-    border-radius: 175px 0 0 8px;
-    box-shadow: -15px 0 45px rgba(0, 201, 219, 0.3), -4px 0 25px rgba(243, 198, 77, 0.25), -25px 0 60px rgba(5, 5, 8, 0.85);
-    outline: 1px solid rgba(0, 201, 219, 0.32);
-    outline-offset: -6px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-right: -14px; /* Ensamblaje perfecto solapado con el borde del manto */
-    z-index: 2;
-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Scrollbar estilizado de vitral para la ventana gótica */
-.gothic-arch-window::-webkit-scrollbar {
-    width: 4px;
-}
-.gothic-arch-window::-webkit-scrollbar-track {
-    background: rgba(10, 10, 15, 0.5);
-}
-.gothic-arch-window::-webkit-scrollbar-thumb {
-    background: var(--vitral-gold, #F3C64D);
-    border-radius: 2px;
-}
-
-/* Remate Superior de la Ojiva */
-.gothic-arch-top {
-    position: relative;
-    padding: 3.2rem 2.2rem 1.6rem 2.2rem;
-    text-align: center;
-    background: linear-gradient(180deg, rgba(24, 24, 34, 0.75) 0%, rgba(10, 10, 15, 0.25) 100%);
-    border-bottom: 1px solid rgba(243, 198, 77, 0.32);
-}
-
-.gothic-rosette-icon {
-    width: 42px;
-    height: 42px;
-    margin: 0 auto 1.2rem auto;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 201, 219, 0.3) 0%, rgba(10, 10, 15, 0.85) 100%);
-    border: 1px solid var(--vitral-gold, #F3C64D);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--vitral-gold, #F3C64D);
-    font-size: 1.6rem;
-    box-shadow: 0 0 16px rgba(0, 201, 219, 0.5), inset 0 0 8px rgba(243, 198, 77, 0.4);
-    animation: gothicRosetteGlow 4s ease-in-out infinite;
-}
-
-@keyframes gothicRosetteGlow {
-    0%, 100% { box-shadow: 0 0 14px rgba(0, 201, 219, 0.4), inset 0 0 6px rgba(243, 198, 77, 0.3); }
-    50% { box-shadow: 0 0 24px rgba(0, 201, 219, 0.7), inset 0 0 12px rgba(243, 198, 77, 0.6); }
-}
-
-.gothic-window-close {
-    position: absolute;
-    top: 1.8rem;
-    left: 1.8rem;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(20, 20, 28, 0.85);
-    border: 1px solid rgba(243, 198, 77, 0.4);
-    color: #F0F3F6;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.gothic-window-close:hover {
-    background: rgba(0, 201, 219, 0.25);
-    border-color: var(--vitral-cyan, #00C9DB);
-    color: var(--vitral-cyan, #00C9DB);
-    transform: rotate(90deg);
-}
-
-.gothic-site-tag {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.85rem;
-    font-weight: 800;
-    color: #F0F3F6;
-    letter-spacing: 0.06em;
-    display: block;
-}
-
-.gothic-site-tag em {
-    color: var(--vitral-gold, #F3C64D);
-    font-style: italic;
-}
-
-.gothic-site-sub {
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--vitral-cyan, #00C9DB);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 0.4rem;
-}
-
-.gothic-lead-divider {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--vitral-gold, #F3C64D), transparent);
-    margin: 1.2rem auto 0 auto;
-}
-
-/* Celdas de Vitral Emplomado (Navegación) */
-.gothic-nav-panes {
-    padding: 1.8rem 1.8rem 1rem 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-    flex: 1;
-}
-
-.gothic-pane-item {
+/* Marca D'ALROC */
+.arch-brand {
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    padding: 1.1rem 1.4rem;
-    background: rgba(18, 18, 26, 0.65);
-    border: 1px solid rgba(243, 198, 77, 0.28);
-    border-radius: 4px;
-    outline: 1px solid rgba(0, 201, 219, 0.15);
-    outline-offset: -3px;
     text-decoration: none;
-    color: #F0F3F6;
-    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.arch-brand-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(184, 142, 62, 0.25));
+}
+
+.arch-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.arch-brand-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-headline);
+    letter-spacing: 0.03em;
+    line-height: 1.15;
+}
+
+.arch-brand-title em {
+    color: var(--gold-dark);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.arch-brand-sub {
+    font-size: 0.95rem;
+    color: var(--gold-dark);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Contacto Rápido Compacto en la barra */
+.arch-quick-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.arch-phone-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-headline);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.arch-phone-link i {
+    color: var(--gold-dark);
+    font-size: 1.15rem;
+}
+
+.arch-phone-link:hover {
+    color: var(--gold-dark);
+}
+
+.arch-location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.arch-location-badge i {
+    color: var(--emerald-column);
+}
+
+/* Disparador del Menú Pop-Up con Remate Redondeado en el Lado Derecho */
+.arch-menu-trigger-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.arch-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--emerald-column);
+    color: #FFFFFF;
+    padding: 0.65rem 1.3rem;
+    border-radius: var(--radius-card);
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(29, 61, 46, 0.25);
+}
+
+.arch-wa-btn:hover {
+    background: #142B20;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.35);
+}
+
+/* Botón MENÚ con remate redondeado a la derecha */
+.arch-menu-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--gold);
+    border-radius: 4px 24px 24px 4px; /* Lo redondo en el lado derecho */
+    padding: 0.65rem 1rem 0.65rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 10px rgba(40, 34, 25, 0.08);
+}
+
+.arch-menu-toggle-btn:hover {
+    background: #FFFFFF;
+    border-color: var(--gold-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(184, 142, 62, 0.25);
+}
+
+.arch-btn-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--text-headline);
+}
+
+.arch-btn-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gold-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-dark);
+    font-size: 1.15rem;
+    transition: all 0.25s ease;
+}
+
+.arch-menu-toggle-btn:hover .arch-btn-icon-box {
+    background: var(--gold);
+    color: #FFFFFF;
+}
+
+.arch-menu-toggle-btn.active {
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+}
+
+.arch-menu-toggle-btn.active .arch-btn-label {
+    color: #FFFFFF;
+}
+
+.arch-menu-toggle-btn.active .arch-btn-icon-box {
+    background: #FFFFFF;
+    color: var(--gold-dark);
+}
+
+/* 2. POP-UP ARQUEADO DESPLEGABLE DESDE EL TOPE */
+/* Forma arqueada: LO REDONDO EN EL LADO DERECHO (border-bottom-right-radius: 160px) */
+/* CERO DIFUMINADO DEL FONDO: la sección Hero permanece 100% visible y activa */
+/* MISMO COLOR QUE LA PÁGINA: #FCFAF6 / #F6F1E7 */
+.top-arch-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-16px);
+    transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.32s ease;
+}
+
+.top-arch-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.top-arch-popup-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--bg-surface); /* Mismo color de la página */
+    border: 2px solid var(--gold);
+    border-top: none;
+    border-bottom-right-radius: 160px; /* LO REDONDO EN EL LADO DERECHO */
+    border-bottom-left-radius: 14px;
+    padding: 2.2rem 3.4rem 2.8rem 3.4rem;
+    box-shadow: 0 22px 55px rgba(40, 34, 25, 0.16), 0 0 20px rgba(184, 142, 62, 0.18);
+    outline: 1px solid rgba(184, 142, 62, 0.35);
+    outline-offset: -6px;
     position: relative;
     overflow: hidden;
 }
 
-.gothic-pane-item::before {
+/* Marca de agua sacra en el arco derecho */
+.top-arch-popup-inner::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(0, 201, 219, 0.15) 0%, rgba(243, 198, 77, 0.12) 100%);
-    opacity: 0;
-    transition: opacity 0.28s ease;
-}
-
-.gothic-pane-item:hover {
-    background: rgba(24, 24, 36, 0.9);
-    border-color: var(--vitral-gold, #F3C64D);
-    outline-color: var(--vitral-cyan, #00C9DB);
-    transform: translateX(-4px);
-    box-shadow: 0 4px 18px rgba(0, 201, 219, 0.25), inset 0 0 12px rgba(243, 198, 77, 0.2);
-}
-
-.gothic-pane-item:hover::before {
-    opacity: 1;
-}
-
-.gothic-pane-num {
-    font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--vitral-gold, #F3C64D);
-    width: 24px;
-    text-align: center;
-    position: relative;
+    right: 28px;
+    bottom: 8px;
+    width: 130px;
+    height: 140px;
+    background: url('img/POP-upPAGINAWEBok_trimmed.png') no-repeat bottom right / contain;
+    opacity: 0.14;
+    pointer-events: none;
     z-index: 1;
 }
 
-.gothic-pane-info {
-    flex: 1;
+/* Encabezado del Pop-up */
+.top-arch-popup-header {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid var(--gold-border);
 }
 
-.gothic-pane-info strong {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: 0.02em;
-}
-
-.gothic-pane-info span {
-    font-size: 1.05rem;
-    color: #A6A4A0;
-    margin-top: 0.15rem;
-}
-
-.gothic-pane-item i {
-    color: var(--vitral-gold, #F3C64D);
-    font-size: 1.2rem;
-    transition: transform 0.25s ease, color 0.25s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.gothic-pane-item:hover i {
-    transform: translateX(4px);
-    color: var(--vitral-cyan, #00C9DB);
-}
-
-/* Gemas de Vitral (Colecciones de Portafolio) */
-.gothic-filter-gem-wrap {
-    padding: 0 1.8rem 1.4rem 1.8rem;
-}
-
-.gothic-gem-label {
+.top-arch-popup-kicker {
     font-family: 'Cinzel', serif;
     font-size: 1rem;
     font-weight: 700;
+    color: var(--gold-dark);
     letter-spacing: 0.16em;
-    color: var(--vitral-gold, #F3C64D);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 0.8rem;
-}
-
-.gothic-gems-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.7rem;
-}
-
-.gothic-gem-btn {
-    padding: 0.75rem 0.9rem;
-    background: rgba(22, 22, 32, 0.7);
-    border: 1px solid rgba(0, 201, 219, 0.35);
-    border-radius: 4px;
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #F0F3F6;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    transition: all 0.22s ease;
-    cursor: pointer;
-}
-
-.gothic-gem-btn i {
-    color: var(--vitral-cyan, #00C9DB);
-    font-size: 1.05rem;
-}
-
-.gothic-gem-btn:hover {
-    background: rgba(0, 201, 219, 0.2);
-    border-color: var(--vitral-cyan, #00C9DB);
-    color: #FFFFFF;
-    box-shadow: 0 0 12px rgba(0, 201, 219, 0.35);
-}
-
-/* Base del Ventanal con Botón WhatsApp */
-.gothic-arch-footer {
-    padding: 1.6rem 1.8rem;
-    background: linear-gradient(180deg, rgba(14, 14, 20, 0.85) 0%, rgba(8, 8, 12, 0.95) 100%);
-    border-top: 1px solid rgba(243, 198, 77, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.gothic-wa-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.85rem;
-    background: linear-gradient(135deg, #184A36 0%, #0F3023 100%);
-    border: 1px solid rgba(0, 201, 219, 0.4);
-    color: #FFFFFF;
-    padding: 1rem 1.5rem;
-    border-radius: 4px;
-    font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(24, 74, 54, 0.4);
-    transition: all 0.25s ease;
-}
-
-.gothic-wa-link:hover {
-    background: linear-gradient(135deg, #226349 0%, #164230 100%);
-    border-color: var(--vitral-gold, #F3C64D);
-    box-shadow: 0 6px 18px rgba(0, 201, 219, 0.4);
-    transform: translateY(-2px);
-}
-
-.gothic-footer-schedule {
-    font-size: 1.1rem;
-    color: #A6A4A0;
-    text-align: center;
-}
-
-/* 4. Envoltura de la Figura Sagrada (Manto y Corona) */
-.church-mantle-wrapper {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    filter: drop-shadow(-6px 8px 18px rgba(0, 201, 219, 0.3)) 
-            drop-shadow(-3px 5px 14px rgba(243, 198, 77, 0.38))
-            drop-shadow(-8px 14px 28px rgba(10, 10, 14, 0.75));
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
-    z-index: 3;
-}
-
-.church-popup-container:not(.active) .church-mantle-wrapper:hover {
-    transform: translateX(-12px);
-    filter: drop-shadow(-8px 12px 26px rgba(0, 201, 219, 0.6)) 
-            drop-shadow(-4px 7px 18px rgba(243, 198, 77, 0.65))
-            drop-shadow(-10px 18px 34px rgba(10, 10, 14, 0.9));
-}
-
-/* Resplandor pulsante de Vitral de Iglesia cuando está replegado */
-@keyframes churchStainedGlassPulse {
-    0%, 100% {
-        filter: drop-shadow(-5px 7px 16px rgba(0, 201, 219, 0.3)) 
-                drop-shadow(-3px 4px 12px rgba(243, 198, 77, 0.38));
-    }
-    50% {
-        filter: drop-shadow(-8px 11px 26px rgba(0, 201, 219, 0.65)) 
-                drop-shadow(-4px 7px 20px rgba(243, 198, 77, 0.68));
-    }
-}
-
-.church-popup-container:not(.active) .church-mantle-wrapper {
-    animation: churchStainedGlassPulse 3.8s ease-in-out infinite;
-}
-
-/* 5. Imagen Exacta del Manto y Corona (POP-upPAGINAWEBok) */
-.church-mantle-img {
-    height: min(82vh, 720px);
-    width: auto;
-    max-width: 45vw;
     display: block;
-    object-fit: contain;
-    object-position: right center;
-    pointer-events: auto;
 }
 
-/* 6. Joya / Botón de Retracción y Cierre en el Manto */
-.church-mantle-close {
-    position: absolute;
-    top: 24px;
-    right: 20px;
+.top-arch-popup-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--text-headline);
+    letter-spacing: 0.03em;
+}
+
+.top-arch-popup-title em {
+    color: var(--gold-dark);
+    font-style: italic;
+}
+
+.top-arch-close-btn {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(11, 11, 14, 0.88);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1.5px solid var(--vitral-gold, #F3C64D);
-    color: var(--vitral-gold, #F3C64D);
+    background: var(--bg-card-warm);
+    border: 1px solid var(--gold-border);
+    color: var(--text-headline);
     font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 0 16px rgba(0, 201, 219, 0.45);
-    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-    z-index: 20;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    transition: all 0.22s ease;
 }
 
-.church-popup-container.active .church-mantle-close {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.church-mantle-close:hover {
-    transform: scale(1.14);
-    background: #14141C;
+.top-arch-close-btn:hover {
+    background: var(--emerald-column);
     color: #FFFFFF;
-    border-color: #00C9DB;
-    box-shadow: 0 0 22px rgba(0, 201, 219, 0.8), 0 0 12px rgba(243, 198, 77, 0.65);
+    border-color: var(--emerald-column);
+    transform: rotate(90deg);
 }
 
-/* 7. Pestaña Indicadora Flotante cuando está retraído */
-.church-mantle-tab-hint {
-    position: absolute;
-    left: -38px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 96px;
-    background: linear-gradient(180deg, rgba(14, 14, 19, 0.95) 0%, rgba(20, 20, 28, 0.95) 100%);
-    border: 1px solid var(--vitral-gold, #F3C64D);
-    border-right: none;
-    border-radius: 6px 0 0 6px;
+/* Rejilla de Navegación Editorial */
+.top-arch-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+}
+
+.top-arch-nav-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--bg-canvas);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-card);
+    text-decoration: none;
+    color: var(--text-headline);
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.top-arch-nav-card:hover {
+    background: #FFFFFF;
+    border-color: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(40, 34, 25, 0.08);
+}
+
+.top-arch-nav-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--gold-dark);
+    width: 28px;
+    text-align: center;
+}
+
+.top-arch-nav-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+.top-arch-nav-info strong {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-headline);
+}
+
+.top-arch-nav-info span {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.top-arch-nav-card i {
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+    transition: transform 0.22s ease;
+}
+
+.top-arch-nav-card:hover i {
+    transform: translateX(3px);
+    color: var(--emerald-column);
+}
+
+/* Fila de Colecciones y Búsqueda */
+.top-arch-filter-row {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: -5px 0 16px rgba(0, 201, 219, 0.4);
-    cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    pointer-events: auto;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(184, 142, 62, 0.25);
 }
 
-.church-popup-container.active .church-mantle-tab-hint {
-    opacity: 0;
-    pointer-events: none;
+.top-arch-pills {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
-.church-mantle-tab-hint i {
-    color: var(--vitral-gold, #F3C64D);
-    font-size: 1.2rem;
-    animation: churchHintBounce 2s ease-in-out infinite;
-}
-
-.church-mantle-tab-hint span {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
+.top-arch-pills-label {
     font-family: 'Cinzel', serif;
-    font-size: 0.95rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    color: #F0F3F6;
-    text-transform: uppercase;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-@keyframes churchHintBounce {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-3px); }
+.top-arch-pill {
+    padding: 0.55rem 1.1rem;
+    background: var(--bg-card-warm);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-card);
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-headline);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.top-arch-pill:hover {
+    background: var(--gold-dark);
+    color: #FFFFFF;
+    border-color: var(--gold-dark);
+}
+
+.top-arch-search-form {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid var(--gold-border);
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
+    width: 280px;
+}
+
+.top-arch-search-input {
+    flex: 1;
+    font-size: 1.15rem;
+    background: transparent;
+    color: var(--text-headline);
+}
+
+.top-arch-search-btn {
+    background: transparent;
+    color: var(--gold-dark);
+    font-size: 1.2rem;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
@@ -3756,46 +3728,52 @@ header.luxury-topbar .navbar a:hover::after {
         justify-content: center;
     }
 
-    .church-mantle-img {
-        height: min(64vh, 420px);
-        max-width: 44vw;
+    /* Topbar y Pop-up Arqueado Responsive */
+    .arch-topbar-container {
+        padding: 0.6rem 4%;
     }
-    .gothic-arch-window {
-        width: 285px;
-        max-width: calc(100vw - 85px);
-        height: min(78vh, 520px);
-        border-radius: 130px 0 0 6px;
+    .arch-quick-contact {
+        display: none;
     }
-    .church-popup-container {
-        transform: translateY(-50%) translateX(calc(100% - 50px));
+    .top-arch-popup-inner {
+        padding: 1.8rem 2rem 2.2rem 2rem;
+        border-bottom-right-radius: 90px;
+        margin: 0 1rem;
     }
-    .church-popup-container.active {
-        transform: translateY(-50%) translateX(0);
+    .top-arch-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
-    .church-mantle-tab-hint {
-        left: -32px;
-        width: 30px;
-        height: 78px;
+    .top-arch-filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+    }
+    .top-arch-search-form {
+        width: 100%;
     }
 }
 
 @media (max-width: 540px) {
-    .gothic-arch-window {
-        width: calc(100vw - 65px);
-        height: 82vh;
-        border-radius: 90px 0 0 6px;
+    .arch-brand-sub {
+        display: none;
     }
-    .church-mantle-img {
-        display: none; /* En pantallas ultra estrechas, la ventana gótica toma protagonismo */
+    .arch-wa-btn span {
+        display: none;
     }
-    .church-popup-container {
-        transform: translateY(-50%) translateX(100%);
+    .arch-wa-btn {
+        padding: 0.6rem 0.8rem;
     }
-    .church-popup-container.active {
-        transform: translateY(-50%) translateX(0);
+    .top-arch-popup-inner {
+        padding: 1.4rem 1.4rem 1.8rem 1.4rem;
+        border-bottom-right-radius: 50px;
+        margin: 0 0.5rem;
     }
-    .church-mantle-tab-hint {
-        left: -34px;
-        display: flex;
+    .top-arch-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .top-arch-popup-title {
+        font-size: 1.7rem;
     }
 }
