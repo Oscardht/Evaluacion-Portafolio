@@ -187,8 +187,8 @@
 
             <!-- Acciones de Contacto Inmediato -->
             <div class="top-shape-actions">
-                <a href="https://wa.me/584147907819?text=Hola%2C%20Lic.%20Claudia.%20Deseo%20informaci%C3%B3n%20sobre%20las%20propiedades%20en%20Isla%20de%20Margarita." target="_blank" rel="noopener noreferrer" class="top-shape-wa-link">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+                <a href="#Galeria" class="top-shape-wa-link">
+                    <i class="fa-solid fa-house-chimney"></i> Ver propiedades ahora
                 </a>
                 <a href="tel:+584147907819" class="top-shape-phone-link">
                     <i class="fa-solid fa-phone"></i> +58 414 790-7819
@@ -963,8 +963,8 @@
                 }
             });
 
-            // Cerrar al pulsar un enlace de navegación
-            document.querySelectorAll('.top-shape-link').forEach(link => {
+            // Cerrar al pulsar un enlace de navegación o botón de propiedades
+            document.querySelectorAll('.top-shape-link, .top-shape-wa-link').forEach(link => {
                 link.addEventListener('click', () => {
                     closeTopShape();
                 });
