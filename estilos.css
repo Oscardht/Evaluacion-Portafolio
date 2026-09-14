@@ -3098,6 +3098,392 @@ header.luxury-topbar .navbar a:hover::after {
     }
 }
 
+/* ==========================================================================
+   PESTAÑA POP-UP Y DRAWER DE NAVEGACIÓN LATERAL D'ALROC
+   Emblema Vectorial: Triángulo Arquitectónico con Corona en el Vértice
+   ========================================================================== */
+
+/* 1. Pestaña Disparadora Flotante (Docked Tab en el margen derecho) */
+.side-tab-trigger {
+    position: fixed;
+    right: 0;
+    top: 28%;
+    transform: translateY(-50%);
+    z-index: 1040;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(246, 241, 231, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid var(--gold);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    padding: 0.9rem 1.4rem 0.9rem 1.2rem;
+    cursor: pointer;
+    box-shadow: -4px 6px 22px rgba(40, 34, 25, 0.16), 0 0 12px rgba(184, 142, 62, 0.2);
+    outline: 1px solid rgba(184, 142, 62, 0.35);
+    outline-offset: -4px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.25s ease;
+    user-select: none;
+}
+
+.side-tab-trigger:hover {
+    transform: translateY(-50%) translateX(-6px);
+    background: #FCFAF6;
+    box-shadow: -6px 8px 28px rgba(40, 34, 25, 0.22), 0 0 16px rgba(184, 142, 62, 0.35);
+    border-color: var(--gold-light);
+}
+
+.side-tab-crest {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(140, 104, 32, 0.35));
+    transition: transform 0.3s ease;
+}
+
+.side-tab-trigger:hover .side-tab-crest {
+    transform: scale(1.12);
+}
+
+.side-tab-label-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.side-tab-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: var(--text-headline);
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.side-tab-sub {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    letter-spacing: 0.08em;
+}
+
+.side-tab-arrow {
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.side-tab-trigger:hover .side-tab-arrow {
+    transform: translateX(-3px);
+    color: var(--emerald-column);
+}
+
+/* 2. Fondo Oscurecido / Backdrop del Pop-up */
+.side-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(22, 19, 16, 0.58);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.side-drawer-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. Panel Lateral Deslizante (Pop-up desde la derecha) */
+.side-drawer-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    max-width: 88vw;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-canvas);
+    border-left: 2px solid var(--gold);
+    outline: 1px solid rgba(184, 142, 62, 0.3);
+    outline-offset: -6px;
+    z-index: 2200;
+    box-shadow: -15px 0 45px rgba(22, 19, 16, 0.35);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.side-drawer-panel.active {
+    transform: translateX(0);
+}
+
+/* Encabezado del Pop-up con Emblema Heráldico */
+.side-drawer-header {
+    position: relative;
+    padding: 2.8rem 2.4rem 1.6rem 2.4rem;
+    text-align: center;
+    background: linear-gradient(180deg, #FCFAF6 0%, #EEE5D5 100%);
+    border-bottom: 1px solid var(--gold-border);
+}
+
+.side-drawer-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: var(--bg-surface);
+    border: 1px solid var(--gold-border);
+    color: var(--text-headline);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.side-drawer-close:hover {
+    background: var(--emerald-column);
+    color: #FFFFFF;
+    border-color: var(--emerald-column);
+    transform: rotate(90deg);
+}
+
+.drawer-crest-img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    margin: 0 auto 1.2rem auto;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(140, 104, 32, 0.25));
+}
+
+.drawer-title-main {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--text-headline);
+    letter-spacing: 0.04em;
+    display: block;
+}
+
+.drawer-title-main em {
+    color: var(--gold-dark);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.drawer-title-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.35rem;
+}
+
+.drawer-divider {
+    margin: 1.4rem auto 0 auto !important;
+}
+
+/* Navegación Principal en el Drawer */
+.drawer-nav {
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    flex: 1;
+}
+
+.drawer-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--gold-border);
+    outline: 1px solid rgba(184, 142, 62, 0.2);
+    outline-offset: -4px;
+    border-radius: var(--radius-card);
+    text-decoration: none;
+    color: var(--text-headline);
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.drawer-nav-item:hover {
+    background: #FFFDF9;
+    transform: translateX(-4px);
+    border-color: var(--gold-dark);
+    outline-color: rgba(184, 142, 62, 0.6);
+    box-shadow: 0 4px 14px rgba(40, 34, 25, 0.08);
+}
+
+.drawer-nav-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--gold-dark);
+    width: 26px;
+    text-align: center;
+}
+
+.drawer-nav-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-nav-text strong {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-headline);
+    letter-spacing: 0.02em;
+}
+
+.drawer-nav-text span {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.drawer-nav-item i {
+    color: var(--gold-dark);
+    font-size: 1.2rem;
+    transition: transform 0.25s ease;
+}
+
+.drawer-nav-item:hover i {
+    transform: translateX(4px);
+    color: var(--emerald-column);
+}
+
+/* Accesos Directos por Colección */
+.drawer-shortcuts-wrap {
+    padding: 0 1.8rem 1.6rem 1.8rem;
+}
+
+.drawer-section-heading {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.drawer-pills-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.drawer-pill {
+    padding: 0.8rem 1rem;
+    background: var(--bg-card-warm);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-card);
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-headline);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.drawer-pill i {
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+}
+
+.drawer-pill:hover {
+    background: var(--gold-dark);
+    color: #FFFFFF;
+    border-color: var(--gold-dark);
+}
+
+.drawer-pill:hover i {
+    color: #FFFFFF;
+}
+
+/* Pie del Pop-up con Canales Directos */
+.drawer-footer {
+    padding: 1.8rem;
+    background: linear-gradient(180deg, #EEE5D5 0%, #E2D7C2 100%);
+    border-top: 1px solid var(--gold-border);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.drawer-btn-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    background: var(--emerald-column);
+    color: #FFFFFF;
+    padding: 1.1rem 1.6rem;
+    border-radius: var(--radius-card);
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.3);
+    transition: all 0.25s ease;
+}
+
+.drawer-btn-wa:hover {
+    background: #142B20;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(29, 61, 46, 0.4);
+}
+
+.drawer-phone-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+}
+
+.drawer-phone-link {
+    color: var(--text-headline);
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.drawer-phone-link i {
+    color: var(--gold-dark);
+}
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 @media (max-width: 1100px) {
     .property-gallery-grid, .Opiniones .boxbox {
@@ -3250,5 +3636,24 @@ header.luxury-topbar .navbar a:hover::after {
     .gallery-filter-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .side-tab-trigger {
+        top: 24%;
+        padding: 0.7rem 1rem 0.7rem 0.9rem;
+    }
+    .side-tab-crest {
+        width: 26px;
+        height: 26px;
+    }
+    .side-tab-label {
+        font-size: 1rem;
+    }
+    .side-tab-sub {
+        display: none;
+    }
+    .side-drawer-panel {
+        width: 100%;
+        max-width: 100vw;
     }
 }
