@@ -3212,19 +3212,12 @@ header.luxury-topbar .navbar a:hover::after {
 
 .top-shape-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.14em;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
+    letter-spacing: 0.12em;
+    display: block;
     margin-bottom: 0.2rem;
-}
-
-.top-shape-kicker i {
-    font-size: 0.72rem;
-    color: var(--gold-dark);
 }
 
 .top-shape-title {
@@ -3370,8 +3363,16 @@ header.luxury-topbar .navbar a:hover::after {
     font-size: 0.65rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     margin-bottom: 0.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.top-shape-agent-role i {
+    font-size: 0.62rem;
+    color: var(--gold-dark);
 }
 
 .top-shape-agent-name {
