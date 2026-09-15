@@ -90,6 +90,11 @@ body {
     background-attachment: fixed;
 }
 
+/* Prevención definitiva de auto-zoom en iOS Safari */
+input, select, textarea {
+    font-size: 16px !important;
+}
+
 /* Títulos con Jerarquía Clásica y Serif */
 h1, h2, h3, h4, .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
@@ -1056,6 +1061,102 @@ header.luxury-topbar .navbar a:hover::after {
 .field-input::placeholder {
     color: #717171;
     font-weight: 400;
+}
+
+/* Radiobuttons del Buscador Hero (Cero teclado / Cero descuadre) */
+.airbnb-field-radios {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.55rem 1.1rem;
+    cursor: default;
+}
+
+.airbnb-field-radios:hover {
+    background-color: transparent;
+}
+
+.field-header-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.field-radio-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.65rem;
+}
+
+.search-radio-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.2rem 0.45rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.search-radio-item:hover {
+    background-color: rgba(29, 61, 46, 0.05);
+}
+
+.search-radio-item input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.radio-custom-dot {
+    width: 16px;
+    height: 16px;
+    border: 1.8px solid #BEB7A9;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.radio-custom-dot::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--emerald-column);
+    transform: scale(0);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-radio-item input[type="radio"]:checked + .radio-custom-dot {
+    border-color: var(--emerald-column);
+    box-shadow: 0 0 0 2px rgba(184, 142, 62, 0.3);
+}
+
+.search-radio-item input[type="radio"]:checked + .radio-custom-dot::after {
+    transform: scale(1);
+}
+
+.radio-label-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #4A463F;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.search-radio-item input[type="radio"]:checked ~ .radio-label-text {
+    font-weight: 700;
+    color: var(--emerald-column);
 }
 
 .field-divider {
@@ -4279,38 +4380,45 @@ header.luxury-topbar .navbar a:hover::after {
     }
 
     /* ==========================================================================
-       TOP CORNER LEFT ARQUITECTÓNICO PARA CELULARES (VERSIÓN AMPLIADA Y REDONDEADA)
-       - Conserva la silueta arqueada icónica (border-bottom-right-radius: 125px).
-       - Versión más grande y generosa para móviles (width: min(350px, 88vw)).
-       - La pestaña contiene ÚNICAMENTE el logo de D'ALROC (CERO hamburguesa, CERO texto).
-       - Protege la zona de la Isla Dinámica / Notch con el fondo marfil (#FCFAF6)
-         evitando que el fondo o hero se filtren durante el scroll.
+       TOP CORNER ARQUITECTÓNICO ESTÁTICO & ESCUDO ISLA DINÁMICA (CELULARES)
+       - Escudo superior (.top-island-shield): Abarca el 100% de la dimensión en el tope
+         cubriendo la Isla Dinámica / Notch con el fondo marfil (#FCFAF6) sin filtraciones.
+       - Silueta Arquitectónica (.top-shape-popup): Conserva su arco redondeado real y noble
+         (border-bottom-right-radius: 130px), orla dorada doble y marca de agua sacra.
+       - Cero diseño cuadrado simplón: Es una verdadera forma arqueada neoclásica.
+       - Estático en el tope: NO persigue al usuario al scrollear (position: absolute).
+       - Muestra ÚNICAMENTE el logo de D'ALROC (CERO hamburguesa, CERO texto añadido).
        ========================================================================== */
     body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: env(safe-area-inset-top, 0px);
-        background: var(--bg-surface);
-        z-index: 2400;
-        pointer-events: none;
+        display: none !important;
+    }
+
+    .top-island-shield {
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: max(26px, env(safe-area-inset-top, 0px)) !important;
+        background: var(--bg-surface) !important;
+        z-index: 2400 !important;
+        pointer-events: none !important;
+        border-bottom: 1px solid rgba(184, 142, 62, 0.25) !important;
     }
 
     .top-shape-popup {
-        position: fixed !important;
+        position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         right: auto !important;
-        width: min(350px, 88vw) !important;
-        max-width: 88vw !important;
+        width: min(345px, 86vw) !important;
+        max-width: 86vw !important;
         background: var(--bg-surface) !important;
         border: 2px solid var(--gold) !important;
         border-top: none !important;
         border-left: none !important;
-        border-bottom-right-radius: 125px !important;
+        border-bottom-right-radius: 130px !important;
         border-bottom-left-radius: 0 !important;
         box-shadow: 0 16px 45px rgba(40, 34, 25, 0.18), 0 0 22px rgba(184, 142, 62, 0.25) !important;
         z-index: 2500 !important;
@@ -4318,42 +4426,49 @@ header.luxury-topbar .navbar a:hover::after {
         outline: 1px solid rgba(184, 142, 62, 0.3) !important;
         outline-offset: -5px !important;
         overflow: hidden !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
         margin: 0 !important;
-        transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
-        transform: translateY(calc(-100% + 58px + env(safe-area-inset-top, 0px))) !important;
+        transform: none !important;
+        transition: box-shadow 0.3s ease !important;
     }
 
     .top-shape-popup:not(.active):hover {
-        transform: translateY(calc(-100% + 62px + env(safe-area-inset-top, 0px))) !important;
-        box-shadow: 0 18px 48px rgba(40, 34, 25, 0.22), 0 0 26px rgba(184, 142, 62, 0.35) !important;
+        transform: none !important;
     }
 
     .top-shape-popup.active {
-        transform: translateY(0) !important;
         box-shadow: 0 24px 60px rgba(40, 34, 25, 0.25), 0 0 32px rgba(184, 142, 62, 0.35) !important;
-        max-height: 94vh !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
+        border-bottom-right-radius: 90px !important;
     }
 
+    /* Marca de agua sacra en el arco redondeado */
     .top-shape-popup::before {
-        display: none !important;
+        content: '' !important;
+        position: absolute !important;
+        right: 12px !important;
+        bottom: 12px !important;
+        width: 85px !important;
+        height: 95px !important;
+        background: url('img/Ejemplo.png') no-repeat bottom right / contain !important;
+        opacity: 0.14 !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        display: block !important;
     }
 
-    /* Pestaña de agarre inferior en móvil: SOLO EL LOGO DE D'ALROC */
+    /* Pestaña superior con el logo oficial D'ALROC */
     .top-shape-handle {
-        order: unset !important;
+        order: 1 !important;
         width: 100% !important;
-        height: 58px !important;
+        height: 64px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
         padding: 0 0 0 1.6rem !important;
-        background: var(--bg-surface) !important;
+        background: transparent !important;
         border: none !important;
-        border-top: 1px solid var(--gold-border) !important;
-        box-shadow: 0 4px 14px rgba(40, 34, 25, 0.12) !important;
+        box-shadow: none !important;
         cursor: pointer !important;
         position: relative !important;
         z-index: 2 !important;
@@ -4361,10 +4476,15 @@ header.luxury-topbar .navbar a:hover::after {
     }
 
     .shape-handle-logo {
-        height: 42px !important;
+        height: 44px !important;
         width: auto !important;
         object-fit: contain !important;
-        filter: drop-shadow(0 2px 6px rgba(184, 142, 62, 0.4)) !important;
+        filter: drop-shadow(0 2px 6px rgba(184, 142, 62, 0.45)) !important;
+        transition: transform 0.2s ease !important;
+    }
+
+    .top-shape-handle:active .shape-handle-logo {
+        transform: scale(0.95);
     }
 
     .shape-handle-text,
@@ -4373,20 +4493,33 @@ header.luxury-topbar .navbar a:hover::after {
         display: none !important;
     }
 
-    /* Cuerpo del Pop-Up en móvil */
+    /* Cuerpo del Pop-Up en móvil (Desciende desde el header al tocar el logo) */
     .top-shape-body {
-        order: unset !important;
+        order: 2 !important;
         width: 100% !important;
         background: var(--bg-surface) !important;
-        padding: 1.4rem 1.6rem 1rem 1.6rem !important;
-        position: relative !important;
-        z-index: 1 !important;
-        max-height: none !important;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.35s ease !important;
+    }
+
+    .top-shape-popup:not(.active) .top-shape-body {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        padding: 0 1.6rem !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+        border-top: none !important;
+    }
+
+    .top-shape-popup.active .top-shape-body {
+        max-height: 85vh !important;
         opacity: 1 !important;
         visibility: visible !important;
+        padding: 1rem 1.6rem 2rem 1.6rem !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
         pointer-events: auto !important;
-        border-top: none !important;
-        transition: none !important;
+        border-top: 1px solid var(--gold-border) !important;
     }
 }
 
@@ -4456,7 +4589,7 @@ header.luxury-topbar .navbar a:hover::after {
         min-height: 100svh;
         min-height: 100dvh;
         overflow: visible;
-        padding: calc(78px + env(safe-area-inset-top, 18px)) 1.4rem 4rem 1.4rem;
+        padding: calc(88px + env(safe-area-inset-top, 18px)) 1.4rem 4rem 1.4rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -4496,21 +4629,46 @@ header.luxury-topbar .navbar a:hover::after {
     }
 
     .airbnb-inputs-bar {
-        border-radius: 18px;
-        padding: 0.65rem;
+        border-radius: 20px;
+        padding: 0.75rem;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.65rem;
         background: #FFFFFF;
         border: 1.5px solid #E2DBCF;
     }
 
-    .airbnb-field-group {
+    .airbnb-field-radios {
         width: 100%;
-        padding: 0.65rem 0.9rem;
-        border-radius: 12px;
+        padding: 0.75rem 0.9rem;
+        border-radius: 14px;
         background: #FAF8F4;
         border: 1px solid #EBE4D8;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+
+    .field-radio-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.65rem;
+    }
+
+    .search-radio-item {
+        padding: 0.35rem 0.6rem;
+        border-radius: 8px;
+        background: #FFFFFF;
+        border: 1px solid #EAE3D6;
+    }
+
+    .search-radio-item:has(input[type="radio"]:checked) {
+        border-color: var(--emerald-column);
+        background: rgba(29, 61, 46, 0.05);
+    }
+
+    .radio-label-text {
+        font-size: 0.94rem;
     }
 
     .field-divider {

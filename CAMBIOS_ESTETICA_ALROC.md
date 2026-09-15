@@ -185,19 +185,17 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 - [x] **Separación Vertical de la Barra Superior en Móviles:**
   - Ajuste de padding superior en la sección Hero para garantizar despeje total respecto a la pestaña retráctil de la marca.
 
-### 📲 Fase 3.6: Top Corner Left Arquitectónico Ampliado en Móviles, Protección de Dynamic Island & Hero Armonioso — COMPLETADO
-- [x] **Top Corner Left Arquitectónico Preservado y Ampliado en Móviles (`<= 768px`):**
-  - **Identidad Arquitectónica Sagrada Intacta:** Se rechazó formalmente la conversión a header rectangular genérico con icono de hamburguesa. El componente conserva íntegramente su silueta de esquina redondeada (`border-bottom-right-radius: 125px`) con orla dorada de 2px (`border: 2px solid var(--gold); border-top: none; border-left: none;`).
-  - **Versión Ampliada y Cómoda:** Escala adaptada a móviles (`width: min(350px, 88vw)`) para una legibilidad y despliegue natural de servicios, píldora panorámica y acciones sin desbordarse.
-  - **Pestaña Pura con ÚNICAMENTE el Logo Oficial:** La pestaña inferior visible contiene exclusivamente el escudo heráldico de D'ALROC (`IMG_0217.png` con drop-shadow áureo), sin texto repetido ni icono de hamburguesa, preservando la estética distinguida original.
-  - **Despliegue y Cierre Suave:** Apertura con clic en el logo o pestaña con animación fluida `cubic-bezier(0.16, 1, 0.3, 1)`, scroll interno independiente para pantallas pequeñas (`max-height: 94vh; overflow-y: auto`) y cierre automático al pulsar fuera o al tocar enlaces.
-- [x] **Protección Fija de la Isla Dinámica / Notch en iPhones y Android (`body::before`):**
-  - Configuración de `viewport-fit=cover`, `theme-color: #FCFAF6` y `apple-mobile-web-app-status-bar-style`.
-  - Franja fija superior sólida con fondo marfil (`var(--bg-surface)` / `#FCFAF6`) de altura `env(safe-area-inset-top, 0px)` y `z-index: 2400`.
-  - **Resultado:** Al hacer scroll en la página, el contenido y la imagen del Hero se deslizan por debajo de la franja superior; la zona de la Isla Dinámica y la barra de estado se mantienen impecablemente cubiertas en marfil alabastro, eliminando cualquier filtración del fondo oscuro o sensación de elemento flotante desanclado.
-- [x] **Hero Armonioso, Limpio y Sin Sobrecarga Tipográfica:**
-  - **Cero Textos Agregados / Kicker Clutter:** Se eliminaron las insignias innecesarias, subtítulos extensos redundantes y chips de zonas populares que rompían la armonía y proporción visual.
-  - **Buscador Fiel al Diseño Original:** Título claro y contundente (`Encuentra tu hogar ideal en Margarita`), selector de pestañas (*Apartamentos*, *Town-House*, *Alquiler*), barra de 3 campos alineados verticalmente de forma limpia en móvil (*Ubicación*, *Calendario*, *Alquiler*), botón de búsqueda en verde esmeralda y enlace secundario `Cerca de ti >`.
+### 📲 Fase 3.6: Arco Arquitectónico Escultural Estático & Buscador Táctil con Radiobuttons — COMPLETADO
+- [x] **Arco Arquitectónico Escultural y Escudo de Isla Dinámica en Móviles (`<= 768px`):**
+  - **Cero Diseño Cuadrado Simplón:** Se sustituyó cualquier remate rectangular plano por el auténtico **arco arquitectónico escultural de esquina** con una curva pronunciada y amplia (`border-bottom-right-radius: 130px`), orla de oro doble (`border: 2px solid var(--gold); outline: 1px solid rgba(184, 142, 62, 0.3)`) y la marca de agua sacra de la Virgen en el arco (`Ejemplo.png`).
+  - **Escudo Estático de Isla Dinámica / Notch (`.top-island-shield`):** Una franja superior sólida en `position: absolute; top: 0; left: 0; width: 100%;` con fondo marfil (`var(--bg-surface)` / `#FCFAF6`) cubre al 100% el ancho de la zona de la cámara, reloj y batería, impidiendo cualquier fuga del fondo de la página.
+  - **Comportamiento 100% Estático (Cero Persecución al Scrollear):** Tanto el arco de esquina como el escudo superior se anclan con `position: absolute; top: 0;`, de modo que al scrollear hacia el catálogo de propiedades permanecen en la cabecera superior de la web y **nunca persiguen al usuario como elemento flotante molesto**.
+  - **Pestaña Pura con el Logo Oficial:** En reposo exhibe exclusivamente el escudo de D'ALROC (`IMG_0217.png`), libre de iconos de hamburguesa o textos genéricos. Al pulsar el logo, desciende el panel de servicios y contacto de forma fluida.
+- [x] **Buscador Hero Táctil con Radiobuttons (Cero Teclado, Cero Descuadre):**
+  - **Reemplazo de Campos de Texto Libre por Radiobuttons:** En lugar de requerir escritura manual (que activaba el teclado virtual y causaba auto-zoom en iOS descuadrando la vista hacia un encuadre tipo escritorio), ahora la selección se realiza mediante radiobuttons táctiles nativos estilizados.
+  - **Selector de Ubicación Directo:** Opciones con radiobutton estilizado (`Todas`, `Pampatar`, `Costa Azul`, `Playa El Ángel`, `La Caracola`) que aplican el filtro al instante y sin zooms accidentales.
+  - **Selector de Modalidad / Estadía:** Opciones (`Cualquiera`, `Vacacional`, `Largo Plazo`).
+  - **Prevención Definitiva de Zoom en iOS:** Configuración de `maximum-scale=1.0, user-scalable=no` en el viewport y tamaño de fuente mínimo de `16px` en controles de formulario.
 - [x] **Unificación Tipográfica del Footer con Plus Jakarta Sans:**
   - Aplicación de *Plus Jakarta Sans* en el pie de página (`.footer`, `.footer h4`, enlaces de navegación), logrando coherencia visual total con la tipografía moderna del Hero.
 
