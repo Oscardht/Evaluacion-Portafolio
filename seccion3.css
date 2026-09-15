@@ -59,7 +59,7 @@
     font-size: 1.5rem;
     line-height: 1.7;
     color: var(--text-body);
-    text-align: justify;
+    text-align: left;
 }
 
 /* ===== PANEL 2: LIC. CLAUDIA DI DIOMEDE — ASESORA ENCARGADA ===== */
@@ -168,7 +168,7 @@
     font-size: 1.45rem;
     color: var(--text-body);
     line-height: 1.6;
-    text-align: justify;
+    text-align: left;
 }
 
 .agent-actions {
@@ -376,9 +376,9 @@ footer {
     .Legado h3 { font-size: 2.8rem; text-align: center; }
     
     .Legado p {
-        text-align: justify;
-        text-justify: inter-word;
-        hyphens: auto;
+        text-align: left;
+        line-height: 1.65;
+        hyphens: manual;
     }
     
     .footer ul {

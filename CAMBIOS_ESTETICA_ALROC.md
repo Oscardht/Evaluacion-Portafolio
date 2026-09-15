@@ -144,29 +144,46 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 - [x] **Estandarización de Identidad y Nomenclatura:**
   - Estandarización unificada del título profesional a **`Lcda. Claudia Di Diomede`** en ambos pop-ups y botones de contacto.
   - Armonización cromática del botón y elementos del buscador estilo Airbnb del Hero (reemplazo de coral `#FF385C` por verde esmeralda imperial `--emerald-column` y oro).
-  - Sincronización exacta en todos los archivos del proyecto (`ipodnano.html`, `index.html` y `estilos.css`).
+  - Sincronización exacta y consolidación final en `index.html` (retirando el archivo temporal de pruebas `ipodnano.html` y unificando el código fuente definitivo en `index.html` y `estilos.css`).
 
 ### 🚀 Fase 3: Catálogo Inmobiliario Victoriano de Lujo (Estilo Airbnb Catalog) — COMPLETADO
 - [x] **Arquitectura de Cuadrícula a 2 Columnas (`grid-template-columns: repeat(2, 1fr)`):**
   - Configuración fija de **2 propiedades por fila** en pantallas de escritorio, logrando un catálogo visual amplio, imponente y cinematográfico.
-  - Adaptabilidad fluida a 1 columna en dispositivos móviles y tabletas (`@media (max-width: 960px)`).
+  - Adaptabilidad fluida a 1 columna en dispositivos móviles y tabletas (`@media (max-width: 820px)`).
 - [x] **Enmarcado Victoriano en Verde Esmeralda Imperial & Bordes Dorados:**
   - Fondo noble de tarjetas en degradado verde heráldico imperial: `linear-gradient(165deg, #1D3D2E 0%, #142B20 100%)`.
   - Doble enmarcado artesanal: borde exterior de 2px en oro antiguo (`#B88E3E`) con filete interior dorado de 1px (`rgba(212, 176, 98, 0.45)`).
-  - Preservación íntegra del fondo general de la sección `#Galeria` en pergamino marfil cálido (`#F6F1E7` a `#EDE4D3`).
-- [x] **Fotografías Panorámicas de Gran Formato (`380px`):**
-  - Contenedor multimedia expandido a 380px con remate inferior de 2px en oro antiguo.
-  - Efecto de zoom suave (*scale 1.06*) al pasar el cursor.
+  - Preservación íntegra del fondo general de la sección `#Galeria` con fondo panorámico e iluminación cálida.
+- [x] **Fotografías Panorámicas de Gran Formato con `OverallPick.png`:**
+  - Contenedor multimedia expandido con remate inferior de 2px en oro antiguo y efecto de zoom suave (*scale 1.06*) en hover.
+  - Integración del distintivo de selección exclusiva en el catálogo.
 - [x] **Tipografía Editorial de Alto Contraste sobre Esmeralda:**
-  - Categorías en tipografía *Cinzel* dorada (`#D4B062`).
+  - Migración a tipografía moderna limpia *Plus Jakarta Sans* para legibilidad óptima de datos técnicos, metrajes y ubicaciones.
   - Títulos monumentales en blanco níveo sobre *Playfair Display*, iluminándose en oro bruñido al interactuar.
-  - Texturas de especificaciones y metros cuadrados con iconos dorados y legibilidad óptima.
-- [x] **Pop-Up / Modal Ficha Técnica Dinámica:**
+  - Especificaciones con iconos dorados (`fa-ruler-combined`, `fa-bed`, `fa-square-parking`).
+- [x] **Buscador Hero y Filtrado Dinámico Conectado:**
+  - Conexión del buscador Airbnb superior con el catálogo: filtrado instantáneo por pestañas (*Apartamentos*, *Town-House*, *Alquiler*) y por entrada de texto en tiempo real (`applyPortfolioFilter`).
+- [x] **Pop-Up / Modal Ficha Técnica Dinámica con Deep Linking:**
   - Ficha técnica completa de cada inmueble con imagen ampliada, resumen descriptivo, metraje y estatus legal.
-  - Botón de conversión directo vía WhatsApp: **`CONSULTAR POR ESTA PROPIEDAD`** con icono de WhatsApp (`fa-brands fa-whatsapp`), estilizado con degradado verde vibrante esmeralda y borde dorado.
-  - **Mensaje predeterminado dinámico con enlace directo:**
-    `Buenas Claudia, me interesa esta propiedad "{link de la propiedad en la pag}". Me podrias dar detalles para pautar una cita?`
-  - Enlaces ancla automáticos (`id="villa_pampatar"`, etc.) que permiten scroll y apertura automática de ficha técnica si el visitante abre el enlace desde WhatsApp.
+  - Detección de fragmento URL (Hash Routing como `#villa_pampatar`): apertura y desplazamiento suave automático al cargar la página si el visitante llega desde un enlace compartido.
+  - Botón de conversión directo vía WhatsApp: **`CONSULTAR POR ESTA PROPIEDAD`** con icono de WhatsApp (`fa-brands fa-whatsapp`), estilizado con degradado verde esmeralda y borde dorado.
+  - Mensaje dinámico preconfigurado con el enlace exacto del inmueble:
+    `Buenas Claudia, me interesa esta propiedad "{URL#inmueble}". Me podrias dar detalles para pautar una cita?`
+
+### 📱 Fase 3.5: Optimización Responsive Móvil & Corrección de Justificación Tipográfica — COMPLETADO
+- [x] **Eliminación Total de la Justificación Forzada (`text-align: justify`):**
+  - **Diagnóstico:** En pantallas móviles (< 768px y < 480px), la justificación tipográfica provocaba amplios "ríos de espacio en blanco" y distorsión entre palabras debido al ancho reducido de columna.
+  - **Corrección:** Se erradicaron todas las declaraciones `text-align: justify` tanto en `estilos.css` como en `seccion3.css` (incluida la regla previa forzada en `@media (max-width: 768px)`).
+  - **Nuevo estándar:** Alineación natural a la izquierda (`text-align: left !important; hyphens: manual !important; word-spacing: normal;`) con interlineado holgado (`line-height: 1.6 - 1.65`) en todos los párrafos, descripciones de tarjetas, bio de la asesora, lemas y fichas técnicas.
+- [x] **Balance de Metadatos y Acciones en Tarjetas Móviles:**
+  - En pantallas estrechas, `.meta-specs-row` pasa de `justify-content: space-between` a `justify-content: flex-start` con `gap: 0.6rem 1.2rem`, eliminando elementos aislados o desfasados al saltar de línea.
+  - Reducción armoniosa de fuentes y paddings en tarjetas para pantallas compactas `<= 480px`.
+- [x] **Microtipografía y Drop-Cap Adaptativo en Ficha Técnica:**
+  - Redimensión responsiva de la letra capitular (`.modal-property-body::first-letter`) de 3.2rem a 2.1rem en pantallas `<= 600px` y 1.9rem en pantallas `<= 480px`, asegurando que el texto fluya de manera uniforme sin colisionar con el margen.
+- [x] **Desplazamiento Seguro de Pestañas del Buscador (`.airbnb-widget-tabs`):**
+  - Ajuste a `justify-content: flex-start` con `overflow-x: auto` en móviles para prevenir que la primera pestaña quede recortada en pantallas angostas.
+- [x] **Separación Vertical de la Barra Superior en Móviles:**
+  - Ajuste de padding superior en la sección Hero (`padding: 7.5rem 1.4rem 4rem 1.4rem`) para garantizar despeje total respecto a la pestaña retráctil de la marca.
 
 ### 🎨 Código Oficial de Colores del Proyecto Inversiones D'ALROC
 | Nombre del Color | Código Hex | Variable CSS | Aplicación Principal |

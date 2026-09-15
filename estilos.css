@@ -793,7 +793,7 @@ header.luxury-topbar .navbar a:hover::after {
     font-weight: 600;
     color: var(--text-headline);
     line-height: 1.5;
-    text-align: justify;
+    text-align: left;
 }
 
 .hero-tagline strong {
@@ -810,7 +810,7 @@ header.luxury-topbar .navbar a:hover::after {
     font-weight: 500;
     color: var(--text-body);
     margin-bottom: 1.2rem;
-    text-align: justify;
+    text-align: left;
     line-height: 1.6;
 }
 
@@ -2118,7 +2118,7 @@ header.luxury-topbar .navbar a:hover::after {
     font-size: 1.45rem;
     color: var(--text-body);
     line-height: 1.65;
-    text-align: justify;
+    text-align: left;
     margin-bottom: 2rem;
 }
 
@@ -3047,7 +3047,7 @@ header.luxury-topbar .navbar a:hover::after {
     font-size: 1.45rem;
     color: var(--text-body);
     line-height: 1.6;
-    text-align: justify;
+    text-align: left;
 }
 
 /* ===== MODAL DE COMPLETADO 100% SCROLL / QR INSTAGRAM & REDES ===== */
@@ -4405,6 +4405,16 @@ header.luxury-topbar .navbar a:hover::after {
         font-size: clamp(2.2rem, 6vw, 3.2rem);
     }
 
+    /* Corrección y Estandarización de Alineación en Móviles (Cero justificación forzada / ríos de espacio) */
+    p, .hero-tagline, .hero-feature, .step-body p, .Opiniones .boxbox p,
+    .portfolio-info p, .modal-property-body, .modal-property-lead,
+    .top-shape-service-text p, .legado-card p, .agent-bio {
+        text-align: left !important;
+        text-justify: auto !important;
+        hyphens: manual !important;
+        word-spacing: normal !important;
+    }
+
     /* Sección Portafolio */
     .Galeria {
         background-attachment: scroll;
@@ -4416,19 +4426,24 @@ header.luxury-topbar .navbar a:hover::after {
     }
     .portfolio-info {
         padding: 2rem 1.8rem;
+        text-align: left;
     }
     .portfolio-info h4 {
         font-size: 1.85rem;
         margin-bottom: 0.9rem;
         line-height: 1.3;
+        text-align: left;
     }
     .portfolio-info p {
         font-size: 1.32rem;
         margin-bottom: 1.6rem;
+        text-align: left;
+        line-height: 1.6;
     }
     .meta-specs-row {
         font-size: 1.18rem;
-        gap: 0.6rem;
+        gap: 0.6rem 1.2rem;
+        justify-content: flex-start;
     }
     .meta-action-row {
         flex-wrap: wrap;
@@ -4464,18 +4479,30 @@ header.luxury-topbar .navbar a:hover::after {
     .modal-property-title {
         font-size: 1.95rem;
         margin-bottom: 0.8rem;
+        text-align: left;
     }
     .modal-property-lead {
         font-size: 1.25rem;
         margin-bottom: 1.1rem;
+        text-align: left;
+        line-height: 1.5;
     }
     .modal-property-body {
         font-size: 1.22rem;
         margin-bottom: 1.4rem;
+        text-align: left;
+        line-height: 1.65;
+    }
+    .modal-property-body::first-letter {
+        font-size: 2.1rem;
+        margin-right: 0.5rem;
+        line-height: 0.9;
+        margin-top: 0;
     }
     .modal-specs-pills {
         gap: 0.6rem;
         margin-bottom: 1.6rem;
+        justify-content: flex-start;
     }
     .modal-spec-pill {
         font-size: 1.05rem;
@@ -4502,9 +4529,16 @@ header.luxury-topbar .navbar a:hover::after {
     }
     .portfolio-info {
         padding: 1.8rem 1.4rem;
+        text-align: left;
     }
     .portfolio-info h4 {
         font-size: 1.75rem;
+        text-align: left;
+    }
+    .meta-specs-row {
+        font-size: 1.12rem;
+        gap: 0.5rem 1rem;
+        justify-content: flex-start;
     }
     .meta-location {
         font-size: 1.18rem;
@@ -4515,6 +4549,10 @@ header.luxury-topbar .navbar a:hover::after {
     }
     .modal-info-col {
         padding: 1.8rem 1.3rem;
+    }
+    .modal-property-body::first-letter {
+        font-size: 1.9rem;
+        margin-right: 0.4rem;
     }
     .modal-btn-wa {
         font-size: 1.05rem;
