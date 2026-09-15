@@ -3838,6 +3838,14 @@ header.luxury-topbar .navbar a:hover::after {
     filter: drop-shadow(0 4px 12px rgba(184, 142, 62, 0.7));
 }
 
+/* En Desktop (ancho > 768px), ocultar texto y toggle para mantener solo el logo arquitectónico en la pestaña */
+@media (min-width: 769px) {
+    .shape-handle-text,
+    .shape-handle-toggle {
+        display: none !important;
+    }
+}
+
 /* ==========================================================================
    INSIGNIA FLOTANTE SACRA: VIRGEN DEL VALLE (OPCIÓN 2)
    - Dockada en el margen derecho inferior con resplandor suave de vitral.
@@ -4270,32 +4278,150 @@ header.luxury-topbar .navbar a:hover::after {
         justify-content: center;
     }
 
-    /* Forma Arquitectónica Pop-Up Responsive */
+    /* ==========================================================================
+       HEADER OFICIAL PARA CELULARES (FULL WIDTH & DYNAMIC ISLAND SAFE AREA)
+       - Abarca el 100% de la pantalla en la parte superior sólo en dispositivos móviles.
+       - Protege la zona de la Isla Dinámica / Notch en iPhones y Android con safe-area-inset-top.
+       - Fondo marfil/alabastro (#FCFAF6) idéntico al header, protegiendo el scroll de la página.
+       ========================================================================== */
     .top-shape-popup {
-        left: 0;
-        right: auto;
-        width: min(360px, 94vw);
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        border: none !important;
+        border-bottom: 2px solid var(--gold) !important;
+        outline: none !important;
+        transform: none !important;
+        background: var(--bg-surface) !important;
+        padding-top: env(safe-area-inset-top, 0px) !important;
+        box-shadow: 0 4px 22px rgba(24, 21, 18, 0.12) !important;
+        z-index: 3500 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+        margin: 0 !important;
     }
-}
 
-@media (max-width: 540px) {
-    .top-shape-popup {
-        left: 0;
-        right: auto;
-        width: min(340px, 96vw);
-        border-bottom-right-radius: 90px;
+    .top-shape-popup:not(.active):hover {
+        transform: none !important;
     }
-    .top-shape-body {
-        padding: 1.3rem 1.2rem 0.9rem 1.2rem;
+
+    .top-shape-popup::before {
+        display: none !important;
     }
-    .top-shape-link {
-        padding: 0.6rem 0.8rem;
+
+    .top-shape-handle {
+        order: 1 !important;
+        width: 100% !important;
+        height: 58px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 1.4rem !important;
+        background: var(--bg-surface) !important;
+        border: none !important;
+        box-shadow: none !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 10 !important;
+        user-select: none !important;
     }
-    .top-shape-title {
-        font-size: 1.4rem;
+
+    .handle-brand-wrap {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.9rem !important;
     }
+
     .shape-handle-logo {
-        height: 38px;
+        height: 38px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        filter: drop-shadow(0 2px 5px rgba(184, 142, 62, 0.35)) !important;
+    }
+
+    .shape-handle-text {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: left !important;
+    }
+
+    .handle-title {
+        font-family: 'Playfair Display', Georgia, serif !important;
+        font-size: 1.4rem !important;
+        font-weight: 800 !important;
+        color: var(--text-headline) !important;
+        letter-spacing: -0.01em !important;
+        line-height: 1.15 !important;
+    }
+
+    .handle-title em {
+        font-style: italic !important;
+        color: var(--gold-dark) !important;
+    }
+
+    .handle-subtitle {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        color: var(--gold-dark) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        line-height: 1.1 !important;
+    }
+
+    .shape-handle-toggle {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.55rem !important;
+        background: var(--bg-card-warm) !important;
+        border: 1px solid var(--gold-border) !important;
+        border-radius: 20px !important;
+        padding: 0.42rem 0.95rem !important;
+        color: var(--emerald-column) !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        transition: all 0.22s ease !important;
+    }
+
+    .top-shape-popup.active .shape-handle-toggle {
+        background: var(--emerald-column) !important;
+        color: #FFFFFF !important;
+        border-color: var(--emerald-column) !important;
+    }
+
+    /* Menú desplegable en móvil (se abre hacia abajo desde la barra de encabezado) */
+    .top-shape-body {
+        order: 2 !important;
+        width: 100% !important;
+        background: var(--bg-surface) !important;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.35s ease !important;
+    }
+
+    .top-shape-popup:not(.active) .top-shape-body {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        padding: 0 1.4rem !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+        border-top: none !important;
+    }
+
+    .top-shape-popup.active .top-shape-body {
+        max-height: calc(85vh - env(safe-area-inset-top, 0px)) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 1.4rem 1.4rem 2.2rem 1.4rem !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        pointer-events: auto !important;
+        border-top: 1px solid var(--gold-border) !important;
     }
 }
 
@@ -4359,42 +4485,227 @@ header.luxury-topbar .navbar a:hover::after {
 
 /* 3. Móvil Estándar (<= 600px) */
 @media (max-width: 600px) {
-    /* Hero adaptable sin desbordes */
+    /* Hero adaptable y despejado sin colisión con la barra superior de celulares */
     .airbnb-hero {
         height: auto;
         min-height: 100svh;
         min-height: 100dvh;
         overflow: visible;
-        padding: 7rem 1.4rem 4rem 1.4rem;
+        padding: calc(75px + env(safe-area-inset-top, 18px)) 1.4rem 4rem 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+
+    .hero-kicker-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--gold-light);
+        background: rgba(20, 43, 32, 0.72);
+        border: 1px solid rgba(212, 176, 98, 0.45);
+        padding: 0.45rem 1.2rem;
+        border-radius: 9999px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.2rem;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
     .airbnb-hero-title {
-        font-size: clamp(2.2rem, 6.5vw, 3.2rem);
-        margin-bottom: 1.6rem;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: clamp(2.3rem, 6.8vw, 3.4rem);
+        font-weight: 800;
+        line-height: 1.16;
+        letter-spacing: -0.03em;
+        color: #FFFFFF;
+        margin-bottom: 0.8rem;
     }
+
+    .hero-welcome-subtext {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 1.32rem;
+        color: #E8E2D8;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        max-width: 520px;
+        font-weight: 400;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Widget de Búsqueda Móvil: Tarjeta elegante tipo App */
     .airbnb-search-widget {
-        padding: 1.1rem 1.2rem 1.3rem 1.2rem;
-        border-radius: 22px;
+        padding: 1.2rem 1.2rem 1.3rem 1.2rem;
+        border-radius: 24px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32), 0 0 16px rgba(184, 142, 62, 0.2);
     }
+
     .airbnb-widget-tabs {
-        gap: 1.2rem;
-        white-space: nowrap;
+        gap: 0.6rem;
+        display: flex;
+        border-bottom: 1px solid #ECE7DE;
+        padding-bottom: 0.8rem;
+        margin-bottom: 0.9rem;
+    }
+
+    .airbnb-tab-btn {
+        flex: 1;
+        font-size: 1.05rem;
+        padding: 0.6rem 0.5rem;
+        border-radius: 20px;
+        color: #555555;
+        background: #F6F4EF;
+        border: 1px solid #E5DFD4;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+
+    .airbnb-tab-btn.active {
+        background: var(--emerald-column) !important;
+        color: #FFFFFF !important;
+        font-weight: 700 !important;
+        border-color: var(--emerald-column) !important;
+        box-shadow: 0 4px 12px rgba(29, 61, 46, 0.25) !important;
+    }
+
+    .airbnb-tab-btn.active::after {
+        display: none !important;
+    }
+
+    .airbnb-inputs-bar {
+        border-radius: 18px;
+        padding: 0.65rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        background: #FFFFFF;
+        border: 1.5px solid #E2DBCF;
+    }
+
+    .field-primary {
+        background: #FAF8F4;
+        border: 1px solid #EBE4D8;
+        border-radius: 14px;
+        padding: 0.75rem 1rem;
+    }
+
+    .airbnb-secondary-fields-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .field-secondary {
+        background: #FAF8F4;
+        border: 1px solid #EBE4D8;
+        border-radius: 14px;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .field-divider,
+    .field-divider-inner {
+        display: none;
+    }
+
+    .airbnb-cta-btn {
+        width: 100% !important;
+        margin: 0.3rem 0 0 0 !important;
+        border-radius: 14px !important;
+        padding: 1.15rem 1.4rem !important;
+        font-size: 1.25rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.04em !important;
+        justify-content: center !important;
+        background: linear-gradient(135deg, #1D3D2E 0%, #2A5A44 100%) !important;
+        border: 1.5px solid var(--gold) !important;
+        box-shadow: 0 6px 20px rgba(29, 61, 46, 0.35) !important;
+    }
+
+    /* Chips de Búsqueda Rápida */
+    .hero-quick-chips {
+        margin-top: 1.2rem;
+        padding-top: 0.9rem;
+        border-top: 1px dashed #E5DFD4;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: left;
+    }
+
+    .quick-chips-title {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--gold-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+    }
+
+    .chips-scroll-row {
+        display: flex;
+        gap: 0.6rem;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        padding-bottom: 0.2rem;
     }
-    .airbnb-widget-tabs::-webkit-scrollbar {
+
+    .chips-scroll-row::-webkit-scrollbar {
         display: none;
     }
-    .airbnb-tab-btn {
-        font-size: 0.95rem;
-        padding: 0.3rem 0.2rem 0.5rem 0.2rem;
+
+    .quick-chip-btn {
+        background: #F5F1E9;
+        border: 1px solid #DFD5C4;
+        border-radius: 9999px;
+        padding: 0.45rem 1rem;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #2C261E;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
     }
-    .airbnb-inputs-bar {
-        border-radius: 18px;
-        padding: 0.7rem;
+
+    .quick-chip-btn:hover,
+    .quick-chip-btn:active {
+        background: var(--emerald-column);
+        color: #FFFFFF;
+        border-color: var(--emerald-column);
+        transform: translateY(-1px);
     }
-    .airbnb-field-group {
-        padding: 0.5rem 0.6rem;
+
+    .airbnb-secondary-wrap {
+        margin-top: 1.6rem;
+    }
+
+    .airbnb-secondary-link {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 1.18rem;
+        font-weight: 700;
+        color: #FFFFFF;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(0, 0, 0, 0.45);
+        padding: 0.7rem 1.4rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(212, 176, 98, 0.45);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: all 0.2s ease;
     }
 
     /* Header Divisionario */

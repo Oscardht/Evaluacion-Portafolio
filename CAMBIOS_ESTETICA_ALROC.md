@@ -183,7 +183,25 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 - [x] **Desplazamiento Seguro de Pestañas del Buscador (`.airbnb-widget-tabs`):**
   - Ajuste a `justify-content: flex-start` con `overflow-x: auto` en móviles para prevenir que la primera pestaña quede recortada en pantallas angostas.
 - [x] **Separación Vertical de la Barra Superior en Móviles:**
-  - Ajuste de padding superior en la sección Hero (`padding: 7.5rem 1.4rem 4rem 1.4rem`) para garantizar despeje total respecto a la pestaña retráctil de la marca.
+  - Ajuste de padding superior en la sección Hero para garantizar despeje total respecto a la pestaña retráctil de la marca.
+
+### 📲 Fase 3.6: Header Móvil de Ancho Completo, Safe Area para Dynamic Island & Hero Amigable — COMPLETADO
+- [x] **Integración con Safe Area e Isla Dinámica (iPhone 14 Pro Max en adelante):**
+  - Configuración de `viewport-fit=cover`, `theme-color: #FCFAF6` y `env(safe-area-inset-top)`.
+  - El fondo marfil (`var(--bg-surface)`) cubre de forma sólida la zona de la cámara e isla dinámica, evitando que al hacer scroll se filtre el fondo oscuro de la página.
+- [x] **Header Oficial Full-Width en Celulares (`<= 768px`):**
+  - La barra superior abarca el 100% del ancho del teléfono de forma fija, actuando como cabecera formal institucional con el logo oficial, tipografía de marca (`INVERSIONES D'ALROC`) y botón de apertura de menú.
+  - El panel del menú desciende de manera fluida debajo de la barra con límite de altura y scroll táctil independiente.
+  - Conservación íntegra de la pestaña y arco arquitectónico de esquina en pantallas desktop y tablets grandes (`> 768px`).
+- [x] **Rediseño Amigable e Intuitivo del Hero Móvil:**
+  - Despeje vertical respecto al header fijo (`padding: calc(75px + env(safe-area-inset-top, 18px)) 1.4rem 4rem 1.4rem;`).
+  - Kicker superior editorial en píldora dorada: `BIENES RAÍCES SELECTOS • ISLA DE MARGARITA`.
+  - Subtítulo de bienvenida explicativo para nuevos visitantes sobre la cartera de inmuebles y blindaje jurídico.
+  - Buscador táctil tipo app con pestañas segmentadas (*Apartamentos*, *Town-House*, *Alquiler*), campo principal de ubicación y campos secundarios compactos en 2 columnas (Calendario y Huéspedes).
+  - Chips interactivos de zonas populares (*Pampatar*, *Costa Azul*, *La Caracola*, *Los Robles*) que rellenan la búsqueda y filtran el catálogo en tiempo real con un solo toque.
+  - Enlace secundario de acceso rápido directo al catálogo de propiedades.
+- [x] **Unificación Tipográfica del Footer con Plus Jakarta Sans:**
+  - Aplicación de *Plus Jakarta Sans* en el pie de página (`.footer`, `.footer h4`, enlaces de navegación), logrando coherencia visual total con la tipografía moderna del Hero.
 
 ### 🎨 Código Oficial de Colores del Proyecto Inversiones D'ALROC
 | Nombre del Color | Código Hex | Variable CSS | Aplicación Principal |

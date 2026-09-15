@@ -276,12 +276,13 @@
 }
 
 /* ===== FOOTER CLÁSICO EDITORIAL ===== */
-footer {
+.footer {
     background: #F3EFE6;
     padding: 5rem 0 3.5rem 0;
     color: var(--text-body);
     text-align: center;
     border-top: 1px solid var(--gold-border);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .footer .container {
@@ -306,10 +307,12 @@ footer {
 }
 
 .footer h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.95rem;
     color: var(--text-headline);
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
 }
 
 .footer ul {
@@ -324,6 +327,7 @@ footer {
 }
 
 .footer ul li a {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-body);
     font-size: 1.45rem;
     font-weight: 600;
