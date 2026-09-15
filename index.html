@@ -107,9 +107,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=victorian-5.2">
+    <link rel="stylesheet" href="estilos.css?v=responsive-8.0">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-    <link rel="stylesheet" href="seccion3.css?v=victorian-4.0">
+    <link rel="stylesheet" href="seccion3.css?v=responsive-5.0">
 </head>
 
 <body>
@@ -138,17 +138,7 @@
 
             <!-- Perfil Profesional & Presentación: De qué se trata Inversiones D'ALROC -->
             <div class="top-shape-about-card">
-                <!-- Fila Interactiva: Burbuja circular a Píldora Panorámica + Tira Verde -->
-                <div class="top-shape-expand-row" id="top-shape-expand-row" title="Pasa el cursor para desplegar la vista panorámica">
-                    <div class="top-shape-pill-box">
-                        <img src="img/ImagenLarge.jpg" alt="Vista Panorámica Isla de Margarita — Inversiones D'ALROC" class="top-shape-pill-img">
-                    </div>
-                    <div class="top-shape-green-strip"></div>
-                </div>
-
-                <div class="top-shape-divider"></div>
-
-                <!-- Bloques de Especialidad y Servicios (Infonormal) -->
+                <!-- Bloques de Especialidad y Servicios (Infonormal) - Por encima de la píldora -->
                 <div class="top-shape-services-grid">
                     <div class="top-shape-service-card">
                         <div class="top-shape-service-icon">
@@ -177,6 +167,29 @@
                         <div class="top-shape-service-text">
                             <strong>Turismo & Hospedaje</strong>
                             <p>Boletería aérea, pasajes y alojamientos selectos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-shape-divider"></div>
+
+                <!-- Fila Interactiva: Burbuja circular a Píldora Panorámica + Texto Fly-In rotativo (Sin panel verde) -->
+                <div class="top-shape-expand-row" id="top-shape-expand-row">
+                    <div class="top-shape-pill-box">
+                        <img src="img/ImagenLarge.jpg" alt="Vista Panorámica Isla de Margarita — Inversiones D'ALROC" class="top-shape-pill-img">
+                    </div>
+                    <div class="top-shape-flyin-wrap" id="top-shape-flyin-wrap">
+                        <div class="top-shape-flyin-item active" data-index="0">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>BAHÍA DE PAMPATAR, ISLA DE MARGARITA</span>
+                        </div>
+                        <div class="top-shape-flyin-item" data-index="1">
+                            <i class="fa-solid fa-house-chimney-window"></i>
+                            <span>EL HOGAR DE TUS SUEÑOS, JUNTO A NUESTRA ASESORÍA.</span>
+                        </div>
+                        <div class="top-shape-flyin-item" data-index="2">
+                            <i class="fa-solid fa-compass"></i>
+                            <span>EL ENCANTO DE LA ISLA, DE LA MANO DE NOSOTROS.</span>
                         </div>
                     </div>
                 </div>
@@ -213,21 +226,17 @@
                 <span class="node-dot"></span>
                 <span class="node-label">01 Inicio</span>
             </a>
-            <a href="#Ruta" class="compass-node" data-section="Ruta" title="Ruta de Inversión">
+            <a href="#Galeria" class="compass-node" data-section="Galeria" title="Portafolio de Inmuebles">
                 <span class="node-dot"></span>
-                <span class="node-label">02 Ruta</span>
-            </a>
-            <a href="#Galeria" class="compass-node" data-section="Galeria" title="Zonas & Inmuebles">
-                <span class="node-dot"></span>
-                <span class="node-label">03 Zonas</span>
+                <span class="node-label">02 Portafolio</span>
             </a>
             <a href="#Opiniones" class="compass-node" data-section="Opiniones" title="Servicios Premium">
                 <span class="node-dot"></span>
-                <span class="node-label">04 Servicios</span>
+                <span class="node-label">03 Servicios</span>
             </a>
             <a href="#Legado" class="compass-node" data-section="Legado" title="Lic. Claudia Di Diomede">
                 <span class="node-dot"></span>
-                <span class="node-label">05 Asesora</span>
+                <span class="node-label">04 Asesora</span>
             </a>
         </nav>
     </aside>
@@ -362,121 +371,26 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 2 — RUTA DE LA INVERSIÓN INMOBILIARIA (HITO ESTRUCTURAL) -->
-    <section class="RutaInversion" id="Ruta">
-        <div class="section-title-wrapper reveal-on-scroll">
-            <span class="editorial-sub-tag">METODOLOGÍA & BLINDAJE</span>
-            <h2 class="editorial-section-title">La Ruta de su Inversión</h2>
-            <div class="gold-divider"></div>
-            <p class="section-subtitle">Acompañamiento integral, transparente y riguroso desde la primera consulta hasta la entrega de llaves y protocolización registral en Nueva Esparta.</p>
+    <!-- ENCABEZADO DIVISIONARIO HERO / PORTAFOLIO -->
+    <header class="portfolio-divider-header" id="Seccion-Propiedades">
+        <div class="portfolio-divider-container">
+            <h2 class="portfolio-divider-title">Propiedades</h2>
         </div>
+    </header>
 
-        <div class="investment-steps-grid">
-            <!-- PASO 1 -->
-            <div class="step-card reveal-on-scroll">
-                <div class="step-header">
-                    <span class="step-number">01</span>
-                    <div class="step-icon-badge">
-                        <i class="fa-solid fa-compass-drafting"></i>
-                    </div>
-                </div>
-                <div class="step-body">
-                    <span class="step-phase">Fase Preliminar</span>
-                    <h3>Curaduría & Oportunidad</h3>
-                    <p>Filtramos únicamente propiedades con títulos intachables, tasación técnica real y comprobada proyección de plusvalía en las zonas más cotizadas de la isla.</p>
-                </div>
-                <div class="step-footer">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>Diagnóstico Personalizado</span>
-                </div>
-            </div>
-
-            <!-- PASO 2 -->
-            <div class="step-card reveal-on-scroll">
-                <div class="step-header">
-                    <span class="step-number">02</span>
-                    <div class="step-icon-badge">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
-                </div>
-                <div class="step-body">
-                    <span class="step-phase">Fase Notarial & Legal</span>
-                    <h3>Blindaje Jurídico Registral</h3>
-                    <p>Auditoría de tradición legal de 20 años, solvencias municipales, certificación de gravámenes y redacción contractual blindada bajo la dirección de la Lic. Claudia Di Diomede.</p>
-                </div>
-                <div class="step-footer">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>Cero Riesgo Patrimonial</span>
-                </div>
-            </div>
-
-            <!-- PASO 3 -->
-            <div class="step-card reveal-on-scroll">
-                <div class="step-header">
-                    <span class="step-number">03</span>
-                    <div class="step-icon-badge">
-                        <i class="fa-solid fa-key"></i>
-                    </div>
-                </div>
-                <div class="step-body">
-                    <span class="step-phase">Fase de Cierre</span>
-                    <h3>Protocolización & Rentabilidad</h3>
-                    <p>Firma ante Registro Público Inmobiliario, entrega formal del inmueble y activación de esquemas de custodia o gestión de rentas vacacionales y de largo plazo.</p>
-                </div>
-                <div class="step-footer">
-                    <i class="fa-solid fa-gem"></i>
-                    <span>Patrimonio Consolidado</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 3 — PORTAFOLIO DE PROPIEDADES ESTILO CRESTFIELD (CARTERA EXCLUSIVA) -->
+    <!-- SECCIÓN 2 — PORTAFOLIO DE PROPIEDADES (CATÁLOGO DIRECTO 2 POR FILA) -->
     <section class="Galeria" id="Galeria">
-        <div class="portfolio-header-wrap reveal-on-scroll">
-            <span class="portfolio-badge-tag"><i class="fa-solid fa-gem"></i> CARTERA EXCLUSIVA • MARGARITA & EL CARIBE</span>
-            <h2 class="portfolio-title">Portafolio de Inmuebles & <em>Colecciones Selectas</em></h2>
-            <div class="gold-divider"></div>
-            <p class="portfolio-desc">Curaduría rigurosa de residencias y oportunidades de inversión en Nueva Esparta. Cada inmueble cuenta con auditoría jurídica intachable respaldada por la Lic. Claudia Di Diomede.</p>
-        </div>
-
-        <!-- FILTROS DE LA COLECCIÓN (TABS CRESTFIELD) -->
-        <div class="portfolio-filter-tabs reveal-on-scroll">
-            <button class="filter-btn active" data-filter="all">
-                <i class="fa-solid fa-border-all"></i> Todas las Propiedades
-            </button>
-            <button class="filter-btn" data-filter="villas">
-                <i class="fa-solid fa-landmark"></i> Villas & Arquitectura
-            </button>
-            <button class="filter-btn" data-filter="playas">
-                <i class="fa-solid fa-water"></i> Frente al Mar
-            </button>
-            <button class="filter-btn" data-filter="townhouses">
-                <i class="fa-solid fa-house-chimney"></i> Townhouses & Apts
-            </button>
-            <button class="filter-btn" data-filter="terrenos">
-                <i class="fa-solid fa-chart-line"></i> Terrenos & Plusvalía
-            </button>
-            <button class="filter-btn" data-filter="alquiler">
-                <i class="fa-solid fa-key"></i> Alquileres VIP
-            </button>
-        </div>
-
-        <!-- CUADRÍCULA DE PROPIEDADES (PORTFOLIO GRID) -->
+        <!-- CUADRÍCULA DE PROPIEDADES (PORTFOLIO GRID — 2 POR FILA ESTILO CATÁLOGO AIRBNB) -->
         <div class="portfolio-grid">
             <!-- Card 1: ACTIVA (Villa Imperial Bahía de Pampatar) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="villas" data-project-key="villa_pampatar">
+            <div class="portfolio-card reveal-on-scroll" id="villa_pampatar" data-category="villas" data-project-key="villa_pampatar">
                 <div class="portfolio-media-holder">
-                    <img src="img/luxury_villa.png" alt="Villa Imperial Bahía de Pampatar" loading="lazy">
-                    <span class="placeholder-badge">
-                        <i class="fa-solid fa-crown"></i> VILLA DE LUJO • PAMPATAR
-                    </span>
+                    <img src="img/OverallPick.png" alt="Villa Imperial Bahía de Pampatar" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
                         <span class="portfolio-category-tag">Residencial Exclusivo</span>
                         <h4>Villa Imperial Bahía de Pampatar</h4>
-                        <p>Residencia mediterránea de alto standing con vistas abiertas a la bahía de Pampatar, piscina desbordante infinita y revestimientos en mármol.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -493,18 +407,14 @@
             </div>
 
             <!-- Card 2: ACTIVA (Penthouse Bahía Marina La Caracola) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="playas" data-project-key="caracola_penthouse">
+            <div class="portfolio-card reveal-on-scroll" id="caracola_penthouse" data-category="playas" data-project-key="caracola_penthouse">
                 <div class="portfolio-media-holder">
-                    <img src="img/Propiedadcaracola.png" alt="Penthouse Bahía Marina La Caracola" loading="lazy">
-                    <span class="placeholder-badge">
-                        <i class="fa-solid fa-water"></i> FRENTE AL MAR • LA CARACOLA
-                    </span>
+                    <img src="img/OverallPick.png" alt="Penthouse Bahía Marina La Caracola" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
                         <span class="portfolio-category-tag">Frente a la Costa</span>
                         <h4>Penthouse Bahía Marina La Caracola</h4>
-                        <p>Dúplex de lujo con terraza solárium panorámica de 180°, acceso privado a playa La Caracola, muelle para embarcaciones y acabados náuticos.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -521,18 +431,14 @@
             </div>
 
             <!-- Card 3: WORK IN PROGRESS (Town-House Costa Azul) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="townhouses" data-project-key="costa_azul_townhouses">
+            <div class="portfolio-card reveal-on-scroll" id="costa_azul_townhouses" data-category="townhouses" data-project-key="costa_azul_townhouses">
                 <div class="portfolio-media-holder">
-                    <img src="img/workinprogress.gif" alt="Residencias Town-House Costa Azul" loading="lazy">
-                    <span class="placeholder-badge in-progress">
-                        <i class="fa-solid fa-screwdriver-wrench"></i> EN CATALOGACIÓN • WORK IN PROGRESS
-                    </span>
+                    <img src="img/OverallPick.png" alt="Residencias Town-House Costa Azul" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
-                        <span class="portfolio-category-tag" style="color: var(--gold-dark);">Preventa Exclusiva</span>
+                        <span class="portfolio-category-tag">Preventa Exclusiva</span>
                         <h4>Residencias Town-House Costa Azul</h4>
-                        <p>Complejo privado de townhouses contemporáneos con tecnología domótica, climatización centralizada, áreas sociales y máxima reserva patrimonial.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -542,25 +448,21 @@
                         </div>
                         <div class="meta-action-row">
                             <span class="meta-location"><i class="fa-solid fa-location-dot"></i> Costa Azul</span>
-                            <span class="meta-cta-link" style="color: var(--gold-dark);">Ficha en Preparación <i class="fa-solid fa-clock"></i></span>
+                            <span class="meta-cta-link">Ver Ficha Técnica <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Card 4: ACTIVA (Hacienda Colonial Suites Los Robles) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="villas" data-project-key="villa_los_robles">
+            <div class="portfolio-card reveal-on-scroll" id="villa_los_robles" data-category="villas" data-project-key="villa_los_robles">
                 <div class="portfolio-media-holder">
-                    <img src="img/IMG_0219.jpeg" alt="Hacienda Colonial Suites Los Robles" loading="lazy">
-                    <span class="placeholder-badge">
-                        <i class="fa-solid fa-landmark"></i> ARQUITECTURA CLÁSICA • LOS ROBLES
-                    </span>
+                    <img src="img/OverallPick.png" alt="Hacienda Colonial Suites Los Robles" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
                         <span class="portfolio-category-tag">Legado Arquitectónico</span>
                         <h4>Hacienda Colonial Suites Los Robles</h4>
-                        <p>Mansión señorial con arcadas neoclásicas, tejas artesanales, frondosos patios interiores tropicales y pozo de agua dulce propio de gran aforo.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -577,18 +479,14 @@
             </div>
 
             <!-- Card 5: WORK IN PROGRESS (Parcela Residencial & Comercial El Ángel) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="terrenos" data-project-key="terreno_playa_el_angel">
+            <div class="portfolio-card reveal-on-scroll" id="terreno_playa_el_angel" data-category="terrenos" data-project-key="terreno_playa_el_angel">
                 <div class="portfolio-media-holder">
-                    <img src="img/workinprogress.gif" alt="Parcela Residencial & Comercial El Ángel" loading="lazy">
-                    <span class="placeholder-badge in-progress">
-                        <i class="fa-solid fa-screwdriver-wrench"></i> EN AUDITORÍA REGISTRAL • WORK IN PROGRESS
-                    </span>
+                    <img src="img/OverallPick.png" alt="Parcela Residencial & Comercial El Ángel" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
-                        <span class="portfolio-category-tag" style="color: var(--gold-dark);">Alta Plusvalía</span>
+                        <span class="portfolio-category-tag">Alta Plusvalía</span>
                         <h4>Parcela Residencial & Comercial El Ángel</h4>
-                        <p>Terreno plano de ubicación estratégica en esquina de alta afluencia en Playa El Ángel, ideal para desarrollo boutique, clínica o torre corporativa.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -597,25 +495,21 @@
                         </div>
                         <div class="meta-action-row">
                             <span class="meta-location"><i class="fa-solid fa-location-dot"></i> Playa El Ángel</span>
-                            <span class="meta-cta-link" style="color: var(--gold-dark);">Ficha en Preparación <i class="fa-solid fa-clock"></i></span>
+                            <span class="meta-cta-link">Ver Ficha Técnica <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Card 6: ACTIVA (Beachfront Estate Playa El Agua) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="playas" data-project-key="beachfront_el_agua">
+            <div class="portfolio-card reveal-on-scroll" id="beachfront_el_agua" data-category="playas" data-project-key="beachfront_el_agua">
                 <div class="portfolio-media-holder">
-                    <img src="img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg" alt="Beachfront Estate Playa El Agua" loading="lazy">
-                    <span class="placeholder-badge">
-                        <i class="fa-solid fa-umbrella-beach"></i> FRENTE AL MAR • PLAYA EL AGUA
-                    </span>
+                    <img src="img/OverallPick.png" alt="Beachfront Estate Playa El Agua" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
                         <span class="portfolio-category-tag">Retiro Caribeño</span>
                         <h4>Beachfront Estate Playa El Agua</h4>
-                        <p>Villa privada sobre la franja costera con palapa de descanso, amplios ventanales bioclimáticos, vegetación tropical y salida directa al oleaje caribeño.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -632,18 +526,14 @@
             </div>
 
             <!-- Card 7: WORK IN PROGRESS (Villa Sunset View & Kitesurf El Yaque) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="alquiler" data-project-key="alquiler_el_yaque">
+            <div class="portfolio-card reveal-on-scroll" id="alquiler_el_yaque" data-category="alquiler" data-project-key="alquiler_el_yaque">
                 <div class="portfolio-media-holder">
-                    <img src="img/workinprogress.gif" alt="Villa Sunset View & Kitesurf El Yaque" loading="lazy">
-                    <span class="placeholder-badge in-progress">
-                        <i class="fa-solid fa-screwdriver-wrench"></i> EN CATALOGACIÓN • WORK IN PROGRESS
-                    </span>
+                    <img src="img/OverallPick.png" alt="Villa Sunset View & Kitesurf El Yaque" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
-                        <span class="portfolio-category-tag" style="color: var(--gold-dark);">Renta Vacacional VIP</span>
+                        <span class="portfolio-category-tag">Renta Vacacional VIP</span>
                         <h4>Villa Sunset View & Kitesurf El Yaque</h4>
-                        <p>Inmueble vacacional de clase internacional con piscina privada, lounge en terraza para presenciar el atardecer, planta eléctrica y servicios de mayordomía.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -653,25 +543,21 @@
                         </div>
                         <div class="meta-action-row">
                             <span class="meta-location"><i class="fa-solid fa-location-dot"></i> El Yaque</span>
-                            <span class="meta-cta-link" style="color: var(--gold-dark);">Ficha en Preparación <i class="fa-solid fa-clock"></i></span>
+                            <span class="meta-cta-link">Ver Ficha Técnica <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Card 8: WORK IN PROGRESS (Mirador del Sol Suites Juan Griego) -->
-            <div class="portfolio-card reveal-on-scroll" data-category="villas" data-project-key="mirador_juan_griego">
+            <div class="portfolio-card reveal-on-scroll" id="mirador_juan_griego" data-category="villas" data-project-key="mirador_juan_griego">
                 <div class="portfolio-media-holder">
-                    <img src="img/workinprogress.gif" alt="Mirador del Sol Suites Juan Griego" loading="lazy">
-                    <span class="placeholder-badge in-progress">
-                        <i class="fa-solid fa-screwdriver-wrench"></i> EN LEVANTAMIENTO FOTOGRÁFICO • WORK IN PROGRESS
-                    </span>
+                    <img src="img/OverallPick.png" alt="Mirador del Sol Suites Juan Griego" loading="lazy">
                 </div>
                 <div class="portfolio-info">
                     <div>
-                        <span class="portfolio-category-tag" style="color: var(--gold-dark);">Colina Panorámica</span>
+                        <span class="portfolio-category-tag">Colina Panorámica</span>
                         <h4>Mirador del Sol Suites Juan Griego</h4>
-                        <p>Residencia en cota elevada con mirador propio hacia las famosas puestas de sol de Juan Griego, diseño multinivel con terrazas y ventanales acústicos.</p>
                     </div>
                     <div class="portfolio-meta">
                         <div class="meta-specs-row">
@@ -681,7 +567,7 @@
                         </div>
                         <div class="meta-action-row">
                             <span class="meta-location"><i class="fa-solid fa-location-dot"></i> Juan Griego</span>
-                            <span class="meta-cta-link" style="color: var(--gold-dark);">Ficha en Preparación <i class="fa-solid fa-clock"></i></span>
+                            <span class="meta-cta-link">Ver Ficha Técnica <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -689,100 +575,11 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 3 — SERVICIOS PREMIUM (CERO POLIMORFISMO EXAGERADO) -->
-    <section class="Opiniones" id="Opiniones">
-        <div class="section-title-wrapper reveal-on-scroll">
-            <span class="editorial-sub-tag">SOLUCIONES DE ALTO NIVEL</span>
-            <h2 class="tope">Nuestros Servicios Premium</h2>
-            <div class="gold-divider"></div>
-        </div>
+    <!-- SECCIÓN 3 (POR DEFINIR) -->
+    <section class="Opiniones" id="Opiniones"></section>
 
-        <div class="boxbox">
-            <div class="glass-card reveal-on-scroll">
-                <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                <h3>Asesoría Personalizada</h3>
-                <p>Te acompañamos en cada paso del proceso de compra o venta de tu propiedad, brindándote una atención exclusiva y adaptada a tus necesidades específicas en el mercado inmobiliario de Isla de Margarita.</p>
-            </div>
-
-            <div class="glass-card reveal-on-scroll">
-                <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h3>Oportunidades de Inversión</h3>
-                <p>Identificamos las mejores oportunidades de inversión inmobiliaria en la región caribeña, maximizando el retorno de tu capital con propiedades de alto valor y comprobado potencial de plusvalía.</p>
-            </div>
-
-            <div class="glass-card reveal-on-scroll">
-                <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Seguridad Jurídica</h3>
-                <p>Garantizamos la transparencia y estricta legalidad de cada transacción, respaldados por una sólida verificación documental que protege tu patrimonio en todo momento.</p>
-            </div>
-
-            <div class="glass-card reveal-on-scroll">
-                <div class="service-icon"><i class="fa-solid fa-key"></i></div>
-                <h3>Acceso Exclusivo a Inmuebles</h3>
-                <p>Captamos las mejores propiedades para los compradores más exigentes, ofreciendo acceso preferencial a inmuebles de catálogo privado que no encontrarás en el mercado convencional.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 4 — AGENTE PROFESIONAL CLAUDIA DI DIOMEDE & CONTACTO -->
-    <section class="Legado" id="Legado">
-        <div class="content">
-            <!-- PANEL 1: VENDE TU PROPIEDAD -->
-            <div class="legado-card reveal-on-scroll">
-                <div>
-                    <span class="editorial-badge"><i class="fa-solid fa-heart"></i> Tu Mejor Inversión</span>
-                    <h3>Vende tu Propiedad <span>Con Nosotros</span></h3>
-                    <p>No busques, deja que te encuentren. Confía la venta de tu propiedad a los expertos. Nuestros servicios inmobiliarios de vanguardia maximizan el alcance y el valor de tu propiedad en Isla de Margarita y toda la región caribeña.</p>
-                </div>
-                <div style="margin-top: 2rem;">
-                    <a href="https://wa.me/584147907819?text=Hola%20Lic.%20Claudia,%20deseo%20vender%20mi%20propiedad%20con%20Inversiones%20D'ALROC." target="_blank" rel="noopener noreferrer" class="editorial-btn secondary-btn" style="width: 100%; justify-content: center;">
-                        <i class="fa-solid fa-handshake"></i> Consignar Propiedad
-                    </a>
-                </div>
-            </div>
-
-            <!-- PANEL 2: LIC. CLAUDIA DI DIOMEDE — ASESORA ENCARGADA -->
-            <div class="agent-profile-card reveal-on-scroll">
-                <div class="agent-header-row">
-                    <div class="agent-avatar-frame">
-                        <img src="img/ClaudiaIMG.jpeg" alt="Lic. Claudia Di Diomede — Corredora de Inmuebles Certificada" class="agent-img">
-                    </div>
-                    <div class="agent-title-box">
-                        <span class="agent-sub-title">ASESORA ENCARGADA</span>
-                        <h3 class="agent-name">Lic. Claudia Di Diomede</h3>
-                        <span class="agent-badge-pill"><i class="fa-solid fa-award"></i> Agente Certificada</span>
-                    </div>
-                </div>
-                <div class="agent-details">
-                    <p class="agent-role"><i class="fa-solid fa-user-tie"></i> Corredora de Inmuebles Certificada</p>
-                    <p class="agent-bio">Especialista en propiedades exclusivas y atención jurídica inmobiliaria personalizada en Isla de Margarita y toda la región caribeña.</p>
-                </div>
-                <div class="agent-actions">
-                    <a href="https://wa.me/584147907819?text=Hola%20Lic.%20Claudia,%20me%20gustaría%20recibir%20asesoría%20inmobiliaria%20personalizada." target="_blank" rel="noopener noreferrer" class="editorial-btn primary-btn">
-                        <i class="fa-brands fa-whatsapp"></i> Contactar a Lic. Claudia
-                    </a>
-                </div>
-            </div>
-
-            <!-- PANEL 3: TARJETA INTERACTIVA DE CONTACTO -->
-            <div class="contact-interactive-card reveal-on-scroll" id="Contacto" style="cursor: pointer;" title="Haga clic para ver tarjeta digital">
-                <div>
-                    <div class="contact-header">
-                        <img src="img/IMG_0217.png" alt="Inversiones D'ALROC Logo" class="contact-card-logo">
-                        <h3><span>Contáctanos</span></h3>
-                    </div>
-                    <div class="contact-list">
-                        <p><i class="fa-brands fa-whatsapp"></i> <span><strong>WhatsApp:</strong> +58 414 790 7819</span></p>
-                        <p><i class="fa-solid fa-envelope"></i> <span><strong>Email:</strong> inversiones.idalroc@gmail.com</span></p>
-                        <p><i class="fa-solid fa-location-dot"></i> <span><strong>Ubicación:</strong> Isla de Margarita, Venezuela</span></p>
-                    </div>
-                </div>
-                <div class="card-prompt-badge">
-                    <i class="fa-solid fa-expand"></i> Ver Tarjeta Digital & QR
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- SECCIÓN 4 (POR DEFINIR) -->
+    <section class="Legado" id="Legado"></section>
 
     <!-- FOOTER CLÁSICO EDITORIAL -->
     <footer class="footer" id="pie-de-pagina">
@@ -887,7 +684,7 @@
                     </div>
                     <div class="modal-action-row">
                         <a href="https://wa.me/584147907819" target="_blank" rel="noopener noreferrer" class="modal-btn-wa" id="modal-prop-wa-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Consultar Disponibilidad vía WhatsApp
+                            <i class="fa-brands fa-whatsapp"></i> CONSULTAR POR ESTA PROPIEDAD
                         </a>
                         <button type="button" class="modal-btn-close" id="modal-prop-cancel-btn">
                             Cerrar Ficha
@@ -967,12 +764,53 @@
                 });
             });
 
-            // Toggle para expandir píldora panorámica en móviles o al hacer clic
+            // Expansión interactiva de la píldora: ÚNICAMENTE al interactuar con el icono circular de la foto
             const expandRow = document.getElementById('top-shape-expand-row');
-            if (expandRow) {
-                expandRow.addEventListener('click', (e) => {
+            const pillBox = document.querySelector('.top-shape-pill-box');
+
+            if (expandRow && pillBox) {
+                // Al pasar el cursor EXCLUSIVAMENTE sobre el icono circular de la foto
+                pillBox.addEventListener('mouseenter', () => {
+                    expandRow.classList.add('pill-hovered');
+                });
+
+                pillBox.addEventListener('mouseleave', () => {
+                    expandRow.classList.remove('pill-hovered');
+                });
+
+                // Al hacer clic EXCLUSIVAMENTE en la foto circular (o píldora expandida)
+                pillBox.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     expandRow.classList.toggle('expanded');
                 });
+
+                // Al hacer clic fuera de la foto / píldora, contraer estado fijo
+                document.addEventListener('click', (e) => {
+                    if (!pillBox.contains(e.target)) {
+                        expandRow.classList.remove('expanded');
+                    }
+                });
+            }
+
+            // Rotación con efecto Fly-In para los lemas e informaciones insulares
+            const flyinItems = document.querySelectorAll('.top-shape-flyin-item');
+            if (flyinItems.length > 0) {
+                let currentFlyinIndex = 0;
+                setInterval(() => {
+                    const prevItem = flyinItems[currentFlyinIndex];
+                    if (prevItem) {
+                        prevItem.classList.remove('active');
+                        prevItem.classList.add('exit');
+                        setTimeout(() => {
+                            prevItem.classList.remove('exit');
+                        }, 500);
+                    }
+
+                    currentFlyinIndex = (currentFlyinIndex + 1) % flyinItems.length;
+                    if (flyinItems[currentFlyinIndex]) {
+                        flyinItems[currentFlyinIndex].classList.add('active');
+                    }
+                }, 3800);
             }
 
             // --- Lógica de la Insignia Flotante de la Virgen del Valle (Opción 2) ---
@@ -1250,15 +1088,19 @@
                 }
 
                 // Detección del Hito Activo para la Brújula Flotante
-                const milestoneIds = ['Historia', 'Ruta', 'Galeria', 'Opiniones', 'Legado'];
+                const milestoneIds = ['Historia', 'Galeria', 'Opiniones', 'Legado'];
                 let activeId = 'Historia';
                 const probeY = scrollY + (window.innerHeight * 0.35);
 
                 for (let i = 0; i < milestoneIds.length; i++) {
                     const el = document.getElementById(milestoneIds[i]);
                     if (el) {
-                        const top = el.offsetTop;
-                        const bottom = top + el.offsetHeight;
+                        let top = el.offsetTop;
+                        if (milestoneIds[i] === 'Galeria') {
+                            const header = document.getElementById('Seccion-Propiedades');
+                            if (header) top = header.offsetTop;
+                        }
+                        const bottom = el.offsetTop + el.offsetHeight;
                         if (probeY >= top && probeY < bottom) {
                             activeId = milestoneIds[i];
                             break;
@@ -1371,8 +1213,8 @@
                 villa_pampatar: {
                     title: "Villa Imperial Bahía de Pampatar",
                     category: "Residencial Exclusivo • Villas & Arquitectura",
-                    img: "img/luxury_villa.png",
-                    badge: "DISPONIBLE • CARTERA EXCLUSIVA",
+                    img: "img/OverallPick.png",
+                    badge: "Disponible • Cartera Exclusiva",
                     isWip: false,
                     lead: "Residencia señorial de arquitectura mediterránea con vista panorámica abierta a la bahía de Pampatar.",
                     body: "Propiedad concebida bajo los más exigentes estándares de sofisticación insular. Cuenta con piscina desbordante infinita, amplias terrazas al aire libre, revestimientos en mármol, cocina de chef completamente equipada, pozo de agua dulce propio de gran aforo y sistema perimetral de seguridad. Documentación y solvencias 100% al día en Registro Inmobiliario.",
@@ -1384,8 +1226,8 @@
                 caracola_penthouse: {
                     title: "Penthouse Bahía Marina La Caracola",
                     category: "Frente a la Costa • Dúplex Panorámico",
-                    img: "img/Propiedadcaracola.png",
-                    badge: "DISPONIBLE • FRENTE AL MAR",
+                    img: "img/OverallPick.png",
+                    badge: "Disponible • Frente al Mar",
                     isWip: false,
                     lead: "Dúplex de ultra lujo frente al mar con terraza solárium privada de 180° sobre la bahía de La Caracola.",
                     body: "Ubicado en uno de los conjuntos residenciales náuticos más exclusivos y cotizados de la Isla de Margarita. Desarrollado en dos niveles comunicados por escalera helicoidal en madera noble y vidrio templado. Salida directa a la playa, dos puestos de estacionamiento cubiertos, maletero náutico y muelle de atraque temporal para embarcaciones.",
@@ -1397,8 +1239,8 @@
                 costa_azul_townhouses: {
                     title: "Residencias Town-House Costa Azul",
                     category: "Preventa Exclusiva • Townhouses & Apts",
-                    img: "img/workinprogress.gif",
-                    badge: "EN CATALOGACIÓN • WORK IN PROGRESS",
+                    img: "img/OverallPick.png",
+                    badge: "En Catalogación • Work In Progress",
                     isWip: true,
                     lead: "Complejo boutique privado de townhouses contemporáneos con domótica y piscina central en Costa Azul.",
                     body: "Desarrollo residencial de baja densidad con arquitectura vanguardista, techos a doble altura, climatización centralizada y patios privados con jacuzzi integrado. Equipado con planta eléctrica integral de respaldo total, conectividad de fibra óptica dedicada y cerco perimetral inteligente.",
@@ -1410,8 +1252,8 @@
                 villa_los_robles: {
                     title: "Hacienda Colonial Suites Los Robles",
                     category: "Legado Arquitectónico • Mansión Señorial",
-                    img: "img/IMG_0219.jpeg",
-                    badge: "DISPONIBLE • CARTERA EXCLUSIVA",
+                    img: "img/OverallPick.png",
+                    badge: "Disponible • Cartera Exclusiva",
                     isWip: false,
                     lead: "Mansión señorial con arcadas neoclásicas, tejas artesanales y exuberante jardín botánico tropical.",
                     body: "Emplazada en una discreta y protegida calle privada en Los Robles. Esta propiedad fusiona la elegancia de la arquitectura señorial caribeña con confort moderno. Incluye casa de huéspedes independiente, tasca parrillera techada, pozo de agua dulce propio de alto caudal y estacionamiento para 6 vehículos.",
@@ -1423,8 +1265,8 @@
                 terreno_playa_el_angel: {
                     title: "Parcela Residencial & Comercial El Ángel",
                     category: "Alta Plusvalía • Terrenos & Proyectos",
-                    img: "img/workinprogress.gif",
-                    badge: "EN AUDITORÍA REGISTRAL • WORK IN PROGRESS",
+                    img: "img/OverallPick.png",
+                    badge: "En Auditoría Registral • Work In Progress",
                     isWip: true,
                     lead: "Terreno plano de esquina con zonificación mixta en el epicentro financiero y gastronómico de Playa El Ángel.",
                     body: "Parcela de ubicación estratégica inmejorable para desarrollo de apartamentos boutique, centro médico especializado o edificio corporativo premium. Cuenta con acometida de servicios públicos, factibilidad técnica aprobada y accesos viales inmediatos a las avenidas principales.",
@@ -1436,8 +1278,8 @@
                 beachfront_el_agua: {
                     title: "Beachfront Estate Playa El Agua",
                     category: "Retiro Caribeño • Frente al Mar",
-                    img: "img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg",
-                    badge: "DISPONIBLE • PRIMERA LÍNEA",
+                    img: "img/OverallPick.png",
+                    badge: "Disponible • Primera Línea",
                     isWip: false,
                     lead: "Villa privada con salida directa a la arena dorada de Playa El Agua y vegetación costera.",
                     body: "Refugio idílico concebido para el disfrute del auténtico estilo de vida caribeño. Grandes terrazas cubiertas, gazebo lounge junto a la piscina infinita, 4 suites con baño privado, área de servicio y cocina gourmet abierta. Ideal tanto para uso residencial exclusivo como para rentas vacacionales de alto perfil internacional.",
@@ -1449,8 +1291,8 @@
                 alquiler_el_yaque: {
                     title: "Villa Sunset View & Kitesurf El Yaque",
                     category: "Renta Vacacional VIP • Alquileres Exclusivos",
-                    img: "img/workinprogress.gif",
-                    badge: "EN CATALOGACIÓN • WORK IN PROGRESS",
+                    img: "img/OverallPick.png",
+                    badge: "En Catalogación • Work In Progress",
                     isWip: true,
                     lead: "Inmueble vacacional de clase internacional con piscina privada y vistas privilegiadas al ocaso en El Yaque.",
                     body: "Propiedad concebida para huéspedes de alto perfil y aficionados a los deportes de viento. Posee área de guardado y lavado de equipos náuticos, conexión a internet satelital Starlink, planta eléctrica autónoma y servicio opcional de mayordomía.",
@@ -1462,8 +1304,8 @@
                 mirador_juan_griego: {
                     title: "Mirador del Sol Suites Juan Griego",
                     category: "Colina Panorámica • Villas & Atardeceres",
-                    img: "img/workinprogress.gif",
-                    badge: "EN LEVANTAMIENTO FOTOGRÁFICO • WORK IN PROGRESS",
+                    img: "img/OverallPick.png",
+                    badge: "En Levantamiento Fotográfico • Work In Progress",
                     isWip: true,
                     lead: "Residencia en cota elevada con mirador propio hacia las legendarias puestas de sol de la bahía de Juan Griego.",
                     body: "Diseño multinivel aterrazado que maximiza las vistas de 270° al mar Caribe. Revestimientos en piedra coralina, ventanales de suelo a techo con tratamiento térmico, área de parrillada panorámica y jardines autóctonos de bajo consumo hídrico.",
@@ -1474,37 +1316,62 @@
                 }
             };
 
-            // Filtrado interactivo estilo Crestfield
-            const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter-tabs .filter-btn');
+            // Conexión exclusiva con la barra de búsqueda de la sección Hero como filtro único
             const portfolioCards = document.querySelectorAll('.portfolio-card');
+            const airbnbTabs = document.querySelectorAll('.airbnb-tab-btn');
+            const inputUbicacion = document.getElementById('input-ubicacion');
+            const airbnbForm = document.getElementById('airbnb-search-form');
 
-            if (portfolioFilterBtns.length && portfolioCards.length) {
-                portfolioFilterBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        portfolioFilterBtns.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
+            let currentTabType = null;
 
-                        const filter = btn.getAttribute('data-filter') || 'all';
+            function applyPortfolioFilter(options = {}) {
+                if (options.tabCategory !== undefined) currentTabType = options.tabCategory;
 
-                        portfolioCards.forEach(card => {
-                            const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
-                            const isMatch = (filter === 'all') || cardCat.split(/\s+/).includes(filter);
+                const query = (options.query !== undefined ? options.query : (inputUbicacion ? inputUbicacion.value : '')).trim().toLowerCase();
 
-                            if (isMatch) {
-                                card.style.display = '';
-                                setTimeout(() => {
-                                    card.style.opacity = '1';
-                                    card.style.transform = 'translateY(0) scale(1)';
-                                }, 10);
-                            } else {
-                                card.style.opacity = '0';
-                                card.style.transform = 'translateY(10px) scale(0.98)';
-                                setTimeout(() => {
-                                    card.style.display = 'none';
-                                }, 220);
-                            }
-                        });
-                    });
+                portfolioCards.forEach(card => {
+                    const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+                    const cardText = (card.innerText || '').toLowerCase();
+                    const projectKey = card.getAttribute('data-project-key') || '';
+                    const dataObj = propertiesData[projectKey];
+                    const fullHaystack = `${cardText} ${cardCat} ${dataObj ? (dataObj.location + ' ' + dataObj.title + ' ' + dataObj.category) : ''}`.toLowerCase();
+
+                    // 1. Filtrado por categoría de la pestaña Hero
+                    let matchTab = true;
+                    if (currentTabType && currentTabType !== 'all') {
+                        if (currentTabType === 'apartamentos') {
+                            matchTab = cardCat.includes('playas') || cardCat.includes('townhouses') || fullHaystack.includes('penthouse') || fullHaystack.includes('apartamento') || fullHaystack.includes('dúplex') || fullHaystack.includes('apts');
+                        } else if (currentTabType === 'townhouse') {
+                            matchTab = cardCat.includes('townhouses') || fullHaystack.includes('town-house') || fullHaystack.includes('townhouse') || fullHaystack.includes('residencias') || cardCat.includes('villas');
+                        } else if (currentTabType === 'alquiler') {
+                            matchTab = cardCat.includes('alquiler') || fullHaystack.includes('alquiler') || fullHaystack.includes('vacacional') || fullHaystack.includes('renta');
+                        }
+                    }
+
+                    // 2. Filtrado por término de texto en el input Ubicación
+                    let matchQuery = true;
+                    if (query.length > 0) {
+                        const terms = query.split(/\s+/).filter(t => t.length > 1);
+                        if (terms.length > 0) {
+                            matchQuery = terms.every(term => fullHaystack.includes(term));
+                        }
+                    }
+
+                    const isMatch = matchTab && matchQuery;
+
+                    if (isMatch) {
+                        card.style.display = '';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0) scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(12px) scale(0.97)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 200);
+                    }
                 });
             }
 
@@ -1556,14 +1423,11 @@
                 if (propModalSpecStatus) propModalSpecStatus.textContent = data.status;
 
                 if (propModalWaBtn) {
-                    const waBase = 'https://wa.me/584147907819';
-                    const msg = encodeURIComponent(data.waMessage);
-                    propModalWaBtn.href = `${waBase}?text=${msg}`;
-                    if (data.isWip) {
-                        propModalWaBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Solicitar Dossier Anticipado vía WhatsApp';
-                    } else {
-                        propModalWaBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Consultar Disponibilidad vía WhatsApp';
-                    }
+                    const pageUrl = window.location.href.split('#')[0];
+                    const propUrl = `${pageUrl}#${key}`;
+                    const waText = `Buenas Claudia, me interesa esta propiedad "${propUrl}". Me podrias dar detalles para pautar una cita?`;
+                    propModalWaBtn.href = `https://wa.me/584147907819?text=${encodeURIComponent(waText)}`;
+                    propModalWaBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> CONSULTAR POR ESTA PROPIEDAD';
                 }
 
                 propModal.classList.add('active');
@@ -1603,10 +1467,21 @@
                 }
             });
 
-            // --- 6. WIDGET DE BÚSQUEDA AIRBNB INTERACTIVO ---
-            const airbnbTabs = document.querySelectorAll('.airbnb-tab-btn');
-            const inputUbicacion = document.getElementById('input-ubicacion');
+            // Apertura automática si la URL contiene el hash de una propiedad (p. ej. enlace compartido de WhatsApp)
+            if (window.location.hash) {
+                const initialHash = window.location.hash.replace('#', '');
+                if (propertiesData[initialHash]) {
+                    setTimeout(() => {
+                        window.openPropertyModal(initialHash);
+                        const targetCard = document.getElementById(initialHash);
+                        if (targetCard) {
+                            targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 350);
+                }
+            }
 
+            // --- 6. WIDGET DE BÚSQUEDA AIRBNB INTERACTIVO & CONEXIÓN TOTAL CON EL PORTAFOLIO ---
             airbnbTabs.forEach(tab => {
                 tab.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1627,29 +1502,32 @@
                             inputUbicacion.placeholder = 'Alquiler vacacional o de largo plazo...';
                         }
                     }
+
+                    applyPortfolioFilter({ tabCategory: category });
                 });
             });
 
-            const airbnbForm = document.getElementById('airbnb-search-form');
             if (airbnbForm) {
                 airbnbForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     const activeTab = document.querySelector('.airbnb-tab-btn.active');
-                    const tabType = activeTab ? activeTab.getAttribute('data-type') : 'all';
-                    const galeria = document.getElementById('Galeria');
-                    if (galeria) {
-                        galeria.scrollIntoView({ behavior: 'smooth' });
+                    const tabType = activeTab ? activeTab.getAttribute('data-type') : null;
+                    const queryText = inputUbicacion ? inputUbicacion.value : '';
+
+                    applyPortfolioFilter({ tabCategory: tabType, query: queryText });
+
+                    const target = document.getElementById('Seccion-Propiedades') || document.getElementById('Galeria');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                    if (tabType === 'apartamentos' || tabType === 'townhouse') {
-                        const btn = document.querySelector('.filter-btn[data-filter="townhouses"]');
-                        if (btn) btn.click();
-                    } else if (tabType === 'alquiler') {
-                        const btn = document.querySelector('.filter-btn[data-filter="alquiler"]');
-                        if (btn) btn.click();
-                    } else {
-                        const btn = document.querySelector('.filter-btn[data-filter="all"]');
-                        if (btn) btn.click();
-                    }
+                });
+            }
+
+            if (inputUbicacion) {
+                inputUbicacion.addEventListener('input', () => {
+                    const activeTab = document.querySelector('.airbnb-tab-btn.active');
+                    const tabType = activeTab ? activeTab.getAttribute('data-type') : null;
+                    applyPortfolioFilter({ tabCategory: tabType, query: inputUbicacion.value });
                 });
             }
         });

@@ -1,0 +1,12 @@
+# robots.txt para Inversiones D'ALROC Real Estate — Lic. Claudia Di Diomede
+# Proyecto Inmobiliario Isla de Margarita, Nueva Esparta, Venezuela
+
+User-agent: *
+Allow: /
+Allow: /img/
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap institucional con todas las secciones inmobiliarias
+Sitemap: https://inversionesdalroc.com/sitemap.xml

@@ -381,8 +381,16 @@ footer {
         hyphens: auto;
     }
     
+    .footer ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem 1.8rem;
+        padding: 0 1rem;
+    }
+
     .footer ul li {
-        display: block;
-        margin: 1.2rem 0;
+        display: inline-flex;
+        margin: 0;
     }
 }

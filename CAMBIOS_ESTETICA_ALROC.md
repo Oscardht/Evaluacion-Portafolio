@@ -113,38 +113,77 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 - [x] **Insignia y Flyout Flotante Sacro de la Virgen del Valle (`.virgen-flyout-card` y `.virgen-floating-dock` - Margen Inferior Derecho):**
   - **Sustitución de Imagen:** Reemplazo de la silueta recortada por el gráfico completo e íntegro de la Virgen (`Ejemplo.png`).
   - **Conversión a Tarjeta Ejecutiva Compacta:** Redimensión a un ancho esbelto de 298px con diseño de tarjeta de presentación de lujo.
-  - **Encabezado y Jerarquía:** Retrato de la Lcda. Claudia Di Diomede con marco y resplandor áureo, kicker superior institucional `ASESORÍA INMOBILIARIA INTEGRAL` (sin corona para máximo espacio y balance), nombre en serif `Lcda. Claudia Di Diomede` e insignia oficial `Profesional Certificado N° 2735`.
+  - **Encabezado y Jerarquía:** Retrato de la Lcda. Claudia Di Diomede con reencuadre óptico ejecutivo (zoom abierto a `scale(1.14)`, elevación vertical y desplazamiento lateral `translate(-4%, -3%)` y `object-position: center 50%` para mayor protagonismo y visibilidad del uniforme blanco corporativo), marco y resplandor áureo, kicker superior institucional `ASESORÍA INMOBILIARIA INTEGRAL` (sin corona para máximo espacio y balance), nombre en serif `Lcda. Claudia Di Diomede` e insignia oficial `Profesional Certificado N° 2735`.
   - **Divisor de Especialidades con Íconos de Gran Formato:** Línea divisoria áurea con 4 insignias circulares en verde esmeralda y oro (Inmobiliaria, Gestoría, Construcción y Turismo).
   - **Canal Directo de WhatsApp:** Botón de contacto estilizado con el mensaje `Conversar con la Lcda. Claudia` con apertura en nueva pestaña y texto preconfigurado.
 - [x] **Pop-up Arquitectónico Superior Izquierdo (`.top-shape-popup`):**
   - **Eliminación de Redundancia de Marca:** Se suprimió el logo duplicado en la cabecera interna, dejando el escudo oficial de Inversiones D'ALROC de forma protagónica en la pestaña inferior que asoma hacia afuera.
   - **Cabecera Monumental Clickeable:**
     - Se rodó el texto hacia la izquierda para aprovechar el ancho completo.
-    - Kicker superior: `EXCLUSIVIDAD Y BLINDAJE` en tipografía *Cinzel* dorada sin corona.
+    - Kicker superior: `EXCLUSIVIDAD Y BLINDAJE` en tipografía *Cinzel* dorada limpia (corona retirada para máxima pureza visual).
+    > [!IMPORTANT]
+    > **👑 ELEMENTO DE IDENTIDAD EN RESERVA — CORONA IMPERIAL ÁUREA (`fa-solid fa-crown`):**  
+    > La insignia de la corona dorada ha sido retirada del kicker superior para preservar la máxima sobriedad y legibilidad tipográfica. Se resguarda formalmente en este documento como activo institucional prioritario para ser reubicada próximamente en una sección de alta distinción (candidatos ideales: insignia de blindaje legal, sello de certificación de la Lcda. Claudia Di Diomede, tarjetas VIP de propiedades o pie de página).
     - Título principal de gran tamaño: `INVERSIONES D'ALROC` con *ALROC* en cursiva dorada.
     - Lema editorial: `En la venta o compra de tu propiedad` en tipografía cursiva *Playfair Display* y tono neutro cálido.
     - **Navegación inteligente:** Todo el bloque de cabecera es interactivo; al cliquearlo, cierra automáticamente el menú desplegable y realiza un desplazamiento suave (*smooth scroll*) hacia el pie de página (`#pie-de-pagina`).
-  - **Píldora Panorámica Interactiva con `ImagenLarge.jpg` (`.top-shape-expand-row`):**
-    - Se removieron los textos secundarios para evitar sobrecarga y en su lugar se creó un componente visual dinámico.
-    - **Estado Reposo:** Burbuja circular con bisel de oro (`54px × 54px`) con encuadre de la costa insular de `ImagenLarge.jpg`, acompañada de una tira verde esmeralda horizontal más finita que el botón de propiedades, sin textos y con micro-borde dorado.
-    - **Estado Hover / Interactivo:** Al pasar el cursor por encima (o tocar en móviles), la burbuja se expande horizontalmente transformándose en una **píldora panorámica ovalada** (`width: 100%`, altura ampliada a 82px con `border-radius: 42px`) revelando la vista aérea completa de la bahía insular de `ImagenLarge.jpg`.
-    - **Desplazamiento Dinámico:** La tira verde se desplaza hacia la derecha y se desvanece de forma sincronizada para cederle el espacio a la fotografía.
-    - **Retorno Suave:** Al retirar el cursor, la píldora se contrae nuevamente al círculo dorado original y la tira verde regresa a su posición de reposo con soporte táctil mediante JavaScript.
-  - **Grilla de Especialidades & Servicios (Infonormal):** Tarjetas de Bienes Raíces & Gestoría, Construcción & Remodelación y Turismo & Hospedaje.
+  - **Grilla de Especialidades & Servicios (Infonormal - Ubicación Superior):** Tarjetas de Bienes Raíces & Gestoría, Construcción & Remodelación y Turismo & Hospedaje situadas estratégicamente por encima de la fila interactiva.
+  - **Píldora Panorámica Interactiva con `ImagenLarge.jpg` y Textos Rotativos Fly-In (`.top-shape-expand-row`):**
+    - **Eliminación del panel verde inerte:** Se removió la tira verde vacía para evitar saturación de bloques verdes y favorecer una estética editorial limpia sobre fondo marfil.
+    - **Eliminación del label verde en la píldora:** Se suprimió la etiqueta/caption verde sobre la fotografía expandida para una vista panorámica limpia y sin interferencias.
+    - **Eliminación total de líneas guía y tooltips:** Se suprimió la línea vertical guía (`border-left`) y el atributo tooltip `title`, dejando un diseño diáfano, limpio y sin avisos intrusivos al pasar el cursor.
+    - **Unificación Tipográfica Cinzel en Verde Esmeralda Imperial:** Todos los textos rotativos comparten de forma uniforme la misma tipografía institucional *Cinzel*, peso 800, mayúsculas sostenidas, espaciado equilibrado y color verde esmeralda imperial (`--emerald-column`), abarcando todo el ancho hasta el borde derecho:
+      1. `BAHÍA DE PAMPATAR, ISLA DE MARGARITA` (con icono de ubicación).
+      2. `EL HOGAR DE TUS SUEÑOS, JUNTO A NUESTRA ASESORÍA.` (con icono de hogar).
+      3. `EL ENCANTO DE LA ISLA, DE LA MANO DE NOSOTROS.` (con icono de brújula).
+      4. Retorna a `BAHÍA DE PAMPATAR, ISLA DE MARGARITA` en bucle fluido.
+    - **Toggle Inteligente de Expansión / Contracción con Clic:**
+      - Al hacer clic, la imagen se expande a lo ancho (`100%`) como píldora panorámica fija de 82px revelando la bahía completa.
+      - Al volver a hacer clic, se contrae inmediatamente de nuevo al icono reducido de 54px y reactiva el bloque de textos rotativos sin quedarse bloqueada en hover.
   - **Botón de Conversión Inferior:** Botón en verde esmeralda `VER PROPIEDADES AHORA` con ancla directa a `#Galeria`, cerrando el pop-up al pulsar, y botón de llamada directa.
 - [x] **Estandarización de Identidad y Nomenclatura:**
   - Estandarización unificada del título profesional a **`Lcda. Claudia Di Diomede`** en ambos pop-ups y botones de contacto.
   - Armonización cromática del botón y elementos del buscador estilo Airbnb del Hero (reemplazo de coral `#FF385C` por verde esmeralda imperial `--emerald-column` y oro).
   - Sincronización exacta en todos los archivos del proyecto (`ipodnano.html`, `index.html` y `estilos.css`).
 
-### 🚀 Fase 3: Catálogo Inmobiliario Detallado & Rotación de Propiedades (Posterior)
-- [ ] **Rotación Dinámica en el Hero (Villa Exclusiva Caribeña):** Al incorporar las fotografías reales de las propiedades en cartera, convertir el marco del Hero en un showcase rotativo de propiedades insignia con transición crossfade y actualización sincronizada de datos técnicos (m², suites, vistas y zona).
-- [ ] Incorporación de un catálogo dinámico o modular de propiedades categorizadas (Villas de Playa, Apartamentos con Vista al Mar, Terrenos de Inversión, Locales Comerciales).
-- [ ] Fichas técnicas individuales con metraje (m²), habitaciones, baños, amenidades y estatus (Venta / Alquiler / Exclusiva).
-- [ ] Filtro rápido por zona (Pampatar, Costa Azul, Playa El Ángel, Juan Griego, El Yaque).
+### 🚀 Fase 3: Catálogo Inmobiliario Victoriano de Lujo (Estilo Airbnb Catalog) — COMPLETADO
+- [x] **Arquitectura de Cuadrícula a 2 Columnas (`grid-template-columns: repeat(2, 1fr)`):**
+  - Configuración fija de **2 propiedades por fila** en pantallas de escritorio, logrando un catálogo visual amplio, imponente y cinematográfico.
+  - Adaptabilidad fluida a 1 columna en dispositivos móviles y tabletas (`@media (max-width: 960px)`).
+- [x] **Enmarcado Victoriano en Verde Esmeralda Imperial & Bordes Dorados:**
+  - Fondo noble de tarjetas en degradado verde heráldico imperial: `linear-gradient(165deg, #1D3D2E 0%, #142B20 100%)`.
+  - Doble enmarcado artesanal: borde exterior de 2px en oro antiguo (`#B88E3E`) con filete interior dorado de 1px (`rgba(212, 176, 98, 0.45)`).
+  - Preservación íntegra del fondo general de la sección `#Galeria` en pergamino marfil cálido (`#F6F1E7` a `#EDE4D3`).
+- [x] **Fotografías Panorámicas de Gran Formato (`380px`):**
+  - Contenedor multimedia expandido a 380px con remate inferior de 2px en oro antiguo.
+  - Efecto de zoom suave (*scale 1.06*) al pasar el cursor.
+- [x] **Tipografía Editorial de Alto Contraste sobre Esmeralda:**
+  - Categorías en tipografía *Cinzel* dorada (`#D4B062`).
+  - Títulos monumentales en blanco níveo sobre *Playfair Display*, iluminándose en oro bruñido al interactuar.
+  - Texturas de especificaciones y metros cuadrados con iconos dorados y legibilidad óptima.
+- [x] **Pop-Up / Modal Ficha Técnica Dinámica:**
+  - Ficha técnica completa de cada inmueble con imagen ampliada, resumen descriptivo, metraje y estatus legal.
+  - Botón de conversión directo vía WhatsApp: **`CONSULTAR POR ESTA PROPIEDAD`** con icono de WhatsApp (`fa-brands fa-whatsapp`), estilizado con degradado verde vibrante esmeralda y borde dorado.
+  - **Mensaje predeterminado dinámico con enlace directo:**
+    `Buenas Claudia, me interesa esta propiedad "{link de la propiedad en la pag}". Me podrias dar detalles para pautar una cita?`
+  - Enlaces ancla automáticos (`id="villa_pampatar"`, etc.) que permiten scroll y apertura automática de ficha técnica si el visitante abre el enlace desde WhatsApp.
+
+### 🎨 Código Oficial de Colores del Proyecto Inversiones D'ALROC
+| Nombre del Color | Código Hex | Variable CSS | Aplicación Principal |
+| :--- | :--- | :--- | :--- |
+| **Verde Esmeralda Imperial** | `#1D3D2E` | `--emerald-column` | Fondo de tarjetas nobles, botones principales y acentos de prestigio |
+| **Verde Esmeralda Profundo** | `#142B20` | Degradado | Sombra base en degradados de tarjetas y botones victorianos |
+| **Verde Mármol AlRoc** | `#2D5446` | `--emerald-medium` | Acentos arquitectónicos y estados activos |
+| **Oro Antiguo Victoriano** | `#B88E3E` | `--gold` | Marcos, filigranas, bordes de tarjetas y divisores heráldicos |
+| **Hoja de Oro Bruñido** | `#D4B062` | `--gold-light` | Iconos, rótulos luminosos, títulos en hover y filetes interiores |
+| **Bronce Orfebre Clásico** | `#8C6820` | `--gold-dark` | Capitulares, subtítulos y grabados |
+| **Pan de Oro Sagrado / Corona** | `#F3C64D` | `--vitral-gold` | Acentos de corona y orfebrería de alta jerarquía |
+| **Pergamino Marfil Cálido** | `#F6F1E7` | `--bg-canvas` | Fondo arquitectónico general de secciones (mármol/pergamino) |
+| **Superficie Marfil Pura** | `#FCFAF6` | `--bg-surface` | Superficie pura interior de modales y cajas claras |
 
 ### 💼 Fase 4: Automatización y Herramientas de Captación (Posterior)
 - [ ] Formulario de captación de inmuebles ("*¿Quieres vender tu propiedad con nosotros?*") con subida de datos básica.
 - [ ] Generador de fichas descargables en PDF para clientes inversores internacionales.
 - [ ] Integración de botón de agenda para visitas presenciales y virtuales guiadas por la Lic. Claudia Di Diomede.
 - [ ] Optimización SEO local orientada a búsquedas como *"Bienes Raíces Isla de Margarita"*, *"Inmobiliaria Pampatar"*, *"Venta de Casas de Lujo Margarita"*.
+

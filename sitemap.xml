@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <!-- Página Principal / Portal Inmobiliario -->
+    <url>
+        <loc>https://inversionesdalroc.com/</loc>
+        <lastmod>2026-09-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://inversionesdalroc.com/img/luxury_villa.png</image:loc>
+            <image:title>Inversiones D'ALROC Real Estate — Isla de Margarita</image:title>
+            <image:caption>Venta y asesoría de propiedades de lujo en el Caribe</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Casas en Isla de Margarita -->
+    <url>
+        <loc>https://inversionesdalroc.com/casas-isla-de-margarita</loc>
+        <lastmod>2026-09-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://inversionesdalroc.com/img/IMG_0219.jpeg</image:loc>
+            <image:title>Casas y Villas de Lujo en Venta en Isla de Margarita</image:title>
+            <image:caption>Villas en Pampatar, Costa Azul y Playa El Ángel</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Terrenos Nueva Esparta -->
+    <url>
+        <loc>https://inversionesdalroc.com/terrenos-nueva-esparta</loc>
+        <lastmod>2026-09-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <image:image>
+            <image:loc>https://inversionesdalroc.com/img/isla-saona.jpg</image:loc>
+            <image:title>Terrenos y Parcelas en Venta en Nueva Esparta</image:title>
+            <image:caption>Lotes de alta plusvalía y terrenos con factibilidad jurídica</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Compra y Venta Hogar -->
+    <url>
+        <loc>https://inversionesdalroc.com/compra-venta-hogar</loc>
+        <lastmod>2026-09-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://inversionesdalroc.com/img/ClaudiaIMG.jpeg</image:loc>
+            <image:title>Compra y Venta de Hogares en Margarita con la Lic. Claudia Di Diomede</image:title>
+            <image:caption>Asesoría jurídica personalizada y corretaje inmobiliario certificado</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Apartamentos -->
+    <url>
+        <loc>https://inversionesdalroc.com/apartamentos</loc>
+        <lastmod>2026-09-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <image:image>
+            <image:loc>https://inversionesdalroc.com/img/Propiedadcaracola.png</image:loc>
+            <image:title>Venta y Alquiler de Apartamentos en Isla de Margarita</image:title>
+            <image:caption>Apartamentos modernos frente al mar en La Caracola y Costa Azul</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Alquiler -->
+    <url>
+        <loc>https://inversionesdalroc.com/alquiler</loc>
+        <lastmod>2026-09-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <image:image>
+            <image:loc>https://inversionesdalroc.com/img/10_BestBeachCaribbean__VaraderoBeach_shutterstock_730129885 (1).jpg</image:loc>
+            <image:title>Alquileres Residenciales y Vacacionales en Isla de Margarita</image:title>
+            <image:caption>Estadías vacacionales y contratos de alquiler residencial garantizados</image:caption>
+        </image:image>
+    </url>
+</urlset>
