@@ -110,9 +110,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=responsive-8.0">
+    <link rel="stylesheet" href="estilos.css?v=responsive-9.0">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-    <link rel="stylesheet" href="seccion3.css?v=responsive-5.0">
+    <link rel="stylesheet" href="seccion3.css?v=responsive-6.0">
 </head>
 
 <body>
@@ -209,19 +209,9 @@
             </div>
         </div>
 
-        <!-- Pestaña inferior de agarre: Solo logo en Desktop; Header completo en Celulares -->
+        <!-- Pestaña inferior de agarre que sobresale en el top corner left: ÚNICAMENTE EL LOGO DE D'ALROC -->
         <button class="top-shape-handle" id="top-shape-handle" aria-expanded="false" aria-controls="top-shape-popup" aria-label="Abrir Menú Inversiones D'ALROC" title="Inversiones D'ALROC — Clic para abrir / cerrar menú">
-            <div class="handle-brand-wrap">
-                <img src="img/IMG_0217.png" alt="Inversiones D'ALROC" class="shape-handle-logo">
-                <div class="shape-handle-text">
-                    <span class="handle-title">INVERSIONES D'<em>ALROC</em></span>
-                    <span class="handle-subtitle">Bienes Raíces • Margarita</span>
-                </div>
-            </div>
-            <div class="shape-handle-toggle">
-                <span class="handle-toggle-label">Menú</span>
-                <i class="fa-solid fa-bars handle-menu-icon"></i>
-            </div>
+            <img src="img/IMG_0217.png" alt="Inversiones D'ALROC" class="shape-handle-logo">
         </button>
     </aside>
 
@@ -318,10 +308,8 @@
         <div class="airbnb-hero-overlay"></div>
 
         <div class="airbnb-hero-container">
-            <!-- ENCABEZADO CENTRAL AMIGABLE & EDITORIAL -->
-            <span class="hero-kicker-badge"><i class="fa-solid fa-gem"></i> BIENES RAÍCES SELECTOS • ISLA DE MARGARITA</span>
+            <!-- ENCABEZADO CENTRAL -->
             <h1 class="airbnb-hero-title">Encuentra tu hogar ideal en Margarita</h1>
-            <p class="hero-welcome-subtext">Villas exclusivas, apartamentos frente al mar y terrenos con blindaje jurídico garantizado por la Lic. Claudia Di Diomede.</p>
 
             <!-- WIDGET DE BÚSQUEDA FLOTANTE (COMPONENTE PRINCIPAL) -->
             <div class="airbnb-search-widget">
@@ -338,64 +326,50 @@
                     </button>
                 </div>
 
-                <!-- Fila inferior (Barra de entradas) -->
+                <!-- Fila inferior (Barra de entradas dividida horizontalmente) -->
                 <form class="airbnb-inputs-bar" id="airbnb-search-form" action="#Galeria" method="GET">
-                    <!-- Campo 1: Ubicación Principal -->
-                    <div class="airbnb-field-group field-primary" onclick="document.getElementById('input-ubicacion').focus();">
+                    <!-- Campo 1: [Icono Búsqueda] Ubicación -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-ubicacion').focus();">
                         <i class="fa-solid fa-magnifying-glass field-icon"></i>
                         <div class="field-texts">
                             <label for="input-ubicacion" class="field-label">Ubicación</label>
-                            <input type="text" id="input-ubicacion" name="ubicacion" class="field-input" placeholder="Pampatar, Costa Azul, La Caracola..." autocomplete="off">
+                            <input type="text" id="input-ubicacion" name="ubicacion" class="field-input" placeholder="Pampatar, Costa Azul, Playa El Ángel..." autocomplete="off">
                         </div>
                     </div>
 
                     <div class="field-divider"></div>
 
-                    <!-- Fila Secundaria de Campos para Móviles -->
-                    <div class="airbnb-secondary-fields-group">
-                        <!-- Campo 2: Calendario -->
-                        <div class="airbnb-field-group field-secondary" onclick="document.getElementById('input-calendario').focus();">
-                            <i class="fa-regular fa-calendar field-icon"></i>
-                            <div class="field-texts">
-                                <label for="input-calendario" class="field-label">Calendario</label>
-                                <input type="text" id="input-calendario" name="fechas" class="field-input" placeholder="Llegada / Salida" autocomplete="off">
-                            </div>
-                        </div>
-
-                        <div class="field-divider-inner"></div>
-
-                        <!-- Campo 3: Alquiler / Huéspedes -->
-                        <div class="airbnb-field-group field-secondary" onclick="document.getElementById('input-alquiler').focus();">
-                            <i class="fa-regular fa-user field-icon"></i>
-                            <div class="field-texts">
-                                <label for="input-alquiler" class="field-label">Huéspedes</label>
-                                <input type="text" id="input-alquiler" name="huespedes" class="field-input" placeholder="¿Cuántas personas?" autocomplete="off">
-                            </div>
+                    <!-- Campo 2: [Icono Calendario] -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-calendario').focus();">
+                        <i class="fa-regular fa-calendar field-icon"></i>
+                        <div class="field-texts">
+                            <label for="input-calendario" class="field-label">Calendario</label>
+                            <input type="text" id="input-calendario" name="fechas" class="field-input" placeholder="Llegada / Salida" autocomplete="off">
                         </div>
                     </div>
 
-                    <!-- Botón CTA -->
+                    <div class="field-divider"></div>
+
+                    <!-- Campo 3: [Icono Usuario] Alquiler -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-alquiler').focus();">
+                        <i class="fa-regular fa-user field-icon"></i>
+                        <div class="field-texts">
+                            <label for="input-alquiler" class="field-label">Alquiler</label>
+                            <input type="text" id="input-alquiler" name="huespedes" class="field-input" placeholder="¿Cuántas personas?" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Botón CTA (Extremo derecho) -->
                     <button type="submit" class="airbnb-cta-btn" id="btn-buscar">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <span>Buscar</span>
                     </button>
                 </form>
-
-                <!-- Chips de Búsqueda Rápida para Móviles y Nuevos Usuarios -->
-                <div class="hero-quick-chips" aria-label="Zonas más consultadas">
-                    <span class="quick-chips-title"><i class="fa-solid fa-compass"></i> Zonas Populares:</span>
-                    <div class="chips-scroll-row">
-                        <button type="button" class="quick-chip-btn" data-zone="Pampatar">Pampatar</button>
-                        <button type="button" class="quick-chip-btn" data-zone="Costa Azul">Costa Azul</button>
-                        <button type="button" class="quick-chip-btn" data-zone="La Caracola">La Caracola</button>
-                        <button type="button" class="quick-chip-btn" data-zone="Los Robles">Los Robles</button>
-                    </div>
-                </div>
             </div>
 
-            <!-- ENLACE SECUNDARIO DIRECTO AL CATÁLOGO -->
+            <!-- ENLACE SECUNDARIO -->
             <div class="airbnb-secondary-wrap">
-                <a href="#Seccion-Propiedades" class="airbnb-secondary-link"><i class="fa-solid fa-arrow-down"></i> Ver Catálogo Completo (4 Inmuebles Disponibles)</a>
+                <a href="#Galeria" class="airbnb-secondary-link">Cerca de ti &gt;</a>
             </div>
         </div>
     </section>
@@ -1559,25 +1533,6 @@
                     applyPortfolioFilter({ tabCategory: tabType, query: inputUbicacion.value });
                 });
             }
-
-            // Quick chips de zonas populares para interacción móvil amigable
-            const quickChips = document.querySelectorAll('.quick-chip-btn');
-            quickChips.forEach(chip => {
-                chip.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const zone = chip.getAttribute('data-zone') || chip.innerText.trim();
-                    if (inputUbicacion) {
-                        inputUbicacion.value = zone;
-                        const activeTab = document.querySelector('.airbnb-tab-btn.active');
-                        const tabType = activeTab ? activeTab.getAttribute('data-type') : null;
-                        applyPortfolioFilter({ tabCategory: tabType, query: zone });
-                    }
-                    const target = document.getElementById('Seccion-Propiedades') || document.getElementById('Galeria');
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
         });
     </script>
 </body>
