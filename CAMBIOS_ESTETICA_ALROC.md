@@ -198,6 +198,7 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
   - **Armonía y Estética Original 100% Intacta:** Se restauró la estructura de 3 campos en píldora dividida (`Ubicación`, `Calendario`, `Alquiler` y botón `Buscar`).
   - **Comboboxes / Selectores Táctiles Integrados:** En lugar de inputs de texto libre que abrían el teclado y causaban zooms o textos arbitrarios, se implementaron elementos `<select class="field-input field-select">` con las zonas (`Pampatar`, `Costa Azul`, `Playa El Ángel`, `La Caracola`, `Juan Griego`).
   - **Cero Teclado, Cero Zoom, Cero Descuadre:** Al tocar el campo se despliega el menú nativo del dispositivo sin activar el teclado en pantalla y sin alterar el layout visual de la barra.
+  - **Tipografía Delicada y Proporcional (Letras de Adentro Reducidas):** Reducción de la escala tipográfica de los textos y placeholders interiores a `0.82rem` (y `0.80rem` en móviles) con labels de `0.72rem`, otorgando un acabado visual mucho más estilizado, sutil y proporcionado.
 - [x] **Unificación Tipográfica del Pie de Página con Plus Jakarta Sans:**
   - Aplicación de *Plus Jakarta Sans* en el pie de página (`.footer`, `.footer h4`, enlaces de navegación), logrando coherencia total con el Hero.
 
