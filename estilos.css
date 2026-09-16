@@ -3958,7 +3958,7 @@ select.field-select option {
     background: var(--bg-surface);
     border: 1.5px solid var(--gold);
     border-radius: 16px 16px 4px 16px;
-    padding: 14px 14px 12px 14px;
+    padding: 1.15rem 1.15rem 1rem 1.15rem;
     box-shadow: 0 12px 32px rgba(40, 34, 25, 0.16);
     pointer-events: auto;
     opacity: 0;
@@ -3978,13 +3978,13 @@ select.field-select option {
     position: absolute;
     top: 8px;
     right: 8px;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
     color: var(--text-headline);
-    font-size: 13px;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4002,15 +4002,15 @@ select.field-select option {
 .vcard-profile-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    padding-right: 6px;
+    gap: 0.85rem;
+    margin-bottom: 0.85rem;
+    padding-right: 0.5rem;
 }
 
 .vcard-avatar-box {
     position: relative;
-    width: 58px;
-    height: 58px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--gold);
@@ -4036,37 +4036,37 @@ select.field-select option {
 
 .vcard-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 10px;
+    font-size: 0.64rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     display: block;
-    line-height: 1.25;
-    margin-bottom: 3px;
+    line-height: 1.15;
+    margin-bottom: 0.2rem;
     white-space: nowrap;
 }
 
 .vcard-name {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 1.24rem;
+    font-weight: 700;
     color: var(--text-headline);
-    line-height: 1.2;
-    margin-bottom: 4px;
+    line-height: 1.15;
+    margin-bottom: 0.25rem;
     white-space: nowrap;
 }
 
 .vcard-cert-tag {
-    font-size: 11px;
+    font-size: 0.74rem;
     font-weight: 600;
     color: var(--emerald-column);
     background: var(--bg-card-warm);
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-pill);
-    padding: 3px 8px;
+    padding: 0.15rem 0.45rem;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.28rem;
     width: fit-content;
     line-height: 1.2;
     white-space: nowrap;
@@ -4074,7 +4074,7 @@ select.field-select option {
 
 .vcard-cert-tag i {
     color: var(--gold-dark);
-    font-size: 11px;
+    font-size: 0.76rem;
 }
 
 /* Línea Divisoria con Redes Sociales Oficiales D'ALROC */
@@ -4082,8 +4082,8 @@ select.field-select option {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 0.4rem;
+    margin-bottom: 0.95rem;
     position: relative;
 }
 
@@ -4097,20 +4097,20 @@ select.field-select option {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 0.7rem;
 }
 
 .vcard-icon-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: var(--bg-card-warm);
-    border: 1.5px solid var(--gold-border);
+    border: 1px solid var(--gold-border);
     color: var(--emerald-column);
-    font-size: 15px;
+    font-size: 1.05rem;
     transition: all 0.22s ease;
     cursor: pointer;
     text-decoration: none;
@@ -4130,27 +4130,27 @@ select.field-select option {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 0.55rem;
     background: var(--emerald-column);
     color: #FFFFFF;
     font-family: 'Cinzel', serif;
-    font-size: 12.5px;
+    font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    padding: 10px 14px;
+    padding: 0.6rem 0.85rem;
     border-radius: var(--radius-pill);
     border: 1px solid var(--gold-border);
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.3);
+    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.3), 0 0 8px rgba(184, 142, 62, 0.2);
 }
 
 .virgen-flyout-wa-btn:hover {
     background: #142B20;
     border-color: var(--gold);
     color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(29, 61, 46, 0.45);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(29, 61, 46, 0.42), 0 0 12px rgba(184, 142, 62, 0.35);
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
