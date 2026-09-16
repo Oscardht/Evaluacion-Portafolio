@@ -203,6 +203,28 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 - [x] **Unificación Tipográfica del Pie de Página con Plus Jakarta Sans:**
   - Aplicación de *Plus Jakarta Sans* en el pie de página (`.footer`, `.footer h4`, enlaces de navegación), logrando coherencia total con el Hero.
 
+### 💎 Fase 3.7: Optimización Tipográfica, Jerarquía Móvil y Conversión de Venta — COMPLETADO
+- [x] **Aprovechamiento Tipográfico Integral en Tarjetas de Servicios y VCard:**
+  - **Diagnóstico:** Con base en las anotaciones de `INCREASEcertainFONTS.jpg`, existía espacio horizontal ocioso en las tarjetas de especialidad y la VCard flotante.
+  - **Solución implementada:** Se incrementó la escala tipográfica de los títulos y textos descriptivos en el menú superior y en la VCard ejecutiva, llenando el espacio disponible con elegancia y máxima legibilidad sin alterar en un solo píxel las dimensiones exteriores de los contenedores ni provocar desbordamientos.
+- [x] **Depuración de Comboboxes (Placeholders No Seleccionables):**
+  - Las preguntas y textos guía de los selectores (`"¿En qué zona buscas?"`, `"¿Cuándo deseas visitar?"`, `"¿Cuántas habitaciones?"`) se blindaron con los atributos `value="" disabled selected hidden`. De este modo actúan como etiquetas guía informativas y el usuario no puede seleccionarlas por error como valores de búsqueda.
+- [x] **Escalado Táctil y Ergonomía Visual en Móviles para Comboboxes:**
+  - En la vista móvil (`@media (max-width: 600px)`), se amplió sustancialmente la escala de los comboboxes para evitar forzar la vista: etiquetas elevadas a `1.18rem` con contraste reforzado, textos de selección a `1.35rem` y opciones nativas forzadas a `16px` para prevenir zoom intrusivo de iOS/Android.
+- [x] **Transformación del 3er Campo de Búsqueda: "Habitaciones" con Ícono de Cama:**
+  - Reemplazo del término `"Alquiler"` por `"Habitaciones"` con ícono `fa-solid fa-bed`.
+  - Incorporación de opciones claras de 1 a 4+ habitaciones, además de proyectos de inversión, reflejando con exactitud los parámetros del mercado inmobiliario.
+- [x] **Jerarquía Visual Superior Izquierda Optimizada para Móviles:**
+  - **Solo en teléfonos (`@media (max-width: 600px)`):** Se ocultó el kicker superior `"EXCLUSIVIDAD Y BLINDAJE"` para evitar redundancia y darle prioridad absoluta al nombre de la marca `INVERSIONES D'ALROC`.
+  - Se incorporó un subtítulo único en cursiva subrayada: `Exclusividad y blindaje en la venta o compra de tu propiedad.` en una sola línea equilibrada.
+  - **Escritorio / PC 100% Intacto:** En computadoras de escritorio se preserva la jerarquía original completa de tres niveles (Kicker `EXCLUSIVIDAD Y BLINDAJE`, Título Monumental y Tagline editorial) sin ninguna alteración.
+- [x] **Redirección y Actualización del Enlace Secundario del Hero:**
+  - Sustitución de `"Cerca de ti >"` por el llamado de conversión:  
+    `¿Buscas vender? Haz clic aquí >`
+  - Se conserva íntegra la misma tipografía, estilos, píldora translúcida en móvil y animación de subrayado progresivo en hover (`.airbnb-secondary-link::after`), enlazando directamente al ancla `#Legado` de la Sección 4.
+
+---
+
 ### 🎨 Código Oficial de Colores del Proyecto Inversiones D'ALROC
 | Nombre del Color | Código Hex | Variable CSS | Aplicación Principal |
 | :--- | :--- | :--- | :--- |
@@ -216,9 +238,47 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 | **Pergamino Marfil Cálido** | `#F6F1E7` | `--bg-canvas` | Fondo arquitectónico general de secciones (mármol/pergamino) |
 | **Superficie Marfil Pura** | `#FCFAF6` | `--bg-surface` | Superficie pura interior de modales y cajas claras |
 
-### 💼 Fase 4: Automatización y Herramientas de Captación (Posterior)
-- [ ] Formulario de captación de inmuebles ("*¿Quieres vender tu propiedad con nosotros?*") con subida de datos básica.
-- [ ] Generador de fichas descargables en PDF para clientes inversores internacionales.
-- [ ] Integración de botón de agenda para visitas presenciales y virtuales guiadas por la Lic. Claudia Di Diomede.
-- [ ] Optimización SEO local orientada a búsquedas como *"Bienes Raíces Isla de Margarita"*, *"Inmobiliaria Pampatar"*, *"Venta de Casas de Lujo Margarita"*.
+---
+
+### 💼 Fase 4: Sección 4 — Formulario de Captación y Consignación ("Vende tu Propiedad")
+**Objetivo:** Canalizar y convertir a propietarios e inversionistas que desean comercializar su inmueble a través de Inversiones D'ALROC y la Lcda. Claudia Di Diomede.
+
+- [x] **Enlace Directo desde el Hero:** Acceso inmediato mediante `¿Buscas vender? Haz clic aquí >` apuntando a la Sección 4 (`#Legado`).
+- [ ] **Estructura del Formulario Neoclásico Editorial:**
+  - Diseño en tarjeta marfil con filetes en oro bruñido y remates arquitectónicos.
+  - Campos esenciales de captación sin fricción:
+    1. **Nombre y Apellido del Propietario / Representante.**
+    2. **Teléfono / WhatsApp de Contacto.**
+    3. **Tipo de Propiedad:** Villa / Casa, Apartamento, Town-House, Terreno / Parcela, Local Comercial.
+    4. **Ubicación en Isla de Margarita:** (Pampatar, Playa El Ángel, Costa Azul, Jorge Coll, Playa El Agua, Porlamar, Juan Griego, etc.).
+    5. **Dimensiones Aproximadas (m²)** y número de habitaciones/baños.
+    6. **Rango de Precio Estimado o Solicitud de Avalúo Legal.**
+    7. **Observaciones / Amenidades Destacadas** (piscina, vista al mar, pozo de agua, planta eléctrica).
+- [ ] **Botón de Conversión WhatsApp Final:**
+  - Una vez completados los datos, el botón de acción principal se habilita con el llamado:  
+    `ENVIAR FORMULARIO Y HABLAR CON LA LCDA. CLAUDIA PARA EMPEZAR A VENDER SU PROPIEDAD`
+  - Al pulsar, compila la información en un mensaje formal estructurado con emojis institucionales hacia el WhatsApp `+58 414 790-7819`.
+
+---
+
+### ✈️🏛️ Propuestas Arquitectónicas: Sección 3 vs. Sección 4 & "Hospedaje y Boletería"
+Actualmente el proyecto cuenta con dos secciones intermedias preparadas en el markup:
+- **Sección 3:** `<section class="Opiniones" id="Opiniones">`
+- **Sección 4:** `<section class="Legado" id="Legado">` (hacia donde apunta el botón *"¿Buscas vender? Haz clic aquí >"*).
+
+Para integrar con éxito los servicios de **Turismo, Hospedaje y Boletería** sin descuidar el nicho de Bienes Raíces y Venta de Propiedades, se plantean las siguientes alternativas:
+
+#### 🌟 Opción Recomendada: Sección 3 Bimodal (Hospedaje & Boletería) + Sección 4 (Consignación & Asesora)
+1. **Sección 3 (`#Opiniones` -> Renombrable a `#Experiencias` o `#Turismo`): "Estadías Exclusivas & Concierge de Viajes":**
+   - **Tarjeta A — Hospedaje Vacacional VIP en Margarita:** Alquileres temporales en villas y apartamentos de lujo frente al mar.
+   - **Tarjeta B — Boletería & Traslados Ejecutivos:** Emisión de boletos aéreos y marítimos (ferry / vuelos nacionales e internacionales a Porlamar), recepción VIP y chofer privado en la isla.
+   - **Botón de Acción:** *"Cotizar Estadía o Vuelo con Concierge D'ALROC"*.
+2. **Sección 4 (`#Legado`): "Consignación de Propiedades & Blindaje con la Lcda. Claudia Di Diomede":**
+   - Abarca el formulario de captación para vendedores conectado a WhatsApp (`ENVIAR FORMULARIO Y HABLAR CON LA LCDA. CLAUDIA PARA EMPEZAR A VENDER SU PROPIEDAD`).
+   - Acompañado del perfil de respaldo legal de la Lcda. Claudia (trayectoria, colegiatura y sello de blindaje inmobiliario).
+
+#### 💡 Opción Alternativa: Pestañas / Selector Interactivo en Sección 4
+- Si la Sección 3 se reserva para testimonios o proyectos de construcción, la Sección 4 puede tener un interruptor de dos vistas:
+  - **Pestaña 1: "Quiero Vender mi Propiedad"** (Formulario de consignación).
+  - **Pestaña 2: "Hospedaje & Boletería Vacacional"** (Solicitud de fechas de viaje, personas y reservas de vuelos/alojamiento temporal).
 

@@ -3483,6 +3483,14 @@ select.field-select option {
     color: var(--text-headline);
 }
 
+.tagline-mobile {
+    display: none;
+}
+
+.tagline-desktop {
+    display: inline;
+}
+
 .top-shape-close-btn {
     width: 32px;
     height: 32px;
@@ -4822,21 +4830,27 @@ select.field-select option {
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Cabecera Pop-Up Top Corner Left Ampliada (Móvil) */
+    /* Cabecera Pop-Up Top Corner Left con jerarquía móvil optimizada */
     .top-shape-kicker {
-        font-size: 1.25rem;
-        letter-spacing: 0.15em;
-        font-weight: 800;
-        margin-bottom: 0.3rem;
+        display: none !important;
+    }
+    .tagline-desktop {
+        display: none !important;
+    }
+    .tagline-mobile {
+        display: block !important;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: #554D40;
+        margin-top: 0.25rem;
+        line-height: 1.25;
+        white-space: nowrap;
     }
     .top-shape-title {
         font-size: 2.45rem;
-        line-height: 1.1;
-    }
-    .top-shape-tagline {
-        font-size: 1.38rem;
-        margin-top: 0.4rem;
-        color: #554D40;
+        line-height: 1.08;
+        margin-top: 0;
     }
     .top-shape-close-btn {
         width: 38px;
@@ -4936,6 +4950,9 @@ select.field-select option {
 @media (max-width: 375px) {
     .top-shape-title {
         font-size: 2.15rem;
+    }
+    .tagline-mobile {
+        font-size: 0.92rem !important;
     }
     .top-shape-service-text strong {
         font-size: 1.45rem;
