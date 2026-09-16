@@ -187,11 +187,12 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 
 ### 📲 Fase 3.6: Arco Arquitectónico Escultural Estático & Buscador Táctil con Radiobuttons — COMPLETADO
 - [x] **Arco Arquitectónico Escultural y Escudo de Isla Dinámica en Móviles (`<= 768px`):**
-  - [x] **Top Corner Arquitectónico Estático D'ALROC en Móviles (Abarca Espacio Completo Excepto Bordesito):**
+- [x] **Top Corner Arquitectónico Estático D'ALROC en Móviles (Abarca Espacio Completo Excepto Bordesito):**
   - **Abarca el Espacio Completo Excepto el Bordesito:** En móviles abarca la dimensión horizontal (`width: calc(100% - 14px)`) conservando el elegante remate curvo en el extremo derecho (`border-bottom-right-radius: 90px` cerrado, `100px` abierto) tal como se especificó en `ABARCAESPACIOCOMPLETO EXCEPTOBORDESITO.png` y `ELESPACIOQUEDEBERIABARCAR.png`.
   - **Comportamiento 100% Estático (Cero Persecución al Scrollear):** Anclado con `position: absolute; top: 0; left: 0;` en móviles para que permanezca en la cabecera superior y nunca persiga al usuario al hacer scroll.
   - **Cero Elementos Duplicados ni Colores Falsos:** Se eliminaron escudos duplicados artificiales. Se utiliza el componente original con sus colores genuinos de escritorio (`#FCFAF6`, `var(--gold)`).
-  - **Preservación Total de la Marca de Agua de la Virgen (`Ejemplo.png`):** Visible en la cabecera en reposo en el arco derecho y visible en el panel interior desplegado.
+  - **Preservación Total de la Marca de Agua de la Virgen (`Ejemplo.png`):** Integrada directamente en `.top-shape-body::before` al desplegar el menú con una opacidad del 18% en el arco inferior derecho (idéntico a PC y sin ser tapada por capas opacas).
+  - **Teléfono de Contacto 100% Visible y Libre de Recortes:** El número `+58 414 790-7819` se rediseñó como cápsula/badge ejecutivo (`.top-shape-phone-link`) con fondo blanco, orla de oro (`border: 1.5px solid var(--gold)`) y tipografía en negrita esmeralda (`#1D3D2E`). Además, se amplió el padding inferior del panel a `2.8rem`, garantizando que la curva del borde dorado quede por encima y con holgura sin recortar ninguna cifra.
 - [x] **Eliminación Total de Resplandores Artificiales ("Glow"):**
   - Se removieron los filtros de `drop-shadow` con halo dorado (`rgba(184, 142, 62, ...)`) y los `box-shadow` con resplandor neón tanto en la insignia flotante de la Virgen (`QUITARGLOW.png`), pastilla de WhatsApp, como en el Top Shape Popup. Ahora poseen sombras naturales, nítidas y limpias, eliminando la separación halo extraña en pantallas de teléfonos.
 - [x] **Restauración Estética de la Barra de Búsqueda Hero con Comboboxes Nativos:**

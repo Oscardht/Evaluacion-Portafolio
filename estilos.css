@@ -4351,20 +4351,20 @@ select.field-select option {
         border-bottom-right-radius: 100px !important;
     }
 
-    /* Marca de agua sacra en el cuerpo desplegado (Solo 1 Virgen, visible al abrir el pop-up como en PC) */
+    /* Marca de agua sacra de la Virgen en móvil (Exactamente como en PC, visible al desplegar el pop-up) */
     .top-shape-popup::before {
         display: none !important;
     }
 
-    .top-shape-popup.active::before {
+    .top-shape-popup.active .top-shape-body::before {
         content: '' !important;
         position: absolute !important;
-        right: 14px !important;
-        bottom: 24px !important;
-        width: 110px !important;
-        height: 125px !important;
+        right: 12px !important;
+        bottom: 20px !important;
+        width: 130px !important;
+        height: 145px !important;
         background: url('img/Ejemplo.png') no-repeat bottom right / contain !important;
-        opacity: 0.16 !important;
+        opacity: 0.18 !important;
         pointer-events: none !important;
         z-index: 0 !important;
         display: block !important;
@@ -4410,8 +4410,14 @@ select.field-select option {
     .top-shape-body {
         order: 2 !important;
         width: 100% !important;
+        position: relative !important;
         background: var(--bg-surface) !important;
         transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.35s ease !important;
+    }
+
+    .top-shape-body > * {
+        position: relative !important;
+        z-index: 1 !important;
     }
 
     .top-shape-popup:not(.active) .top-shape-body {
@@ -4425,14 +4431,58 @@ select.field-select option {
     }
 
     .top-shape-popup.active .top-shape-body {
-        max-height: 85vh !important;
+        max-height: 86vh !important;
         opacity: 1 !important;
         visibility: visible !important;
-        padding: 1rem 1.6rem 2rem 1.6rem !important;
+        padding: 1rem 1.6rem 2.8rem 1.6rem !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         pointer-events: auto !important;
         border-top: 1px solid var(--gold-border) !important;
+    }
+
+    /* Acciones al pie: botón WhatsApp y teléfono 100% legible sin recortarse por el borde curvo */
+    .top-shape-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.85rem !important;
+        padding-top: 1.1rem !important;
+        padding-bottom: 0.4rem !important;
+        margin-bottom: 0.4rem !important;
+        border-top: 1px solid var(--gold-border) !important;
+        width: 100% !important;
+    }
+
+    .top-shape-wa-link {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0.8rem 1.2rem !important;
+        font-size: 1rem !important;
+        justify-content: center !important;
+    }
+
+    .top-shape-phone-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 0.6rem !important;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+        font-size: 1.18rem !important;
+        font-weight: 800 !important;
+        color: var(--emerald-column) !important;
+        background: #FFFFFF !important;
+        border: 1.5px solid var(--gold) !important;
+        border-radius: 9999px !important;
+        padding: 0.55rem 1.25rem !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+        white-space: nowrap !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .top-shape-phone-link i {
+        color: var(--gold-dark) !important;
+        font-size: 1.05rem !important;
     }
 }
 
