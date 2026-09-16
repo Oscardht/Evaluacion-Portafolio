@@ -332,7 +332,8 @@
                         <div class="field-texts">
                             <label for="input-ubicacion" class="field-label">Ubicación</label>
                             <select id="input-ubicacion" name="ubicacion" class="field-input field-select">
-                                <option value="">Pampatar, Costa Azul, Playa El Ángel...</option>
+                                <option value="" disabled selected hidden>Pampatar, Costa Azul, Playa El Ángel...</option>
+                                <option value="">Todas las ubicaciones</option>
                                 <option value="Pampatar">Pampatar</option>
                                 <option value="Costa Azul">Costa Azul</option>
                                 <option value="Playa El Ángel">Playa El Ángel</option>
@@ -350,7 +351,8 @@
                         <div class="field-texts">
                             <label for="input-calendario" class="field-label">Calendario</label>
                             <select id="input-calendario" name="fechas" class="field-input field-select">
-                                <option value="">Llegada / Salida</option>
+                                <option value="" disabled selected hidden>Llegada / Salida</option>
+                                <option value="">Cualquier fecha</option>
                                 <option value="Esta semana">Esta semana</option>
                                 <option value="Próximo mes">Próximo mes</option>
                                 <option value="Temporada Vacacional">Temporada Vacacional</option>
@@ -361,17 +363,19 @@
 
                     <div class="field-divider"></div>
 
-                    <!-- Campo 3: [Icono Usuario] Alquiler Combobox -->
-                    <div class="airbnb-field-group" onclick="document.getElementById('input-alquiler').focus();">
-                        <i class="fa-regular fa-user field-icon"></i>
+                    <!-- Campo 3: [Icono Habitaciones] Habitaciones Combobox -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-habitaciones').focus();">
+                        <i class="fa-solid fa-bed field-icon"></i>
                         <div class="field-texts">
-                            <label for="input-alquiler" class="field-label">Alquiler</label>
-                            <select id="input-alquiler" name="huespedes" class="field-input field-select">
-                                <option value="">¿Cuántas personas?</option>
-                                <option value="1 a 2 huéspedes">1 a 2 huéspedes</option>
-                                <option value="3 a 5 huéspedes">3 a 5 huéspedes</option>
-                                <option value="Familia / Grupo 6+">Familia / Grupo 6+</option>
-                                <option value="Inversión / Compra">Inversión / Compra</option>
+                            <label for="input-habitaciones" class="field-label">Habitaciones</label>
+                            <select id="input-habitaciones" name="habitaciones" class="field-input field-select">
+                                <option value="" disabled selected hidden>¿Cuántas habitaciones?</option>
+                                <option value="">Cualquier cantidad</option>
+                                <option value="1 habitación">1 habitación</option>
+                                <option value="2 habitaciones">2 habitaciones</option>
+                                <option value="3 habitaciones">3 habitaciones</option>
+                                <option value="4+ habitaciones">4 o más habitaciones</option>
+                                <option value="Inversión / Proyecto">Inversión / Proyecto</option>
                             </select>
                         </div>
                     </div>

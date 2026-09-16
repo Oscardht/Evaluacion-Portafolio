@@ -3442,17 +3442,17 @@ select.field-select option {
 
 .top-shape-kicker {
     font-family: 'Cinzel', serif;
-    font-size: 0.74rem;
+    font-size: 0.98rem;
     font-weight: 700;
     color: var(--gold-dark);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     display: block;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 
 .top-shape-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.85rem;
+    font-size: 2.15rem;
     font-weight: 800;
     color: var(--text-headline);
     margin: 0;
@@ -3469,12 +3469,13 @@ select.field-select option {
 
 .top-shape-tagline {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 0.82rem;
+    font-size: 1.12rem;
     font-style: italic;
     color: var(--text-muted);
-    margin-top: 0.28rem;
+    margin-top: 0.35rem;
     display: block;
     line-height: 1.25;
+    letter-spacing: 0.01em;
     transition: color 0.2s ease;
 }
 
@@ -4578,55 +4579,74 @@ select.field-select option {
         text-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
     }
 
-    /* Widget de Búsqueda Móvil Armonioso */
+    /* Widget de Búsqueda Móvil Armonioso y Ampliado (Combobox grande y confortable) */
     .airbnb-search-widget {
-        padding: 1.1rem 1.2rem 1.3rem 1.2rem;
+        padding: 1.3rem 1.3rem 1.5rem 1.3rem;
         border-radius: 24px;
         box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32), 0 0 16px rgba(184, 142, 62, 0.2);
     }
 
     .airbnb-widget-tabs {
-        gap: 1.2rem;
+        gap: 1.4rem;
         display: flex;
         justify-content: center;
         border-bottom: 1px solid #ECE7DE;
         padding-bottom: 0.8rem;
-        margin-bottom: 0.9rem;
+        margin-bottom: 1.1rem;
     }
 
     .airbnb-tab-btn {
-        font-size: 1.05rem;
-        padding: 0.4rem 0.5rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 0.5rem 0.7rem;
         color: #666666;
     }
 
     .airbnb-inputs-bar {
         border-radius: 20px;
-        padding: 0.65rem;
+        padding: 0.8rem;
         display: flex;
         flex-direction: column;
-        gap: 0.35rem;
+        gap: 0.5rem;
         background: #FFFFFF;
         border: 1.5px solid #E2DBCF;
     }
 
     .airbnb-field-group {
         width: 100%;
-        padding: 0.6rem 0.85rem;
+        padding: 0.85rem 1rem;
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        border-radius: 12px;
+        gap: 1rem;
+        border-radius: 14px;
+        min-height: 60px;
         transition: background-color 0.2s ease;
     }
 
+    .airbnb-field-group .field-icon {
+        font-size: 1.6rem;
+    }
+
     .airbnb-field-group .field-label {
-        font-size: 0.70rem !important;
+        font-size: 1.18rem !important;
+        font-weight: 800 !important;
+        color: #1A1612 !important;
+        letter-spacing: 0.03em !important;
+        margin-bottom: 0.15rem !important;
     }
 
     .airbnb-field-group .field-input,
     .airbnb-field-group select.field-select {
-        font-size: 0.80rem !important;
+        font-size: 1.35rem !important;
+        font-weight: 600 !important;
+        color: #2D271F !important;
+        padding-top: 0.2rem !important;
+        line-height: 1.3 !important;
+    }
+
+    select.field-select option {
+        font-size: 16px;
+        padding: 10px 14px;
     }
 
     .airbnb-field-group:active,
@@ -4646,8 +4666,8 @@ select.field-select option {
         width: 100% !important;
         margin: 0.3rem 0 0 0 !important;
         border-radius: 14px !important;
-        padding: 1.1rem 1.4rem !important;
-        font-size: 1.2rem !important;
+        padding: 1.25rem 1.6rem !important;
+        font-size: 1.4rem !important;
         font-weight: 800 !important;
         letter-spacing: 0.04em !important;
         justify-content: center !important;
@@ -4802,6 +4822,28 @@ select.field-select option {
         -webkit-overflow-scrolling: touch;
     }
 
+    /* Cabecera Pop-Up Top Corner Left Ampliada (Móvil) */
+    .top-shape-kicker {
+        font-size: 1.25rem;
+        letter-spacing: 0.15em;
+        font-weight: 800;
+        margin-bottom: 0.3rem;
+    }
+    .top-shape-title {
+        font-size: 2.45rem;
+        line-height: 1.1;
+    }
+    .top-shape-tagline {
+        font-size: 1.38rem;
+        margin-top: 0.4rem;
+        color: #554D40;
+    }
+    .top-shape-close-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
+    }
+
     /* Refuerzo de tipografía Infonormal y VCard para abarcar armónicamente el ancho */
     .top-shape-service-card {
         padding: 0.75rem 1rem;
@@ -4892,6 +4934,9 @@ select.field-select option {
 
 /* 5. Móviles Estrechos (<= 375px) */
 @media (max-width: 375px) {
+    .top-shape-title {
+        font-size: 2.15rem;
+    }
     .top-shape-service-text strong {
         font-size: 1.45rem;
     }
