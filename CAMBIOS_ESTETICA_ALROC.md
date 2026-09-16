@@ -219,9 +219,9 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
   - Se incorporó un subtítulo único en cursiva subrayada: `Exclusividad y blindaje en la venta o compra de tu propiedad.` en una sola línea equilibrada.
   - **Escritorio / PC 100% Intacto:** En computadoras de escritorio se preserva la jerarquía original completa de tres niveles (Kicker `EXCLUSIVIDAD Y BLINDAJE`, Título Monumental y Tagline editorial) sin ninguna alteración.
 - [x] **Redirección y Actualización del Enlace Secundario del Hero:**
-  - Sustitución de `"Cerca de ti >"` por el llamado de conversión:  
-    `¿Buscas vender? Haz clic aquí >`
-  - Se conserva íntegra la misma tipografía, estilos, píldora translúcida en móvil y animación de subrayado progresivo en hover (`.airbnb-secondary-link::after`), enlazando directamente al ancla `#Legado` de la Sección 4.
+  - Sustitución de `"Cerca de ti >"` por el llamado de conversión directo:  
+    `Publica tu propiedad hoy y encuentra compradores >`
+  - Se conserva íntegra la misma tipografía (*Plus Jakarta Sans*), estilos, píldora translúcida en móvil y animación de subrayado progresivo en hover (`.airbnb-secondary-link::after`), enlazando directamente al ancla `#Legado` de la Sección 4.
 
 ---
 
@@ -243,7 +243,7 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 ### 💼 Fase 4: Sección 4 — Formulario de Captación y Consignación ("Vende tu Propiedad")
 **Objetivo:** Canalizar y convertir a propietarios e inversionistas que desean comercializar su inmueble a través de Inversiones D'ALROC y la Lcda. Claudia Di Diomede.
 
-- [x] **Enlace Directo desde el Hero:** Acceso inmediato mediante `¿Buscas vender? Haz clic aquí >` apuntando a la Sección 4 (`#Legado`).
+- [x] **Enlace Directo desde el Hero:** Acceso inmediato mediante `Publica tu propiedad hoy y encuentra compradores >` apuntando a la Sección 4 (`#Legado`).
 - [ ] **Estructura del Formulario Neoclásico Editorial:**
   - Diseño en tarjeta marfil con filetes en oro bruñido y remates arquitectónicos.
   - Campos esenciales de captación sin fricción:
@@ -264,7 +264,7 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 ### ✈️🏛️ Propuestas Arquitectónicas: Sección 3 vs. Sección 4 & "Hospedaje y Boletería"
 Actualmente el proyecto cuenta con dos secciones intermedias preparadas en el markup:
 - **Sección 3:** `<section class="Opiniones" id="Opiniones">`
-- **Sección 4:** `<section class="Legado" id="Legado">` (hacia donde apunta el botón *"¿Buscas vender? Haz clic aquí >"*).
+- **Sección 4:** `<section class="Legado" id="Legado">` (hacia donde apunta el botón *"Publica tu propiedad hoy y encuentra compradores >"*).
 
 Para integrar con éxito los servicios de **Turismo, Hospedaje y Boletería** sin descuidar el nicho de Bienes Raíces y Venta de Propiedades, se plantean las siguientes alternativas:
 
