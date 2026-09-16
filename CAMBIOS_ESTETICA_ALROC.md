@@ -125,7 +125,7 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
     > **👑 ELEMENTO DE IDENTIDAD EN RESERVA — CORONA IMPERIAL ÁUREA (`fa-solid fa-crown`):**  
     > La insignia de la corona dorada ha sido retirada del kicker superior para preservar la máxima sobriedad y legibilidad tipográfica. Se resguarda formalmente en este documento como activo institucional prioritario para ser reubicada próximamente en una sección de alta distinción (candidatos ideales: insignia de blindaje legal, sello de certificación de la Lcda. Claudia Di Diomede, tarjetas VIP de propiedades o pie de página).
     - Título principal de gran tamaño: `INVERSIONES D'ALROC` en tipografía moderna *Plus Jakarta Sans* (peso 800) con *ALROC* en cursiva dorada.
-    - Lema editorial: `En la compra o venta de tu propiedad` en tipografía romana clásica *Cinzel* (peso 600) y tono neutro cálido.
+    - Lema editorial: `En la compra o venta de tu propiedad` en tipografía cursiva *Playfair Display* (itálica) y tono neutro cálido.
     - **Navegación inteligente:** Todo el bloque de cabecera es interactivo; al cliquearlo, cierra automáticamente el menú desplegable y realiza un desplazamiento suave (*smooth scroll*) hacia el pie de página (`#pie-de-pagina`).
   - **Grilla de Especialidades & Servicios (Infonormal - Ubicación Superior):** Tarjetas de Bienes Raíces & Gestoría, Construcción & Remodelación y Turismo & Hospedaje situadas estratégicamente por encima de la fila interactiva.
   - **Píldora Panorámica Interactiva con `ImagenLarge.jpg` y Textos Rotativos Fly-In (`.top-shape-expand-row`):**
@@ -216,7 +216,7 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
   - Incorporación de opciones claras de 1 a 4+ habitaciones, además de proyectos de inversión, reflejando con exactitud los parámetros del mercado inmobiliario.
 - [x] **Jerarquía Visual Superior Izquierda Optimizada para Móviles:**
   - **Solo en teléfonos (`@media (max-width: 600px)`):** Se ocultó el kicker superior `"EXCLUSIVIDAD Y BLINDAJE"` para evitar redundancia y darle prioridad absoluta al nombre de la marca `INVERSIONES D'ALROC`.
-  - Se incorporó un subtítulo único en tipografía romana *Cinzel*: `Exclusividad y blindaje en la compra o venta de tu propiedad.` en una sola línea equilibrada y con remates clásicos.
+  - Se incorporó un subtítulo único en cursiva *Playfair Display*: `Exclusividad y blindaje en la compra o venta de tu propiedad.` en una sola línea equilibrada.
   - **Escritorio / PC 100% Intacto:** En computadoras de escritorio se preserva la jerarquía original completa de tres niveles (Kicker `EXCLUSIVIDAD Y BLINDAJE`, Título Monumental y Tagline editorial) sin ninguna alteración.
 - [x] **Redirección y Actualización del Enlace Secundario del Hero:**
   - Sustitución de `"Cerca de ti >"` por el llamado de conversión directo:  
@@ -227,8 +227,8 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
   - Ahora muestra las palabras solas con tipografía pura: **Inicio**, **Portafolio**, **Servicios**, **Asesora**.
 - [x] **Exploración Tipográfica de la Marca D'ALROC (`.top-shape-title`):**
   - Migración del título institucional `INVERSIONES D'ALROC` a tipografía moderna **Plus Jakarta Sans** (peso 800), unificando su identidad con la barra de búsqueda y elementos interactivos, y preservando el acento *ALROC* en cursiva dorada.
-- [x] **Aplicación de Cinzel al Subtítulo Institucional (`.top-shape-tagline` & `.tagline-mobile`):**
-  - Se configuró la tipografía **Cinzel** (peso 600, espaciado clásico `0.03em`) exclusivamente para el subtítulo/lema editorial (`En la compra o venta de tu propiedad` en PC y `Exclusividad y blindaje en la compra o venta de tu propiedad.` en móvil), aportando un acabado solemne y arquitectónico de inspiración imperial.
+- [x] **Restauración de Tipografía Original Playfair Display (Italic) en Subtítulo (`.top-shape-tagline` & `.tagline-mobile`):**
+  - Se restituyó de forma definitiva la tipografía original **Playfair Display** en estilo cursivo/itálico (`font-style: italic`), descartando Cinzel para preservar la distinción editorial atemporal y el contraste refinado con el título en Plus Jakarta Sans tanto en escritorio (`1.12rem`) como en móvil (`1.05rem` / `0.92rem` en pantallas compactas).
 
 ---
 

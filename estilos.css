@@ -3468,14 +3468,14 @@ select.field-select option {
 }
 
 .top-shape-tagline {
-    font-family: 'Cinzel', serif;
-    font-size: 0.98rem;
-    font-weight: 600;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.12rem;
+    font-style: italic;
     color: var(--text-muted);
     margin-top: 0.35rem;
     display: block;
     line-height: 1.25;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
     transition: color 0.2s ease;
 }
 
@@ -4839,14 +4839,13 @@ select.field-select option {
     }
     .tagline-mobile {
         display: block !important;
-        font-family: 'Cinzel', serif;
-        font-weight: 600;
-        font-size: 0.88rem;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-style: italic;
+        font-size: 1.05rem;
         color: #554D40;
         margin-top: 0.25rem;
         line-height: 1.25;
         white-space: nowrap;
-        letter-spacing: 0.015em;
     }
     .top-shape-title {
         font-size: 2.45rem;
@@ -4953,7 +4952,7 @@ select.field-select option {
         font-size: 2.15rem;
     }
     .tagline-mobile {
-        font-size: 0.80rem !important;
+        font-size: 0.92rem !important;
     }
     .top-shape-service-text strong {
         font-size: 1.45rem;
