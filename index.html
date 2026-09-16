@@ -122,10 +122,7 @@
          - La forma está oculta en el techo; solo sobresale un poquito (la pestaña de 46px).
          - Curvatura de arco en el extremo derecho (border-bottom-right-radius: 140px).
          - Mismo color marfil/pergamino de la página (#FCFAF6 / #F6F1E7).
-         - CERO DIFUMINADO DEL FONDO (fondo 100% nítido y visible al desplegarse).
-         <!-- Franja protectora estática de la Isla Dinámica / Status Bar en Móviles -->
-    <div class="top-island-shield" id="top-island-shield" aria-hidden="true"></div>
-
+         - CERO DIFUMINADO DEL FONDO (fondo 100% nítido y visible al desplegarse). -->
     <aside class="top-shape-popup" id="top-shape-popup" aria-label="Menú Arquitectónico D'ALROC">
         <!-- Cuerpo Principal de la Forma (Desplegable) -->
         <div class="top-shape-body">
@@ -211,9 +208,9 @@
             </div>
         </div>
 
-        <!-- Pestaña inferior de agarre que sobresale en el top corner left: ÚNICAMENTE EL LOGO DE D'ALROC -->
         <button class="top-shape-handle" id="top-shape-handle" aria-expanded="false" aria-controls="top-shape-popup" aria-label="Abrir Menú Inversiones D'ALROC" title="Inversiones D'ALROC — Clic para abrir / cerrar menú">
             <img src="img/IMG_0217.png" alt="Inversiones D'ALROC" class="shape-handle-logo">
+            <span class="shape-handle-virgen" aria-hidden="true"></span>
         </button>
     </aside>
 
@@ -328,67 +325,55 @@
                     </button>
                 </div>
 
-                <!-- Fila inferior (Barra de selección táctil con Radiobuttons) -->
+                <!-- Fila inferior (Barra de entradas dividida horizontalmente) -->
                 <form class="airbnb-inputs-bar" id="airbnb-search-form" action="#Galeria" method="GET">
-                    <!-- Campo 1: [Icono Ubicación] Selector con Radiobuttons -->
-                    <div class="airbnb-field-group airbnb-field-radios">
-                        <div class="field-header-info">
-                            <i class="fa-solid fa-location-dot field-icon"></i>
-                            <span class="field-label">Ubicación</span>
-                        </div>
-                        <div class="field-radio-options" role="radiogroup" aria-label="Ubicación en Margarita">
-                            <label class="search-radio-item">
-                                <input type="radio" name="ubicacion" value="" checked>
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Todas</span>
-                            </label>
-                            <label class="search-radio-item">
-                                <input type="radio" name="ubicacion" value="Pampatar">
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Pampatar</span>
-                            </label>
-                            <label class="search-radio-item">
-                                <input type="radio" name="ubicacion" value="Costa Azul">
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Costa Azul</span>
-                            </label>
-                            <label class="search-radio-item">
-                                <input type="radio" name="ubicacion" value="Playa El Ángel">
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Playa El Ángel</span>
-                            </label>
-                            <label class="search-radio-item">
-                                <input type="radio" name="ubicacion" value="La Caracola">
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">La Caracola</span>
-                            </label>
+                    <!-- Campo 1: [Icono Ubicación] Selector Combobox -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-ubicacion').focus();">
+                        <i class="fa-solid fa-magnifying-glass field-icon"></i>
+                        <div class="field-texts">
+                            <label for="input-ubicacion" class="field-label">Ubicación</label>
+                            <select id="input-ubicacion" name="ubicacion" class="field-input field-select">
+                                <option value="">Pampatar, Costa Azul, Playa El Ángel...</option>
+                                <option value="Pampatar">Pampatar</option>
+                                <option value="Costa Azul">Costa Azul</option>
+                                <option value="Playa El Ángel">Playa El Ángel</option>
+                                <option value="La Caracola">La Caracola</option>
+                                <option value="Juan Griego">Juan Griego</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="field-divider"></div>
 
-                    <!-- Campo 2: [Icono Estadía] Selector de Modalidad con Radiobuttons -->
-                    <div class="airbnb-field-group airbnb-field-radios">
-                        <div class="field-header-info">
-                            <i class="fa-regular fa-calendar-check field-icon"></i>
-                            <span class="field-label">Estadía</span>
+                    <!-- Campo 2: [Icono Calendario] Selector Combobox -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-calendario').focus();">
+                        <i class="fa-regular fa-calendar field-icon"></i>
+                        <div class="field-texts">
+                            <label for="input-calendario" class="field-label">Calendario</label>
+                            <select id="input-calendario" name="fechas" class="field-input field-select">
+                                <option value="">Llegada / Salida</option>
+                                <option value="Esta semana">Esta semana</option>
+                                <option value="Próximo mes">Próximo mes</option>
+                                <option value="Temporada Vacacional">Temporada Vacacional</option>
+                                <option value="Largo Plazo">Largo Plazo</option>
+                            </select>
                         </div>
-                        <div class="field-radio-options" role="radiogroup" aria-label="Modalidad de Estadía">
-                            <label class="search-radio-item">
-                                <input type="radio" name="estadia" value="" checked>
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Cualquiera</span>
-                            </label>
-                            <label class="search-radio-item">
-                                <input type="radio" name="estadia" value="vacacional">
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Vacacional</span>
-                            </label>
-                            <label class="search-radio-item">
-                                <input type="radio" name="estadia" value="largo_plazo">
-                                <span class="radio-custom-dot"></span>
-                                <span class="radio-label-text">Largo Plazo</span>
-                            </label>
+                    </div>
+
+                    <div class="field-divider"></div>
+
+                    <!-- Campo 3: [Icono Usuario] Alquiler Combobox -->
+                    <div class="airbnb-field-group" onclick="document.getElementById('input-alquiler').focus();">
+                        <i class="fa-regular fa-user field-icon"></i>
+                        <div class="field-texts">
+                            <label for="input-alquiler" class="field-label">Alquiler</label>
+                            <select id="input-alquiler" name="huespedes" class="field-input field-select">
+                                <option value="">¿Cuántas personas?</option>
+                                <option value="1 a 2 huéspedes">1 a 2 huéspedes</option>
+                                <option value="3 a 5 huéspedes">3 a 5 huéspedes</option>
+                                <option value="Familia / Grupo 6+">Familia / Grupo 6+</option>
+                                <option value="Inversión / Compra">Inversión / Compra</option>
+                            </select>
                         </div>
                     </div>
 
@@ -1518,9 +1503,10 @@
             }
 
             // --- 6. WIDGET DE BÚSQUEDA AIRBNB INTERACTIVO & CONEXIÓN TOTAL CON EL PORTAFOLIO ---
+            const inputUbicacion = document.getElementById('input-ubicacion');
+
             const getSelectedLocation = () => {
-                const checked = document.querySelector('input[name="ubicacion"]:checked');
-                return checked ? checked.value : '';
+                return inputUbicacion ? inputUbicacion.value : '';
             };
 
             airbnbTabs.forEach(tab => {
@@ -1538,15 +1524,14 @@
                 });
             });
 
-            // Filtro táctil directo por Radiobuttons (Cero teclado, cero zoom, cero descuadre)
-            const zoneRadios = document.querySelectorAll('input[name="ubicacion"]');
-            zoneRadios.forEach(radio => {
-                radio.addEventListener('change', () => {
+            // Filtro táctil directo por Combobox Select (Cero teclado, cero zoom, cero descuadre)
+            if (inputUbicacion) {
+                inputUbicacion.addEventListener('change', () => {
                     const activeTab = document.querySelector('.airbnb-tab-btn.active');
                     const tabType = activeTab ? activeTab.getAttribute('data-type') : null;
-                    applyPortfolioFilter({ tabCategory: tabType, query: radio.value });
+                    applyPortfolioFilter({ tabCategory: tabType, query: inputUbicacion.value });
                 });
-            });
+            }
 
             if (airbnbForm) {
                 airbnbForm.addEventListener('submit', (e) => {

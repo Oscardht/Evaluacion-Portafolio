@@ -187,17 +187,19 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 
 ### 📲 Fase 3.6: Arco Arquitectónico Escultural Estático & Buscador Táctil con Radiobuttons — COMPLETADO
 - [x] **Arco Arquitectónico Escultural y Escudo de Isla Dinámica en Móviles (`<= 768px`):**
-  - **Cero Diseño Cuadrado Simplón:** Se sustituyó cualquier remate rectangular plano por el auténtico **arco arquitectónico escultural de esquina** con una curva pronunciada y amplia (`border-bottom-right-radius: 130px`), orla de oro doble (`border: 2px solid var(--gold); outline: 1px solid rgba(184, 142, 62, 0.3)`) y la marca de agua sacra de la Virgen en el arco (`Ejemplo.png`).
-  - **Escudo Estático de Isla Dinámica / Notch (`.top-island-shield`):** Una franja superior sólida en `position: absolute; top: 0; left: 0; width: 100%;` con fondo marfil (`var(--bg-surface)` / `#FCFAF6`) cubre al 100% el ancho de la zona de la cámara, reloj y batería, impidiendo cualquier fuga del fondo de la página.
-  - **Comportamiento 100% Estático (Cero Persecución al Scrollear):** Tanto el arco de esquina como el escudo superior se anclan con `position: absolute; top: 0;`, de modo que al scrollear hacia el catálogo de propiedades permanecen en la cabecera superior de la web y **nunca persiguen al usuario como elemento flotante molesto**.
-  - **Pestaña Pura con el Logo Oficial:** En reposo exhibe exclusivamente el escudo de D'ALROC (`IMG_0217.png`), libre de iconos de hamburguesa o textos genéricos. Al pulsar el logo, desciende el panel de servicios y contacto de forma fluida.
-- [x] **Buscador Hero Táctil con Radiobuttons (Cero Teclado, Cero Descuadre):**
-  - **Reemplazo de Campos de Texto Libre por Radiobuttons:** En lugar de requerir escritura manual (que activaba el teclado virtual y causaba auto-zoom en iOS descuadrando la vista hacia un encuadre tipo escritorio), ahora la selección se realiza mediante radiobuttons táctiles nativos estilizados.
-  - **Selector de Ubicación Directo:** Opciones con radiobutton estilizado (`Todas`, `Pampatar`, `Costa Azul`, `Playa El Ángel`, `La Caracola`) que aplican el filtro al instante y sin zooms accidentales.
-  - **Selector de Modalidad / Estadía:** Opciones (`Cualquiera`, `Vacacional`, `Largo Plazo`).
-  - **Prevención Definitiva de Zoom en iOS:** Configuración de `maximum-scale=1.0, user-scalable=no` en el viewport y tamaño de fuente mínimo de `16px` en controles de formulario.
-- [x] **Unificación Tipográfica del Footer con Plus Jakarta Sans:**
-  - Aplicación de *Plus Jakarta Sans* en el pie de página (`.footer`, `.footer h4`, enlaces de navegación), logrando coherencia visual total con la tipografía moderna del Hero.
+  - [x] **Top Corner Arquitectónico Estático D'ALROC en Móviles (Abarca Espacio Completo Excepto Bordesito):**
+  - **Abarca el Espacio Completo Excepto el Bordesito:** En móviles abarca la dimensión horizontal (`width: calc(100% - 14px)`) conservando el elegante remate curvo en el extremo derecho (`border-bottom-right-radius: 90px` cerrado, `100px` abierto) tal como se especificó en `ABARCAESPACIOCOMPLETO EXCEPTOBORDESITO.png` y `ELESPACIOQUEDEBERIABARCAR.png`.
+  - **Comportamiento 100% Estático (Cero Persecución al Scrollear):** Anclado con `position: absolute; top: 0; left: 0;` en móviles para que permanezca en la cabecera superior y nunca persiga al usuario al hacer scroll.
+  - **Cero Elementos Duplicados ni Colores Falsos:** Se eliminaron escudos duplicados artificiales. Se utiliza el componente original con sus colores genuinos de escritorio (`#FCFAF6`, `var(--gold)`).
+  - **Preservación Total de la Marca de Agua de la Virgen (`Ejemplo.png`):** Visible en la cabecera en reposo en el arco derecho y visible en el panel interior desplegado.
+- [x] **Eliminación Total de Resplandores Artificiales ("Glow"):**
+  - Se removieron los filtros de `drop-shadow` con halo dorado (`rgba(184, 142, 62, ...)`) y los `box-shadow` con resplandor neón tanto en la insignia flotante de la Virgen (`QUITARGLOW.png`), pastilla de WhatsApp, como en el Top Shape Popup. Ahora poseen sombras naturales, nítidas y limpias, eliminando la separación halo extraña en pantallas de teléfonos.
+- [x] **Restauración Estética de la Barra de Búsqueda Hero con Comboboxes Nativos:**
+  - **Armonía y Estética Original 100% Intacta:** Se restauró la estructura de 3 campos en píldora dividida (`Ubicación`, `Calendario`, `Alquiler` y botón `Buscar`).
+  - **Comboboxes / Selectores Táctiles Integrados:** En lugar de inputs de texto libre que abrían el teclado y causaban zooms o textos arbitrarios, se implementaron elementos `<select class="field-input field-select">` con las zonas (`Pampatar`, `Costa Azul`, `Playa El Ángel`, `La Caracola`, `Juan Griego`).
+  - **Cero Teclado, Cero Zoom, Cero Descuadre:** Al tocar el campo se despliega el menú nativo del dispositivo sin activar el teclado en pantalla y sin alterar el layout visual de la barra.
+- [x] **Unificación Tipográfica del Pie de Página con Plus Jakarta Sans:**
+  - Aplicación de *Plus Jakarta Sans* en el pie de página (`.footer`, `.footer h4`, enlaces de navegación), logrando coherencia total con el Hero.
 
 ### 🎨 Código Oficial de Colores del Proyecto Inversiones D'ALROC
 | Nombre del Color | Código Hex | Variable CSS | Aplicación Principal |

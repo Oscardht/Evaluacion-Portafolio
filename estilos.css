@@ -1063,100 +1063,31 @@ header.luxury-topbar .navbar a:hover::after {
     font-weight: 400;
 }
 
-/* Radiobuttons del Buscador Hero (Cero teclado / Cero descuadre) */
-.airbnb-field-radios {
-    flex: 1.4;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
-    padding: 0.55rem 1.1rem;
-    cursor: default;
-}
-
-.airbnb-field-radios:hover {
-    background-color: transparent;
-}
-
-.field-header-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.field-radio-options {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.3rem 0.65rem;
-}
-
-.search-radio-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    cursor: pointer;
-    user-select: none;
-    padding: 0.2rem 0.45rem;
-    border-radius: 8px;
-    transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.search-radio-item:hover {
-    background-color: rgba(29, 61, 46, 0.05);
-}
-
-.search-radio-item input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-}
-
-.radio-custom-dot {
-    width: 16px;
-    height: 16px;
-    border: 1.8px solid #BEB7A9;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
-}
-
-.radio-custom-dot::after {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--emerald-column);
-    transform: scale(0);
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.search-radio-item input[type="radio"]:checked + .radio-custom-dot {
-    border-color: var(--emerald-column);
-    box-shadow: 0 0 0 2px rgba(184, 142, 62, 0.3);
-}
-
-.search-radio-item input[type="radio"]:checked + .radio-custom-dot::after {
-    transform: scale(1);
-}
-
-.radio-label-text {
+/* Selectores Combobox Elegantes del Buscador Hero (Cero teclado / Cero descuadre / Estética 100% original) */
+select.field-select {
+    border: none;
+    outline: none;
+    background: transparent;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.92rem;
+    color: #222222;
     font-weight: 500;
-    color: #4A463F;
-    transition: color 0.2s ease, font-weight 0.2s ease;
+    width: 100%;
+    padding: 0.15rem 0 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-.search-radio-item input[type="radio"]:checked ~ .radio-label-text {
-    font-weight: 700;
-    color: var(--emerald-column);
+select.field-select option {
+    background-color: #FFFFFF;
+    color: #222222;
+    font-size: 14px;
+    padding: 6px 10px;
 }
 
 .field-divider {
@@ -3436,19 +3367,17 @@ header.luxury-topbar .navbar a:hover::after {
     border-left: none;
     border-bottom-right-radius: 140px; /* LO REDONDO EN EL LADO DERECHO */
     border-bottom-left-radius: 0;
-    box-shadow: 0 16px 45px rgba(40, 34, 25, 0.16), 0 0 20px rgba(184, 142, 62, 0.2);
+    box-shadow: 0 12px 35px rgba(40, 34, 25, 0.14);
     z-index: 2500;
     transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
     transform: translateY(calc(-100% + 56px)); /* Oculto: solo sobresale el logo (56px) */
-    outline: 1px solid rgba(184, 142, 62, 0.3);
-    outline-offset: -5px;
     overflow: hidden;
 }
 
 /* Nudge sutil al pasar el cursor cuando está oculta para invitar al clic */
 .top-shape-popup:not(.active):hover {
     transform: translateY(calc(-100% + 62px));
-    box-shadow: 0 18px 48px rgba(40, 34, 25, 0.2), 0 0 24px rgba(184, 142, 62, 0.35);
+    box-shadow: 0 16px 42px rgba(40, 34, 25, 0.18);
 }
 
 /* Marca de agua sacra en el arco redondeado derecho */
@@ -3468,7 +3397,7 @@ header.luxury-topbar .navbar a:hover::after {
 /* Estado Desplegado (Clic en la pestaña o botón) */
 .top-shape-popup.active {
     transform: translateY(0); /* Desciende completamente mostrando la forma */
-    box-shadow: 0 24px 60px rgba(40, 34, 25, 0.22), 0 0 28px rgba(184, 142, 62, 0.3);
+    box-shadow: 0 20px 50px rgba(40, 34, 25, 0.2);
 }
 
 /* Cuerpo de la forma */
@@ -3974,14 +3903,12 @@ header.luxury-topbar .navbar a:hover::after {
     pointer-events: auto;
     padding: 0.2rem;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-    filter: drop-shadow(0 6px 18px rgba(184, 142, 62, 0.45)) 
-            drop-shadow(0 4px 12px rgba(26, 22, 18, 0.3));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.22));
 }
 
 .virgen-tab-trigger:hover {
-    transform: translateY(-6px) scale(1.04);
-    filter: drop-shadow(0 10px 26px rgba(184, 142, 62, 0.7)) 
-            drop-shadow(0 6px 16px rgba(26, 22, 18, 0.45));
+    transform: translateY(-5px) scale(1.03);
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.3));
 }
 
 /* Imagen completa del Manto Sagrado */
@@ -4006,7 +3933,7 @@ header.luxury-topbar .navbar a:hover::after {
     letter-spacing: 0.06em;
     padding: 0.35rem 0.85rem;
     border-radius: var(--radius-pill);
-    box-shadow: 0 4px 14px rgba(29, 61, 46, 0.4), 0 0 12px rgba(184, 142, 62, 0.35);
+    box-shadow: 0 4px 12px rgba(29, 61, 46, 0.35);
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -4017,8 +3944,8 @@ header.luxury-topbar .navbar a:hover::after {
 
 .virgen-tab-trigger:hover .virgen-pulse-pill {
     background: #142B20;
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(29, 61, 46, 0.5), 0 0 16px rgba(184, 142, 62, 0.5);
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(29, 61, 46, 0.45);
 }
 
 /* Tarjeta Flyout / Tarjeta de Presentación Ejecutiva Lic. Claudia Di Diomede */
@@ -4031,9 +3958,7 @@ header.luxury-topbar .navbar a:hover::after {
     border: 1.5px solid var(--gold);
     border-radius: 16px 16px 4px 16px;
     padding: 1.15rem 1.15rem 1rem 1.15rem;
-    box-shadow: 0 16px 40px rgba(40, 34, 25, 0.2), 0 0 20px rgba(184, 142, 62, 0.25);
-    outline: 1px solid rgba(184, 142, 62, 0.25);
-    outline-offset: -4px;
+    box-shadow: 0 12px 32px rgba(40, 34, 25, 0.16);
     pointer-events: auto;
     opacity: 0;
     visibility: hidden;
@@ -4380,31 +4305,15 @@ header.luxury-topbar .navbar a:hover::after {
     }
 
     /* ==========================================================================
-       TOP CORNER ARQUITECTÓNICO ESTÁTICO & ESCUDO ISLA DINÁMICA (CELULARES)
-       - Escudo superior (.top-island-shield): Abarca el 100% de la dimensión en el tope
-         cubriendo la Isla Dinámica / Notch con el fondo marfil (#FCFAF6) sin filtraciones.
-       - Silueta Arquitectónica (.top-shape-popup): Conserva su arco redondeado real y noble
-         (border-bottom-right-radius: 130px), orla dorada doble y marca de agua sacra.
-       - Cero diseño cuadrado simplón: Es una verdadera forma arqueada neoclásica.
-       - Estático en el tope: NO persigue al usuario al scrollear (position: absolute).
-       - Muestra ÚNICAMENTE el logo de D'ALROC (CERO hamburguesa, CERO texto añadido).
+       TOP CORNER ARQUITECTÓNICO ESTÁTICO D'ALROC (CELULARES)
+       - Abarca el ancho completo excepto el bordesito redondeado en la derecha
+         (width: calc(100% - 14px); border-bottom-right-radius: 90px).
+       - Estático en el tope (position: absolute; top: 0; left: 0;) - NO persigue al hacer scroll.
+       - Marca de agua de la Virgen visible tanto cerrado en el header como abierto en el pop-up.
+       - Cero duplicados, colores originales (#FCFAF6 / var(--gold)), CERO GLOW.
        ========================================================================== */
     body::before {
         display: none !important;
-    }
-
-    .top-island-shield {
-        display: block !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        height: max(26px, env(safe-area-inset-top, 0px)) !important;
-        background: var(--bg-surface) !important;
-        z-index: 2400 !important;
-        pointer-events: none !important;
-        border-bottom: 1px solid rgba(184, 142, 62, 0.25) !important;
     }
 
     .top-shape-popup {
@@ -4412,25 +4321,24 @@ header.luxury-topbar .navbar a:hover::after {
         top: 0 !important;
         left: 0 !important;
         right: auto !important;
-        width: min(345px, 86vw) !important;
-        max-width: 86vw !important;
+        width: calc(100% - 14px) !important;
+        max-width: calc(100% - 14px) !important;
         background: var(--bg-surface) !important;
         border: 2px solid var(--gold) !important;
         border-top: none !important;
         border-left: none !important;
-        border-bottom-right-radius: 130px !important;
+        border-bottom-right-radius: 90px !important;
         border-bottom-left-radius: 0 !important;
-        box-shadow: 0 16px 45px rgba(40, 34, 25, 0.18), 0 0 22px rgba(184, 142, 62, 0.25) !important;
+        box-shadow: 0 8px 24px rgba(40, 34, 25, 0.12) !important;
         z-index: 2500 !important;
         padding-top: env(safe-area-inset-top, 0px) !important;
-        outline: 1px solid rgba(184, 142, 62, 0.3) !important;
-        outline-offset: -5px !important;
+        outline: none !important;
         overflow: hidden !important;
         display: flex !important;
         flex-direction: column !important;
         margin: 0 !important;
         transform: none !important;
-        transition: box-shadow 0.3s ease !important;
+        transition: box-shadow 0.3s ease, border-bottom-right-radius 0.3s ease !important;
     }
 
     .top-shape-popup:not(.active):hover {
@@ -4438,34 +4346,34 @@ header.luxury-topbar .navbar a:hover::after {
     }
 
     .top-shape-popup.active {
-        box-shadow: 0 24px 60px rgba(40, 34, 25, 0.25), 0 0 32px rgba(184, 142, 62, 0.35) !important;
-        border-bottom-right-radius: 90px !important;
+        box-shadow: 0 16px 45px rgba(40, 34, 25, 0.18) !important;
+        border-bottom-right-radius: 100px !important;
     }
 
-    /* Marca de agua sacra en el arco redondeado */
+    /* Marca de agua sacra en el cuerpo desplegado */
     .top-shape-popup::before {
         content: '' !important;
         position: absolute !important;
-        right: 12px !important;
-        bottom: 12px !important;
-        width: 85px !important;
-        height: 95px !important;
+        right: 14px !important;
+        bottom: 24px !important;
+        width: 110px !important;
+        height: 125px !important;
         background: url('img/Ejemplo.png') no-repeat bottom right / contain !important;
-        opacity: 0.14 !important;
+        opacity: 0.16 !important;
         pointer-events: none !important;
         z-index: 0 !important;
         display: block !important;
     }
 
-    /* Pestaña superior con el logo oficial D'ALROC */
+    /* Pestaña superior con el logo oficial D'ALROC y la marca de agua sacra */
     .top-shape-handle {
         order: 1 !important;
         width: 100% !important;
-        height: 64px !important;
+        height: 60px !important;
         display: flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
-        padding: 0 0 0 1.6rem !important;
+        justify-content: space-between !important;
+        padding: 0 1.6rem !important;
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
@@ -4479,8 +4387,25 @@ header.luxury-topbar .navbar a:hover::after {
         height: 44px !important;
         width: auto !important;
         object-fit: contain !important;
-        filter: drop-shadow(0 2px 6px rgba(184, 142, 62, 0.45)) !important;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15)) !important;
         transition: transform 0.2s ease !important;
+    }
+
+    .shape-handle-virgen {
+        display: block !important;
+        position: absolute !important;
+        right: 16px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 75px !important;
+        height: 48px !important;
+        background: url('img/Ejemplo.png') no-repeat right center / contain !important;
+        opacity: 0.24 !important;
+        pointer-events: none !important;
+    }
+
+    .top-shape-popup.active .shape-handle-virgen {
+        opacity: 0 !important;
     }
 
     .top-shape-handle:active .shape-handle-logo {
@@ -4493,7 +4418,7 @@ header.luxury-topbar .navbar a:hover::after {
         display: none !important;
     }
 
-    /* Cuerpo del Pop-Up en móvil (Desciende desde el header al tocar el logo) */
+    /* Cuerpo del Pop-Up en móvil */
     .top-shape-body {
         order: 2 !important;
         width: 100% !important;
@@ -4630,49 +4555,35 @@ header.luxury-topbar .navbar a:hover::after {
 
     .airbnb-inputs-bar {
         border-radius: 20px;
-        padding: 0.75rem;
+        padding: 0.65rem;
         display: flex;
         flex-direction: column;
-        gap: 0.65rem;
+        gap: 0.35rem;
         background: #FFFFFF;
         border: 1.5px solid #E2DBCF;
     }
 
-    .airbnb-field-radios {
+    .airbnb-field-group {
         width: 100%;
-        padding: 0.75rem 0.9rem;
-        border-radius: 14px;
-        background: #FAF8F4;
-        border: 1px solid #EBE4D8;
+        padding: 0.6rem 0.85rem;
         display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
+        align-items: center;
+        gap: 0.75rem;
+        border-radius: 12px;
+        transition: background-color 0.2s ease;
     }
 
-    .field-radio-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.35rem 0.65rem;
-    }
-
-    .search-radio-item {
-        padding: 0.35rem 0.6rem;
-        border-radius: 8px;
-        background: #FFFFFF;
-        border: 1px solid #EAE3D6;
-    }
-
-    .search-radio-item:has(input[type="radio"]:checked) {
-        border-color: var(--emerald-column);
-        background: rgba(29, 61, 46, 0.05);
-    }
-
-    .radio-label-text {
-        font-size: 0.94rem;
+    .airbnb-field-group:active,
+    .airbnb-field-group:focus-within {
+        background-color: #F8F6F2;
     }
 
     .field-divider {
-        display: none;
+        width: 100%;
+        height: 1px;
+        background-color: #ECE7DE;
+        margin: 0.1rem 0;
+        display: block;
     }
 
     .airbnb-cta-btn {
