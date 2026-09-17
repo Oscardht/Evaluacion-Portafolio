@@ -4991,15 +4991,46 @@ select.field-select option {
 
     /* Píldora e items flotantes rotativos aumentados armónicamente */
     .top-shape-expand-row {
-        height: 56px !important;
+        height: 56px;
         margin-top: 0.8rem !important;
         margin-bottom: 0.8rem !important;
+        transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .top-shape-pill-box {
-        width: 54px !important;
-        height: 54px !important;
+        width: 54px;
+        height: 54px;
         border: 2px solid var(--gold) !important;
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: transparent !important;
+        transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                    height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.4s ease !important;
     }
+
+    /* Estado Expandido en móvil (Píldora Panorámica 100% interactiva al toque) */
+    .top-shape-expand-row.expanded,
+    .top-shape-expand-row.pill-hovered {
+        height: 82px !important;
+    }
+    .top-shape-expand-row.expanded .top-shape-pill-box,
+    .top-shape-expand-row.pill-hovered .top-shape-pill-box {
+        width: 100% !important;
+        height: 82px !important;
+        border-radius: 42px !important;
+        box-shadow: 0 8px 24px rgba(40, 34, 25, 0.22), 0 0 18px rgba(184, 142, 62, 0.38) !important;
+    }
+    .top-shape-expand-row.expanded .top-shape-pill-img,
+    .top-shape-expand-row.pill-hovered .top-shape-pill-img {
+        transform: scale(1.02) !important;
+    }
+    .top-shape-expand-row.expanded .top-shape-flyin-wrap,
+    .top-shape-expand-row.pill-hovered .top-shape-flyin-wrap {
+        opacity: 0 !important;
+        transform: translateX(25px) !important;
+        pointer-events: none !important;
+    }
+
     .top-shape-flyin-wrap {
         left: 64px !important;
     }

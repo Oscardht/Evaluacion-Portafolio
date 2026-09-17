@@ -1108,7 +1108,7 @@
             const pillBox = document.querySelector('.top-shape-pill-box');
 
             if (expandRow && pillBox) {
-                // Al pasar el cursor EXCLUSIVAMENTE sobre el icono circular de la foto
+                // Al pasar el cursor EXCLUSIVAMENTE sobre el icono circular de la foto (PC)
                 pillBox.addEventListener('mouseenter', () => {
                     expandRow.classList.add('pill-hovered');
                 });
@@ -1117,18 +1117,40 @@
                     expandRow.classList.remove('pill-hovered');
                 });
 
-                // Al hacer clic EXCLUSIVAMENTE en la foto circular (o píldora expandida)
-                pillBox.addEventListener('click', (e) => {
+                // Toggle al interactuar con la píldora (clic o toque táctil en móviles)
+                let lastPillTouchTime = 0;
+                const togglePill = (e) => {
                     e.stopPropagation();
                     expandRow.classList.toggle('expanded');
+                };
+
+                pillBox.addEventListener('touchend', (e) => {
+                    lastPillTouchTime = Date.now();
+                    togglePill(e);
+                }, { passive: false });
+
+                pillBox.addEventListener('click', (e) => {
+                    // Evitar doble toggle si ya se disparó por touchend
+                    if (Date.now() - lastPillTouchTime < 450) {
+                        e.stopPropagation();
+                        return;
+                    }
+                    togglePill(e);
                 });
 
-                // Al hacer clic fuera de la foto / píldora, contraer estado fijo
-                document.addEventListener('click', (e) => {
-                    if (!pillBox.contains(e.target)) {
+                // Al hacer clic o tocar fuera de la foto / píldora, contraer estado fijo
+                const closePillOutside = (e) => {
+                    if (!pillBox.contains(e.target) && !expandRow.contains(e.target)) {
                         expandRow.classList.remove('expanded');
                     }
-                });
+                };
+
+                document.addEventListener('click', closePillOutside);
+                document.addEventListener('touchend', (e) => {
+                    if (!pillBox.contains(e.target) && !expandRow.contains(e.target)) {
+                        expandRow.classList.remove('expanded');
+                    }
+                }, { passive: true });
             }
 
             // Rotación con efecto Fly-In para los lemas e informaciones insulares
