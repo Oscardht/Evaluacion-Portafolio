@@ -931,6 +931,20 @@
     .Legado { 
         padding: 4.5rem 4%; 
     }
+
+    .legado-header-editorial {
+        background-image: url('img/AQUAMARINE.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 3.2rem 1.8rem;
+        border-radius: 18px;
+        border: 1.5px solid var(--gold-border);
+        box-shadow: 0 8px 24px rgba(40, 34, 25, 0.08);
+        margin: 0 auto 3.5rem auto;
+        position: relative;
+        overflow: hidden;
+    }
     
     .legado-main-title { 
         font-size: 2.8rem; 
