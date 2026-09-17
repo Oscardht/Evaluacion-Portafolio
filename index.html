@@ -110,9 +110,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom Architectural CSS Styles -->
-    <link rel="stylesheet" href="estilos.css?v=responsive-12.0">
+    <link rel="stylesheet" href="estilos.css?v=responsive-15.0">
     <link rel="stylesheet" href="assets/scrollbar.css" media="only screen and (max-device-width:480px)">
-    <link rel="stylesheet" href="seccion3.css?v=responsive-6.0">
+    <link rel="stylesheet" href="seccion3.css?v=responsive-13.0">
 </head>
 
 <body>
@@ -132,8 +132,8 @@
                     <span class="top-shape-kicker">EXCLUSIVIDAD Y BLINDAJE</span>
                     <h2 class="top-shape-title">INVERSIONES D'<em>ALROC</em></h2>
                     <span class="top-shape-tagline">
-                        <span class="tagline-desktop">En la compra o venta de tu propiedad</span>
-                        <span class="tagline-mobile">Exclusividad y blindaje en la compra o venta de tu propiedad.</span>
+                        <span class="tagline-desktop">En la venta o compra de tu propiedad</span>
+                        <span class="tagline-mobile">Exclusividad y blindaje en la venta o compra de tu propiedad.</span>
                     </span>
                 </a>
                 <button class="top-shape-close-btn" id="top-shape-close-btn" aria-label="Cerrar Menú">
@@ -605,8 +605,280 @@
     <!-- SECCIÓN 3 (POR DEFINIR) -->
     <section class="Opiniones" id="Opiniones"></section>
 
-    <!-- SECCIÓN 4 (POR DEFINIR) -->
-    <section class="Legado" id="Legado"></section>
+    <!-- ==========================================================================
+         SECCIÓN 4: CONSIGNACIÓN, FORMULARIO DE GESTIÓN & RESPALDO PROFESIONAL
+         Vende o Administra tu Propiedad con Inversiones D'ALROC
+         Lcda. Claudia Di Diomede — Corredora Inmobiliaria Certificada N° 2735
+         ========================================================================== -->
+    <section class="Legado" id="Legado">
+        <div class="legado-container">
+            <!-- Encabezado Arquitectónico Neoclásico -->
+            <div class="legado-header-editorial">
+                <div class="legado-kicker-badge">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>CONSIGNACIÓN Y GESTIÓN PATRIMONIAL DE LA MANO DEL MEJOR RESPALDO JURÍDICO</span>
+                </div>
+                <h2 class="legado-main-title">
+                    La Decisión Más Inteligente para el <span>Manejo de tu Propiedad</span>
+                </h2>
+                <p class="legado-lead-desc">
+                    Permítenos evaluar y comercializar tu inmueble en la Isla de Margarita con el máximo alcance y blindaje jurídico registral de <strong>Inversiones D'ALROC</strong>.
+                </p>
+                <div class="legado-gold-filigree">
+                    <span class="filigree-line"></span>
+                    <i class="fa-solid fa-gem filigree-gem"></i>
+                    <span class="filigree-line"></span>
+                </div>
+            </div>
+
+            <!-- Formulario Centrado de Venta y Administración -->
+            <div class="legado-content-single">
+                
+                <div class="consignacion-card">
+                    <div class="consignacion-card-header">
+                        <div class="consignacion-header-icon">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                        <div class="consignacion-header-text">
+                            <div class="consignacion-header-top-row">
+                                <h3 class="consignacion-title">Formulario de Venta y Administración</h3>
+                                <span class="header-folio-tag" id="displayFolioTag"><i class="fa-solid fa-barcode"></i> Folio: ALR-...</span>
+                            </div>
+                            <p class="consignacion-subtitle">
+                                Completa los datos de tu propiedad para comenzar la gestión con Inversiones D'ALROC.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form id="formConsignacionPropiedad" class="consignacion-form" novalidate>
+                        <!-- Folio / ID de Registro Transparente -->
+                        <input type="hidden" id="propFolioID" name="ID_Expediente" value="">
+
+                        <!-- Bloque 1: Datos del Propietario -->
+                        <div class="form-section-legend">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <span>1. DATOS DEL PROPIETARIO O REPRESENTANTE</span>
+                        </div>
+                        
+                        <div class="form-row-2">
+                            <div class="form-field-group">
+                                <label for="propNombre">Nombre y Apellido <span class="req-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="propNombre" name="propNombre" placeholder="Ej. Carlos Mendoza" required class="arch-field-control">
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="propTelefono">Teléfono / WhatsApp <span class="req-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <input type="tel" id="propTelefono" name="propTelefono" placeholder="Ej. +58 412 1234567" required class="arch-field-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-field-group">
+                                <label for="propEmail">Correo Electrónico <span class="opt-tag">(Opcional)</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="propEmail" name="propEmail" placeholder="correo@ejemplo.com" class="arch-field-control">
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="propModalidad">Modalidad de Gestión Deseada <span class="req-star">*</span></label>
+                                <div class="input-with-icon select-wrapper">
+                                    <i class="fa-solid fa-handshake"></i>
+                                    <select id="propModalidad" name="propModalidad" required class="arch-field-control arch-select">
+                                        <option value="Venta de Propiedad" selected>Venta de Propiedad</option>
+                                        <option value="Administración & Alquiler Vacacional">Administración & Alquiler Vacacional</option>
+                                        <option value="Alquiler Residencial Anual">Alquiler Residencial Anual</option>
+                                        <option value="Avalúo Comercial">Avalúo Comercial</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bloque 2: Datos del Inmueble -->
+                        <div class="form-section-legend">
+                            <i class="fa-solid fa-building"></i>
+                            <span>2. CARACTERÍSTICAS DEL INMUEBLE</span>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-field-group">
+                                <label for="propTipo">Tipo de Propiedad <span class="req-star">*</span></label>
+                                <div class="input-with-icon select-wrapper">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                    <select id="propTipo" name="propTipo" required class="arch-field-control arch-select">
+                                        <option value="Apartamento" selected>Apartamento</option>
+                                        <option value="Villa / Casa Vacacional">Villa / Casa Vacacional</option>
+                                        <option value="Town-House">Town-House</option>
+                                        <option value="Penthouse Exclusivo">Penthouse Exclusivo</option>
+                                        <option value="Terreno / Parcela / Lote">Terreno / Parcela / Lote</option>
+                                        <option value="Local Comercial / Oficina">Local Comercial / Oficina</option>
+                                        <option value="Galpón / Depósito Industrial">Galpón / Depósito Industrial</option>
+                                        <option value="Otro Inmueble">Otro Inmueble</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="propZona">Ubicación en Margarita <span class="req-star">*</span></label>
+                                <div class="input-with-icon select-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <select id="propZona" name="propZona" required class="arch-field-control arch-select">
+                                        <option value="Pampatar (Municipio Maneiro)" selected>Pampatar (Maneiro)</option>
+                                        <option value="Costa Azul (Porlamar / Mariño)">Costa Azul (Porlamar)</option>
+                                        <option value="Playa El Ángel (Pampatar)">Playa El Ángel</option>
+                                        <option value="Jorge Coll (Maneiro)">Jorge Coll</option>
+                                        <option value="La Caracola / Los Uveros">La Caracola / Los Uveros</option>
+                                        <option value="Playa El Agua / Playa Parguito">Playa El Agua / Parguito</option>
+                                        <option value="Juan Griego (Marcano)">Juan Griego</option>
+                                        <option value="El Yaque (Díaz)">El Yaque</option>
+                                        <option value="La Asunción (Arismendi)">La Asunción</option>
+                                        <option value="Porlamar Centro / Zonas Aledañas">Porlamar Centro / Otras</option>
+                                        <option value="Otra Zona de la Isla">Otra Zona de la Isla</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-field-group">
+                                <label for="propUrbanismo">Conjunto Residencial / Edificio / Calle</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                    <input type="text" id="propUrbanismo" name="propUrbanismo" placeholder="Ej. Res. Aguamarina, Av. Aldonza" class="arch-field-control">
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="propMetros">Área Aproximada (m²)</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-ruler-combined"></i>
+                                    <input type="text" id="propMetros" name="propMetros" placeholder="Ej. 135 m²" class="arch-field-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Distribución: 3 columnas compactas -->
+                        <div class="form-row-3">
+                            <div class="form-field-group">
+                                <label for="propHabs">Habitaciones</label>
+                                <div class="input-with-icon select-wrapper">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <select id="propHabs" name="propHabs" class="arch-field-control arch-select">
+                                        <option value="1 Habitación">1 Habitación</option>
+                                        <option value="2 Habitaciones" selected>2 Habitaciones</option>
+                                        <option value="3 Habitaciones">3 Habitaciones</option>
+                                        <option value="4 Habitaciones">4 Habitaciones</option>
+                                        <option value="5+ Habitaciones">5+ Habitaciones</option>
+                                        <option value="No Aplica">No Aplica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="propBanos">Baños</label>
+                                <div class="input-with-icon select-wrapper">
+                                    <i class="fa-solid fa-bath"></i>
+                                    <select id="propBanos" name="propBanos" class="arch-field-control arch-select">
+                                        <option value="1 Baño">1 Baño</option>
+                                        <option value="2 Baños" selected>2 Baños</option>
+                                        <option value="3 Baños">3 Baños</option>
+                                        <option value="4+ Baños">4+ Baños</option>
+                                        <option value="No Aplica">No Aplica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="propEstacionamiento">Estacionamiento</label>
+                                <div class="input-with-icon select-wrapper">
+                                    <i class="fa-solid fa-square-parking"></i>
+                                    <select id="propEstacionamiento" name="propEstacionamiento" class="arch-field-control arch-select">
+                                        <option value="Sin puesto">Sin puesto</option>
+                                        <option value="1 Puesto" selected>1 Puesto</option>
+                                        <option value="2 Puestos">2 Puestos</option>
+                                        <option value="3+ Puestos">3+ Puestos</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bloque 3: Amenidades y Fortalezas -->
+                        <div class="form-section-legend">
+                            <i class="fa-solid fa-star"></i>
+                            <span>3. AMENIDADES DESTACADAS & SERVICIOS</span>
+                        </div>
+
+                        <div class="amenities-pills-grid">
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Planta Eléctrica">
+                                <span class="pill-body"><i class="fa-solid fa-bolt"></i> Planta Eléctrica</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Pozo / Tanque de Agua">
+                                <span class="pill-body"><i class="fa-solid fa-faucet-drip"></i> Pozo / Tanque Amplio</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Vista al Mar">
+                                <span class="pill-body"><i class="fa-solid fa-water"></i> Vista al Mar</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Piscina">
+                                <span class="pill-body"><i class="fa-solid fa-person-swimming"></i> Piscina / Áreas Sociales</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Amoblado / Equipado">
+                                <span class="pill-body"><i class="fa-solid fa-couch"></i> Amoblado & Equipado</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Vigilancia 24/7">
+                                <span class="pill-body"><i class="fa-solid fa-shield-halved"></i> Vigilancia 24/7</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Línea Blanca / Climatizado">
+                                <span class="pill-body"><i class="fa-solid fa-snowflake"></i> Climatizado / A/A</span>
+                            </label>
+                            <label class="amenity-checkbox-pill">
+                                <input type="checkbox" name="amenidades" value="Salida al Mar / Playa">
+                                <span class="pill-body"><i class="fa-solid fa-umbrella-beach"></i> Acceso a Playa</span>
+                            </label>
+                        </div>
+
+                        <!-- Bloque 4: Expectativa Económica & Notas -->
+                        <div class="form-section-legend">
+                            <i class="fa-solid fa-comments-dollar"></i>
+                            <span>4. VALOR ESTIMADO & OBSERVACIONES</span>
+                        </div>
+
+                        <div class="form-field-group full-width">
+                            <label for="propPrecio">Precio Estimado o Expectativa de Valor (USD)</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-tag"></i>
+                                <input type="text" id="propPrecio" name="propPrecio" placeholder="Ej. $85,000 USD (o indicar 'Deseo avalúo')" class="arch-field-control">
+                            </div>
+                        </div>
+
+                        <div class="form-field-group full-width">
+                            <label for="propDetalles">Detalles Adicionales o Estado Documental</label>
+                            <textarea id="propDetalles" name="propDetalles" rows="3" placeholder="Comenta si la propiedad está remodelada, documentación al día (título, ficha catastral), disponibilidad para visitas, etc." class="arch-field-control arch-textarea"></textarea>
+                        </div>
+
+                        <!-- Botón de Envío y Redirección -->
+                        <div class="form-submit-container">
+                            <button type="submit" class="btn-consignacion-submit" id="btnConsignacionSubmit">
+                                <span class="btn-submit-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                                <span class="btn-submit-labels">
+                                    <strong class="btn-submit-text-main">PONERSE EN CONTACTO CON INVERSIONES D'ALROC</strong>
+                                </span>
+                                <span class="btn-submit-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                            </button>
+                            <div id="consignacionFeedback" class="consignacion-feedback" style="display: none;"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER CLÁSICO EDITORIAL -->
     <footer class="footer" id="pie-de-pagina">
@@ -1072,6 +1344,15 @@
                         header.classList.add('scrolled');
                     } else {
                         header.classList.remove('scrolled');
+                    }
+                }
+
+                // Cierre automático del Top Left Corner Pop-Up SOLO EN TELÉFONOS al scrollear hacia la Sección 2
+                if (windowWidth <= 820 && topShapePopup && topShapePopup.classList.contains('active')) {
+                    const sec2 = document.getElementById('Seccion-Propiedades') || document.getElementById('Galeria');
+                    const sec2Top = sec2 ? sec2.offsetTop : 600;
+                    if (scrollY > 180 || (sec2 && scrollY >= (sec2Top - (window.innerHeight * 0.85)))) {
+                        closeTopShape();
                     }
                 }
 
@@ -1550,6 +1831,113 @@
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
+                });
+            }
+
+            // ==========================================================================
+            // GESTIÓN DEL FORMULARIO DE CONSIGNACIÓN INMOBILIARIA (SECCIÓN 4 - #Legado)
+            // ==========================================================================
+            const formConsignacion = document.getElementById('formConsignacionPropiedad');
+            const feedbackConsignacion = document.getElementById('consignacionFeedback');
+            const inputFolio = document.getElementById('propFolioID');
+
+            // Generador de Folio / ID de Expediente Único (Sin Base de Datos)
+            function generarFolioID() {
+                const randomPart = Math.floor(100000 + Math.random() * 900000); // 6 dígitos
+                return `ALR-${randomPart}`;
+            }
+
+            // Inicializar el ID único al cargar la página en el campo oculto y el distintivo de la esquina
+            const folioGenerado = generarFolioID();
+            if (inputFolio) {
+                inputFolio.value = folioGenerado;
+            }
+            const displayTag = document.getElementById('displayFolioTag');
+            if (displayTag) {
+                displayTag.innerHTML = `<i class="fa-solid fa-barcode"></i> Folio: #${folioGenerado}`;
+            }
+
+            if (formConsignacion) {
+                formConsignacion.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const folioID = inputFolio?.value || generarFolioID();
+                    const nombre = document.getElementById('propNombre')?.value.trim() || '';
+                    const telefono = document.getElementById('propTelefono')?.value.trim() || '';
+                    const email = document.getElementById('propEmail')?.value.trim() || '';
+                    const modalidad = document.getElementById('propModalidad')?.value || 'Venta de Propiedad';
+                    const tipo = document.getElementById('propTipo')?.value || 'Apartamento';
+                    const zona = document.getElementById('propZona')?.value || 'Pampatar';
+                    const urbanismo = document.getElementById('propUrbanismo')?.value.trim() || '';
+                    const metros = document.getElementById('propMetros')?.value.trim() || '';
+                    const habs = document.getElementById('propHabs')?.value || '2 Habitaciones';
+                    const banos = document.getElementById('propBanos')?.value || '2 Baños';
+                    const estacionamiento = document.getElementById('propEstacionamiento')?.value || '1 Puesto';
+                    const precio = document.getElementById('propPrecio')?.value.trim() || '';
+                    const detalles = document.getElementById('propDetalles')?.value.trim() || '';
+
+                    // Recolectar amenidades seleccionadas
+                    const amenidadesChecked = document.querySelectorAll('input[name="amenidades"]:checked');
+                    const amenidadesArr = Array.from(amenidadesChecked).map(cb => cb.value);
+
+                    // Validación básica de campos obligatorios
+                    if (!nombre || !telefono) {
+                        if (feedbackConsignacion) {
+                            feedbackConsignacion.className = 'consignacion-feedback error';
+                            feedbackConsignacion.style.display = 'flex';
+                            feedbackConsignacion.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>Por favor completa tu Nombre y Teléfono para iniciar la gestión.</span>';
+                        }
+                        return;
+                    }
+
+                    // 1. Envío silencioso a FormSubmit con el ID no editable para verificar en el correo
+                    const payloadFormSubmit = {
+                        _subject: `Nuevo Inmueble [ID: ${folioID}] - ${nombre} (${tipo})`,
+                        _template: "table",
+                        _captcha: "false",
+                        "ID_Expediente": folioID,
+                        "Fecha_Registro": new Date().toLocaleString('es-VE'),
+                        "Nombre_Propietario": nombre,
+                        "Telefono_WhatsApp": telefono,
+                        "Email": email || "No especificado",
+                        "Modalidad": modalidad,
+                        "Tipo_Inmueble": tipo,
+                        "Zona_Margarita": zona,
+                        "Urbanismo_Edificio": urbanismo || "No especificado",
+                        "Metraje_Aprox": metros || "No especificado",
+                        "Habitaciones": habs,
+                        "Banos": banos,
+                        "Estacionamiento": estacionamiento,
+                        "Amenidades": amenidadesArr.length > 0 ? amenidadesArr.join(', ') : "Ninguna seleccionada",
+                        "Precio_Estimado_USD": precio || "A consultar",
+                        "Observaciones": detalles || "Sin observaciones adicionales"
+                    };
+
+                    fetch("https://formsubmit.co/ajax/inversiones.idalroc@gmail.com", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(payloadFormSubmit)
+                    }).catch(err => console.warn("FormSubmit background dispatch:", err));
+
+                    // 2. Mensaje exacto con el ID dinámico inyectado en la barra de WhatsApp
+                    const waMensaje = `Claudia, llene el formulario [ID: #${folioID}] en tu web dalrocmargarita.com para empezar la administración de mi inmueble, me interesa maximizar el alcance y el valor de mi propiedad con la ayuda de tus servicios inmobibliarios.`;
+
+                    // Notificación de confirmación en pantalla
+                    if (feedbackConsignacion) {
+                        feedbackConsignacion.className = 'consignacion-feedback success';
+                        feedbackConsignacion.style.display = 'flex';
+                        feedbackConsignacion.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>¡Registro exitoso! Folio: <strong>#${folioID}</strong>. Abriendo WhatsApp oficial...</span>`;
+                    }
+
+                    // 3. Redirección oficial al WhatsApp de la Lcda. Claudia (+58 414 790-7819)
+                    const waUrl = `https://wa.me/584147907819?text=${encodeURIComponent(waMensaje)}`;
+
+                    setTimeout(() => {
+                        window.open(waUrl, '_blank');
+                    }, 400);
                 });
             }
         });

@@ -251,20 +251,41 @@ La obra pictórica `AlRocWeb` (representación en acuarela del santuario y altar
 **Objetivo:** Canalizar y convertir a propietarios e inversionistas que desean comercializar su inmueble a través de Inversiones D'ALROC y la Lcda. Claudia Di Diomede.
 
 - [x] **Enlace Directo desde el Hero:** Acceso inmediato mediante `Publica tu propiedad hoy y encuentra compradores` apuntando a la Sección 4 (`#Legado`).
-- [ ] **Estructura del Formulario Neoclásico Editorial:**
-  - Diseño en tarjeta marfil con filetes en oro bruñido y remates arquitectónicos.
-  - Campos esenciales de captación sin fricción:
-    1. **Nombre y Apellido del Propietario / Representante.**
-    2. **Teléfono / WhatsApp de Contacto.**
-    3. **Tipo de Propiedad:** Villa / Casa, Apartamento, Town-House, Terreno / Parcela, Local Comercial.
-    4. **Ubicación en Isla de Margarita:** (Pampatar, Playa El Ángel, Costa Azul, Jorge Coll, Playa El Agua, Porlamar, Juan Griego, etc.).
-    5. **Dimensiones Aproximadas (m²)** y número de habitaciones/baños.
-    6. **Rango de Precio Estimado o Solicitud de Avalúo Legal.**
-    7. **Observaciones / Amenidades Destacadas** (piscina, vista al mar, pozo de agua, planta eléctrica).
-- [ ] **Botón de Conversión WhatsApp Final:**
-  - Una vez completados los datos, el botón de acción principal se habilita con el llamado:  
-    `ENVIAR FORMULARIO Y HABLAR CON LA LCDA. CLAUDIA PARA EMPEZAR A VENDER SU PROPIEDAD`
-  - Al pulsar, compila la información en un mensaje formal estructurado con emojis institucionales hacia el WhatsApp `+58 414 790-7819`.
+- [x] **Estructura del Formulario Neoclásico Editorial (Centrado y Sin Protagonismos):**
+  - Diseño en tarjeta marfil con filetes en oro bruñido y remates arquitectónicos neoclásicos (`.consignacion-card`, contenedor centrado `.legado-content-single`).
+  - **Badge Discreto de Folio / ID en la Esquina Superior Derecha (`#displayFolioTag`):** Generado automáticamente en el navegador (ej. `Folio: #ALR-748291`), sin campos invasivos de entrada y enviado vía campo oculto (`type="hidden"`).
+  - **Encabezado Editorial de la Sección 4:**
+    - *Kicker Badge:* `CONSIGNACIÓN Y GESTIÓN PATRIMONIAL DE LA MANO DEL MEJOR RESPALDO JURÍDICO` (en tipografía imperial `Cinzel`, 800 negrita, adaptativo para móviles).
+    - *Titular Monumental:* **La Decisión Más Inteligente para el *Manejo de tu Propiedad*** (`Playfair Display`).
+    - *Descripción Institucional:* *Permítenos evaluar y comercializar tu inmueble en la Isla de Margarita con el máximo alcance y blindaje jurídico registral de **Inversiones D'ALROC**.* (en tipografía `Cinzel` con interletreado arquitectónico).
+    - *Encabezado Interno de Tarjeta:* Titulado sobrio `Formulario de Venta y Administración` para evitar redundancias con los títulos grandes.
+  - Campos esenciales de captación organizados en 4 bloques:
+    1. **Datos del Propietario:** Nombre y Apellido, Teléfono / WhatsApp, Correo Electrónico, Modalidad de Gestión.
+    2. **Características del Inmueble:** Tipo de Propiedad, Ubicación en Margarita, Conjunto/Edificio, Metraje (m²), Habitaciones, Baños, Puestos de Estacionamiento.
+    3. **Amenidades Destacadas:** Checkbox pills táctiles (Planta eléctrica, Pozo/Tanque, Vista al Mar, Piscina, Amoblado, Vigilancia 24/7, Climatizado, Acceso a Playa).
+    4. **Expectativa Económica:** Valor estimado en USD y detalles o estado documental.
+  - **Botón de Envío Sobrio y Clásico (`.btn-consignacion-submit`):**
+    - Fondo verde esmeralda profundo `linear-gradient(165deg, #1D3D2E 0%, #142B20 100%)` con marco dorado fino `2px solid var(--gold)`.
+    - Medallón sutil con icono clásico de WhatsApp (`#25D366`) y flecha dorada de avance.
+    - Texto solicitado en mayúsculas: `PONERSE EN CONTACTO CON INVERSIONES D'ALROC`.
+- [x] **Integración con FormSubmit (AJAX) y Redirección a WhatsApp:**
+  - **Envío Silencioso a FormSubmit:** Al pulsar enviar, se despachan todos los datos del formulario por detrás a FormSubmit (`inversiones.idalroc@gmail.com`) con el asunto: `Nuevo Inmueble [ID: ALR-XXXXXX] - Nombre (Tipo)`.
+  - **Búsqueda Inmediata en el Correo:** Claudia puede buscar en su app de correo el ID (ej. `ALR-748291`) y encontrar de inmediato la ficha completa.
+  - **Redirección Directa a WhatsApp:** Abre el chat oficial con el mensaje exacto conteniendo el ID dinámico:
+    > *"Claudia, llene el formulario [ID: #ALR-XXXXXX] en tu web dalrocmargarita.com para empezar la administración de mi inmueble, me interesa maximizar el alcance y el valor de mi propiedad con la ayuda de tus servicios inmobibliarios."*
+
+---
+
+### 🏛️ Mejoras en Pop-Up Superior Izquierdo (Top Left Corner Shape `#top-shape-popup`)
+- [x] **Actualización de Subtexto a `Cinzel Italic`:**
+  - Texto actualizado a `En la venta o compra de tu propiedad` (desktop) y `Exclusividad y blindaje en la venta o compra de tu propiedad.` (móvil).
+  - Tipografía `Cinzel` con estilo `italic` aplicado tanto en desktop como en media query móvil con `!important` para prevenir sobreescrituras.
+- [x] **Efecto Hover Verde Imperial & Oro en Tarjetas de Servicios:**
+  - Las 3 tarjetas de especialidades (`.top-shape-service-card`) cambian suavemente su fondo al verde esmeralda `#1D3D2E`, con borde dorado `var(--gold)`, medallón de icono en oro pulido con glifo verde oscuro, y texto en blanco y alabastro cálido.
+  - Subtextos descriptivos formateados en tipografía `Cinzel` (`0.92rem`, 600 bold).
+- [x] **Autocierre Inteligente al Scrollear (Exclusivo para Teléfonos Móviles):**
+  - Implementado en `handleScrollEffects`: si un usuario móvil (`windowWidth <= 820px`) tiene el menú abierto y scrollea alejándose del Hero hacia la Sección 2 (`#Galeria` / `#Seccion-Propiedades`), el sistema invoca `closeTopShape()` replegando el pop-up automáticamente.
+  - Preserva el comportamiento de anclaje de escritorio 100% intacto.
 
 ---
 

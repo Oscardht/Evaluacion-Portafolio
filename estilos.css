@@ -3468,9 +3468,9 @@ select.field-select option {
 }
 
 .top-shape-tagline {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cinzel', serif !important;
     font-size: 1.12rem;
-    font-style: italic;
+    font-style: italic !important;
     color: var(--text-muted);
     margin-top: 0.35rem;
     display: block;
@@ -3489,6 +3489,8 @@ select.field-select option {
 
 .tagline-desktop {
     display: inline;
+    font-family: 'Cinzel', serif !important;
+    font-style: italic !important;
 }
 
 .top-shape-close-btn {
@@ -3744,15 +3746,15 @@ select.field-select option {
     border: 1px solid var(--gold-border);
     border-radius: var(--radius-card);
     padding: 0.75rem 1rem;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     text-align: left;
 }
 
 .top-shape-service-card:hover {
-    background: #FFFFFF;
+    background: var(--emerald-column);
     border-color: var(--gold);
-    transform: translateX(3px);
-    box-shadow: 0 4px 12px rgba(40, 34, 25, 0.08);
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(29, 61, 46, 0.35), 0 0 10px rgba(184, 142, 62, 0.25);
 }
 
 .top-shape-service-icon {
@@ -3768,6 +3770,14 @@ select.field-select option {
     font-size: 1.15rem;
     flex-shrink: 0;
     margin-top: 0;
+    transition: all 0.25s ease;
+}
+
+.top-shape-service-card:hover .top-shape-service-icon {
+    background: var(--gold);
+    border-color: var(--gold-light);
+    color: #142B20;
+    transform: scale(1.06);
 }
 
 .top-shape-service-text {
@@ -3786,14 +3796,26 @@ select.field-select option {
     margin-bottom: 0.18rem;
     letter-spacing: 0.015em;
     display: block;
+    transition: color 0.2s ease;
+}
+
+.top-shape-service-card:hover .top-shape-service-text strong {
+    color: #FFFFFF;
 }
 
 .top-shape-service-text p {
-    font-size: 0.98rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.92rem;
+    font-weight: 600;
     color: var(--text-body);
-    line-height: 1.32;
+    line-height: 1.35;
     margin: 0;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.top-shape-service-card:hover .top-shape-service-text p {
+    color: #E8E2D6;
 }
 
 /* Acciones rápidas al pie de la forma */
@@ -4839,7 +4861,7 @@ select.field-select option {
     }
     .tagline-mobile {
         display: block !important;
-        font-family: 'Playfair Display', Georgia, serif;
+        font-family: 'Cinzel', serif;
         font-style: italic;
         font-size: 1.05rem;
         color: #554D40;
