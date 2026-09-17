@@ -5,10 +5,14 @@
    ========================================================================== */
 
 .Legado {
-    background: linear-gradient(180deg, #F6F1E7 0%, #EEE5D5 50%, #E2D7C2 100%);
+    position: relative;
+    background-image: url('img/RoyalCrownhd.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 10rem 9%;
     border-bottom: 1px solid var(--gold-border);
-    position: relative;
     overflow: hidden;
 }
 
@@ -929,14 +933,14 @@
 
 @media (max-width: 768px) {
     .Legado { 
+        background-attachment: scroll;
         padding: 4.5rem 4%; 
     }
 
     .legado-header-editorial {
-        background-image: url('img/RoyalCrownhd.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background: rgba(252, 250, 246, 0.90);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding: 3.2rem 1.8rem;
         border-radius: 18px;
         border: 1.5px solid var(--gold-border);
