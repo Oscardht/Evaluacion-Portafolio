@@ -1005,10 +1005,12 @@
 
             // --- Lógica de la Forma Arquitectónica Pop-Up en el Tope (Oculta, sobresale solo la pestaña) ---
             let topShapeOpenScrollY = 0;
+            let topShapeSwipeCount = 0;
 
             const openTopShape = () => {
                 if (!topShapePopup) return;
-                topShapeOpenScrollY = window.pageYOffset || document.documentElement.scrollTop;
+                topShapeOpenScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+                topShapeSwipeCount = 0;
                 topShapePopup.classList.add('active');
                 if (topShapeHandle) {
                     topShapeHandle.setAttribute('aria-expanded', 'true');
@@ -1018,6 +1020,7 @@
             const closeTopShape = () => {
                 if (!topShapePopup) return;
                 topShapePopup.classList.remove('active');
+                topShapeSwipeCount = 0;
                 if (topShapeHandle) {
                     topShapeHandle.setAttribute('aria-expanded', 'false');
                 }
@@ -1073,24 +1076,31 @@
             document.addEventListener('touchend', (e) => {
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
                     let moveDist = 0;
+                    let deltaY = 0;
                     if (e.changedTouches && e.changedTouches[0]) {
                         moveDist = Math.hypot(e.changedTouches[0].clientX - touchStartX, e.changedTouches[0].clientY - touchStartY);
+                        deltaY = touchStartY - e.changedTouches[0].clientY; // Positivo = swipe hacia arriba (para scrollear hacia abajo)
                     }
-                    // Cierre por tap estático deliberado fuera del pop-up (interacción con la página / Sección 2)
+
+                    // 1. Cierre por tap estático deliberado fuera del pop-up (interacción con la página / Sección 2)
                     if (!topShapePopup.contains(e.target) && !touchStartedInsidePopup && moveDist < 12) {
                         closeTopShape();
-                    } else if (moveDist >= 12) {
-                        // Si fue desplazamiento de scroll, verificar si ya se llegó a la Sección 3
-                        const currentY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-                        const sec3 = document.getElementById('Opiniones') || document.getElementById('Legado');
-                        const secGaleria = document.getElementById('Galeria');
-                        let sec3Top = 0;
-                        if (sec3 && sec3.offsetTop > 0) sec3Top = sec3.offsetTop;
-                        else if (secGaleria) sec3Top = secGaleria.offsetTop + secGaleria.offsetHeight;
-                        const winH = window.innerHeight || 700;
-                        if (sec3Top > 0 && currentY >= (sec3Top - (winH * 0.35))) {
+                        return;
+                    }
+
+                    // 2. Conteo de swipes hacia abajo: a los 2 swipes (o 1 swipe largo > 150px), cerrar el pop-up
+                    if (deltaY > 45) {
+                        topShapeSwipeCount++;
+                        if (topShapeSwipeCount >= 2 || deltaY > 150) {
                             closeTopShape();
+                            return;
                         }
+                    }
+
+                    // 3. Verificación de scroll acumulado (2 swipes en teléfono equivalen a ~220px)
+                    const currentY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+                    if (Math.abs(currentY - topShapeOpenScrollY) >= 220) {
+                        closeTopShape();
                     }
                 }
                 touchStartedInsidePopup = false;
@@ -1474,40 +1484,11 @@
                     }
                 }
 
-                // Cierre automático del Top Left Corner Pop-Up al scrollear en la página (Llegada a Sección 3)
+                // Cierre automático del Top Left Corner Pop-Up al scrollear (calibrado a 2 swipes de scroll: ~220px)
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
-                    const sec3 = document.getElementById('Opiniones');
-                    const secLegado = document.getElementById('Legado');
-                    const secGaleria = document.getElementById('Galeria');
-
-                    let sec3Top = 0;
-                    if (sec3 && sec3.offsetTop > 0) {
-                        sec3Top = sec3.offsetTop;
-                    } else if (secLegado && secLegado.offsetTop > 0) {
-                        sec3Top = secLegado.offsetTop;
-                    } else if (secGaleria) {
-                        sec3Top = secGaleria.offsetTop + secGaleria.offsetHeight;
-                    }
-
-                    // Umbral de llegada a Sección 3 (cuando la Sección 3 entra en la vista del usuario)
-                    const windowHeight = window.innerHeight || 700;
-                    const sec3Arrival = Math.max(0, sec3Top - (windowHeight * 0.35));
-
-                    if (sec3Arrival > 0) {
-                        if (topShapeOpenScrollY < sec3Arrival) {
-                            if (scrollY >= sec3Arrival) {
-                                closeTopShape();
-                            }
-                        } else {
-                            // Si se abrió ya dentro o cerca de la Sección 3, se cierra tras scrollear un margen prudente
-                            if (Math.abs(scrollY - topShapeOpenScrollY) > 150) {
-                                closeTopShape();
-                            }
-                        }
-                    } else {
-                        if (Math.abs(scrollY - topShapeOpenScrollY) > 250) {
-                            closeTopShape();
-                        }
+                    const scrollDist = Math.abs(scrollY - topShapeOpenScrollY);
+                    if (scrollDist >= 220) {
+                        closeTopShape();
                     }
                 }
 
