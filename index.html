@@ -133,7 +133,7 @@
                     <h2 class="top-shape-title">INVERSIONES D'<em>ALROC</em></h2>
                     <span class="top-shape-tagline">
                         <span class="tagline-desktop">En la venta o compra de tu propiedad</span>
-                        <span class="tagline-mobile">Exclusividad y blindaje en la venta o compra de tu propiedad.</span>
+                        <span class="tagline-mobile">Exclusividad y blindaje en la compra o venta de tu propiedad.</span>
                     </span>
                 </a>
                 <button class="top-shape-close-btn" id="top-shape-close-btn" aria-label="Cerrar Menú">
@@ -1062,6 +1062,46 @@
                     closeTopShape();
                 });
             });
+
+            // Interacción táctil en móviles para las tarjetas de servicios (emula el efecto hover de PC al pasar el dedo)
+            const serviceCards = document.querySelectorAll('.top-shape-service-card');
+            const servicesGrid = document.querySelector('.top-shape-services-grid');
+            if (servicesGrid && serviceCards.length > 0) {
+                let currentActiveTouchCard = null;
+                const setTouchCard = (card) => {
+                    if (currentActiveTouchCard === card) return;
+                    if (currentActiveTouchCard) currentActiveTouchCard.classList.remove('touch-active');
+                    currentActiveTouchCard = card;
+                    if (currentActiveTouchCard) currentActiveTouchCard.classList.add('touch-active');
+                };
+
+                servicesGrid.addEventListener('touchstart', (e) => {
+                    const touch = e.touches[0];
+                    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+                    const card = target ? target.closest('.top-shape-service-card') : null;
+                    setTouchCard(card);
+                }, { passive: true });
+
+                servicesGrid.addEventListener('touchmove', (e) => {
+                    const touch = e.touches[0];
+                    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+                    const card = target ? target.closest('.top-shape-service-card') : null;
+                    setTouchCard(card);
+                }, { passive: true });
+
+                const clearTouchCard = () => {
+                    if (currentActiveTouchCard) {
+                        const prev = currentActiveTouchCard;
+                        setTimeout(() => {
+                            prev.classList.remove('touch-active');
+                        }, 350);
+                        currentActiveTouchCard = null;
+                    }
+                };
+
+                servicesGrid.addEventListener('touchend', clearTouchCard, { passive: true });
+                servicesGrid.addEventListener('touchcancel', clearTouchCard, { passive: true });
+            }
 
             // Expansión interactiva de la píldora: ÚNICAMENTE al interactuar con el icono circular de la foto
             const expandRow = document.getElementById('top-shape-expand-row');
