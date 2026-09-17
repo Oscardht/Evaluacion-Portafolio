@@ -1076,9 +1076,21 @@
                     if (e.changedTouches && e.changedTouches[0]) {
                         moveDist = Math.hypot(e.changedTouches[0].clientX - touchStartX, e.changedTouches[0].clientY - touchStartY);
                     }
-                    // Solo cerrar si fue un tap estático deliberado fuera del pop-up (no un gesto de scroll)
+                    // Cierre por tap estático deliberado fuera del pop-up (interacción con la página / Sección 2)
                     if (!topShapePopup.contains(e.target) && !touchStartedInsidePopup && moveDist < 12) {
                         closeTopShape();
+                    } else if (moveDist >= 12) {
+                        // Si fue desplazamiento de scroll, verificar si ya se llegó a la Sección 3
+                        const currentY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+                        const sec3 = document.getElementById('Opiniones') || document.getElementById('Legado');
+                        const secGaleria = document.getElementById('Galeria');
+                        let sec3Top = 0;
+                        if (sec3 && sec3.offsetTop > 0) sec3Top = sec3.offsetTop;
+                        else if (secGaleria) sec3Top = secGaleria.offsetTop + secGaleria.offsetHeight;
+                        const winH = window.innerHeight || 700;
+                        if (sec3Top > 0 && currentY >= (sec3Top - (winH * 0.35))) {
+                            closeTopShape();
+                        }
                     }
                 }
                 touchStartedInsidePopup = false;
@@ -1091,6 +1103,16 @@
                     }
                 }
             });
+
+            // Interacción deliberada con la Sección 2 (catálogo, tarjetas de propiedades, filtros)
+            const secGaleriaNode = document.getElementById('Galeria');
+            if (secGaleriaNode) {
+                secGaleriaNode.addEventListener('click', () => {
+                    if (topShapePopup && topShapePopup.classList.contains('active')) {
+                        closeTopShape();
+                    }
+                });
+            }
 
             // Cerrar con tecla Escape
             document.addEventListener('keydown', (e) => {
@@ -1452,18 +1474,32 @@
                     }
                 }
 
-                // Cierre automático del Top Left Corner Pop-Up al scrollear en la página
+                // Cierre automático del Top Left Corner Pop-Up al scrollear en la página (Llegada a Sección 3)
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
-                    const sec2 = document.getElementById('Galeria') || document.getElementById('Seccion-Propiedades');
-                    if (sec2) {
-                        // Mitad de la Sección 2 (offsetTop + 50% del alto de la galería de propiedades)
-                        const sec2Midpoint = sec2.offsetTop + (sec2.offsetHeight * 0.5);
-                        if (topShapeOpenScrollY < sec2Midpoint) {
-                            if (scrollY >= sec2Midpoint) {
+                    const sec3 = document.getElementById('Opiniones');
+                    const secLegado = document.getElementById('Legado');
+                    const secGaleria = document.getElementById('Galeria');
+
+                    let sec3Top = 0;
+                    if (sec3 && sec3.offsetTop > 0) {
+                        sec3Top = sec3.offsetTop;
+                    } else if (secLegado && secLegado.offsetTop > 0) {
+                        sec3Top = secLegado.offsetTop;
+                    } else if (secGaleria) {
+                        sec3Top = secGaleria.offsetTop + secGaleria.offsetHeight;
+                    }
+
+                    // Umbral de llegada a Sección 3 (cuando la Sección 3 entra en la vista del usuario)
+                    const windowHeight = window.innerHeight || 700;
+                    const sec3Arrival = Math.max(0, sec3Top - (windowHeight * 0.35));
+
+                    if (sec3Arrival > 0) {
+                        if (topShapeOpenScrollY < sec3Arrival) {
+                            if (scrollY >= sec3Arrival) {
                                 closeTopShape();
                             }
                         } else {
-                            // Si se abrió estando ya más abajo de la mitad, se cierra tras scrollear un margen prudente
+                            // Si se abrió ya dentro o cerca de la Sección 3, se cierra tras scrollear un margen prudente
                             if (Math.abs(scrollY - topShapeOpenScrollY) > 150) {
                                 closeTopShape();
                             }
