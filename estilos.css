@@ -3462,9 +3462,10 @@ select.field-select option {
 }
 
 .top-shape-title em {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: var(--gold-dark);
     font-style: italic;
+    font-weight: 800;
     transition: color 0.2s ease;
 }
 
@@ -4888,7 +4889,7 @@ select.field-select option {
         white-space: normal !important;
     }
     .top-shape-title {
-        font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
         font-size: 2.35rem !important;
         font-weight: 800 !important;
         line-height: 1.1 !important;
@@ -4896,8 +4897,9 @@ select.field-select option {
         color: #1A1612 !important;
     }
     .top-shape-title em {
-        font-family: 'Playfair Display', Georgia, serif !important;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
         font-style: italic !important;
+        font-weight: 800 !important;
         color: var(--gold-dark) !important;
     }
     .top-shape-close-btn {
