@@ -1055,17 +1055,29 @@
                 });
             }
 
-            // Cerrar al hacer clic o tocar fuera de la forma (tanto en PC como en móviles)
+            // Cerrar al hacer clic o tap estático fuera de la forma (tanto en PC como en móviles)
+            let touchStartX = 0;
+            let touchStartY = 0;
             let touchStartedInsidePopup = false;
+
             document.addEventListener('touchstart', (e) => {
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
                     touchStartedInsidePopup = topShapePopup.contains(e.target);
+                    if (e.touches && e.touches[0]) {
+                        touchStartX = e.touches[0].clientX;
+                        touchStartY = e.touches[0].clientY;
+                    }
                 }
             }, { passive: true });
 
             document.addEventListener('touchend', (e) => {
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
-                    if (!topShapePopup.contains(e.target) && !touchStartedInsidePopup) {
+                    let moveDist = 0;
+                    if (e.changedTouches && e.changedTouches[0]) {
+                        moveDist = Math.hypot(e.changedTouches[0].clientX - touchStartX, e.changedTouches[0].clientY - touchStartY);
+                    }
+                    // Solo cerrar si fue un tap estático deliberado fuera del pop-up (no un gesto de scroll)
+                    if (!topShapePopup.contains(e.target) && !touchStartedInsidePopup && moveDist < 12) {
                         closeTopShape();
                     }
                 }
@@ -1079,25 +1091,6 @@
                     }
                 }
             });
-
-            // Cerrar inmediatamente si el usuario desliza el dedo fuera del pop-up para scrollear
-            document.addEventListener('touchmove', (e) => {
-                if (topShapePopup && topShapePopup.classList.contains('active')) {
-                    if (!topShapePopup.contains(e.target)) {
-                        closeTopShape();
-                    }
-                }
-            }, { passive: true });
-
-            // Cerrar al scrollear la página
-            window.addEventListener('scroll', () => {
-                if (topShapePopup && topShapePopup.classList.contains('active')) {
-                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                    if (Math.abs(currentScroll - topShapeOpenScrollY) > 20) {
-                        closeTopShape();
-                    }
-                }
-            }, { passive: true });
 
             // Cerrar con tecla Escape
             document.addEventListener('keydown', (e) => {
@@ -1461,8 +1454,24 @@
 
                 // Cierre automático del Top Left Corner Pop-Up al scrollear en la página
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
-                    if (Math.abs(scrollY - topShapeOpenScrollY) > 20 || scrollY > 40) {
-                        closeTopShape();
+                    const sec2 = document.getElementById('Galeria') || document.getElementById('Seccion-Propiedades');
+                    if (sec2) {
+                        // Mitad de la Sección 2 (offsetTop + 50% del alto de la galería de propiedades)
+                        const sec2Midpoint = sec2.offsetTop + (sec2.offsetHeight * 0.5);
+                        if (topShapeOpenScrollY < sec2Midpoint) {
+                            if (scrollY >= sec2Midpoint) {
+                                closeTopShape();
+                            }
+                        } else {
+                            // Si se abrió estando ya más abajo de la mitad, se cierra tras scrollear un margen prudente
+                            if (Math.abs(scrollY - topShapeOpenScrollY) > 150) {
+                                closeTopShape();
+                            }
+                        }
+                    } else {
+                        if (Math.abs(scrollY - topShapeOpenScrollY) > 250) {
+                            closeTopShape();
+                        }
                     }
                 }
 
