@@ -1004,8 +1004,11 @@
             const topShapeCloseBtn = document.getElementById('top-shape-close-btn');
 
             // --- Lógica de la Forma Arquitectónica Pop-Up en el Tope (Oculta, sobresale solo la pestaña) ---
+            let topShapeOpenScrollY = 0;
+
             const openTopShape = () => {
                 if (!topShapePopup) return;
+                topShapeOpenScrollY = window.pageYOffset || document.documentElement.scrollTop;
                 topShapePopup.classList.add('active');
                 if (topShapeHandle) {
                     topShapeHandle.setAttribute('aria-expanded', 'true');
@@ -1029,8 +1032,16 @@
                 }
             };
 
+            let lastTopShapeHandleTouch = 0;
             if (topShapeHandle) {
-                topShapeHandle.addEventListener('click', toggleTopShape);
+                topShapeHandle.addEventListener('touchend', (e) => {
+                    lastTopShapeHandleTouch = Date.now();
+                    toggleTopShape(e);
+                });
+                topShapeHandle.addEventListener('click', (e) => {
+                    if (Date.now() - lastTopShapeHandleTouch < 450) return;
+                    toggleTopShape(e);
+                });
             }
 
             if (topShapeCloseBtn) {
@@ -1038,9 +1049,29 @@
                     e.stopPropagation();
                     closeTopShape();
                 });
+                topShapeCloseBtn.addEventListener('touchend', (e) => {
+                    e.stopPropagation();
+                    closeTopShape();
+                });
             }
 
-            // Cerrar al hacer clic fuera de la forma
+            // Cerrar al hacer clic o tocar fuera de la forma (tanto en PC como en móviles)
+            let touchStartedInsidePopup = false;
+            document.addEventListener('touchstart', (e) => {
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    touchStartedInsidePopup = topShapePopup.contains(e.target);
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    if (!topShapePopup.contains(e.target) && !touchStartedInsidePopup) {
+                        closeTopShape();
+                    }
+                }
+                touchStartedInsidePopup = false;
+            }, { passive: true });
+
             document.addEventListener('click', (e) => {
                 if (topShapePopup && topShapePopup.classList.contains('active')) {
                     if (!topShapePopup.contains(e.target)) {
@@ -1048,6 +1079,25 @@
                     }
                 }
             });
+
+            // Cerrar inmediatamente si el usuario desliza el dedo fuera del pop-up para scrollear
+            document.addEventListener('touchmove', (e) => {
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    if (!topShapePopup.contains(e.target)) {
+                        closeTopShape();
+                    }
+                }
+            }, { passive: true });
+
+            // Cerrar al scrollear la página
+            window.addEventListener('scroll', () => {
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    if (Math.abs(currentScroll - topShapeOpenScrollY) > 20) {
+                        closeTopShape();
+                    }
+                }
+            }, { passive: true });
 
             // Cerrar con tecla Escape
             document.addEventListener('keydown', (e) => {
@@ -1409,11 +1459,9 @@
                     }
                 }
 
-                // Cierre automático del Top Left Corner Pop-Up SOLO EN TELÉFONOS al scrollear hacia la Sección 2
-                if (windowWidth <= 820 && topShapePopup && topShapePopup.classList.contains('active')) {
-                    const sec2 = document.getElementById('Seccion-Propiedades') || document.getElementById('Galeria');
-                    const sec2Top = sec2 ? sec2.offsetTop : 600;
-                    if (scrollY > 180 || (sec2 && scrollY >= (sec2Top - (window.innerHeight * 0.85)))) {
+                // Cierre automático del Top Left Corner Pop-Up al scrollear en la página
+                if (topShapePopup && topShapePopup.classList.contains('active')) {
+                    if (Math.abs(scrollY - topShapeOpenScrollY) > 20 || scrollY > 40) {
                         closeTopShape();
                     }
                 }
